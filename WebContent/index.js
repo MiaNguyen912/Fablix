@@ -18,14 +18,46 @@ function handleStarResult(resultData) {
         let stars = resultData[i]["stars"];
         let genres = resultData[i]["genres"];
 
+        let genres_id = [];
+        let genres_name = [];
+        for (const key in genres){
+            genres_id.push(key);
+            genres_name.push(genres[key]);
+        }
+
+        let stars_id = [];
+        let stars_name = [];
+        for (const key in stars){
+            stars_id.push(key);
+            stars_name.push(stars[key]);
+        }
+
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='single-movie?id='" + movie_id  + ">" + movie_title + "</a></td>";
+        rowHTML += "<td><a href='single-movie.html?id='" + movie_id  + "'>" + movie_title + "</a></td>";
         rowHTML += "<td>" + movie_title + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
-        rowHTML += "<td>" + genres + "</td>";
-        rowHTML += "<td>" + stars + "</td>";
+
+        // genres
+        rowHTML += "<td>";
+        for (let i = 0; i<genres_id.length; i++){
+            if (i < genres_id.length -1 )
+                rowHTML += genres_name[i] + ", ";
+            else
+                rowHTML += genres_name[i];
+        }
+        rowHTML += "</td>";
+
+        // stars
+        rowHTML += "<td>";
+        for (let i = 0; i<stars_id.length; i++){
+            if (i < stars_id.length -1 )
+                rowHTML += "<a href='/cs122b_project1_api_example_war/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+            else
+                rowHTML += "<a href='/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+        }
+        rowHTML += "</td>";
 
         rowHTML += "<td>" + movie_rating + "</td>";
 
