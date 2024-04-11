@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 
 // Declaring a WebServlet called MoviesServlet, which maps to url "/api/20movies"
-@WebServlet(name = "MoviesServlet", urlPatterns = "/api/20movies")
+@WebServlet(name = "Top20MoviesServlet", urlPatterns = "/api/20movies")
 public class Top20MoviesServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
