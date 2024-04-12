@@ -53,14 +53,25 @@ function handleResult(resultData) {
     // Populate the star table
     // Find the empty table body by id "movie_table_body"
     let movieTableBodyElement = jQuery("#movie_table_body");
+    let movies = resultData[0]["movies"];
+    let movies_id = [];
+    let movies_name = [];
+
+    for (const key in movies){
+        movies_id.push(key);
+        movies_name.push(movies[key]);
+    }
 
     // Concatenate the html tags with resultData jsonObject to create table rows
     for (let i = 0; i < Math.min(10, resultData.length); i++) {
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<th>" + resultData[i]["movie_title"] + "</th>";
-        rowHTML += "<th>" + resultData[i]["movie_year"] + "</th>";
-        rowHTML += "<th>" + resultData[i]["movie_director"] + "</th>";
+        rowHTML += "<td>";
+        if (i < movies_id.length -1 )
+            rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>, ";
+        else
+            rowHTML += "<a href='/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>";
+        rowHTML += "</td>";
         rowHTML += "</tr>";
 
         // Append the row created to the table body, which will refresh the page
