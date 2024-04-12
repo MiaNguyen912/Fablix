@@ -95,6 +95,7 @@ public class Top20MoviesServlet extends HttpServlet {
                 else
                     current_movie_ID = movie_id; // update current_movie_id
                 String title = rs.getString("title");
+                String year = rs.getString("year");
                 String director = rs.getString("director");
                 float rating = rs.getFloat("rating");
                 HashMap<String, String> genres = new HashMap<>();
@@ -142,6 +143,7 @@ public class Top20MoviesServlet extends HttpServlet {
                 JsonObject jsonObject = new JsonObject();
                 jsonObject.addProperty("movie_id", movie_id);
                 jsonObject.addProperty("movie_title", title);
+                jsonObject.addProperty("movie_year", year);
                 jsonObject.addProperty("movie_director", director);
                 jsonObject.addProperty("movie_rating", rating);
                 jsonObject.add("stars", starsJson);

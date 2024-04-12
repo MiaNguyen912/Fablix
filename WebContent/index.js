@@ -13,6 +13,7 @@ function handleStarResult(resultData) {
     for (let i = 0; i < Math.min(20, resultData.length); i++) {
         let movie_id = resultData[i]["movie_id"];
         let movie_title = resultData[i]["movie_title"];
+        let movie_year = resultData[i]["movie_year"];
         let movie_director = resultData[i]["movie_director"];
         let movie_rating = resultData[i]["movie_rating"];
         let stars = resultData[i]["stars"];
@@ -36,7 +37,7 @@ function handleStarResult(resultData) {
         let rowHTML = "";
         rowHTML += "<tr>";
         rowHTML += "<td><a href='single-movie.html?id='" + movie_id  + "'>" + movie_title + "</a></td>";
-        rowHTML += "<td>" + movie_title + "</td>";
+        rowHTML += "<td>" + movie_year + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
 
         // genres
