@@ -3,7 +3,7 @@
 
 function handleListBtnClick(){
     let grid = document.getElementById("movie_grid");
-    let list = document.getElementById("movie-list-box");
+    let list = document.getElementById("detail_table");
 
     if (!grid.classList.contains("hide")) {
         grid.classList.add("hide");
@@ -16,7 +16,7 @@ function handleListBtnClick(){
 
 function handleGridBtnClick(){
     let grid = document.getElementById("movie_grid");
-    let list = document.getElementById("movie-list-box");
+    let list = document.getElementById("detail_table");
     if (grid.classList.contains("hide")) {
         grid.classList.remove("hide");
     }

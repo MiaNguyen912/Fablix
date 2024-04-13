@@ -48,7 +48,7 @@ function handleResult(resultData) {
 
     // populate the star info h3
     // find the empty h3 body by id "movie_info"
-    let movieInfoElement = jQuery("#movie_info");
+    let movieInfoElement = jQuery("#main_info");
     let movie_director = resultData[0]["movie_director"];
     let movie_rating = resultData[0]["movie_rating"];
     let stars = resultData[0]["stars"];

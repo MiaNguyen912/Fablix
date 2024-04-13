@@ -39,16 +39,19 @@ function getParameterByName(target) {
 function handleResult(resultData) {
 
     console.log("handleResult: populating star info from resultData");
+    let starName = jQuery("#main_info");
+    let starDOB = jQuery("#sub_info");
 
-    // populate the star info h3
-    // find the empty h3 body by id "star_info"
-    let starInfoElement = jQuery("#star_info");
+    let yob = resultData[0]["star_yob"];
+    if (yob === null){
+        yob = "N/A";
+    }
 
     // append two html <p> created to the h3 body, which will refresh the page
-    starInfoElement.append("<p>Star Name: " + resultData[0]["star_name"] + "</p>" +
-        "<p>Date Of Birth: " + resultData[0]["star_yob"] + "</p>");
+    starName.append(resultData[0]["star_name"]);
+    starDOB.append("DOB: " + yob);
 
-    console.log("handleResult: populating movie table from resultData");
+    console.log("handleResult: populating star table from resultData");
 
     // Populate the star table
     // Find the empty table body by id "movie_table_body"
