@@ -61,6 +61,7 @@ public class SingleMovieServlet extends HttpServlet {
                     "JOIN genres g ON g.id = gm.genreid " +
                     "JOIN stars_in_movies sm USING(movieid) " +
                     "JOIN stars s ON s.id = sm.starid " +
+                    "JOIN ratings r ON m.id = r.movieid " +
                     "WHERE m.id = ?";
 
             /*
@@ -95,6 +96,7 @@ public class SingleMovieServlet extends HttpServlet {
                 String movieTitle = rs.getString("title");
                 String movieYear = rs.getString("year");
                 String movieDirector = rs.getString("director");
+                String movieRating = rs.getString("Rating");
 
                 HashMap<String, String> movieGenres = new HashMap<>();
                 String genre_ID = "" + rs.getInt("genreid"); //cast int to string
@@ -134,6 +136,7 @@ public class SingleMovieServlet extends HttpServlet {
                 jsonObject.addProperty("movie_title", movieTitle);
                 jsonObject.addProperty("movie_year", movieYear);
                 jsonObject.addProperty("movie_director", movieDirector);
+                jsonObject.addProperty("movie_rating", movieRating);
                 jsonObject.add("stars", starsJson);
                 jsonObject.add("genres", genresJson);
                 jsonArray.add(jsonObject);
