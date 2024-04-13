@@ -56,7 +56,7 @@ function handleStarResult(resultData) {
             if (i < stars_id.length -1 )
                 rowHTML += "<a href='/cs122b_project1_api_example_war/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                rowHTML += "<a href='/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+                rowHTML += "<a href='/cs122b_project1_api_example_war/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
         }
         rowHTML += "</td>";
 

@@ -70,7 +70,7 @@ function handleResult(resultData) {
         if (i < movies_id.length -1 )
             rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>, ";
         else
-            rowHTML += "<a href='/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>";
+            rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>";
         rowHTML += "</td>";
         rowHTML += "</tr>";
 
