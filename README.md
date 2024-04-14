@@ -30,11 +30,13 @@ mysql> quit;
 ### To run this example: 
 1. Clone this repository using `git clone`
 2. Open IntelliJ -> Import Project -> Choose the project you just cloned (The root path must contain the pom.xml!) -> Choose Import project from external model -> choose Maven -> Click on Finish -> The IntelliJ will load automatically
-3. For "Root Directory", right click "cs122b-project1-api-example" -> Mark Directory as -> sources root
-4. In `WebContent/META-INF/context.xml`, make sure the mysql username is `mytestuser` and password is `My6$Password`.
-5. Also make sure you have the `moviedb` database.
-6. Configure Tomcat Apache and add a .war file as an Artifact
-7. Run the Tomcat server
+3. run "npm install"
+4. Load Maven Project
+5. For "Root Directory", right click "cs122b-project1-api-example" -> Mark Directory as -> sources root
+6. In `WebContent/META-INF/context.xml`, make sure the mysql username is `mytestuser` and password is `My6$Password`.
+7. Also make sure you have the `moviedb` database.
+8. Configure Tomcat Apache and add a .war file as an Artifact
+9. Run the Tomcat server
 
 ### If you modify css using tailwind properties:
 1. Delete the existing tailwind.css in WebContent/assets
