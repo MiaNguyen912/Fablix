@@ -67,17 +67,11 @@ function handleResult(resultData) {
         stars_id.push(key);
         stars_name.push(stars[key]);
     }
-    // append two html <p> created to the h3 body, which will refresh the page
-    // For title, year, director, and rating
     movieInfoElement.append("<p>" + resultData[0]["movie_title"] + " (" + resultData[0]["movie_year"] + ")</p>");
 
     console.log("handleResult: populating movie info table from resultData");
-
-    // Populate the star table
-    // Find the empty table body by id "movie_info_table_body"
     let movieTableBodyElement = jQuery("#movie_info_table_body");
 
-    // Concatenate the html tags with resultData jsonObject to create table rows
     let rowHTML = "";
     rowHTML += "<tr>";
     rowHTML += "<td>" + movie_director + "</td>";

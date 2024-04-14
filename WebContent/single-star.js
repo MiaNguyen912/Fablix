@@ -35,12 +35,11 @@ function getParameterByName(target) {
  * Handles the data returned by the API, read the jsonObject and populate data into html elements
  * @param resultData jsonObject
  */
-
 function handleResult(resultData) {
 
     console.log("handleResult: populating star info from resultData");
     let starName = jQuery("#main_info");
-    let starDOB = jQuery("#sub_info");
+    let starYOB = jQuery("#sub_info");
 
     let yob = resultData[0]["star_yob"];
     if (yob === null){
@@ -49,12 +48,11 @@ function handleResult(resultData) {
 
     // append two html <p> created to the h3 body, which will refresh the page
     starName.append(resultData[0]["star_name"]);
-    starDOB.append("DOB: " + yob);
+    starYOB.append("Year of birth: " + yob);
 
     console.log("handleResult: populating star table from resultData");
 
     // Populate the star table
-    // Find the empty table body by id "movie_table_body"
     let movieTableBodyElement = jQuery("#movie_table_body");
     let movies = resultData[0]["movies"];
     let movies_id = [];
@@ -65,21 +63,36 @@ function handleResult(resultData) {
         movies_name.push(movies[key]);
     }
 
-    // Concatenate the html tags with resultData jsonObject to create table rows
-    for (let i = 0; i < Math.min(10, resultData.length); i++) {
+
+    for (let i = 0; i<movies_id.length; i++){
         let rowHTML = "";
         rowHTML += "<tr>";
         rowHTML += "<td>";
-        if (i < movies_id.length -1 )
-            rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>, ";
-        else
-            rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>";
+        rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>";
         rowHTML += "</td>";
         rowHTML += "</tr>";
 
         // Append the row created to the table body, which will refresh the page
         movieTableBodyElement.append(rowHTML);
+
     }
+
+
+
+    // for (let i = 0; i < Math.min(20, resultData.length); i++) {
+    //     let rowHTML = "";
+    //     rowHTML += "<tr>";
+    //     rowHTML += "<td>";
+    //     if (i < movies_id.length -1 )
+    //         rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>, ";
+    //     else
+    //         rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>";
+    //     rowHTML += "</td>";
+    //     rowHTML += "</tr>";
+
+        // Append the row created to the table body, which will refresh the page
+    //     movieTableBodyElement.append(rowHTML);
+    // }
 }
 
 /**
