@@ -36,6 +36,11 @@ mysql> quit;
 6. Configure Tomcat Apache and add a .war file as an Artifact
 7. Run the Tomcat server
 
+### If you modify css using tailwind properties:
+1. Delete the existing tailwind.css in WebContent/assets
+2. In terminal, run 'npx tailwindcss -i ./WebContent/assets/style.css -o ./WebContent/assets/tailwind.css --watch' to combine the style.css with necessary tailwind property into tailwind.css file
+3. Wait for the file tailwind.css to be generated inside WebContent/assets
+
 ### Brief Explanation
 - This project uses `jQuery` for making HTTP requests and manipulate DOM.
 

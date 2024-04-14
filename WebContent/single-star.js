@@ -56,20 +56,20 @@ function handleResult(resultData) {
     let movieTableBodyElement = jQuery("#movie_table_body");
     let movies = resultData[0]["movies"];
     let movies_id = [];
-    let movies_name = [];
+    let movies_detail = [];
 
     for (const key in movies){
         movies_id.push(key);
-        movies_name.push(movies[key]);
+        movies_detail.push(movies[key]);
     }
 
 
     for (let i = 0; i<movies_id.length; i++){
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td>";
-        rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>";
-        rowHTML += "</td>";
+        rowHTML += "<td><a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_detail[i]["title"] + "</a></td>";
+        rowHTML += "<td>" + movies_detail[i]["year"] + "</td>";
+        rowHTML += "<td>" + movies_detail[i]["director"] + "</td>";
         rowHTML += "</tr>";
 
         // Append the row created to the table body, which will refresh the page

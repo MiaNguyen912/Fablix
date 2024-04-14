@@ -15,6 +15,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 // Declaring a WebServlet called SingleStarServlet, which maps to url "/api/single-star/id=..."
@@ -83,23 +84,54 @@ public class SingleStarServlet extends HttpServlet {
                 String starName = rs.getString("name");
                 String starYob = rs.getString("birthYear");
 
-                HashMap<String, String> movies_of_this_star = new HashMap<>();
+                HashMap<String, ArrayList<String>> movies_of_this_star = new HashMap<>();
                 String movieId = rs.getString("movieId");
                 String movieTitle = rs.getString("title");
-                movies_of_this_star.put(movieId, movieTitle);
+                String movieYear = rs.getString("year");
+                String movieDirector = rs.getString("director");
+
+                ArrayList<String> movieDetail = new ArrayList<>();
+                movieDetail.add(movieTitle);
+                movieDetail.add(movieYear);
+                movieDetail.add(movieDirector);
+                movies_of_this_star.put(movieId, movieDetail);
 
 
                 while(rs.next()){
                     movieId = rs.getString("movieId");
                     movieTitle = rs.getString("title");
-                    movies_of_this_star.put(movieId, movieTitle);
+                    movieYear = rs.getString("year");
+                    movieDirector = rs.getString("director");
+                    ArrayList<String> thisMovieDetail = new ArrayList<>();
+
+                    thisMovieDetail.add(movieTitle);
+                    thisMovieDetail.add(movieYear);
+                    thisMovieDetail.add(movieDirector);
+
+                    movies_of_this_star.put(movieId, thisMovieDetail);
                 }
 
+                // Convert movieDetail ArrayList<String> to JsonObject
+//                JsonObject movieDetailJson = new JsonObject();
+//                movieDetailJson.addProperty("title", movieDetail.get(0));
+//                movieDetailJson.addProperty("year", movieDetail.get(1));
+//                movieDetailJson.addProperty("director", movieDetail.get(2));
 
-                // Convert movies_of_this_star HashMap<String, String> to JsonObject
+
+                // Convert movies_of_this_star HashMap<String, ArrayList<String>> to JsonObject
                 JsonObject moviesJson = new JsonObject();
                 for (String key : movies_of_this_star.keySet()) {
-                    moviesJson.addProperty(key, movies_of_this_star.get(key));
+
+                    // Convert movieDetail ArrayList<String> to JsonObject
+                    JsonObject movieDetailJson = new JsonObject();
+                    ArrayList<String> detail = movies_of_this_star.get(key);
+                    movieDetailJson.addProperty("title", detail.get(0));
+                    movieDetailJson.addProperty("year", detail.get(1));
+                    movieDetailJson.addProperty("director", detail.get(2));
+
+                    moviesJson.add(key, movieDetailJson);
+
+//                    moviesJson.addProperty(key, movies_of_this_star.get(key));
                 }
 
 
