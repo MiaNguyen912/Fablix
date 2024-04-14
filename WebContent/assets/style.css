@@ -2,11 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.color-palette {
+    color: #f7a072;
+    color: #d2612d;
+    color: #ae6033;
+    color: #9f6637;
+    color: #886932;
+    color: #726032;
+    color: #5d5733;
+    color: #474e33;
+    color: #3a4231;
+    color: #2d3730;
+    color: #202c2f;
+}
+
+
 body{
     box-sizing: border-box;
     /*background: linear-gradient(to right, pink, lightblue);*/
-    background: linear-gradient(to right, #570b75, #2d2d2d);
-
+    /*background: linear-gradient(to right, #570b75, #2d2d2d);*/
+    background: linear-gradient(to right, #886932, #202c2f);
 }
 td a {
     color: #1566bf;
@@ -26,7 +41,8 @@ td a {
     /*background-color: #303030;*/
 }
 #page-title {
-    color: #5AF;
+    /*color: #5AF;*/
+    color: #d2612d;
     font-family: sans-serif, 'Roboto';
     font-size: 70px;
     font-weight: bolder;
@@ -65,12 +81,12 @@ td a {
     font-weight: bold;
     padding: 30px 30px 0 10vw;
     font-size: 40px;
-    color: #5AF;
+    color: #d2612d;
 }
 #sub_info{
     font-family: sans-serif, "Roboto";
     padding: 0 30px 0 10vw;
     font-size: 20px;
-    color: #5AF;
+    color: #d2612d;
 }
 
