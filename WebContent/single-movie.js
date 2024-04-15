@@ -88,9 +88,9 @@ function handleResult(resultData) {
     rowHTML += "<td>";
     for (let i = 0; i<stars_id.length; i++){
         if (i < stars_id.length -1 )
-            rowHTML += "<a href='/cs122b_project1_api_example_war/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+            rowHTML += "<a href='/cs122b-project1-api-example/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
         else
-            rowHTML += "<a href='/cs122b_project1_api_example_war/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+            rowHTML += "<a href='/cs122b-project1-api-example/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
     }
     rowHTML += "</td>";
     rowHTML += "<td>" + movie_rating + "</td>";
