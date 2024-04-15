@@ -81,9 +81,9 @@ function handleStarResult(resultData) {
         let starsText = "";
         for (let i = 0; i<stars_id.length; i++){
             if (i < stars_id.length -1 )
-                starsText += "<a href='/cs122b-project1-api-example/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='/cs122b-project1-api-example/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
         }
         rowHTML += "<td>" + starsText + "</td>";
 
