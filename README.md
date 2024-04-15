@@ -5,14 +5,19 @@ https://drive.google.com/file/d/1IjAYOmAGrMq2puDwuztdXVVTQuwHT7x6/view?usp=drive
 
 ### Contributions: 
 Mia:
-- 
+- Build the API (SingleMovieServlet, SingleStarServlet, Top20MovieServlet)
+- Create createtable.sql
+- Construct the home page, which is the top-20-movies page (front-end and back-end)
+- Beautify top-20-movies, single-movie, single-star pages using Tailwind CSS and plain CSS
+- add List view/Grid view feature on the home page
 
   
 Daniel:
-- Fix single star page to show movies
-- Add year of birth for each star
-- Created single movie page and updated movie links to go to correct movie page
-- Add links to go back to main page from each single star/movie page
+- construct the back-end of single-star and single-movie (front-end and back-end)
+- Help debug and fix errors 
+- Add the year of birth for each star
+- Updated movie links to go to the correct movie page
+- Add links to go back to the main page from each single star/movie page
 
 ### Before running the project
 
