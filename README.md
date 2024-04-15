@@ -1,5 +1,18 @@
 ## CS 122B Project 1
 
+### Demo Video Link: 
+https://drive.google.com/file/d/1IjAYOmAGrMq2puDwuztdXVVTQuwHT7x6/view?usp=drive_link
+
+### Contributions: 
+Mia:
+- 
+
+  
+Daniel:
+- Fix single star page to show movies
+- Add year of birth for each star
+- Created single movie page and updated movie links to go to correct movie page
+- Add links to go back to main page from each single star/movie page
 
 ### Before running the project
 
