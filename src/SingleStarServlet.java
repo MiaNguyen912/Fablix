@@ -17,6 +17,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
 // Declaring a WebServlet called SingleStarServlet, which maps to url "/api/single-star/id=..."
 @WebServlet(name = "SingleStarServlet", urlPatterns = "/authenticated/api/single-star")
@@ -56,7 +58,7 @@ public class SingleStarServlet extends HttpServlet {
             // Get a connection from dataSource
 
             // Construct a query with parameter represented by "?"
-            String query = "SELECT * FROM stars s JOIN stars_in_movies sm ON s.id = sm.starid JOIN movies m ON sm.movieid = m.id WHERE s.id = ?";
+            String query = "SELECT * FROM stars s JOIN stars_in_movies sm ON s.id = sm.starid JOIN movies m ON sm.movieid = m.id WHERE s.id = ? ORDER BY m.year DESC, m.title ASC";
 
             /*
             SELECT *
@@ -84,7 +86,7 @@ public class SingleStarServlet extends HttpServlet {
                 String starName = rs.getString("name");
                 String starYob = rs.getString("birthYear");
 
-                HashMap<String, ArrayList<String>> movies_of_this_star = new HashMap<>();
+                LinkedHashMap<String, ArrayList<String>> movies_of_this_star = new LinkedHashMap<>(); // use LinkedHashMap to keep data in the same order as they're added
                 String movieId = rs.getString("movieId");
                 String movieTitle = rs.getString("title");
                 String movieYear = rs.getString("year");
@@ -118,7 +120,7 @@ public class SingleStarServlet extends HttpServlet {
 //                movieDetailJson.addProperty("director", movieDetail.get(2));
 
 
-                // Convert movies_of_this_star HashMap<String, ArrayList<String>> to JsonObject
+                // Convert movies_of_this_star to JsonObject
                 JsonObject moviesJson = new JsonObject();
                 for (String key : movies_of_this_star.keySet()) {
 
