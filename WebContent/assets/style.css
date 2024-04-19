@@ -108,3 +108,11 @@ td a {
     transform: scale(1);
     transition: opacity 75ms ease-in, transform 75ms ease-in;
 }
+
+/* ---------------------------------------- */
+#login-page-full {
+    background-image: url("login-background.jpg");
+    background-color: rgba(0, 0, 0, 0.7); /* Darken background */
+    background-size: 130% auto; /* Stretch vertically */
+    background-position: center;
+}
