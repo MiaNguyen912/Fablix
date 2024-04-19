@@ -2,26 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.color-palette {
-    color: #f7a072;
-    color: #d2612d;
-    color: #ae6033;
-    color: #9f6637;
-    color: #886932;
-    color: #726032;
-    color: #5d5733;
-    color: #474e33;
-    color: #3a4231;
-    color: #2d3730;
-    color: #202c2f;
-}
-
-
 body{
     box-sizing: border-box;
     /*background: linear-gradient(to right, pink, lightblue);*/
     /*background: linear-gradient(to right, #570b75, #2d2d2d);*/
-    background: linear-gradient(to right, #886932, #202c2f);
+    background: linear-gradient(135deg, #21262a, #545a5d);
 }
 td a {
     color: #1566bf;
