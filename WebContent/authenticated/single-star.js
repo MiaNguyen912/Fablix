@@ -76,23 +76,6 @@ function handleResult(resultData) {
         movieTableBodyElement.append(rowHTML);
 
     }
-
-
-
-    // for (let i = 0; i < Math.min(20, resultData.length); i++) {
-    //     let rowHTML = "";
-    //     rowHTML += "<tr>";
-    //     rowHTML += "<td>";
-    //     if (i < movies_id.length -1 )
-    //         rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>, ";
-    //     else
-    //         rowHTML += "<a href='/cs122b_project1_api_example_war/single-movie.html?id=" + movies_id[i] + "'> " + movies_name[i] + "</a>";
-    //     rowHTML += "</td>";
-    //     rowHTML += "</tr>";
-
-        // Append the row created to the table body, which will refresh the page
-    //     movieTableBodyElement.append(rowHTML);
-    // }
 }
 
 /**

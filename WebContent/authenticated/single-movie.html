@@ -18,9 +18,11 @@
 
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
 
-    <!-- style.css -->
-    <link rel="stylesheet" href="assets/style.css">
+    <!-- style sheet -->
+    <link rel="stylesheet" href="../assets/style.css">
+
 
     <title>Single Movie</title>
 </head>
@@ -28,27 +30,65 @@
     <!-- -------------------------- HEADER ----------------------- -->
     <header class="bg-gray-900" id="header" >
         <nav class="mx-6 flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-            <div class="flex lg:flex-1">
-                <a href="index.html" class="-m-1.5 p-1.5">
-                    <img class="h-8 w-auto inline" src="assets/ticket-white.png" alt="Fablix icon">
+            <div class="flex lg:flex-1 lg:gap-x-12">
+                <!-- logo -->
+                <a href="../index.html" class="-m-1.5 p-1.5">
+                    <img class="h-8 w-auto inline" src="../assets/ticket-white.png" alt="Fablix icon">
                     <span class="text-white ml-1.5 font-semibold text-lg align-bottom">Fablix</span>
                 </a>
+
+                <!-- "Browse by" dropdown list -->
+                <div id="browse-dropdown-list" class="relative inline-block text-left">
+                    <div>
+                        <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-none px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-500 hover:text-black" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                            Browse by
+                            <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="drop-down-menu" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <div class="py-1" role="none">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                            <a href="movie-by-genre.html" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Genre</a>
+                            <a href="movie-by-title.html" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Title</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
-                <a href="#" class="text-sm font-semibold leading-6 text-white align-bottom">About</a>
-                <a href="#" class="text-sm font-semibold leading-6 text-white align-bottom">Contact</a>
-                <a href="#" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12 items-center">
+                <!-- Search form -->
+
+                <form ACTION="form" METHOD="GET" id="seach-form">
+                    <span class="text-sm font-semibold leading-6 text-white mr-2">Search Movie</span>
+                    <input type="text" placeholder="Title" name="title-search" id="title-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 w-24 mr-1">
+                    <input type="text" placeholder="Year" name="year-search" id="year-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 w-24 mr-1">
+                    <input type="text" placeholder="Director" name="director-search" id="director-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 w-24 mr-1">
+                    <input type="text" placeholder="Star" name="star-search" id="star-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 w-24">
+                    <input TYPE="SUBMIT" VALUE="Search" class="rounded-md bg-none px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-500 hover:text-black w-20">
+
+                </form>
+
+                <!-- cart -->
+                <a href="cart.html" id="cart-btn" class="text-sm font-semibold leading-6 text-white ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                </a>
+
+                <!-- login/logout -->
+                <a href="../login.html" id="login-btn" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+                <a href="../login.html" id="logout-btn" onclick="handleLogOut()" class="text-sm font-semibold leading-6 text-white">Log out <span aria-hidden="true">&rarr;</span></a>
             </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
         <div class="lg:hidden" role="dialog" aria-modal="true">
-            <!-- Background backdrop, show/hide based on slide-over state. -->
             <div class="fixed inset-0 z-10"></div>
             <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
                 <div class="flex items-center justify-between">
                     <a href="#" class="-m-1.5 p-1.5">
-                        <img class="h-8 w-auto inline" src="assets/ticket-white.png" alt="Fablix icon">
+                        <img class="h-8 w-auto inline" src="../assets/ticket-white.png" alt="Fablix icon">
                         <span class="text-white ml-1.5 font-semibold text-lg align-bottom">Fablix</span>
                     </a>
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-400">
@@ -63,9 +103,11 @@
                         <div class="space-y-2 py-6">
                             <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">About</a>
                             <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Contact</a>
+                            <a href="cart.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Check out</a>
                         </div>
                         <div class="py-6">
-                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800">Log in</a>
+                            <a href="../login.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800">Log in</a>
+                            <a href="../login.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800">Log out</a>
                         </div>
                     </div>
                 </div>
@@ -219,10 +261,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Load our own JS file -->
-    <!-- The path is relative to single-star.html, since these two files are in the same directory -->
-    <!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path
-         otherwise the url is relative to the root path-->
     <script src="single-movie.js"></script>
+    <script src="../header.js"></script>
+
 </body>
 
 

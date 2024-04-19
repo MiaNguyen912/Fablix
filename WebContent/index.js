@@ -1,6 +1,4 @@
 
-
-
 function handleListBtnClick(){
     let grid = document.getElementById("movie_grid");
     let list = document.getElementById("detail_table");
@@ -63,7 +61,7 @@ function handleStarResult(resultData) {
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
+        rowHTML += "<td><a href='authenticated/single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
         rowHTML += "<td>" + movie_year + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
 
@@ -81,9 +79,9 @@ function handleStarResult(resultData) {
         let starsText = "";
         for (let i = 0; i<stars_id.length; i++){
             if (i < stars_id.length -1 )
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+                starsText += "<a href='authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+                starsText += "<a href='authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
         }
         rowHTML += "<td>" + starsText + "</td>";
 
@@ -100,7 +98,7 @@ function handleStarResult(resultData) {
             '            <div class="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5">\n' +
             '                <dl class="flex flex-wrap">\n' +
             '                    <div class="flex-auto pl-6 pt-6">\n' +
-            '                        <dt class="text-base leading-6 text-gray-900"><strong><a href=\single-movie.html?id=' + movie_id + '>' + movie_title + '</a></strong> <span class="text-sm text-gray-500">(' + movie_year + ')</span></dt>\n' +
+            '                        <dt class="text-base leading-6 text-gray-900"><strong><a href=authenticated/single-movie.html?id=' + movie_id + '>' + movie_title + '</a></strong> <span class="text-sm text-gray-500">(' + movie_year + ')</span></dt>\n' +
             '                        <dd class="mt-1 text-sm font-semibold leading-6 text-gray-900">' + genresText + '</dd>\n' +
             '                    </div>\n' +
             '                    <div class="flex-none self-end px-6 pt-4">\n' +

@@ -64,19 +64,38 @@ mysql> quit;
 ### Brief Explanation
 - This project uses `jQuery` for making HTTP requests and manipulate DOM.
 
-- `...Servlet.java` files: are Java servlets that talk to the database and return information in the JSON format.
+- [SingleMovieServlet.java](src/SingleMovieServlet.java), [SingleStarServlet.java](src/SingleStarServlet.java), [Top20MoviesServlet.java](src/Top20MoviesServlet.java): Java servlets that handle HTTP GET request by talking to the database and return information in the JSON format.
 
-- `index.js` is the main Javascript file that initiates an HTTP GET request to the `Top20MoviesServlet`. After the response is returned, `index.js` populates the table using the data it gets.
+- [LoginServlet.java](src/LoginServlet.java) handles the login requests. It contains the following functionalities:
+   - It gets the username and password from the parameters.
+   - It verifies the username and password.
+   - If login succeeds, it puts the `User` object in the session. Then it sends back a JSON response: `{"status": "success", "message": "success"}` .
+   - If login fails, the JSON response will be: `{"status": "fail", "message": "incorrect password"}` or `{"status": "fail", "message": "user <username> doesn't exist"}`.
 
-- `index.html` is the main HTML file that contains the initial skeleton for the table.
+- [LoginFilter.java](src/LoginFilter.java) is a special `Filter` class. It serves the purpose that for each URL request, if the user is not logged in, then it redirects the user to the `login.html` page.
+   - A `Filter` class intercepts all incoming requests and determines if such requests are allowed against the rules we implement. See more details about `Filter` class [here](http://tutorials.jenkov.com/java-servlets/servlet-filters.html).
+   - In `Filter`, all requests will pass through the `doFilter` function.
+   - `LoginFilter` first checks if the request (the URL pattern) maps to the home page or login page (which are allowed to access without login).
+   - It then checks if the user has logged in to the current session. If so, it redirects the user to the requested URL and if otherwise,`login.html` .
+
+- [SessionIndexServlet.java](src/IndexServlet.java) shows your current session information, last access time, and a list of movies added to cart. Has two methods, `doPost` and `doGet`.
+   *  `doGET`: is invoked when you have HTTP GET requests through the api `/api/session-index`
+      * It first gets the session ID, overrides the last access time, and writes these values in the JSON Object that is sent through `response`.
+   *  `doPOST`: is invoked with HTTP POST requests, responsible for the movie cart feature.
+      * First, it gets the session ID and the list of movies from the current session.
+      * If there is no such array of movies, it will create an empty array and add chosen movie.
+      * Sends the list of items through `cart.js`.
+
+
+- Web pages that required log in to access are put in `authenticated` folder
+- only the home page (index.html) and login page (login.html) are accessible without logging in
+
 
 
 ### DataSource
-- For project 1, you are recommended to use tomcat to manage your DataSource instead of manually define MySQL connection in each of the servlet.
-
 - `WebContent/META-INF/context.xml` contains a DataSource, with database information stored in it.
 `WEB-INF/web.xml` registers the DataSource to name jdbc/moviedb, which could be referred to anywhere in the project.
 
 - In each `...Servlet.java`, a private DataSource reference dataSource is created with `@Resource` annotation. It is a reference to the DataSource `jdbc/moviedb` we registered in `web.xml`
 
-- To use DataSource, you can create a new connection to it by `dataSource.getConnection()`, and you can use the connection as previous examples.
+- To use DataSource, you can create a new connection to it by `dataSource.getConnection()`.

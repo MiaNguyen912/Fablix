@@ -1,26 +1,4 @@
-/**
- * This example is following frontend and backend separation.
- *
- * Before this .js is loaded, the html skeleton is created.
- *
- * This .js performs three steps:
- *      1. Get parameter from request URL so it know which id to look for
- *      2. Use jQuery to talk to backend API to get the json data.
- *      3. Populate the data to correct html elements.
- */
 
-
-/**
- * Retrieve parameter from request URL, matching by parameter name
- * @param target String
- * @returns {*}
- *     title;
- *     year;
- *     director;
- *     all of the genres;
- *     all of the stars (hyperlinked);
- *     rating.
- */
 function getParameterByName(target) {
     // Get request URL
     let url = window.location.href;
@@ -44,10 +22,8 @@ function getParameterByName(target) {
 
 function handleResult(resultData) {
 
-    console.log("handleResult: populating star info from resultData");
+    console.log("handleResult: populating movie info from resultData");
 
-    // populate the star info h3
-    // find the empty h3 body by id "movie_info"
     let movieInfoElement = jQuery("#main_info");
     let movie_director = resultData[0]["movie_director"];
     let movie_rating = resultData[0]["movie_rating"];
@@ -69,7 +45,7 @@ function handleResult(resultData) {
     }
     movieInfoElement.append("<p>" + resultData[0]["movie_title"] + " (" + resultData[0]["movie_year"] + ")</p>");
 
-    console.log("handleResult: populating movie info table from resultData");
+    console.log("handleResult: populating movie table from resultData");
     let movieTableBodyElement = jQuery("#movie_info_table_body");
 
     let rowHTML = "";

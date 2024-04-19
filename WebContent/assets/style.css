@@ -90,3 +90,21 @@ td a {
     color: #d2612d;
 }
 
+/* ------------------------------------ */
+#drop-down-menu {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 100ms ease-out, transform 100ms ease-out;
+
+    /*Entering: "transition ease-out duration-100"*/
+    /*From: "transform opacity-0 scale-95"*/
+    /*To: "transform opacity-100 scale-100"*/
+    /*Leaving: "transition ease-in duration-75"*/
+    /*From: "transform opacity-100 scale-100"*/
+    /*To: "transform opacity-0 scale-95"*/
+}
+#drop-down-menu.active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 75ms ease-in, transform 75ms ease-in;
+}
