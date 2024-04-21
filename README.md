@@ -90,7 +90,31 @@ mysql> quit;
 - Web pages that required log in to access are put in `authenticated` folder
 - only the home page (index.html) and login page (login.html) are accessible without logging in
 
+### Searching logic
+- if title is specified: find 'title%' or '% title%' (title should match at the beginning or after a space)
+- if year is specified: find results with the exact specified year 
+- if director is specified: find '%director%' (director can match at the beginning, middle, or end)
+- if star name is specified: find '%star%' (star can match at the beginning, middle, or end)
 
+#### Seach query example:
+
+    SELECT * FROM ratings r
+    JOIN movies m ON r.movieid = m.id
+    JOIN genres_in_movies gm ON gm.movieid = r.movieid
+    JOIN genres g ON g.id = gm.genreid
+    JOIN stars_in_movies sm ON sm.movieid = r.movieid
+    JOIN stars s ON s.id = sm.starid
+    JOIN ( SELECT starid, COUNT(movieid) AS movie_count FROM stars_in_movies GROUP BY starid) sp ON s.id = sp.starid
+    JOIN (SELECT sm.movieid
+        FROM stars_in_movies sm
+        JOIN stars s ON s.id = sm.starid
+        WHERE s.name LIKE '%tom%'
+    ) as movies_of_chosen_star ON movies_of_chosen_star.movieid = m.id
+    WHERE m.title LIKE 'term%' or m.title LIKE '% term%'
+          AND m.year = 2004 
+          AND m.director LIKE '%Steven%'
+          AND
+    ORDER BY m.title, sp.movie_count DESC, s.name ASC;
 
 ### DataSource
 - `WebContent/META-INF/context.xml` contains a DataSource, with database information stored in it.
