@@ -69,11 +69,17 @@ public class MoviesByTitleServlet extends HttpServlet {
                     "            JOIN stars_in_movies sm ON sm.movieid = r.movieid\n" +
                     "            JOIN stars s ON s.id = sm.starid\n" +
                     "            JOIN ( SELECT starid, COUNT(movieid) AS movie_count FROM stars_in_movies GROUP BY starid) sp ON s.id = sp.starid\n" +
-                    "            WHERE  m.title LIKE ?" +
-                    "            ORDER BY m.title ASC, sp.movie_count DESC, s.name ASC;";
+                    "            WHERE ";
+            if (firstLetter.equals("*")){
+                query += "m.title RLIKE '^[^A-Za-z0-9]'";
+            } else
+                query += " m.title LIKE ?";
+            query += "            ORDER BY m.title ASC, sp.movie_count DESC, s.name ASC;";
 
             PreparedStatement statement = conn.prepareStatement(query);
-            statement.setString(1, firstLetter + "%");
+
+            if (!firstLetter.equals("*"))
+                statement.setString(1, firstLetter + "%");
             ResultSet rs = statement.executeQuery();
             JsonArray jsonArray = new JsonArray();
 
