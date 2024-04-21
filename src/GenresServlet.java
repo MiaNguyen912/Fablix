@@ -17,7 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-@WebServlet(name = "GenresServlet", urlPatterns = "/authenticated/api/genres")
+@WebServlet(name = "GenresServlet", urlPatterns = "/authenticated/api/all-genres")
 public class GenresServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 
@@ -48,7 +48,7 @@ public class GenresServlet extends HttpServlet {
             // Get a connection from dataSource
 
             // Construct a query with parameter represented by "?"
-            String query = "SELECT * FROM genres";
+            String query = "SELECT * FROM genres ORDER BY genres.name";
             PreparedStatement statement = conn.prepareStatement(query);
             ResultSet rs = statement.executeQuery();
             JsonArray jsonArray = new JsonArray();

@@ -45,7 +45,7 @@ function handleLogOut(){
 //------- search by title -----------
 let title_letter_list = jQuery("#title-letter-list");
 let links = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*'];
-let baseUrl_titleSearch = 'title?start=';
+let baseUrl_titleSearch = 'movies-by-title.html?start=';
 
 let html = "";
 for (let i = 0; i < links.length; i++) {
@@ -66,8 +66,8 @@ title_letter_list.append(html);
 //------- search by genre -----------
 function handleGenreListDisplay(resultData) {
     let genre_list = jQuery("#genre-search-list");
-    let baseUrl_genreSearch = 'genre?name=';
-    let baseUrlFromAuthenticatedPages_genreSearch = 'genre?name=';
+    let baseUrl_genreSearch = 'movies-by-genre.html?name=';
+    let baseUrlFromAuthenticatedPages_genreSearch = 'movies-by-genre.html?name=';
 
     let rowHTML = "";
     for (let i = 0; i < resultData.length; i++) {
@@ -81,6 +81,6 @@ function handleGenreListDisplay(resultData) {
 jQuery.ajax({
     dataType: "json", // Setting return data type
     method: "GET", // Setting request method
-    url: "api/genres", // Setting request url, which is mapped by StarsServlet in Stars.java
+    url: "api/all-genres", // Setting request url, which is mapped by StarsServlet in Stars.java
     success: (resultData) => handleGenreListDisplay(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
 });
