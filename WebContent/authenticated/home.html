@@ -154,21 +154,36 @@
     </header>
 
     <!-- -------------------------- BODY ----------------------- -->
-    <h3 id="main_info"></h3>
     <div id="page-body" class="flex flex-col justify-center align-middle">
+        <h1 id="page-title">Top 20 Movies</h1>
+        <span class="isolate inline-flex rounded-md shadow-sm pb-4">
+              <button onclick="handleListBtnClick()" type="button" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 ">List</button>
+              <button onclick="handleGridBtnClick()" type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Grid</button>
+            </span>
 
-        <table id="detail_table" class="table table-striped">
-            <thead>
-                <tr>
+        <!-- list view-->
+        <div id="detail_table">
+            <table id="movie_table" class="table table-striped">
+                <!-- Create a table header -->
+                <thead id="movie_table_header_text">
+                <tr id="movie_table_header" >
+                    <!-- Titles of each column-->
+                    <th>Title</th>
+                    <th>Year</th>
                     <th>Director</th>
                     <th>Genres</th>
                     <th>Stars</th>
                     <th>Rating</th>
                 </tr>
-            </thead>
-            <!-- Table body is left empty here, will be populated with the data retrieved with single-movie.js -->
-            <tbody id=movie_info_table_body></tbody>
-        </table>
+                </thead>
+                <tbody id="movie_table_body"></tbody>
+            </table>
+        </div>
+
+        <!-- grid view-->
+        <ul id="movie_grid" role="list" class="hide px-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
+            <!-- <li> items will be filled in by index.js -->
+        </ul>
     </div>
 
     <!-- -------------------------- FOOTER ----------------------- -->
@@ -299,7 +314,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Load our own JS file -->
-    <script src="single-movie.js"></script>
+    <script src="home.js"></script>
     <script src="header.js"></script>
 
 </body>

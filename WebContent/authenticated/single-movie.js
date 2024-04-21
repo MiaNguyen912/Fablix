@@ -20,7 +20,7 @@ function getParameterByName(target) {
  * @param resultData jsonObject
  */
 
-function handleResult(resultData) {
+function handleMovieResult(resultData) {
 
     console.log("handleSingleMovieResult: populating movie info from resultData");
 
@@ -88,5 +88,5 @@ jQuery.ajax({
     dataType: "json",  // Setting return data type
     method: "GET",// Setting request method
     url: "api/single-movie?id=" + movieId, // Setting request url, which is mapped by SingleMovieServlet
-    success: (resultData) => handleResult(resultData) // Setting callback function to handle data returned successfully by the SingleStarServlet
+    success: (resultData) => handleMovieResult(resultData) // Setting callback function to handle data returned successfully by the SingleStarServlet
 });
