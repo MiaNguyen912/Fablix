@@ -73,19 +73,6 @@ public class SingleMovieServlet extends HttpServlet {
                     "            WHERE m.id = ?" +
                     "            ORDER BY sp.movie_count DESC, s.name ASC;";
 
-            /*
-            SELECT *
-            FROM movies m
-            JOIN genres_in_movies gm ON m.id = gm.movieid
-            JOIN genres g ON g.id = gm.genreid
-            JOIN stars_in_movies sm USING(movieid)
-            JOIN stars s ON s.id = sm.starid
-            JOIN ratings r ON m.id = r.movieid
-
-            WHERE m.id = 'tt0395642';
-             */
-
-
 
             /*
             SELECT m.*, g.name, s.name, sp.movie_count, r.rating
@@ -173,6 +160,8 @@ public class SingleMovieServlet extends HttpServlet {
                 jsonObject.add("genres", genresJson);
                 jsonArray.add(jsonObject);
             }
+
+            // close structures
             rs.close();
             statement.close();
 

@@ -1,9 +1,3 @@
-<!-- This example is following frontend and backend separation.
-
-    This .html performs two steps:
-    1. Create a html template skeleton, with all the elements defined (some left empty) and named with ids.
-    2. Load single-star.js to populate the data into empty elements.
-    -->
 
 <!doctype html>
 <html lang="en">
@@ -27,10 +21,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/tailwind.css">
 
-    <!-- style.css -->
+    <!-- style sheet -->
     <link rel="stylesheet" href="../assets/style.css">
 
-    <title>Movie Star</title>
+
+    <title>Single Movie</title>
 </head>
 <body>
     <!-- -------------------------- HEADER ----------------------- -->
@@ -124,25 +119,38 @@
     </header>
 
     <!-- -------------------------- BODY ----------------------- -->
-    <h3 id="main_info"></h3>
-    <p id="sub_info"></p>
+    <h3 id="result-title" class="italic">Results...</h3>
 
     <div id="page-body" class="flex flex-col justify-center align-middle">
-        <table id=detail_table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Movie</th>
-                <th>Release Year</th>
-                <th>Director</th>
-            </tr>
-            </thead>
+        <span class="isolate inline-flex rounded-md shadow-sm pb-4">
+              <button onclick="handleListBtnClick()" type="button" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 ">List</button>
+              <button onclick="handleGridBtnClick()" type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Grid</button>
+        </span>
 
-            <!-- Table body is left empty here, will be populated with the data retrieved with single-star.js -->
-            <!-- single-star.js will find this html element by it's id "movie_table_body" -->
-            <tbody id=movie_table_body></tbody>
-        </table>
+        <!-- list view-->
+        <div id="detail_table">
+            <table id="movie_table" class="table table-striped">
+                <!-- Create a table header -->
+                <thead id="movie_table_header_text">
+                <tr id="movie_table_header" >
+                    <!-- Titles of each column-->
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Director</th>
+                    <th>Genres</th>
+                    <th>Stars</th>
+                    <th>Rating</th>
+                </tr>
+                </thead>
+                <tbody id="movie_table_body"></tbody>
+            </table>
+        </div>
+
+        <!-- grid view-->
+        <ul id="movie_grid" role="list" class="hide px-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
+            <!-- <li> items will be filled in by index.js -->
+        </ul>
     </div>
-
 
     <!-- -------------------------- FOOTER ----------------------- -->
     <footer class="bg-gray-900" aria-labelledby="footer-heading">
@@ -267,15 +275,17 @@
 
 
 
+
+
     <!-- Load jQuery and Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <!-- Load our own JS file -->
-    <script src="single-star.js"></script>
+    <!-- Load JS files -->
+    <!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path otherwise the url is relative to the root path-->
+    <script src="search-result.js"></script>
     <script src="../header.js"></script>
-
 </body>
 
 

@@ -22,7 +22,7 @@ function getParameterByName(target) {
 
 function handleResult(resultData) {
 
-    console.log("handleResult: populating movie info from resultData");
+    console.log("handleSingleMovieResult: populating movie info from resultData");
 
     let movieInfoElement = jQuery("#main_info");
     let movie_director = resultData[0]["movie_director"];
@@ -87,6 +87,6 @@ let movieId = getParameterByName('id');
 jQuery.ajax({
     dataType: "json",  // Setting return data type
     method: "GET",// Setting request method
-    url: "api/single-movie?id=" + movieId, // Setting request url, which is mapped by StarsServlet in Stars.java
+    url: "api/single-movie?id=" + movieId, // Setting request url, which is mapped by SingleMovieServlet
     success: (resultData) => handleResult(resultData) // Setting callback function to handle data returned successfully by the SingleStarServlet
 });
