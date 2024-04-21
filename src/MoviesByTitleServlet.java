@@ -25,8 +25,8 @@ import java.util.TreeMap;
  */
 
 // Declaring a WebServlet called FormServlet, which maps to url "/api/search"
-@WebServlet(name = "MoviesByGenreServlet", urlPatterns = "/authenticated/api/genre")
-public class MoviesByGenreServlet extends HttpServlet {
+@WebServlet(name = "MoviesByTitleServlet", urlPatterns = "/authenticated/api/title")
+public class MoviesByTitleServlet extends HttpServlet {
     private DataSource dataSource;
     public void init(ServletConfig config) {
         try {
@@ -46,7 +46,7 @@ public class MoviesByGenreServlet extends HttpServlet {
             Connection conn = dataSource.getConnection(); // Create a new connection to database
 
             // Retrieve parameters from the http request
-            String genre = request.getParameter("name");
+            String firstLetter = request.getParameter("start");
 
             // Generate a SQL query
 
@@ -58,8 +58,8 @@ public class MoviesByGenreServlet extends HttpServlet {
             JOIN stars_in_movies sm ON sm.movieid = r.movieid
             JOIN stars s ON s.id = sm.starid
             JOIN ( SELECT starid, COUNT(movieid) AS movie_count FROM stars_in_movies GROUP BY starid) sp ON s.id = sp.starid
-            WHERE g.name = 'drama'
-            ORDER BY m.year DESC, m.title ASC, sp.movie_count DESC, s.name ASC;
+            WHERE m.title LIKE '?%'
+            ORDER BY m.title, sp.movie_count DESC, s.name ASC;
             */
 
             String query = "SELECT * FROM ratings r\n" +
@@ -69,11 +69,11 @@ public class MoviesByGenreServlet extends HttpServlet {
                     "            JOIN stars_in_movies sm ON sm.movieid = r.movieid\n" +
                     "            JOIN stars s ON s.id = sm.starid\n" +
                     "            JOIN ( SELECT starid, COUNT(movieid) AS movie_count FROM stars_in_movies GROUP BY starid) sp ON s.id = sp.starid\n" +
-                    "            WHERE g.name = ?" +
-                    "            ORDER BY m.year DESC, m.title ASC, sp.movie_count DESC, s.name ASC;";
+                    "            WHERE  m.title LIKE ?" +
+                    "            ORDER BY m.title ASC, sp.movie_count DESC, s.name ASC;";
 
             PreparedStatement statement = conn.prepareStatement(query);
-            statement.setString(1, genre);
+            statement.setString(1, firstLetter + "%");
             ResultSet rs = statement.executeQuery();
             JsonArray jsonArray = new JsonArray();
 
