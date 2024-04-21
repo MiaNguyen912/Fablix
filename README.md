@@ -95,7 +95,7 @@ mysql> quit;
 - if year is specified: find results with the exact specified year 
 - if director is specified: find '%director%' (director can match at the beginning, middle, or end)
 - if star name is specified: find '%star%' (star can match at the beginning, middle, or end)
-
+- results are arranged in alphabetical order for movie title
 #### Seach query example:
 
     SELECT * FROM ratings r
