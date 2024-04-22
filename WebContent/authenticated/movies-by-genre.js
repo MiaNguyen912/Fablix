@@ -1,28 +1,4 @@
 
-function handleListBtnClick(){
-    let grid = document.getElementById("movie_grid");
-    let list = document.getElementById("detail_table");
-
-    if (!grid.classList.contains("hide")) {
-        grid.classList.add("hide");
-    }
-    if (list.classList.contains("hide")) {
-        list.classList.remove("hide");
-    }
-
-}
-
-function handleGridBtnClick(){
-    let grid = document.getElementById("movie_grid");
-    let list = document.getElementById("detail_table");
-    if (grid.classList.contains("hide")) {
-        grid.classList.remove("hide");
-    }
-    if (!list.classList.contains("hide")) {
-        list.classList.add("hide");
-    }
-}
-
 function getParameterByName(target) {
     // Get request URL
     let url = window.location.href;

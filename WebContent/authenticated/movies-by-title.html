@@ -155,14 +155,34 @@
 </header>
 
 <!-- -------------------------- BODY ----------------------- -->
-<h3 id="result-title" class="italic">Results...</h3>
+<div>
+    <h3 id="result-title" class="italic inline text-orange-500">Results...</h3>
+    <div id="soft-and-filter">
+        <label for="dropdown-sort-by" class="font-semibold text-orange-500 pr-2.5">Sort by</label>
+        <select id="dropdown-sort-by" onchange="handleSort(this)" class="pr-4 pl-2 rounded-md">
+            <option value="title_asc" selected>Title (Ascending)</option>
+            <option value="title_desc">Title (Descending)</option>
+            <option value="rating_asc">Rating (Ascending)</option>
+            <option value="rating_desc">Rating (Descending)</option>
+        </select>
+
+        <label for="dropdown-movies-per-page" class="font-semibold text-orange-500 pr-2.5 pl-10">Movies per page</label>
+        <select id="dropdown-movies-per-page" onchange="handleMoviesPerPage(this)" class="pr-4 pl-2 rounded-md">
+            <option value="10">10</option>
+            <option value="25" selected>25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+
+        <label for="display-buttons" class="font-semibold text-orange-500 pr-2.5 pl-10">Display</label>
+        <span id="display-buttons" class="pr-4 pl-2 rounded-md">
+              <button id="list-btn" onclick="handleListBtnClick()" type="button" class="relative inline-flex items-center rounded-l-md bg-gray-50 px-3 py-1 text-sm text-gray-900 ring-1 ring-inset ring-gray-300 hover:font-semibold hover:bg-orange-300 focus:z-10">List</button>
+              <button id="grid-btn" onclick="handleGridBtnClick()" type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-gray-50 px-3 py-1 text-sm text-gray-900 ring-1 ring-inset ring-gray-300 hover:font-semibold hover:bg-orange-300 focus:z-10">Grid</button>
+        </span>
+    </div>
+</div>
 
 <div id="page-body" class="flex flex-col justify-center align-middle">
-        <span class="isolate inline-flex rounded-md shadow-sm pb-4">
-              <button onclick="handleListBtnClick()" type="button" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 ">List</button>
-              <button onclick="handleGridBtnClick()" type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Grid</button>
-        </span>
-
     <!-- list view-->
     <div id="detail_table">
         <table id="movie_table" class="table table-striped">

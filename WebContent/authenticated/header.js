@@ -84,3 +84,47 @@ jQuery.ajax({
     url: "api/all-genres", // Setting request url, which is mapped by StarsServlet in Stars.java
     success: (resultData) => handleGenreListDisplay(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
 });
+
+
+// -----------------------------------
+function handleListBtnClick(){
+    let grid = document.getElementById("movie_grid");
+    let list = document.getElementById("detail_table");
+
+    if (!grid.classList.contains("hide")) {
+        grid.classList.add("hide");
+    }
+    if (list.classList.contains("hide")) {
+        list.classList.remove("hide");
+    }
+
+}
+
+function handleGridBtnClick(){
+    let grid = document.getElementById("movie_grid");
+    let list = document.getElementById("detail_table");
+    if (grid.classList.contains("hide")) {
+        grid.classList.remove("hide");
+    }
+    if (!list.classList.contains("hide")) {
+        list.classList.add("hide");
+    }
+}
+
+function handleSort(selectElement) {
+    let selectedValue = selectElement.value;
+    console.log("Selected value:", selectedValue);
+
+    // Call your function or perform any other actions here
+    // For example:
+    // updateContent(selectedValue);
+}
+
+function handleMoviesPerPage(selectElement) {
+    let selectedValue = selectElement.value;
+    console.log("Selected value:", selectedValue);
+
+    // Call your function or perform any other actions here
+    // For example:
+    // updateContent(selectedValue);
+}
