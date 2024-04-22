@@ -51,15 +51,17 @@ function handleMovieResult(resultData) {
     let rowHTML = "";
     rowHTML += "<tr>";
     rowHTML += "<td>" + movie_director + "</td>";
+
     // genres
     rowHTML += "<td>";
     for (let i = 0; i<genres_id.length; i++){
         if (i < genres_id.length -1 )
-            rowHTML += genres_name[i] + ", ";
+            rowHTML += "<a href='movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
         else
-            rowHTML += genres_name[i];
+            rowHTML += "<a href='movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
     }
     rowHTML += "</td>";
+
     // stars
     rowHTML += "<td>";
     for (let i = 0; i<stars_id.length; i++){
