@@ -99,7 +99,7 @@
         <div class="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12 items-center">
             <!-- Search form -->
 
-            <form ACTION="search-result.html" METHOD="GET" id="seach-form">
+            <form ACTION="list.html?type=search" METHOD="GET" id="seach-form">
                 <!--                    <span class="text-sm font-semibold leading-6 text-white mr-2">Search Movie</span>-->
                 <input type="text" placeholder="Movie title" name="title" id="title-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 w-24 mr-1">
                 <input type="text" placeholder="Year" name="year" id="year-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 w-24 mr-1">
@@ -355,7 +355,7 @@
 
 <!-- Load JS files -->
 <!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path otherwise the url is relative to the root path-->
-<script src="movies-by-genre.js"></script>
+<script src="list.js"></script>
 <script src="header.js"></script>
 </body>
 

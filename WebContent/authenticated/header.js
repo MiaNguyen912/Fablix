@@ -45,7 +45,7 @@ function handleLogOut(){
 //------- search by title -----------
 let title_letter_list = jQuery("#title-letter-list");
 let links = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*'];
-let baseUrl_titleSearch = 'movies-by-title.html?start=';
+let baseUrl_titleSearch = 'list.html?type=title&start=';
 
 let html = "";
 for (let i = 0; i < links.length; i++) {
@@ -66,8 +66,8 @@ title_letter_list.append(html);
 //------- search by genre -----------
 function handleGenreListDisplay(resultData) {
     let genre_list = jQuery("#genre-search-list");
-    let baseUrl_genreSearch = 'movies-by-genre.html?name=';
-    let baseUrlFromAuthenticatedPages_genreSearch = 'movies-by-genre.html?name=';
+    let baseUrl_genreSearch = 'list.html?type=genre&name=';
+    let baseUrlFromAuthenticatedPages_genreSearch = 'list.html?type=genre&name=';
 
     let rowHTML = "";
     for (let i = 0; i < resultData.length; i++) {
@@ -136,7 +136,7 @@ function handleSort(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     } else if (genre === "null" && titleFirstLetter !== "null"){
@@ -145,7 +145,7 @@ function handleSort(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "api/title?start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
 
@@ -185,7 +185,7 @@ function handleMoviesPerPage(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     } else if (genre === "null" && titleFirstLetter !== "null"){
@@ -194,7 +194,7 @@ function handleMoviesPerPage(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "api/title?start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
 
@@ -238,7 +238,7 @@ function handlePreviousPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     } else if (genre === "null" && titleFirstLetter !== "null"){
@@ -247,7 +247,7 @@ function handlePreviousPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "api/title?start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
 
@@ -283,7 +283,7 @@ function handleNextPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     } else if (genre === "null" && titleFirstLetter !== "null"){
@@ -292,7 +292,7 @@ function handleNextPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "api/title?start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
 
