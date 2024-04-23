@@ -139,15 +139,26 @@ function handleMoviesByGenreResult(resultData) {
 /**
  * Once this .js is loaded, following scripts will be executed by the browser
  */
-// Get params from URL
+// Get params from URL and session storage
 let genre = getParameterByName('name');
-sessionStorage.setItem('genre', genre); // store the selected genre in session
-let limit = sessionStorage.getItem('limit');
-let sort = sessionStorage.getItem('sort');
-let page = sessionStorage.getItem('page');
-if (limit == null) limit = "10";
-if (sort == null) sort = "title_asc";
-if (page == null) page = "1";
+let limit= "10"; // default initial value
+let sort = "title_asc"; // default initial value
+let page = "1"; // default initial value
+sessionStorage.setItem('genre', genre);
+sessionStorage.setItem('limit', limit);
+sessionStorage.setItem('sort', sort);
+sessionStorage.setItem('page', page);
+
+// clear session variable of title first letter and search result
+sessionStorage.setItem('titleFirstLetter', null);
+sessionStorage.setItem('searchTitle', null);
+sessionStorage.setItem('searchYear', null);
+sessionStorage.setItem('searchDirector', null);
+sessionStorage.setItem('searchStar', null);
+
+
+
+console.log("call movies-by-genres.js");
 
 
 // Makes the HTTP GET request

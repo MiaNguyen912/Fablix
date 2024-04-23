@@ -116,22 +116,46 @@ function handleSort(selectElement) {
     console.log("Sort by:", selectedValue);
 
     // save/retrieve data from session storage
-    sessionStorage.setItem('sort', selectedValue);
-    sessionStorage.setItem('page', 1); // refresh page number
     let genre = sessionStorage.getItem('genre');
+    let titleFirstLetter = sessionStorage.getItem('titleFirstLetter');
+    let searchTitle = sessionStorage.getItem('searchTitle');
+    let searchYear = sessionStorage.getItem('searchYear');
+    let searchDirector = sessionStorage.getItem('searchDirector');
+    let searchStar = sessionStorage.getItem('searchStar');
+
     let limit = sessionStorage.getItem('limit');
     let sort = selectedValue;
-    let page = "1";
-    if (limit == null) limit = "10";
+    let page = "1"; // refresh page number
+    sessionStorage.setItem('sort', sort);
+    sessionStorage.setItem('page', page); // refresh page number
 
 
-    // Makes the HTTP GET request
-    jQuery.ajax({
-        dataType: "json", // Setting return data type
-        method: "GET", // Setting request method
-        url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
-        success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
-    });
+    if (titleFirstLetter === "null" && genre !== "null") {
+        // do genre sort
+        console.log("Sort on movies-by-genre page");
+        jQuery.ajax({
+            dataType: "json", // Setting return data type
+            method: "GET", // Setting request method
+            url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+        });
+    } else if (genre === "null" && titleFirstLetter !== "null"){
+        // do title sort
+        console.log("Sort on movies-by-title page");
+        jQuery.ajax({
+            dataType: "json", // Setting return data type
+            method: "GET", // Setting request method
+            url: "api/title?start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+        });
+
+    } else {
+        // do search-result sort
+        console.log("Sort on search-result page");
+
+    }
+
+
 
 }
 
@@ -140,21 +164,45 @@ function handleMoviesPerPage(selectElement) {
     console.log("Page limit:", selectedValue);
 
     // save/retrieve data from session storage
-    sessionStorage.setItem('limit', selectedValue);
-    sessionStorage.setItem('page', 1); // refresh page number
     let genre = sessionStorage.getItem('genre');
-    let limit = selectedValue
+    let titleFirstLetter = sessionStorage.getItem('titleFirstLetter');
+    let searchTitle = sessionStorage.getItem('searchTitle');
+    let searchYear = sessionStorage.getItem('searchYear');
+    let searchDirector = sessionStorage.getItem('searchDirector');
+    let searchStar = sessionStorage.getItem('searchStar');
+
+    let limit = selectedValue;
     let sort = sessionStorage.getItem('sort');
-    let page = "1";
-    if (sort == null) sort = "title_asc";
+    let page = "1"; // refresh page number
+    sessionStorage.setItem('limit', limit);
+    sessionStorage.setItem('page', page); // refresh page number
+
 
     // Makes the HTTP GET request
-    jQuery.ajax({
-        dataType: "json", // Setting return data type
-        method: "GET", // Setting request method
-        url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
-        success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
-    });
+    if (titleFirstLetter === "null" && genre !== "null") {
+        // do genre sort
+        console.log("Sort on movies-by-genre page");
+        jQuery.ajax({
+            dataType: "json", // Setting return data type
+            method: "GET", // Setting request method
+            url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+        });
+    } else if (genre === "null" && titleFirstLetter !== "null"){
+        // do title sort
+        console.log("Sort on movies-by-title page");
+        jQuery.ajax({
+            dataType: "json", // Setting return data type
+            method: "GET", // Setting request method
+            url: "api/title?start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+        });
+
+    } else {
+        // do search-result sort
+        console.log("Sort on search-result page");
+
+    }
 }
 
 
@@ -167,24 +215,47 @@ function handlePreviousPage(){
 
     // save/retrieve data from session storage
     let genre = sessionStorage.getItem('genre');
+    let titleFirstLetter = sessionStorage.getItem('titleFirstLetter');
+    let searchTitle = sessionStorage.getItem('searchTitle');
+    let searchYear = sessionStorage.getItem('searchYear');
+    let searchDirector = sessionStorage.getItem('searchDirector');
+    let searchStar = sessionStorage.getItem('searchStar');
+
     let limit = sessionStorage.getItem('limit');
     let sort = sessionStorage.getItem('sort');
     let page = sessionStorage.getItem('page');
-    if (limit == null) limit = "10";
-    if (sort == null) sort = "title_asc";
-    if (page == null) page = "1";
 
     let new_page = parseInt(page) - 1;
     if (new_page <= 0) new_page = 1;
     sessionStorage.setItem('page', new_page + "");
 
+
+
     // Makes the HTTP GET request
-    jQuery.ajax({
-        dataType: "json", // Setting return data type
-        method: "GET", // Setting request method
-        url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
-        success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
-    });
+    if (titleFirstLetter === "null" && genre !== "null") {
+        // do genre sort
+        console.log("Sort on movies-by-genre page");
+        jQuery.ajax({
+            dataType: "json", // Setting return data type
+            method: "GET", // Setting request method
+            url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+        });
+    } else if (genre === "null" && titleFirstLetter !== "null"){
+        // do title sort
+        console.log("Sort on movies-by-title page");
+        jQuery.ajax({
+            dataType: "json", // Setting return data type
+            method: "GET", // Setting request method
+            url: "api/title?start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+        });
+
+    } else {
+        // do search-result sort
+        console.log("Sort on search-result page");
+
+    }
 }
 
 function handleNextPage(){
@@ -192,21 +263,42 @@ function handleNextPage(){
 
     // save/retrieve data from session storage
     let genre = sessionStorage.getItem('genre');
+    let titleFirstLetter = sessionStorage.getItem('titleFirstLetter');
+    let searchTitle = sessionStorage.getItem('searchTitle');
+    let searchYear = sessionStorage.getItem('searchYear');
+    let searchDirector = sessionStorage.getItem('searchDirector');
+    let searchStar = sessionStorage.getItem('searchStar');
+
     let limit = sessionStorage.getItem('limit');
     let sort = sessionStorage.getItem('sort');
     let page = sessionStorage.getItem('page');
-    if (limit == null) limit = "10";
-    if (sort == null) sort = "title_asc";
-    if (page == null) page = "1";
 
     let new_page = parseInt(page) + 1;
     sessionStorage.setItem('page', new_page + "");
 
     // Makes the HTTP GET request
-    jQuery.ajax({
-        dataType: "json", // Setting return data type
-        method: "GET", // Setting request method
-        url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
-        success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
-    });
+    if (titleFirstLetter === "null" && genre !== "null") {
+        // do genre sort
+        console.log("Sort on movies-by-genre page");
+        jQuery.ajax({
+            dataType: "json", // Setting return data type
+            method: "GET", // Setting request method
+            url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+        });
+    } else if (genre === "null" && titleFirstLetter !== "null"){
+        // do title sort
+        console.log("Sort on movies-by-title page");
+        jQuery.ajax({
+            dataType: "json", // Setting return data type
+            method: "GET", // Setting request method
+            url: "api/title?start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+        });
+
+    } else {
+        // do search-result sort
+        console.log("Sort on search-result page");
+
+    }
 }

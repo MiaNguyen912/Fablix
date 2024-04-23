@@ -45,41 +45,78 @@ public class MoviesByTitleServlet extends HttpServlet {
         try {
             Connection conn = dataSource.getConnection(); // Create a new connection to database
 
-            // Retrieve parameters from the http request
+            // ----------- Retrieve parameters from the http request
             String firstLetter = request.getParameter("start");
+            String sort_style = request.getParameter("sort-style");
+            int limit = Integer.parseInt(request.getParameter("limit"));
+            int page = Integer.parseInt(request.getParameter("page"));
 
-            // Generate a SQL query
-
+            // ------------ Generate a SQL query
             /*
-            SELECT * FROM ratings r
-            JOIN movies m ON r.movieid = m.id
-            JOIN genres_in_movies gm ON gm.movieid = r.movieid
-            JOIN genres g ON g.id = gm.genreid
-            JOIN stars_in_movies sm ON sm.movieid = r.movieid
-            JOIN stars s ON s.id = sm.starid
-            JOIN ( SELECT starid, COUNT(movieid) AS movie_count FROM stars_in_movies GROUP BY starid) sp ON s.id = sp.starid
-            WHERE m.title LIKE '?%'
-            ORDER BY m.title, sp.movie_count DESC, s.name ASC;
-            */
+                SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count
+                FROM (
+                    SELECT *
+                    FROM ratings r
+                    JOIN movies m ON r.movieid = m.id
+                    WHERE title LIKE 'b%'
+                    ORDER BY title ASC, rating ASC
+                    LIMIT 10 OFFSET 0
+                ) AS distinct_movies
+                JOIN genres_in_movies gm ON gm.movieid = distinct_movies.movieid
+                JOIN genres g ON g.id = gm.genreid
+                JOIN stars_in_movies sm ON sm.movieid = distinct_movies.movieid
+                JOIN stars s ON s.id = sm.starid
+                JOIN (
+                    SELECT starid, COUNT(movieid) AS movie_count
+                    FROM stars_in_movies
+                    GROUP BY starid
+                ) sp ON s.id = sp.starid
+                ORDER BY title ASC, rating ASC, movie_count DESC, s.name ASC;
 
-            String query = "SELECT * FROM ratings r\n" +
-                    "            JOIN movies m ON r.movieid = m.id\n" +
-                    "            JOIN genres_in_movies gm ON gm.movieid = r.movieid\n" +
-                    "            JOIN genres g ON g.id = gm.genreid\n" +
-                    "            JOIN stars_in_movies sm ON sm.movieid = r.movieid\n" +
-                    "            JOIN stars s ON s.id = sm.starid\n" +
-                    "            JOIN ( SELECT starid, COUNT(movieid) AS movie_count FROM stars_in_movies GROUP BY starid) sp ON s.id = sp.starid\n" +
-                    "            WHERE ";
+            */
+            String order_by = "";
+            if (sort_style.equals("title_asc")){
+                order_by = "title ASC, rating ASC";
+            } else if (sort_style.equals("title_desc")){
+                order_by = "title DESC, rating DESC";
+            } else if (sort_style.equals("rating_asc")){
+                order_by = "rating ASC, title ASC";
+            } else {
+                order_by = "rating DESC, title DESC";
+            }
+
+            String like = "";
             if (firstLetter.equals("*")){
-                query += "m.title RLIKE '^[^A-Za-z0-9]'";
-            } else
-                query += " m.title LIKE ?";
-            query += "            ORDER BY m.title ASC, sp.movie_count DESC, s.name ASC;";
+                like = " RLIKE '^[^A-Za-z0-9]' ";
+            } else {
+                like = " LIKE '" + firstLetter + "%' ";
+            }
+
+            String query = "SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count\n" +
+                    "                FROM (\n" +
+                    "                    SELECT *\n" +
+                    "                    FROM ratings r\n" +
+                    "                    JOIN movies m ON r.movieid = m.id\n" +
+                    "                    WHERE title " + like +
+                    "                    ORDER BY " + order_by +
+                    "                    LIMIT ? OFFSET ?" +
+                    "                ) AS distinct_movies\n" +
+                    "                JOIN genres_in_movies gm ON gm.movieid = distinct_movies.movieid\n" +
+                    "                JOIN genres g ON g.id = gm.genreid\n" +
+                    "                JOIN stars_in_movies sm ON sm.movieid = distinct_movies.movieid\n" +
+                    "                JOIN stars s ON s.id = sm.starid\n" +
+                    "                JOIN (\n" +
+                    "                    SELECT starid, COUNT(movieid) AS movie_count\n" +
+                    "                    FROM stars_in_movies\n" +
+                    "                    GROUP BY starid\n" +
+                    "                ) sp ON s.id = sp.starid\n" +
+                    "                ORDER BY " + order_by + ", movie_count DESC, s.name ASC;";
+
 
             PreparedStatement statement = conn.prepareStatement(query);
+            statement.setInt(1, limit);
+            statement.setInt(2,limit*(page-1));
 
-            if (!firstLetter.equals("*"))
-                statement.setString(1, firstLetter + "%");
             ResultSet rs = statement.executeQuery();
             JsonArray jsonArray = new JsonArray();
 
@@ -98,7 +135,7 @@ public class MoviesByTitleServlet extends HttpServlet {
                 LinkedHashMap<String, String> stars = new LinkedHashMap<>();
 
                 String genre_ID = "" + rs.getInt("genreid"); //cast int to string
-                String genre_name = rs.getString("g.name");
+                String genre_name = rs.getString("genrename");
                 genres.put(genre_ID, genre_name);
 
                 String star_ID = rs.getString("starid");
@@ -116,7 +153,7 @@ public class MoviesByTitleServlet extends HttpServlet {
 
 
                     genre_ID = "" + rs.getInt("genreid"); //cast int to string
-                    genre_name = rs.getString("g.name");
+                    genre_name = rs.getString("genrename");
                     genres.put(genre_ID, genre_name);
 
                     star_ID = rs.getString("starid");
