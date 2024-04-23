@@ -71,10 +71,8 @@ public class SessionIndexServlet extends HttpServlet {
             previousItems.add(item);
             session.setAttribute("previousItems", previousItems);
         } else {
-            // requests from altering previousItems at the same time
-            // we lock the ArrayList while updating
-
-            // prevent corrupted states through sharing under multi-threads (multiple clients requests from altering previousItems at the same time)
+            // prevent corrupted states through sharing under multi-threads (multiple clients
+            // requests from altering previousItems at the same time)
             // we lock the ArrayList while updating (only execute one thread at a time)
             synchronized (previousItems) {
                 previousItems.add(item);

@@ -24,7 +24,7 @@ import java.util.TreeMap;
  * generates output as a html <table>
  */
 
-// Declaring a WebServlet called FormServlet, which maps to url "/api/search"
+// Declaring a WebServlet that maps to url "/api/search"
 @WebServlet(name = "SearchMovieServlet", urlPatterns = "/authenticated/api/search")
 public class SearchMovieServlet extends HttpServlet {
 
@@ -84,7 +84,7 @@ public class SearchMovieServlet extends HttpServlet {
                 query += "      JOIN (SELECT sm.movieid\n" +
                          "            FROM stars_in_movies sm\n" +
                          "            JOIN stars s ON s.id = sm.starid\n" +
-                         "            WHERE s.name LIKE '%tom%'\n" +
+                         "            WHERE s.name LIKE '%" + starParam + "%'\n" +
                          "      ) as movies_of_chosen_star ON movies_of_chosen_star.movieid = m.id ";
             }
             if (!titleParam.isEmpty() || !yearParam.isEmpty() || !directorParam.isEmpty())
