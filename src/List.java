@@ -186,7 +186,13 @@ public class List extends HttpServlet {
                 LinkedHashMap<String, String> stars = new LinkedHashMap<>();
 
                 String genre_ID = "" + rs.getInt("genreid"); //cast int to string
-                String genre_name = rs.getString("genrename");
+                String genre_name = "";
+                if (type.equals("search")){
+                    genre_name = rs.getString("g.name");
+                }
+                else {
+                    genre_name = rs.getString("genrename");
+                }
                 genres.put(genre_ID, genre_name);
 
                 String star_ID = rs.getString("starid");
