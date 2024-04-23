@@ -113,18 +113,100 @@ function handleGridBtnClick(){
 
 function handleSort(selectElement) {
     let selectedValue = selectElement.value;
-    console.log("Selected value:", selectedValue);
+    console.log("Sort by:", selectedValue);
 
-    // Call your function or perform any other actions here
-    // For example:
-    // updateContent(selectedValue);
+    // save/retrieve data from session storage
+    sessionStorage.setItem('sort', selectedValue);
+    sessionStorage.setItem('page', 1); // refresh page number
+    let genre = sessionStorage.getItem('genre');
+    let limit = sessionStorage.getItem('limit');
+    let sort = selectedValue;
+    let page = "1";
+    if (limit == null) limit = "10";
+
+
+    // Makes the HTTP GET request
+    jQuery.ajax({
+        dataType: "json", // Setting return data type
+        method: "GET", // Setting request method
+        url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+        success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+    });
+
 }
 
 function handleMoviesPerPage(selectElement) {
     let selectedValue = selectElement.value;
-    console.log("Selected value:", selectedValue);
+    console.log("Page limit:", selectedValue);
 
-    // Call your function or perform any other actions here
-    // For example:
-    // updateContent(selectedValue);
+    // save/retrieve data from session storage
+    sessionStorage.setItem('limit', selectedValue);
+    sessionStorage.setItem('page', 1); // refresh page number
+    let genre = sessionStorage.getItem('genre');
+    let limit = selectedValue
+    let sort = sessionStorage.getItem('sort');
+    let page = "1";
+    if (sort == null) sort = "title_asc";
+
+    // Makes the HTTP GET request
+    jQuery.ajax({
+        dataType: "json", // Setting return data type
+        method: "GET", // Setting request method
+        url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+        success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+    });
+}
+
+
+function handleGoBackBtnClick(){
+
+}
+
+function handlePreviousPage(){
+    console.log("Go to previous page");
+
+    // save/retrieve data from session storage
+    let genre = sessionStorage.getItem('genre');
+    let limit = sessionStorage.getItem('limit');
+    let sort = sessionStorage.getItem('sort');
+    let page = sessionStorage.getItem('page');
+    if (limit == null) limit = "10";
+    if (sort == null) sort = "title_asc";
+    if (page == null) page = "1";
+
+    let new_page = parseInt(page) - 1;
+    if (new_page <= 0) new_page = 1;
+    sessionStorage.setItem('page', new_page + "");
+
+    // Makes the HTTP GET request
+    jQuery.ajax({
+        dataType: "json", // Setting return data type
+        method: "GET", // Setting request method
+        url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+        success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+    });
+}
+
+function handleNextPage(){
+    console.log("Go to next page");
+
+    // save/retrieve data from session storage
+    let genre = sessionStorage.getItem('genre');
+    let limit = sessionStorage.getItem('limit');
+    let sort = sessionStorage.getItem('sort');
+    let page = sessionStorage.getItem('page');
+    if (limit == null) limit = "10";
+    if (sort == null) sort = "title_asc";
+    if (page == null) page = "1";
+
+    let new_page = parseInt(page) + 1;
+    sessionStorage.setItem('page', new_page + "");
+
+    // Makes the HTTP GET request
+    jQuery.ajax({
+        dataType: "json", // Setting return data type
+        method: "GET", // Setting request method
+        url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+        success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+    });
 }

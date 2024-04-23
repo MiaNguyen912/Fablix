@@ -14,6 +14,7 @@ function getParameterByName(target) {
     // Return the decoded parameter value
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
 /**
  * Handles the data returned by the API, read the jsonObject and populate data into html elements
  * @param resultData jsonObject
@@ -21,12 +22,19 @@ function getParameterByName(target) {
 function handleMoviesByGenreResult(resultData) {
     console.log("handleSearchResult: displaying movies by genre");
 
-    // Populate the movie table
-    let movieTableBodyElement = jQuery("#movie_table_body");
-    let movieGridElement = jQuery("#movie_grid");
+    // --------- display page number
+    let page_number = document.getElementById("page-number");
+    let page = sessionStorage.getItem('page');
+    if (page == null) page = 1;
+    page_number.innerHTML = page
 
-    // Iterate through resultData, no more than 10 entries
-    for (let i = 0; i < Math.min(20, resultData.length); i++) {
+    // ----------- populate movie table
+    let movieTableBodyElement = document.getElementById("movie_table_body");
+    let movieGridElement = document.getElementById("movie_grid");
+    movieTableBodyElement.innerHTML = ''; // Clear the content
+    movieGridElement.innerHTML = '';
+
+    for (let i = 0; i < resultData.length; i++) {
         let movie_id = resultData[i]["movie_id"];
         let movie_title = resultData[i]["movie_title"];
         let movie_year = resultData[i]["movie_year"];
@@ -82,7 +90,8 @@ function handleMoviesByGenreResult(resultData) {
 
 
         // Append the row created to the table body, which will refresh the page
-        movieTableBodyElement.append(rowHTML);
+        movieTableBodyElement.innerHTML += rowHTML;
+
 
         //------------------------------------------------
         let gridItemHTML = '        <li class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">\n' +
@@ -122,22 +131,29 @@ function handleMoviesByGenreResult(resultData) {
             '            </div>\n' +
             '        </li>\n';
 
-        movieGridElement.append(gridItemHTML);
+        movieGridElement.innerHTML += gridItemHTML;
 
     }
 }
-
 
 /**
  * Once this .js is loaded, following scripts will be executed by the browser
  */
 // Get params from URL
 let genre = getParameterByName('name');
+sessionStorage.setItem('genre', genre); // store the selected genre in session
+let limit = sessionStorage.getItem('limit');
+let sort = sessionStorage.getItem('sort');
+let page = sessionStorage.getItem('page');
+if (limit == null) limit = "10";
+if (sort == null) sort = "title_asc";
+if (page == null) page = "1";
+
 
 // Makes the HTTP GET request
 jQuery.ajax({
     dataType: "json", // Setting return data type
     method: "GET", // Setting request method
-    url: "api/genre?name=" + genre,
+    url: "api/genre?name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
     success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
 });
