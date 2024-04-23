@@ -19,12 +19,18 @@ function getParameterByName(target) {
  * Handles the data returned by the API, read the jsonObject and populate data into html elements
  * @param resultData jsonObject
  */
-function handleResult(resultData) {
+function handleSearchResult(resultData) {
     console.log("handleSearchResult: populating search result from resultData");
 
-    // Populate the movie table
-    let movieTableBodyElement = jQuery("#movie_table_body");
-    let movieGridElement = jQuery("#movie_grid");
+    // --------- display page number
+    let page_number = document.getElementById("page-number");
+    page_number.innerHTML = sessionStorage.getItem('page');
+
+    // ----------- populate movie table
+    let movieTableBodyElement = document.getElementById("movie_table_body");
+    let movieGridElement = document.getElementById("movie_grid");
+    movieTableBodyElement.innerHTML = ''; // Clear the content
+    movieGridElement.innerHTML = '';
 
     // Iterate through resultData, no more than 10 entries
     for (let i = 0; i < Math.min(20, resultData.length); i++) {
@@ -83,7 +89,7 @@ function handleResult(resultData) {
 
 
         // Append the row created to the table body, which will refresh the page
-        movieTableBodyElement.append(rowHTML);
+        movieTableBodyElement.innerHTML += rowHTML;
 
         //------------------------------------------------
         let gridItemHTML = '        <li class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">\n' +
@@ -123,8 +129,7 @@ function handleResult(resultData) {
             '            </div>\n' +
             '        </li>\n';
 
-        movieGridElement.append(gridItemHTML);
-
+        movieGridElement.innerHTML += gridItemHTML;
     }
 }
 
@@ -132,17 +137,32 @@ function handleResult(resultData) {
 /**
  * Once this .js is loaded, following scripts will be executed by the browser
  */
-// Get params from URL
+// Get params from URL and session storage
 let searchTitle = getParameterByName('title');
 let searchYear = getParameterByName('year');
 let searchDirector = getParameterByName('director');
 let searchStar = getParameterByName('star');
+let limit= "10"; // default initial value
+let sort = "title_asc"; // default initial value
+let page = "1"; // default initial value
+
+sessionStorage.setItem('searchTitle', searchTitle);
+sessionStorage.setItem('searchYear', searchYear);
+sessionStorage.setItem('searchDirector', searchDirector);
+sessionStorage.setItem('searchStar', searchStar);
+sessionStorage.setItem('limit', limit);
+sessionStorage.setItem('sort', sort);
+sessionStorage.setItem('page', page);
+
+// clear session variable of genre and title
+sessionStorage.setItem('genre', null);
+sessionStorage.setItem('titleFirstLetter', null);
 
 
 // Makes the HTTP GET request
 jQuery.ajax({
     dataType: "json", // Setting return data type
     method: "GET", // Setting request method
-    url: "api/search?title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar,
-    success: (resultData) => handleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+    url: "api/search?title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+    success: (resultData) => handleSearchResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
 });
