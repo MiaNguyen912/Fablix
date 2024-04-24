@@ -39,6 +39,7 @@ public class ListServlet extends HttpServlet {
             throws IOException {
         response.setContentType("text/html");    // Response mime type
         PrintWriter out = response.getWriter(); // Output stream to STDOUT
+        String query = "";
 
         try {
             Connection conn = dataSource.getConnection(); // Create a new connection to database
@@ -85,7 +86,7 @@ public class ListServlet extends HttpServlet {
             } else {
                 order_by = "rating DESC, title DESC";
             }
-            String query = "";
+            query = "";
 
             PreparedStatement statement = null;
             if (type.equals("genre")){
@@ -128,7 +129,8 @@ public class ListServlet extends HttpServlet {
                         "                    SELECT starid, COUNT(movieid) AS movie_count\n" +
                         "                    FROM stars_in_movies\n" +
                         "                    GROUP BY starid\n" +
-                        "                ) sp ON s.id = sp.starid\n";
+                        "                ) sp ON s.id = sp.starid " +
+                        "                ORDER BY " + order_by + ", movie_count DESC, s.name ASC";
 
                 statement = conn.prepareStatement(query);
                 statement.setString(1, genre);
@@ -144,7 +146,7 @@ public class ListServlet extends HttpServlet {
                         JOIN movies m ON r.movieid = m.id
                         WHERE title LIKE 'b%'
                         ORDER BY title ASC, rating ASC
-                        LIMIT 10 OFFSET 0
+                        LIMIT 25 OFFSET 0
                     ) AS distinct_movies
                     JOIN genres_in_movies gm ON gm.movieid = distinct_movies.movieid
                     JOIN genres g ON g.id = gm.genreid
@@ -174,7 +176,9 @@ public class ListServlet extends HttpServlet {
                         "                    SELECT starid, COUNT(movieid) AS movie_count\n" +
                         "                    FROM stars_in_movies\n" +
                         "                    GROUP BY starid\n" +
-                        "                ) sp ON s.id = sp.starid\n";
+                        "                ) sp ON s.id = sp.starid\n" +
+                        "                ORDER BY " + order_by + ", movie_count DESC, s.name ASC";
+
 
                 statement = conn.prepareStatement(query);
                 statement.setInt(1, limit);
@@ -209,23 +213,23 @@ public class ListServlet extends HttpServlet {
                     ORDER BY title ASC, rating ASC, movie_count DESC, s.name ASC;
                 */
 
-                query = "SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count\n" +
-                        "FROM (\n" +
-                        "     SELECT *\n" +
-                        "     FROM ratings r\n" +
+                query = " SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count " +
+                        " FROM (" +
+                        "     SELECT *" +
+                        "     FROM ratings r" +
                         "     JOIN movies m ON r.movieid = m.id";
                 if (!starParam.isEmpty()) {
-                    query += "JOIN (SELECT sm.movieid as movie_of_chosen_star\n" +
+                    query += " JOIN (SELECT sm.movieid as movie_of_chosen_star\n" +
                             "       FROM stars_in_movies sm\n" +
                             "       JOIN stars s ON s.id = sm.starid\n" +
                             "       WHERE s.name LIKE '%" + starParam + "%'\n" +
-                            ") as movies_of_chosen_star ON movies_of_chosen_star.movie_of_chosen_star = m.id\n";
+                            " ) as movies_of_chosen_star ON movies_of_chosen_star.movie_of_chosen_star = m.id\n";
                 }
 
                 if (!titleParam.isEmpty() || !yearParam.isEmpty() || !directorParam.isEmpty())
-                    query += "WHERE ";
+                    query += " WHERE ";
                 if (!titleParam.isEmpty())
-                    query += "(title LIKE '" + titleParam + "%' OR title LIKE '% " + titleParam + "%)' AND ";
+                    query += "(title LIKE '" + titleParam + "%' OR title LIKE '% " + titleParam + "%') AND ";
                 if (!yearParam.isEmpty())
                     query += "m.year = " + yearParam + " AND ";
                 if (!directorParam.isEmpty())
@@ -354,6 +358,8 @@ public class ListServlet extends HttpServlet {
             // Write error message JSON object to output
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("errorMessage", e.getMessage());
+            jsonObject.addProperty("query", query);
+
             out.write(jsonObject.toString());
 
             // Log error to localhost log
