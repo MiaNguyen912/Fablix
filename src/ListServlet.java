@@ -77,17 +77,28 @@ public class ListServlet extends HttpServlet {
 
             // ------------ Generate a SQL query
             String order_by = "";
-            if (sort_style.equals("title_asc")){
+
+            if (sort_style.equals("title_asc_rating_asc")){
                 order_by = "title ASC, rating ASC";
-            } else if (sort_style.equals("title_desc")){
+            } else if (sort_style.equals("title_asc_rating_desc")) {
+                order_by = "title ASC, rating DESC";
+            } else if (sort_style.equals("title_desc_rating_asc")){
+                order_by = "title DESC, rating ASC";
+            }else if (sort_style.equals("title_desc_rating_desc")){
                 order_by = "title DESC, rating DESC";
-            } else if (sort_style.equals("rating_asc")){
+            } else if (sort_style.equals("rating_asc_title_asc")){
                 order_by = "rating ASC, title ASC";
+            } else if (sort_style.equals("rating_asc_title_desc")){
+                order_by = "rating ASC, title DESC";
+            } else if (sort_style.equals("rating_desc_title_asc")){
+                order_by = "rating DESC, title ASC";
             } else {
                 order_by = "rating DESC, title DESC";
             }
-            query = "";
 
+
+
+            query = "";
             PreparedStatement statement = null;
             if (type.equals("genre")){
                 /*

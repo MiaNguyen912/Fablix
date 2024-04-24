@@ -159,11 +159,17 @@
     <div id="soft-and-filter">
         <label for="dropdown-sort-by" class="font-semibold text-orange-500 pr-2.5">Sort by</label>
         <select id="dropdown-sort-by" onchange="handleSort(this)" class="bg-gray-300 pr-4 pl-2 rounded-md">
-            <option value="title_asc" selected>Title (Ascending)</option>
-            <option value="title_desc">Title (Descending)</option>
-            <option value="rating_asc">Rating (Ascending)</option>
-            <option value="rating_desc">Rating (Descending)</option>
+            <option value="title_asc_rating_asc" selected>Title ↑, Rating ↑</option>
+            <option value="title_asc_rating_desc">Title ↑, Rating ↓</option>
+            <option value="title_desc_rating_asc">Title ↓, Rating ↑</option>
+            <option value="title_desc_rating_desc">Title ↓, Rating ↓</option>
+
+            <option value="rating_asc_title_asc">Rating ↑, Title ↑</option>
+            <option value="rating_asc_title_desc">Rating ↑, Title ↓</option>
+            <option value="rating_desc_title_asc">Rating ↓, Title ↑</option>
+            <option value="rating_desc_title_desc">Rating ↓, Title ↓</option>
         </select>
+
 
         <label for="dropdown-movies-per-page" class="font-semibold text-orange-500 pr-2.5 pl-10">Movies per page</label>
         <select id="dropdown-movies-per-page" onchange="handleMoviesPerPage(this)" class="bg-gray-300 pr-4 pl-2 rounded-md">
