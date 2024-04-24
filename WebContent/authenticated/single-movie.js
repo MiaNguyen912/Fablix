@@ -56,9 +56,9 @@ function handleMovieResult(resultData) {
     rowHTML += "<td>";
     for (let i = 0; i<genres_id.length; i++){
         if (i < genres_id.length -1 )
-            rowHTML += "<a href='movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+            rowHTML += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
         else
-            rowHTML += "<a href='movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+            rowHTML += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
     }
     rowHTML += "</td>";
 

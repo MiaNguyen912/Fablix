@@ -20,7 +20,7 @@ function getParameterByName(target) {
  * @param resultData jsonObject
  */
 function handleMoviesByGenreResult(resultData) {
-    console.log("handleSearchResult: displaying movies by genre");
+    console.log("Handle movies by title results");
 
     // --------- display page number
     let page_number = document.getElementById("page-number");
@@ -141,7 +141,7 @@ function handleMoviesByGenreResult(resultData) {
  * @param resultData jsonObject
  */
 function handleSearchResult(resultData) {
-    console.log("handleSearchResult: populating search result from resultData");
+    console.log("Handle movies by title results");
 
     // --------- display page number
     let page_number = document.getElementById("page-number");
@@ -188,9 +188,9 @@ function handleSearchResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -260,7 +260,7 @@ function handleSearchResult(resultData) {
  * @param resultData jsonObject
  */
 function handleMoviesByTitleResult(resultData) {
-    console.log("handleSearchResult: displaying movies by title");
+    console.log("Handle movies by title results");
 
     // --------- display page number
     let page_number = document.getElementById("page-number");
@@ -308,9 +308,9 @@ function handleMoviesByTitleResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href=list.html?type=genre&name='> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href=list.html?type=genre&name='> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 

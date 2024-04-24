@@ -23,8 +23,8 @@ import java.util.TreeMap;
  */
 
 // Declaring a WebServlet called FormServlet, which maps to url "/api/search"
-@WebServlet(name = "MovieList", urlPatterns = "/authenticated/api/list")
-public class List extends HttpServlet {
+@WebServlet(name = "ListServlet", urlPatterns = "/authenticated/api/list")
+public class ListServlet extends HttpServlet {
     private DataSource dataSource;
     public void init(ServletConfig config) {
         try {
@@ -47,14 +47,15 @@ public class List extends HttpServlet {
             // ----------- Retrieve request type (Whether it is by genre, title, or search parameters)
             String type = request.getParameter("type");
 
+
             // ----------- Retrieve general parameters from the http request
             String sort_style = request.getParameter("sort-style");
             int limit = Integer.parseInt(request.getParameter("limit"));
             int page = Integer.parseInt(request.getParameter("page"));
 
 
-            String genre = "", firstLetter = "", like = "", titleParam = "", yearParam = "", directorParam = "", starParam = "";
             // ----------- Retrieve type specific parameters from the http request
+            String genre = "", firstLetter = "", like = "", titleParam = "", yearParam = "", directorParam = "", starParam = "";
             if (type.equals("genre")){
                 genre = request.getParameter("name");
             }
@@ -72,8 +73,8 @@ public class List extends HttpServlet {
                 starParam = (request.getParameter("star") != null)? request.getParameter("star"): "";
             }
 
-            // ------------ Generate a SQL query
 
+            // ------------ Generate a SQL query
             String order_by = "";
             if (sort_style.equals("title_asc")){
                 order_by = "title ASC, rating ASC";
@@ -88,6 +89,28 @@ public class List extends HttpServlet {
 
             PreparedStatement statement = null;
             if (type.equals("genre")){
+                /*
+                    SELECT *
+                    FROM (
+                        SELECT DISTINCT m.id AS movieid, title, year, director, rating, numvotes, genreid, name as genrename
+                        FROM ratings r
+                        JOIN movies m ON r.movieid = m.id
+                        JOIN genres_in_movies gm ON gm.movieid = r.movieid
+                        JOIN genres g ON g.id = gm.genreid
+                        WHERE g.name = 'action'
+                        ORDER BY title DESC, rating DESC
+                        LIMIT 10 OFFSET 5
+                    ) AS distinct_movies
+                    JOIN stars_in_movies sm ON sm.movieid = distinct_movies.movieid
+                    JOIN stars s ON s.id = sm.starid
+                    JOIN (
+                        SELECT starid, COUNT(movieid) AS movie_count
+                        FROM stars_in_movies
+                        GROUP BY starid
+                    ) sp ON s.id = sp.starid
+                    ORDER BY title DESC, rating DESC, movie_count DESC, s.name ASC;
+
+                */
                 query += "SELECT *\n" +
                         "                FROM (\n" +
                         "                    SELECT DISTINCT m.id AS movieid, title, year, director, rating, numvotes, genreid, name as genrename\n" +
@@ -113,6 +136,27 @@ public class List extends HttpServlet {
                 statement.setInt(3,limit*(page-1));
             }
             else if (type.equals("title")){
+                /*
+                    SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count
+                    FROM (
+                        SELECT *
+                        FROM ratings r
+                        JOIN movies m ON r.movieid = m.id
+                        WHERE title LIKE 'b%'
+                        ORDER BY title ASC, rating ASC
+                        LIMIT 10 OFFSET 0
+                    ) AS distinct_movies
+                    JOIN genres_in_movies gm ON gm.movieid = distinct_movies.movieid
+                    JOIN genres g ON g.id = gm.genreid
+                    JOIN stars_in_movies sm ON sm.movieid = distinct_movies.movieid
+                    JOIN stars s ON s.id = sm.starid
+                    JOIN (
+                        SELECT starid, COUNT(movieid) AS movie_count
+                        FROM stars_in_movies
+                        GROUP BY starid
+                    ) sp ON s.id = sp.starid
+                    ORDER BY title ASC, rating ASC, movie_count DESC, s.name ASC;
+                */
                 query = "SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count\n" +
                         "                FROM (\n" +
                         "                    SELECT *\n" +
@@ -137,41 +181,84 @@ public class List extends HttpServlet {
                 statement.setInt(2,limit*(page-1));
             }
             else if (type.equals("search")){
-                query = "SELECT * FROM ratings r" +
-                        "            JOIN movies m ON r.movieid = m.id" +
-                        "            JOIN genres_in_movies gm ON gm.movieid = r.movieid" +
-                        "            JOIN genres g ON g.id = gm.genreid" +
-                        "            JOIN stars_in_movies sm ON sm.movieid = r.movieid" +
-                        "            JOIN stars s ON s.id = sm.starid" +
-                        "            JOIN ( SELECT starid, COUNT(movieid) AS movie_count FROM stars_in_movies GROUP BY starid) sp ON s.id = sp.starid";
+                   /*
+                    SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count
+                    FROM (
+                        SELECT *
+                        FROM ratings r
+                        JOIN movies m ON r.movieid = m.id
+                        JOIN (SELECT sm.movieid as movie_of_chosen_star
+                            FROM stars_in_movies sm
+                            JOIN stars s ON s.id = sm.starid
+                            WHERE s.name LIKE '%ste%'
+                        ) as movies_of_chosen_star ON movies_of_chosen_star.movie_of_chosen_star = m.id
+                        WHERE (title LIKE 'term%' OR title LIKE '% term%')
+                            AND year = 2004
+                            AND director LIKE '%%'
+                        ORDER BY title ASC, rating ASC
+                        LIMIT 10 OFFSET 0
+                    ) AS distinct_movies
+                    JOIN genres_in_movies gm ON gm.movieid = distinct_movies.movieid
+                    JOIN genres g ON g.id = gm.genreid
+                    JOIN stars_in_movies sm ON sm.movieid = distinct_movies.movieid
+                    JOIN stars s ON s.id = sm.starid
+                    JOIN ( SELECT starid, COUNT(movieid) AS movie_count
+                        FROM stars_in_movies
+                        GROUP BY starid
+                    ) sp ON s.id = sp.starid
+                    ORDER BY title ASC, rating ASC, movie_count DESC, s.name ASC;
+                */
+
+                query = "SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count\n" +
+                        "FROM (\n" +
+                        "     SELECT *\n" +
+                        "     FROM ratings r\n" +
+                        "     JOIN movies m ON r.movieid = m.id";
                 if (!starParam.isEmpty()) {
-                    query += "      JOIN (SELECT sm.movieid\n" +
-                            "            FROM stars_in_movies sm\n" +
-                            "            JOIN stars s ON s.id = sm.starid\n" +
-                            "            WHERE s.name LIKE '%" + starParam + "%'\n" +
-                            "      ) as movies_of_chosen_star ON movies_of_chosen_star.movieid = m.id ";
+                    query += "JOIN (SELECT sm.movieid as movie_of_chosen_star\n" +
+                            "       FROM stars_in_movies sm\n" +
+                            "       JOIN stars s ON s.id = sm.starid\n" +
+                            "       WHERE s.name LIKE '%" + starParam + "%'\n" +
+                            ") as movies_of_chosen_star ON movies_of_chosen_star.movie_of_chosen_star = m.id\n";
                 }
+
                 if (!titleParam.isEmpty() || !yearParam.isEmpty() || !directorParam.isEmpty())
-                    query += "           WHERE ";
-                if (!titleParam.isEmpty()) {
-                    query += "m.title LIKE '" + titleParam + "%' OR m.title LIKE '% " + titleParam + "%' AND ";
-                }
-                if (!yearParam.isEmpty()) {
+                    query += "WHERE ";
+                if (!titleParam.isEmpty())
+                    query += "(title LIKE '" + titleParam + "%' OR title LIKE '% " + titleParam + "%)' AND ";
+                if (!yearParam.isEmpty())
                     query += "m.year = " + yearParam + " AND ";
-                }
-                if (!directorParam.isEmpty()) {
+                if (!directorParam.isEmpty())
                     query += "m.director LIKE '%" + directorParam + "%' AND ";
-                }
-                if (query.endsWith(" AND ")){
+                if (query.endsWith(" AND "))
                     query = query.substring(0, query.length() - 5); // Remove the last " AND " if necessary
-                }
+
+                query += "     ORDER BY " + order_by +
+                        "      LIMIT ? OFFSET ?" +
+                        " ) AS distinct_movies\n" +
+                        " JOIN genres_in_movies gm ON gm.movieid = distinct_movies.movieid\n" +
+                        " JOIN genres g ON g.id = gm.genreid\n" +
+                        " JOIN stars_in_movies sm ON sm.movieid = distinct_movies.movieid\n" +
+                        " JOIN stars s ON s.id = sm.starid\n" +
+                        " JOIN ( SELECT starid, COUNT(movieid) AS movie_count\n" +
+                        "    FROM stars_in_movies\n" +
+                        "    GROUP BY starid\n" +
+                        " ) sp ON s.id = sp.starid\n" +
+                        " ORDER BY " + order_by + ", movie_count DESC, s.name ASC";
+
                 statement = conn.prepareStatement(query);
+                statement.setInt(1, limit);
+                statement.setInt(2,limit*(page-1));
             }
 
+
+
+            // --------------- execute query
             ResultSet rs = statement.executeQuery();
             JsonArray jsonArray = new JsonArray();
 
-            // Iterate through each row of rs
+
+            // ---------------- process each row of rs
             String current_movie_ID = "";
             boolean hasNextRow = rs.next();
             while (hasNextRow) {
@@ -186,13 +273,8 @@ public class List extends HttpServlet {
                 LinkedHashMap<String, String> stars = new LinkedHashMap<>();
 
                 String genre_ID = "" + rs.getInt("genreid"); //cast int to string
-                String genre_name = "";
-                if (type.equals("search")){
-                    genre_name = rs.getString("g.name");
-                }
-                else {
-                    genre_name = rs.getString("genrename");
-                }
+                String genre_name = rs.getString("genrename");
+
                 genres.put(genre_ID, genre_name);
 
                 String star_ID = rs.getString("starid");
@@ -207,7 +289,6 @@ public class List extends HttpServlet {
                     if(!this_movie_id.equals(current_movie_ID)){
                         break;
                     }
-
 
                     genre_ID = "" + rs.getInt("genreid"); //cast int to string
                     genre_name = rs.getString("genrename");
@@ -246,7 +327,7 @@ public class List extends HttpServlet {
                 jsonArray.add(jsonObject);
             }
 
-            // Close all structures
+            // ---------------- Close all structures
             rs.close();
             statement.close();
             conn.close();

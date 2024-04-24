@@ -91,9 +91,9 @@ function handleTop20Result(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='authenticated/movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='authenticated/list.html?type=genre&name=" + genres_name[i] +"'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='authenticated/movies-by-genre.html?name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href='authenticated/list.html?type=genre&name=" + genres_name[i] +"'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
