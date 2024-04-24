@@ -386,7 +386,7 @@ if (type === "genre"){
     // Get params from URL and session storage
     let genre = getParameterByName('name');
     let limit= "10"; // default initial value
-    let sort = "title_asc"; // default initial value
+    let sort = "title_asc_rating_asc"; // default initial value
     let page = "1"; // default initial value
     sessionStorage.setItem('genre', genre);
     sessionStorage.setItem('limit', limit);
@@ -413,7 +413,7 @@ if (type === "genre"){
     // Get params from URL and session storage
     let firstLetter = getParameterByName('start');
     let limit= "10"; // default initial value
-    let sort = "title_asc"; // default initial value
+    let sort = "title_asc_rating_asc"; // default initial value
     let page = "1"; // default initial value
     sessionStorage.setItem('titleFirstLetter', firstLetter);
     sessionStorage.setItem('limit', limit);
@@ -444,7 +444,7 @@ if (type === "genre"){
     let searchDirector = getParameterByName('director');
     let searchStar = getParameterByName('star');
     let limit= "10"; // default initial value
-    let sort = "title_asc"; // default initial value
+    let sort = "title_asc_rating_asc"; // default initial value
     let page = "1"; // default initial value
 
     sessionStorage.setItem('searchTitle', searchTitle);
