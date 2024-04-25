@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS movies(
     id VARCHAR(10) PRIMARY KEY,
     title VARCHAR(100) NOT NULL DEFAULT '',
     year INTEGER NOT NULL,
-    director VARCHAR(100) NOT NULL DEFAULT ''
+    director VARCHAR(100) NOT NULL DEFAULT '',
+    price INT NOT NULL DEFAULT FLOOR(RAND() * 60 + 1) -- Generates a random price between 1 and 60
     );
 
 CREATE TABLE IF NOT EXISTS stars (
