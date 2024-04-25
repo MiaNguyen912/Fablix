@@ -1,4 +1,3 @@
-
 function getParameterByName(target) {
     // Get request URL
     let url = window.location.href;
@@ -13,6 +12,28 @@ function getParameterByName(target) {
 
     // Return the decoded parameter value
     return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+
+/**
+ * Adds the specified movieId into the cart that's saved in sessionStorage
+ * @param button button that was clicked
+ */
+function addToCart(button){
+    let movie_id = button.getAttribute('data-movie-id');
+    let cartData = JSON.parse(sessionStorage.getItem('cart')) || {};
+
+    // Check if the movie_id already exists in cartData
+    if (cartData[movie_id]) {
+        // Increment the quantity if the movie_id is already in the cart
+        cartData[movie_id]++;
+    } else {
+        // Initialize the quantity to 1 if the movie_id is not yet in the cart
+        cartData[movie_id] = 1;
+    }
+
+    // Save updated cart data back to sessionStorage
+    sessionStorage.setItem('cart', JSON.stringify(cartData));
 }
 
 /**
@@ -87,7 +108,7 @@ function handleMoviesByGenreResult(resultData) {
 
         rowHTML += "<td>" + movie_rating + "</td>";
 
-
+        rowHTML +=  '<td><button onclick="addToCart(this)" data-movie-id="' + movie_id + '">Add to Cart</button></td>';
 
         // Append the row created to the table body, which will refresh the page
         movieTableBodyElement.innerHTML += rowHTML;
@@ -207,7 +228,7 @@ function handleSearchResult(resultData) {
 
         rowHTML += "<td>" + movie_rating + "</td>";
 
-
+        rowHTML +=  '<td><button onclick="addToCart(this)" data-movie-id="' + movie_id + '">Add to Cart</button></td>';
 
         // Append the row created to the table body, which will refresh the page
         movieTableBodyElement.innerHTML += rowHTML;
@@ -327,7 +348,7 @@ function handleMoviesByTitleResult(resultData) {
 
         rowHTML += "<td>" + movie_rating + "</td>";
 
-
+        rowHTML +=  '<td><button onclick="addToCart(this)" data-movie-id="' + movie_id + '">Add to Cart</button></td>';
 
         // Append the row created to the table body, which will refresh the page
         movieTableBodyElement.innerHTML += rowHTML;
