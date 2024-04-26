@@ -50,10 +50,11 @@ public class LoginServlet extends HttpServlet {
             JsonObject responseJsonObject = new JsonObject();
             if (rs.next()) { // rs having a row means the username or email exists
                 String resulting_password = rs.getString("password");
+                String id = rs.getString("id");
 
                 if (resulting_password.equals(password)){
                     // Login success, set this user into the session
-                    request.getSession().setAttribute("user", new User(username));
+                    request.getSession().setAttribute("user", new User(username, id)); // initialize a User object
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
                 } else {

@@ -21,6 +21,8 @@ function getParameterByName(target) {
  */
 function addToCart(button){
     let movie_id = button.getAttribute('data-movie-id');
+    let movie_title = button.getAttribute('data-movie-title');
+
     let cartData = JSON.parse(sessionStorage.getItem('cart')) || {};
 
     // Check if the movie_id already exists in cartData
@@ -108,7 +110,11 @@ function handleMoviesByGenreResult(resultData) {
 
         rowHTML += "<td>" + movie_rating + "</td>";
 
-        rowHTML +=  '<td><button onclick="addToCart(this)" data-movie-id="' + movie_id + '">Add to Cart</button></td>';
+        rowHTML +=  "<td><button onclick='addToCart(this)' class='rounded-md px-3 py-2.5 text-lg font-semibold text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 bg-orange-500 hover:bg-orange-700' data-movie-id='" + movie_id + "' data-movie-title='" + movie_title + "'>Add</button></td>";
+
+
+
+
 
         // Append the row created to the table body, which will refresh the page
         movieTableBodyElement.innerHTML += rowHTML;
@@ -224,11 +230,8 @@ function handleSearchResult(resultData) {
                 starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
         }
         rowHTML += "<td>" + starsText + "</td>";
-
-
         rowHTML += "<td>" + movie_rating + "</td>";
-
-        rowHTML +=  '<td><button onclick="addToCart(this)" data-movie-id="' + movie_id + '">Add to Cart</button></td>';
+        rowHTML +=  "<td><button onclick='addToCart(this)' class='rounded-md px-3 py-2.5 text-lg font-semibold text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 bg-orange-500 hover:bg-orange-700' data-movie-id='" + movie_id + "' data-movie-title='" + movie_title + "'>Add</button></td>";
 
         // Append the row created to the table body, which will refresh the page
         movieTableBodyElement.innerHTML += rowHTML;
@@ -344,11 +347,9 @@ function handleMoviesByTitleResult(resultData) {
                 starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
         }
         rowHTML += "<td>" + starsText + "</td>";
-
-
         rowHTML += "<td>" + movie_rating + "</td>";
+        rowHTML +=  "<td><button onclick='addToCart(this)' class='rounded-md px-3 py-2.5 text-lg font-semibold text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 bg-orange-500 hover:bg-orange-700' data-movie-id='" + movie_id + "' data-movie-title='" + movie_title + "'>Add</button></td>";
 
-        rowHTML +=  '<td><button onclick="addToCart(this)" data-movie-id="' + movie_id + '">Add to Cart</button></td>';
 
         // Append the row created to the table body, which will refresh the page
         movieTableBodyElement.innerHTML += rowHTML;
