@@ -11,13 +11,13 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 
 // Declaring a WebServlet called MoviesServlet, which maps to url "/api/20movies"
-@WebServlet(name = "PaymentServlet", urlPatterns = "/api/payment")
+@WebServlet(name = "PaymentServlet", urlPatterns = "/authenticated/api/payment")
 public class PaymentServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -44,25 +44,33 @@ public class PaymentServlet extends HttpServlet {
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try (Connection conn = dataSource.getConnection()) {
 
-            // Declare our statement
-            Statement statement = conn.createStatement();
-
             // Get the credit card information into variables
             String cardNumber = request.getParameter("card_number");
             String firstName = request.getParameter("first_name");
             String lastName = request.getParameter("last_name");
-            String expirationDate = request.getParameter("expiration_date");
+            String expirationDate = request.getParameter("expiration_date"); // getParameter() return String only
+
+
+//            SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy"); // Adjust the format based on how the date is sent from the client
+//            Date expirationDate = (Date) dateFormat.parse(expirationDateString);
+
 
             // Make a sql query to the database to see if the information exists in the table creditcards
                 //Id varchar(20) primary key,
                 //Firstname varchar(50) NOT NULL DEFAULT '',
                 //Lastname varchar(50) NOT NULL DEFAULT '',
                 //Expiration date not null
-            String query = "SELECT * FROM creditcards WHERE " +
-                    "Id = " + cardNumber + " AND " +
-                    "Firstname = " + firstName +
-                    " AND Lastname = " + lastName +
-                    " AND Expiration = " + expirationDate;
+            String query = "SELECT * FROM creditcards " +
+                    " WHERE Id = ? " +
+                    " AND Firstname = ?" +
+                    " AND Lastname = ?" +
+                    " AND Expiration = '" + expirationDate + "'";
+
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, cardNumber);
+            statement.setString(2, firstName);
+            statement.setString(3, lastName);
+//            statement.setDate(4, new java.sql.Date(expirationDate));
 
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -71,7 +79,7 @@ public class PaymentServlet extends HttpServlet {
             if (resultSet.next()) {
                 // Card information exists, return success message
 
-                // If query matches, then using cartData, make a new insert into the sales table
+                // If query matches, then using cart_data, make a new insert into the sales table
 //            Id integer primary key auto_increment,
 //            Customerid integer not null references customers(id),
 //            Moviewid varchar(10) NOT NULL DEFAULT '' references movies(id),
@@ -101,8 +109,5 @@ public class PaymentServlet extends HttpServlet {
         } finally {
             out.close();
         }
-
-        // Always remember to close db connection after usage. Here it's done by try-with-resources
-
     }
 }
