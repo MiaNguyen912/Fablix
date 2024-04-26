@@ -23,6 +23,33 @@ function handleGridBtnClick(){
     }
 }
 
+
+/**
+ * Adds the specified movieId into the cart that's saved in sessionStorage
+ * @param button button that was clicked
+ */
+function addToCart(button){
+    let movie_id = button.getAttribute('data-movie-id');
+    let movie_title = button.getAttribute('data-movie-title');
+
+    let cartData = JSON.parse(sessionStorage.getItem('cart')) || {};
+
+    // Check if the movie_id already exists in cartData
+    if (cartData[movie_id]) {
+        // Increment the quantity if the movie_id is already in the cart
+        cartData[movie_id]++;
+    } else {
+        // Initialize the quantity to 1 if the movie_id is not yet in the cart
+        cartData[movie_id] = 1;
+    }
+
+    // Save updated cart data back to sessionStorage
+    sessionStorage.setItem('cart', JSON.stringify(cartData));
+}
+
+
+
+
 /**
  * Handles the data returned by the API, read the jsonObject and populate data into html elements
  * @param resultData jsonObject

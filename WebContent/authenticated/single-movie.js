@@ -1,3 +1,22 @@
+function addToCart(button){
+    let movie_id = button.getAttribute('data-movie-id');
+    let movie_title = button.getAttribute('data-movie-title');
+
+    let cartData = JSON.parse(sessionStorage.getItem('cart')) || {};
+
+    // Check if the movie_id already exists in cartData
+    if (cartData[movie_id]) {
+        // Increment the quantity if the movie_id is already in the cart
+        cartData[movie_id]++;
+    } else {
+        // Initialize the quantity to 1 if the movie_id is not yet in the cart
+        cartData[movie_id] = 1;
+    }
+
+    // Save updated cart data back to sessionStorage
+    sessionStorage.setItem('cart', JSON.stringify(cartData));
+}
+
 
 function getParameterByName(target) {
     // Get request URL
@@ -25,6 +44,8 @@ function handleMovieResult(resultData) {
     console.log("handleSingleMovieResult: populating movie info from resultData");
 
     let movieInfoElement = jQuery("#main_info");
+    let movie_id = resultData[0]["movie_id"];
+    let movie_title = resultData[0]["movie_title"];
     let movie_director = resultData[0]["movie_director"];
     let movie_rating = resultData[0]["movie_rating"];
     let stars = resultData[0]["stars"];
@@ -72,6 +93,7 @@ function handleMovieResult(resultData) {
     }
     rowHTML += "</td>";
     rowHTML += "<td>" + movie_rating + "</td>";
+    rowHTML +=  "<td><button onclick='addToCart(this)' class='rounded-md px-3 py-2.5 text-lg font-semibold text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 bg-orange-500 hover:bg-orange-700' data-movie-id='" + movie_id + "' data-movie-title='" + movie_title + "'>Add</button></td>";
     rowHTML += "</tr>";
 
     // Append the row created to the table body, which will refresh the page
