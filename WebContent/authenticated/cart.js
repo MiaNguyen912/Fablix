@@ -8,6 +8,7 @@ function showCartData(resultData){
     let cartTableBodyElement = jQuery("#cart_table_body")
 
     let cartData = JSON.parse(sessionStorage.getItem('cart')) || {};
+    let cartTotal = 0; // Initialize cart total
 
     // Iterate through all the movies in the cart,
     for (let i = 0; i < resultData.length; i++) {
@@ -42,10 +43,14 @@ function showCartData(resultData){
         rowHTML += "</td>";
 
         cartTableBodyElement.append(rowHTML);
+
+        // Update cart total
+        cartTotal += (price*amount);
     }
 
     // Now update cart total
-    
+    document.getElementById('cart_total').textContent = cartTotal.toFixed(2);
+
 }
 
 function decreaseAmount(button){
@@ -60,9 +65,12 @@ function decreaseAmount(button){
 
         // Update the displayed amount
         document.getElementById('amount_' + movie_id).textContent = amount;
-        // Update Total as well
-        let price = document.getElementById('price_' + movie_id).textContent;
+        // Update Total
+        let price = parseFloat(document.getElementById('price_' + movie_id).textContent);
         document.getElementById('total_' + movie_id).textContent = (price * amount);
+        // Update cart total
+        let old_total = parseFloat(document.getElementById('cart_total').textContent);
+        document.getElementById('cart_total').textContent = (old_total - price).toFixed(2);
     }
 }
 
@@ -78,12 +86,40 @@ function increaseAmount(button) {
     // Update the displayed amount
     document.getElementById('amount_' + movie_id).textContent = amount;
     // Update Total as well
-    let price = document.getElementById('price_' + movie_id).textContent;
+    let price = parseFloat(document.getElementById('price_' + movie_id).textContent);
     document.getElementById('total_' + movie_id).textContent = (price * amount);
+    // Update cart total
+    let old_total = parseFloat(document.getElementById('cart_total').textContent);
+    document.getElementById('cart_total').textContent = (old_total + price).toFixed(2);
 }
 
 function deleteMovie(button){
+    // Update sessionStorage to remove that movie_id
+    // Update html to remove that row
+    // Update cart total by subtracting old total_movie_id
+    let movie_id = button.getAttribute('data-movie-id');
+    let cartData = JSON.parse(sessionStorage.getItem('cart')) || {};
 
+
+    let old_total = document.getElementById('total_' + movie_id).textContent;
+    let old_cart_total = document.getElementById('cart_total').textContent;
+
+    document.getElementById('cart_total').textContent = (old_cart_total - old_total).toFixed(2);
+
+    // Remove the movie_id from cartData
+    delete cartData[movie_id];
+
+    sessionStorage.setItem('cart', JSON.stringify(cartData));
+
+    // Remove the corresponding row from the HTML table
+    let row = button.closest('tr');
+    row.remove();
+}
+
+function checkout(){
+    let cart_total = document.getElementById('cart_total').textContent;
+    sessionStorage.setItem('cart_total', cart_total);
+    window.location.href = 'payment.html';
 }
 
 /**

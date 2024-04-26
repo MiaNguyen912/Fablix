@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../assets/style.css">
 
 
-    <title>Single Movie</title>
+    <title>Cart</title>
 </head>
 <body>
     <!-- -------------------------- HEADER ----------------------- -->
@@ -166,9 +166,14 @@
                 <tfoot id="cart_table_footer">
                 <tr>
                     <td>
-                        <button id="checkout_button">Checkout</button>
+                        <button id="checkout_button" onclick="checkout()">Checkout</button>
                     </td>
-                    <td colspan="4" id="cart_total"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>$
+                        <span id='cart_total'></span>
+                    </td>
                 </tr>
                 </tfoot>
             </table>
