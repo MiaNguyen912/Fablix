@@ -1,13 +1,22 @@
-/**
- * This example is following frontend and backend separation.
- *
- * Before this .js is loaded, the html skeleton is created.
- *
- * This .js performs three steps:
- *      1. Get parameter from request URL so it know which id to look for
- *      2. Use jQuery to talk to backend API to get the json data.
- *      3. Populate the data to correct html elements.
- */
+function addToCart(button){
+    let movie_id = button.getAttribute('data-movie-id');
+    let movie_title = button.getAttribute('data-movie-title');
+    alert(movie_title + " has been added to your cart");
+
+    let cartData = JSON.parse(sessionStorage.getItem('cart')) || {};
+
+    // Check if the movie_id already exists in cartData
+    if (cartData[movie_id]) {
+        // Increment the quantity if the movie_id is already in the cart
+        cartData[movie_id]++;
+    } else {
+        // Initialize the quantity to 1 if the movie_id is not yet in the cart
+        cartData[movie_id] = 1;
+    }
+
+    // Save updated cart data back to sessionStorage
+    sessionStorage.setItem('cart', JSON.stringify(cartData));
+}
 
 
 /**
@@ -65,11 +74,15 @@ function handleStarResult(resultData) {
 
 
     for (let i = 0; i<movies_id.length; i++){
+        let movie_id = movies_id[i];
+        let movie_title = movies_detail[i]["title"]
+
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='single-movie.html?id=" + movies_id[i] + "'> " + movies_detail[i]["title"] + "</a></td>";
+        rowHTML += "<td><a href='single-movie.html?id=" + movie_id + "'> " + movie_title + "</a></td>";
         rowHTML += "<td>" + movies_detail[i]["year"] + "</td>";
         rowHTML += "<td>" + movies_detail[i]["director"] + "</td>";
+        rowHTML +=  "<td><button onclick='addToCart(this)' class='rounded-md px-3 py-2.5 text-lg font-semibold text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 bg-orange-500 hover:bg-orange-700' data-movie-id='" + movie_id + "' data-movie-title='" + movie_title + "'>Add</button></td>";
         rowHTML += "</tr>";
 
         // Append the row created to the table body, which will refresh the page

@@ -1,6 +1,7 @@
 function addToCart(button){
     let movie_id = button.getAttribute('data-movie-id');
     let movie_title = button.getAttribute('data-movie-title');
+    alert(movie_title + " has been added to your cart");
 
     let cartData = JSON.parse(sessionStorage.getItem('cart')) || {};
 
