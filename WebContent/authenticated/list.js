@@ -68,17 +68,37 @@ function handleMoviesByGenreResult(resultData) {
 
         let genres_id = [];
         let genres_name = [];
+        let count = 0;
         for (const key in genres){
-            genres_id.push(key);
-            genres_name.push(genres[key]);
+            if (count < 3) {
+                genres_id.push(key);
+                genres_name.push(genres[key]);
+                count++;
+            } else {
+                break;
+            }
         }
+        // for (const key in genres){
+        //     genres_id.push(key);
+        //     genres_name.push(genres[key]);
+        // }
 
         let stars_id = [];
         let stars_name = [];
+        count = 0;
         for (const key in stars){
-            stars_id.push(key);
-            stars_name.push(stars[key]);
+            if (count < 3) {
+                stars_id.push(key);
+                stars_name.push(stars[key]);
+                count++;
+            } else {
+                break;
+            }
         }
+        // for (const key in stars){
+        //     stars_id.push(key);
+        //     stars_name.push(stars[key]);
+        // }
 
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
@@ -103,7 +123,7 @@ function handleMoviesByGenreResult(resultData) {
             if (i < stars_id.length -1 )
                 starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
 
@@ -192,17 +212,42 @@ function handleSearchResult(resultData) {
 
         let genres_id = [];
         let genres_name = [];
+        let count = 0;
         for (const key in genres){
-            genres_id.push(key);
-            genres_name.push(genres[key]);
+            if (count < 3) {
+                genres_id.push(key);
+                genres_name.push(genres[key]);
+                count++;
+            } else {
+                break;
+            }
         }
+
 
         let stars_id = [];
         let stars_name = [];
+        count = 0;
         for (const key in stars){
-            stars_id.push(key);
-            stars_name.push(stars[key]);
+            if (count < 3) {
+                stars_id.push(key);
+                stars_name.push(stars[key]);
+                count++;
+            } else {
+                break;
+            }
         }
+
+        // for (const key in genres){
+        //     genres_id.push(key);
+        //     genres_name.push(genres[key]);
+        // }
+
+        // let stars_id = [];
+        // let stars_name = [];
+        // for (const key in stars){
+        //     stars_id.push(key);
+        //     stars_name.push(stars[key]);
+        // }
 
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
@@ -227,7 +272,7 @@ function handleSearchResult(resultData) {
             if (i < stars_id.length -1 )
                 starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
         rowHTML += "<td>" + movie_rating + "</td>";
@@ -309,17 +354,38 @@ function handleMoviesByTitleResult(resultData) {
 
         let genres_id = [];
         let genres_name = [];
+        let count = 0;
         for (const key in genres){
-            genres_id.push(key);
-            genres_name.push(genres[key]);
+            if (count < 3) {
+                genres_id.push(key);
+                genres_name.push(genres[key]);
+                count++;
+            } else {
+                break;
+            }
         }
+        // for (const key in genres){
+        //     genres_id.push(key);
+        //     genres_name.push(genres[key]);
+        // }
 
         let stars_id = [];
         let stars_name = [];
+        count = 0;
         for (const key in stars){
-            stars_id.push(key);
-            stars_name.push(stars[key]);
+            if (count < 3) {
+                stars_id.push(key);
+                stars_name.push(stars[key]);
+                count++;
+            } else {
+                break;
+            }
         }
+        // for (const key in stars){
+        //     stars_id.push(key);
+        //     stars_name.push(stars[key]);
+        // }
+
 
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
@@ -332,9 +398,9 @@ function handleMoviesByTitleResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href=list.html?type=genre&name='> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href=list.html?type=genre&name='> " + genres_name[i] + "</a>";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -344,7 +410,7 @@ function handleMoviesByTitleResult(resultData) {
             if (i < stars_id.length -1 )
                 starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
         rowHTML += "<td>" + movie_rating + "</td>";
@@ -431,7 +497,8 @@ if (type === "genre"){
         url: "api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
         success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
     });
-} else if (type === "title"){
+}
+else if (type === "title"){
     // Get params from URL and session storage
     let firstLetter = getParameterByName('start');
     let limit= "10"; // default initial value
@@ -456,7 +523,8 @@ if (type === "genre"){
         url: "api/list?type=title&start=" + firstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
         success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
     });
-} else if (type === "search"){
+}
+else if (type === "search"){
     /**
      * Once this .js is loaded, following scripts will be executed by the browser
      */

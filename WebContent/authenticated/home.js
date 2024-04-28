@@ -71,18 +71,46 @@ function handleTop20Result(resultData) {
         let stars = resultData[i]["stars"];
         let genres = resultData[i]["genres"];
 
+        // let genres_id = [];
+        // let genres_name = [];
+        // for (const key in genres){
+        //     genres_id.push(key);
+        //     genres_name.push(genres[key]);
+        // }
+        //
+        // let stars_id = [];
+        // let stars_name = [];
+        // for (const key in stars){
+        //     stars_id.push(key);
+        //     stars_name.push(stars[key]);
+        // }
+
+
         let genres_id = [];
         let genres_name = [];
+        let count = 0;
         for (const key in genres){
-            genres_id.push(key);
-            genres_name.push(genres[key]);
+            if (count < 3) {
+                genres_id.push(key);
+                genres_name.push(genres[key]);
+                count++;
+            } else {
+                break;
+            }
         }
+
 
         let stars_id = [];
         let stars_name = [];
+        count = 0;
         for (const key in stars){
-            stars_id.push(key);
-            stars_name.push(stars[key]);
+            if (count < 3) {
+                stars_id.push(key);
+                stars_name.push(stars[key]);
+                count++;
+            } else {
+                break;
+            }
         }
 
         // Concatenate the html tags with resultData jsonObject
@@ -108,7 +136,7 @@ function handleTop20Result(resultData) {
             if (i < stars_id.length -1 )
                 starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
         rowHTML += "<td>" + movie_rating + "</td>";

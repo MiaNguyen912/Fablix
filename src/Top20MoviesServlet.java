@@ -16,7 +16,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.ArrayList;
-
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
 
 // Declaring a WebServlet called MoviesServlet, which maps to url "/api/20movies"
@@ -61,8 +62,14 @@ public class Top20MoviesServlet extends HttpServlet {
                     "       JOIN genres g ON g.id = gm.genreid\n" +
                     "       JOIN stars_in_movies sm USING(movieid)\n" +
                     "       JOIN stars s ON s.id = sm.starid\n" +
+                    "       JOIN (\n" +
+                    "            SELECT starid, COUNT(movieid) AS movie_count\n" +
+                    "            FROM stars_in_movies\n" +
+                    "            GROUP BY starid\n" +
+                    "       ) sp ON s.id = sp.starid\n" +
                     "       WHERE ranking <= 20\n" +
-                    "       ORDER BY ranked_ratings.ranking;";
+                    "       ORDER BY ranked_ratings.ranking ASC, movie_count DESC, s.name ASC";
+
 
             /*SELECT *
             FROM (
@@ -74,10 +81,14 @@ public class Top20MoviesServlet extends HttpServlet {
             JOIN genres g ON g.id = gm.genreid
             JOIN stars_in_movies sm USING(movieid)
             JOIN stars s ON s.id = sm.starid
+            JOIN (
+                 SELECT starid, COUNT(movieid) AS movie_count
+                 FROM stars_in_movies
+                 GROUP BY starid
+            ) sp ON s.id = sp.starid
             WHERE ranking <= 20
-            ORDER BY ranked_ratings.ranking ;
+            ORDER BY ranked_ratings.ranking, movie_count DESC, s.name ASC;
             */
-
 
 
             // Perform the query
@@ -85,54 +96,122 @@ public class Top20MoviesServlet extends HttpServlet {
 
             JsonArray jsonArray = new JsonArray();
 
+//            String current_movie_ID = "";
+//
+//            // Iterate through each row of rs
+//            while (rs.next()) {
+//                String movie_id = rs.getString("movieid");
+//                if (movie_id.equals(current_movie_ID))
+//                    continue; // go to next row
+//                else
+//                    current_movie_ID = movie_id; // update current_movie_id
+//                String title = rs.getString("title");
+//                String year = rs.getString("year");
+//                String director = rs.getString("director");
+//                float rating = rs.getFloat("rating");
+//                HashMap<String, String> genres = new HashMap<>();
+//                HashMap<String, String> stars = new HashMap<>();
+//
+//                // record 3 stars, 3 genres
+//
+//                while(genres.size()<3 || stars.size()<3){
+//                    String this_movie_id = rs.getString("movieid");
+//
+//                    // if not the same movie, skip recording stars/genres and go to next row
+//                    if(!this_movie_id.equals(current_movie_ID))
+//                        break;
+//
+//                    if (genres.size()<3){
+//                        String genre_ID = "" + rs.getInt("genreid"); //cast int to string
+//                        String genre_name = rs.getString("g.name");
+//                        genres.put(genre_ID, genre_name);
+//                    }
+//
+//                    if (stars.size()<3){
+//                        String star_ID = rs.getString("starid");
+//                        String star_name = rs.getString("s.name");
+//                        stars.put(star_ID, star_name);
+//                    }
+//                    if (!rs.next()) // go to next row
+//                        break;
+//                }
+//
+//
+//                // Convert stars HashMap<String, String> to JsonObject
+//                JsonObject starsJson = new JsonObject();
+//                for (String key : stars.keySet()) {
+//                    starsJson.addProperty(key, stars.get(key));
+//                }
+//
+//                // Convert genres HashMap<String, String> to JsonObject
+//                JsonObject genresJson = new JsonObject();
+//                for (String key : genres.keySet()) {
+//                    genresJson.addProperty(key, genres.get(key));
+//                }
+//
+//
+//                // Create a JsonObject based on the data we retrieve from rs
+//                JsonObject jsonObject = new JsonObject();
+//                jsonObject.addProperty("movie_id", movie_id);
+//                jsonObject.addProperty("movie_title", title);
+//                jsonObject.addProperty("movie_year", year);
+//                jsonObject.addProperty("movie_director", director);
+//                jsonObject.addProperty("movie_rating", rating);
+//                jsonObject.add("stars", starsJson);
+//                jsonObject.add("genres", genresJson);
+//
+//
+//                jsonArray.add(jsonObject);
+//            }
             String current_movie_ID = "";
-
-            // Iterate through each row of rs
-            while (rs.next()) {
+            boolean hasNextRow = rs.next();
+            while (hasNextRow) {
                 String movie_id = rs.getString("movieid");
-                if (movie_id.equals(current_movie_ID))
-                    continue; // go to next row
-                else
-                    current_movie_ID = movie_id; // update current_movie_id
+                current_movie_ID = movie_id; // update current_movie_id
+
                 String title = rs.getString("title");
                 String year = rs.getString("year");
                 String director = rs.getString("director");
                 float rating = rs.getFloat("rating");
-                HashMap<String, String> genres = new HashMap<>();
-                HashMap<String, String> stars = new HashMap<>();
+                TreeMap<String, String> genres = new TreeMap<>();
+                LinkedHashMap<String, String> stars = new LinkedHashMap<>();
 
-                // record 3 stars, 3 genres
+                String genre_ID = "" + rs.getInt("genreid"); //cast int to string
+                String genre_name = rs.getString("g.name");
 
-                while(genres.size()<3 || stars.size()<3){
+                genres.put(genre_ID, genre_name);
+
+                String star_ID = rs.getString("starid");
+                String star_name = rs.getString("s.name");
+                stars.put(star_ID, star_name);
+
+                hasNextRow = rs.next();
+                while(hasNextRow){
                     String this_movie_id = rs.getString("movieid");
 
                     // if not the same movie, skip recording stars/genres and go to next row
-                    if(!this_movie_id.equals(current_movie_ID))
+                    if(!this_movie_id.equals(current_movie_ID)){
                         break;
-
-                    if (genres.size()<3){
-                        String genre_ID = "" + rs.getInt("genreid"); //cast int to string
-                        String genre_name = rs.getString("g.name");
-                        genres.put(genre_ID, genre_name);
                     }
 
-                    if (stars.size()<3){
-                        String star_ID = rs.getString("starid");
-                        String star_name = rs.getString("s.name");
-                        stars.put(star_ID, star_name);
-                    }
-                    if (!rs.next()) // go to next row
-                        break;
+                    genre_ID = "" + rs.getInt("genreid"); //cast int to string
+                    genre_name = rs.getString("g.name");
+                    genres.put(genre_ID, genre_name);
+
+                    star_ID = rs.getString("starid");
+                    star_name = rs.getString("s.name");
+                    stars.put(star_ID, star_name);
+                    hasNextRow = rs.next();
                 }
 
 
-                // Convert stars HashMap<String, String> to JsonObject
+                // Convert stars to JsonObject
                 JsonObject starsJson = new JsonObject();
                 for (String key : stars.keySet()) {
                     starsJson.addProperty(key, stars.get(key));
                 }
 
-                // Convert genres HashMap<String, String> to JsonObject
+                // Convert genres to JsonObject
                 JsonObject genresJson = new JsonObject();
                 for (String key : genres.keySet()) {
                     genresJson.addProperty(key, genres.get(key));
@@ -149,9 +228,10 @@ public class Top20MoviesServlet extends HttpServlet {
                 jsonObject.add("stars", starsJson);
                 jsonObject.add("genres", genresJson);
 
-
                 jsonArray.add(jsonObject);
             }
+
+
             rs.close();
             statement.close();
 
