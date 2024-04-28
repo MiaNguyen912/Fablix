@@ -112,5 +112,23 @@ function handleGridBtnClick(){
 }
 
 function handleGoBackBtnClick(){
+    let search_type = sessionStorage.getItem('search_type');
+    let genre = sessionStorage.getItem('genre');
+    let titleFirstLetter = sessionStorage.getItem('titleFirstLetter');
+    let searchTitle = sessionStorage.getItem('searchTitle');
+    let searchYear = sessionStorage.getItem('searchYear');
+    let searchDirector = sessionStorage.getItem('searchDirector');
+    let searchStar = sessionStorage.getItem('searchStar');
+    let limit = sessionStorage.getItem('limit');
+    let sort = sessionStorage.getItem('sort');
+    let page = sessionStorage.getItem('page');
 
+
+    if (search_type === "genre"){
+        window.location.href = 'list.html?type=genre&name=' + genre + '&goback=true';
+    } else if (search_type === "title"){
+        window.location.href = 'list.html?type=title&start=' + titleFirstLetter + '&goback=true';
+    } else {
+        window.location.href = 'list.html?type=search&title=' + searchTitle + '&year=' + searchYear+ '&director=' + searchDirector + '&star=' + searchStar + '&goback=true';
+    }
 }

@@ -469,17 +469,32 @@ function handleMoviesByTitleResult(resultData) {
 
 // Execute different code for different types
 let type = getParameterByName('type');
+sessionStorage.setItem('search_type', type);
+
 
 if (type === "genre"){
     // Get params from URL and session storage
     let genre = getParameterByName('name');
-    let limit= "10"; // default initial value
-    let sort = "title_asc_rating_asc"; // default initial value
-    let page = "1"; // default initial value
     sessionStorage.setItem('genre', genre);
-    sessionStorage.setItem('limit', limit);
-    sessionStorage.setItem('sort', sort);
-    sessionStorage.setItem('page', page);
+
+    let goback = getParameterByName('goback');
+    let limit;
+    let sort;
+    let page
+
+    if (goback == null){
+        limit= "10"; // default initial value
+        sort = "title_asc_rating_asc"; // default initial value
+        page = "1"; // default initial value
+        sessionStorage.setItem('limit', limit);
+        sessionStorage.setItem('sort', sort);
+        sessionStorage.setItem('page', page);
+    } else {
+        limit= sessionStorage.getItem('limit');
+        sort = sessionStorage.getItem('sort');
+        page = sessionStorage.getItem('page');
+    }
+
 
     // clear session variable of title first letter and search result
     sessionStorage.setItem('titleFirstLetter', null);
@@ -488,7 +503,24 @@ if (type === "genre"){
     sessionStorage.setItem('searchDirector', null);
     sessionStorage.setItem('searchStar', null);
 
-    console.log("call movies-by-genres.js");
+
+    // display selected sort type
+    const sort_dropdownlist = document.getElementById("dropdown-sort-by");
+    for (let option of sort_dropdownlist.options) {
+        if (option.value === sort) {
+            option.selected = true;
+            break;
+        }
+    }
+
+    // display selected movies-per-page
+    const moviesperpage_dropdownlist = document.getElementById("dropdown-movies-per-page");
+    for (let option of moviesperpage_dropdownlist.options) {
+        if (option.value === limit) {
+            option.selected = true;
+            break;
+        }
+    }
 
     // Makes the HTTP GET request
     jQuery.ajax({
@@ -501,13 +533,25 @@ if (type === "genre"){
 else if (type === "title"){
     // Get params from URL and session storage
     let firstLetter = getParameterByName('start');
-    let limit= "10"; // default initial value
-    let sort = "title_asc_rating_asc"; // default initial value
-    let page = "1"; // default initial value
     sessionStorage.setItem('titleFirstLetter', firstLetter);
-    sessionStorage.setItem('limit', limit);
-    sessionStorage.setItem('sort', sort);
-    sessionStorage.setItem('page', page);
+
+    let goback = getParameterByName('goback');
+    let limit;
+    let sort;
+    let page
+
+    if (goback == null){
+        limit= "10"; // default initial value
+        sort = "title_asc_rating_asc"; // default initial value
+        page = "1"; // default initial value
+        sessionStorage.setItem('limit', limit);
+        sessionStorage.setItem('sort', sort);
+        sessionStorage.setItem('page', page);
+    } else {
+        limit= sessionStorage.getItem('limit');
+        sort = sessionStorage.getItem('sort');
+        page = sessionStorage.getItem('page');
+    }
 
     // clear session variable of genre and search result
     sessionStorage.setItem('genre', null);
@@ -515,6 +559,24 @@ else if (type === "title"){
     sessionStorage.setItem('searchYear', null);
     sessionStorage.setItem('searchDirector', null);
     sessionStorage.setItem('searchStar', null);
+
+    // display selected sort type
+    const sort_dropdownlist = document.getElementById("dropdown-sort-by");
+    for (let option of sort_dropdownlist.options) {
+        if (option.value === sort) {
+            option.selected = true;
+            break;
+        }
+    }
+
+    // display selected movies-per-page
+    const moviesperpage_dropdownlist = document.getElementById("dropdown-movies-per-page");
+    for (let option of moviesperpage_dropdownlist.options) {
+        if (option.value === limit) {
+            option.selected = true;
+            break;
+        }
+    }
 
     // Makes the HTTP GET request
     jQuery.ajax({
@@ -533,22 +595,50 @@ else if (type === "search"){
     let searchYear = getParameterByName('year');
     let searchDirector = getParameterByName('director');
     let searchStar = getParameterByName('star');
-    let limit= "10"; // default initial value
-    let sort = "title_asc_rating_asc"; // default initial value
-    let page = "1"; // default initial value
-
     sessionStorage.setItem('searchTitle', searchTitle);
     sessionStorage.setItem('searchYear', searchYear);
     sessionStorage.setItem('searchDirector', searchDirector);
     sessionStorage.setItem('searchStar', searchStar);
-    sessionStorage.setItem('limit', limit);
-    sessionStorage.setItem('sort', sort);
-    sessionStorage.setItem('page', page);
+
+    let goback = getParameterByName('goback');
+    let limit;
+    let sort;
+    let page
+
+    if (goback == null){
+        limit= "10"; // default initial value
+        sort = "title_asc_rating_asc"; // default initial value
+        page = "1"; // default initial value
+        sessionStorage.setItem('limit', limit);
+        sessionStorage.setItem('sort', sort);
+        sessionStorage.setItem('page', page);
+    } else {
+        limit= sessionStorage.getItem('limit');
+        sort = sessionStorage.getItem('sort');
+        page = sessionStorage.getItem('page');
+    }
 
     // clear session variable of genre and title
     sessionStorage.setItem('genre', null);
     sessionStorage.setItem('titleFirstLetter', null);
 
+    // display selected sort type
+    const sort_dropdownlist = document.getElementById("dropdown-sort-by");
+    for (let option of sort_dropdownlist.options) {
+        if (option.value === sort) {
+            option.selected = true;
+            break;
+        }
+    }
+
+    // display selected movies-per-page
+    const moviesperpage_dropdownlist = document.getElementById("dropdown-movies-per-page");
+    for (let option of moviesperpage_dropdownlist.options) {
+        if (option.value === limit) {
+            option.selected = true;
+            break;
+        }
+    }
 
     // Makes the HTTP GET request
     jQuery.ajax({
