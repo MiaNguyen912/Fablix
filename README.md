@@ -1,7 +1,8 @@
 ## CS 122B Project 2
 
 ### Demo Video Link: 
-
+https://drive.google.com/drive/folders/10XUPX29k_KBGcLwpegHCa0qt7Qlegs7X?usp=sharing
+- It's in 2 parts as the video recording software froze near the end, but I made sure to restart the recording right where we left off with additional cart items
 
 ### Contributions: 
 Mia:
@@ -14,11 +15,10 @@ Mia:
 
   
 Daniel:
-- construct the back-end of single-star and single-movie (front-end and back-end)
-- Help debug and fix errors 
-- Add the year of birth for each star
-- Updated movie links to go to the correct movie page
-- Add links to go back to the main page from each single star/movie page
+- Build list page to reroute search results from genre, title, and substring search
+- Build cart page to show items in cart as well as logic to keep track of cart contents
+- Build checkout page to take in credit card information and check with backend database
+- Draft confirmation page to display successful sale result and summarized information
 
 ### Before running the project
 
