@@ -1,7 +1,7 @@
-## CS 122B Project 1
+## CS 122B Project 2
 
 ### Demo Video Link: 
-https://drive.google.com/file/d/1IjAYOmAGrMq2puDwuztdXVVTQuwHT7x6/view?usp=drive_link
+
 
 ### Contributions: 
 Mia:
