@@ -5,11 +5,12 @@ https://drive.google.com/file/d/1IjAYOmAGrMq2puDwuztdXVVTQuwHT7x6/view?usp=drive
 
 ### Contributions: 
 Mia:
-- Build the API (SingleMovieServlet, SingleStarServlet, Top20MovieServlet)
-- Create createtable.sql
-- Construct the home page, which is the top-20-movies page (front-end and back-end)
-- Beautify top-20-movies, single-movie, single-star pages using Tailwind CSS and plain CSS
-- add List view/Grid view feature on the home page
+- Construct the login page and login logic
+- construct the Header of each page to include browsing options, search bar, shopping cart button, and logout button
+- Build the search and browse movie functions (front-end and back-end)
+- Build the sort/filter/pagination of the result page when user browses or searches for movies
+- Modify single-movie and single-star servlets to display data in the correct order (genre by alphabetical order, stars by decreasing number of movies they play)
+- Beautify the cart, checkout, and confirmation pages with tailwind css
 
   
 Daniel:
