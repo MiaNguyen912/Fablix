@@ -42,6 +42,7 @@ Daniel:
 local> mysql -u mytestuser -p
 mysql> source <Path-to-CreatTable.sql>;
 mysql> source <Path-to-Movie-date.sql>;
+mysql> source <Path-to-edittable.sql>;
 mysql> quit;
 ```
 
@@ -66,11 +67,19 @@ mysql> quit;
 
 - [SingleMovieServlet.java](src/SingleMovieServlet.java), [SingleStarServlet.java](src/SingleStarServlet.java), [Top20MoviesServlet.java](src/Top20MoviesServlet.java): Java servlets that handle HTTP GET request by talking to the database and return information in the JSON format.
 
+
+- [listServlet.java](...): generate API result when user searches for movies based on title's starting letter, by genre, or by searching for keyword (handle HTTP GET requests)
+
+
+- [User.java](...): a utility class that has variables and functions use for the login user
+
+
 - [LoginServlet.java](src/LoginServlet.java) handles the login requests. It contains the following functionalities:
    - It gets the username and password from the parameters.
    - It verifies the username and password.
    - If login succeeds, it puts the `User` object in the session. Then it sends back a JSON response: `{"status": "success", "message": "success"}` .
    - If login fails, the JSON response will be: `{"status": "fail", "message": "incorrect password"}` or `{"status": "fail", "message": "user <username> doesn't exist"}`.
+
 
 - [LoginFilter.java](src/LoginFilter.java) is a special `Filter` class. It serves the purpose that for each URL request, if the user is not logged in, then it redirects the user to the `login.html` page.
    - A `Filter` class intercepts all incoming requests and determines if such requests are allowed against the rules we implement. See more details about `Filter` class [here](http://tutorials.jenkov.com/java-servlets/servlet-filters.html).
@@ -78,13 +87,12 @@ mysql> quit;
    - `LoginFilter` first checks if the request (the URL pattern) maps to the home page or login page (which are allowed to access without login).
    - It then checks if the user has logged in to the current session. If so, it redirects the user to the requested URL and if otherwise,`login.html` .
 
-- [SessionIndexServlet.java](src/IndexServlet.java) shows your current session information, last access time, and a list of movies added to cart. Has two methods, `doPost` and `doGet`.
-   *  `doGET`: is invoked when you have HTTP GET requests through the api `/api/session-index`
-      * It first gets the session ID, overrides the last access time, and writes these values in the JSON Object that is sent through `response`.
-   *  `doPOST`: is invoked with HTTP POST requests, responsible for the movie cart feature.
-      * First, it gets the session ID and the list of movies from the current session.
-      * If there is no such array of movies, it will create an empty array and add chosen movie.
-      * Sends the list of items through `cart.js`.
+
+- [CartServlet.java](...): handle HTTP POST request when user finalize their items in cart and go to checkout page
+
+
+- [PaymentServet.java](src/IndexServlet.java): has method doPOST, which is invoked with HTTP POST requests, responsible for validating card information 
+
 
 
 - Web pages that required log in to access are put in `authenticated` folder
