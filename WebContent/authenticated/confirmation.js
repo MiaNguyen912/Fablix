@@ -28,6 +28,9 @@ function handleConfirmation(resultData) {
         rowHTML += "</tr>";
         confirmation_panel.append(rowHTML);
     }
+    let total = jQuery("#total");
+    let cart_total = sessionStorage.getItem("cart_total");
+    total.append("Total: $" + cart_total);
 
     // clear shopping cart and total in sessionStorage
     sessionStorage.setItem("cart", null);
