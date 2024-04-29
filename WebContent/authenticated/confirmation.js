@@ -29,7 +29,9 @@ function handleConfirmation(resultData) {
         confirmation_panel.append(rowHTML);
     }
 
+    // clear shopping cart and total in sessionStorage
     sessionStorage.setItem("cart", null);
+    sessionStorage.setItem("cart_total", null);
 
 }
 

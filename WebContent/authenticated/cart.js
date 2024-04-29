@@ -1,27 +1,44 @@
-// Once this .js is loaded, following scripts will be executed by the browser
+let empty_panel = document.getElementById("empty_panel");
+let cart_panel = document.getElementById("cart_panel");
 
 // Get the current cart data and turn it into a list of movie IDs
 let cartDataJson = JSON.parse(sessionStorage.getItem('cart'));
 
-// Extract the movie IDs from the cartDataJson object
-let movieIdsString = Object.keys(cartDataJson).join(',');
+if (cartDataJson == null){
+    if (empty_panel.classList.contains("hide")) {
+        empty_panel.classList.remove("hide");
+    }
+    if (!cart_panel.classList.contains("hide")) {
+        cart_panel.classList.add("hide");
+    }
+} else {
+    if (!empty_panel.classList.contains("hide")) {
+        empty_panel.classList.add("hide");
+    }
+    if (cart_panel.classList.contains("hide")) {
+        cart_panel.classList.remove("hide");
+    }
+    // Extract the movie IDs from the cartDataJson object
+    let movieIdsString = Object.keys(cartDataJson).join(',');
 
 // URL to pass into the api
-let url = `../api/cart?movieIds=${movieIdsString}`;
+    let url = `../api/cart?movieIds=${movieIdsString}`;
 
 // Makes the HTTP GET request and registers on success callback function showCartData
-jQuery.ajax({
-    dataType: "json", // Setting return data type
-    method: "GET", // Setting request method
-    url: url,
-    success: (resultData) => showCartData(resultData)
-});
+    jQuery.ajax({
+        dataType: "json", // Setting return data type
+        method: "GET", // Setting request method
+        url: url,
+        success: (resultData) => showCartData(resultData)
+    });
+}
 
 let cart_list = $("#cart-list");
 let order_summary_panel = $("#order-summary-panel");
 let subtotal_price = 0
 let tax = 0;
 let total = 0;
+
 
 
 
