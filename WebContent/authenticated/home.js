@@ -73,21 +73,6 @@ function handleTop20Result(resultData) {
         let stars = resultData[i]["stars"];
         let genres = resultData[i]["genres"];
 
-        // let genres_id = [];
-        // let genres_name = [];
-        // for (const key in genres){
-        //     genres_id.push(key);
-        //     genres_name.push(genres[key]);
-        // }
-        //
-        // let stars_id = [];
-        // let stars_name = [];
-        // for (const key in stars){
-        //     stars_id.push(key);
-        //     stars_name.push(stars[key]);
-        // }
-
-
         let genres_id = [];
         let genres_name = [];
         let count = 0;

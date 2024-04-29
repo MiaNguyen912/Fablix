@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS customers(
 Create table IF NOT EXISTS sales (
     Id integer primary key auto_increment,
     Customerid integer not null references customers(id),
-    Moviewid varchar(10) NOT NULL DEFAULT '' references movies(id),
+    Movieid varchar(10) NOT NULL DEFAULT '' references movies(id),
     Saledate Date not null
     );
 

@@ -145,33 +145,6 @@
     </header>
 
     <!-- -------------------------- BODY ----------------------- -->
-<!--    <div id="page-body" class="flex flex-col justify-center align-middle">-->
-<!--        <h1 id="page-title">Payment Details</h1>-->
-<!--            <form id="payment_form">-->
-<!--                <div>-->
-<!--                    <label for="card_number">Card Number:</label>-->
-<!--                    <input type="text" id="card_number" name="card_number" required>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <label for="first_name">First Name:</label>-->
-<!--                    <input type="text" id="first_name" name="first_name" required>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <label for="last_name">Last Name:</label>-->
-<!--                    <input type="text" id="last_name" name="last_name" required>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <label for="expiration_date">Expiration Date (mm/dd/yyyy):</label>-->
-<!--                    <input type="text" id="expiration_date" name="expiration_date" pattern="\d{2}/\d{2}/\d{4}" required>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <label for="payment_amount">Final Payment Amount: $</label>-->
-<!--                    <span id="payment_amount"></span>-->
-<!--                </div>-->
-<!--                <button type="submit" id="place_order_button" onclick="placeOrder()">Place Order</button>-->
-<!--            </form>-->
-<!--    </div>-->
-
     <div class="bg-white mx-8 mb-8 rounded-lg pt-4 flex-auto overflow-y-auto px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-0">
         <div class="mx-auto max-w-lg">
 
@@ -226,6 +199,8 @@
                 </div>
                 <button type="submit" id="pay-button" class="mt-6 w-full rounded-md border border-transparent bg-orange-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"></button>
 
+                <!-- error message -->
+                <div id="error_message" class="mt-4 text-red-600"></div>
             </form>
         </div>
     </div>

@@ -44,7 +44,9 @@ function placeOrder(placeOrderEvent) {
     //     return;
     // }
 
-    let cartData = JSON.parse(sessionStorage.getItem('cart'));
+    // let cartData = JSON.parse(sessionStorage.getItem('cart'));
+    let cartData = sessionStorage.getItem('cart');
+
 
     // Now HTTP Post request to the payment servlet to check with database if credit card is valid
     let postData = {
@@ -52,9 +54,8 @@ function placeOrder(placeOrderEvent) {
         first_name: firstName,
         last_name: lastName,
         expiration_date: formattedExpirationDate,
-        cart_data: cartData
+        cart_data: cartData // format: {"tt0395642":2,"tt0424773":1}
     };
-    console.log(formattedExpirationDate);
 
     jQuery.ajax({
         dataType: "json", // Setting return data type
@@ -62,10 +63,10 @@ function placeOrder(placeOrderEvent) {
         url: "api/payment",
         data: postData,
         success: function(response) {
-            if (response.success) {
+            if (response["status"] === "success") {
                 showConfirmation();
             } else {
-                showInvalid();
+                showInvalid(response);
             }
         }
     });
@@ -74,7 +75,10 @@ function placeOrder(placeOrderEvent) {
 
 function showConfirmation(){
     console.log("success")
+    window.location.replace("confirmation.html");
+
 }
-function showInvalid(){
-    console.log("success")
+function showInvalid(response){
+    console.log("fail")
+    $("#error_message").text(response["message"]);
 }

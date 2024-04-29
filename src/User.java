@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -7,8 +8,9 @@ import java.util.HashMap;
  */
 public class User {
     private final String username;
-
     private final String userID;
+
+    private ArrayList<Integer> sales_id;
     private HashMap<String, HashMap<String, String>> cart_items;
 
     // {
@@ -20,6 +22,7 @@ public class User {
         this.username = username;
         this.userID = id;
         cart_items = new HashMap<>();
+        sales_id = new ArrayList<>();
     }
 
     public String getUsername(){
@@ -34,6 +37,18 @@ public class User {
     public void setCart(HashMap<String, HashMap<String, String>> new_cart){
         cart_items = new_cart;
     }
+
+
+    public void setSales(ArrayList<Integer> sales){
+        sales_id = sales;
+    }
+
+    public ArrayList<Integer> getSales(){
+        return sales_id;
+    }
+
+
+
 
     public void addItemToCart(String item_id, String item_name){
         if (cart_items.get(item_id) == null){
