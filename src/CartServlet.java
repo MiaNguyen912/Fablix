@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 
 // Declaring a WebServlet called MoviesServlet, which maps to url "/api/20movies"
-@WebServlet(name = "CartServlet", urlPatterns = "/api/cart")
+@WebServlet(name = "CartServlet", urlPatterns = "/authenticated/api/cart")
 public class CartServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
