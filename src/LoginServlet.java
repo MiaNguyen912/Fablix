@@ -39,7 +39,27 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        // Get a connection from dataSource; use try-with-resources to auto close db connection after usage
+
+
+        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
+
+        // Verify reCAPTCHA
+        try {
+            RecaptchaVerifyUtils.verify(gRecaptchaResponse);
+        } catch (Exception e) {
+            JsonObject responseJsonObject = new JsonObject();
+            responseJsonObject.addProperty("status", "fail");
+            request.getServletContext().log("Login failed"); // Log to localhost log
+            // responseJsonObject.addProperty("message", e.getMessage());
+            responseJsonObject.addProperty("message", "Recaptcha verification failed");
+            response.setStatus(200); // Set response status to 200 (OK)
+            response.getWriter().write(responseJsonObject.toString()); // write out response object
+            return;
+        }
+
+
+        // Verifying username and password
         try (Connection conn = dataSource.getConnection()) {
             String query = "SELECT * FROM customers WHERE email= ?";
             PreparedStatement statement = conn.prepareStatement(query); // Declare statement
@@ -48,7 +68,14 @@ public class LoginServlet extends HttpServlet {
 
 
             JsonObject responseJsonObject = new JsonObject();
+
+
+
+
             if (rs.next()) { // rs having a row means the username or email exists
+
+
+
                 String resulting_password = rs.getString("password");
                 String id = rs.getString("id");
 
