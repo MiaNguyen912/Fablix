@@ -79,6 +79,8 @@ public class StaffLoginServlet extends HttpServlet {
                 if (resulting_password.equals(password)){
                     // Login success, set this user into the session
                     request.getSession().setAttribute("staff", new Staff(username, fullName)); // username is email
+                    request.getSession().setAttribute("user", new User(username, "000")); // create a User object with id=000 so that staff can access user's api used for browsing/searching
+
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
                 } else {

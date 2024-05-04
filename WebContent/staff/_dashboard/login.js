@@ -13,7 +13,7 @@ function handleLoginResult(resultDataString) {
     // If login succeeds, redirect the user to index.html
     if (resultDataJson["status"] === "success") {
         sessionStorage.setItem('isLoggedIn', 'true'); // store isLoggedIn information onto session storage
-        window.location.replace("home.html");
+        window.location.replace("loggedin/home.html");
     } else {
         // If login fails, display error message
         sessionStorage.setItem('isLoggedIn', 'false');

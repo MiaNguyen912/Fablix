@@ -7,12 +7,10 @@ if (isLoggedIn){
 
 } else {
     let logout_btn = document.getElementById("logout-btn");
-    let cart_btn = document.getElementById("cart-btn");
     let browse_ddl = document.getElementById("browse-dropdown-list");
     let search_form = document.getElementById("seach-form");
 
     logout_btn.style.display = "none";
-    cart_btn.style.display = "none";
     browse_ddl.style.display = "none";
     search_form.style.display = "none";
 }
@@ -28,16 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function handleLogOut(){
-    // sessionStorage.setItem('isLoggedIn', 'false'); // update isLoggedIn information onto session storage
 
-
-    // // Make an AJAX request to the servlet endpoint
-    // jQuery.ajax({
-    //     dataType: "json", // Setting return data type
-    //     method: "GET", // Setting request method
-    //     url: "api/logout",
-    //     success: (resultData) => console.log(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
-    // });
 }
 
 // --------- populate search option dropdown list---------------
@@ -81,7 +70,7 @@ function handleGenreListDisplay(resultData) {
 jQuery.ajax({
     dataType: "json", // Setting return data type
     method: "GET", // Setting request method
-    url: "api/all-genres", // Setting request url, which is mapped by StarsServlet in Stars.java
+    url: "../../../authenticated/api/all-genres", // Setting request url, which is mapped by StarsServlet in Stars.java
     success: (resultData) => handleGenreListDisplay(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
 });
 
