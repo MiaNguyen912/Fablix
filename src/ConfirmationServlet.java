@@ -50,19 +50,24 @@ public class ConfirmationServlet extends HttpServlet {
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try (Connection conn = dataSource.getConnection()) {
 
-
+            String placeholder = "";
+            for (int i = 0; i < sales_id_list.size(); i++) {
+                placeholder += "?";
+                if (i < sales_id_list.size() - 1) {
+                    placeholder += ",";
+                }
+            }
 
             query = "SELECT s.id as sale_id, title, quantity FROM movies m " +
                     "JOIN sales s ON m.id = s.movieid " +
-                    " WHERE s.id IN (";
-            for (int id : sales_id_list){
-                query += id + ",";
-            }
-            query = query.substring(0, query.length() - 1);
-            query += ")";
+                    " WHERE s.id IN (" + placeholder + ")";
 
             PreparedStatement statement = conn.prepareStatement(query);
-            ResultSet resultSet = statement.executeQuery(query);
+            int index = 1;
+            for (int id : sales_id_list) {
+                statement.setInt(index++, id);
+            }
+            ResultSet resultSet = statement.executeQuery();
             JsonArray jsonArray = new JsonArray();
 
             JsonObject responseJson = new JsonObject();

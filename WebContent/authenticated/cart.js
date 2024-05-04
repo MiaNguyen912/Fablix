@@ -22,7 +22,7 @@ if (cartDataJson == null){
     let movieIdsString = Object.keys(cartDataJson).join(',');
 
 // URL to pass into the api
-    let url = `../api/cart?movieIds=${movieIdsString}`;
+    let url = `api/cart?movieIds=${movieIdsString}`;
 
 // Makes the HTTP GET request and registers on success callback function showCartData
     jQuery.ajax({

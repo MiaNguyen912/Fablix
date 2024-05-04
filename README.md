@@ -132,3 +132,14 @@ mysql> quit;
 - In each `...Servlet.java`, a private DataSource reference dataSource is created with `@Resource` annotation. It is a reference to the DataSource `jdbc/moviedb` we registered in `web.xml`
 
 - To use DataSource, you can create a new connection to it by `dataSource.getConnection()`.
+
+### Files with Prepared Statements
+- [Top20MoviesServlet.java](src/Top20MoviesServlet.java)
+- [SingleStarServlet.java](...)
+- [SingleMovieServlet.java](...)
+- [PaymentServlet.java](...)
+- [LoginServlet.java](...)
+- [ListServlet.java](...)
+- [GenresServlet.java](...)
+- [ConfirmationServlet.java](...)
+- [CartServlet.java](...)

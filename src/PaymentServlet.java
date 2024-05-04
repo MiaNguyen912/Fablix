@@ -103,9 +103,15 @@ public class PaymentServlet extends HttpServlet {
                     String movie_id = item_data.getKey();
                     Integer quantity = item_data.getValue();
 
-                    String insert_query = "INSERT INTO sales (Customerid, Movieid, Saledate, Quantity) " +
-                            " VALUES(" + userID + ", '" + movie_id+ "', '" + LocalDate.now() + "', " + quantity + ")";
+                    String insert_query = "INSERT INTO sales (Customerid, Movieid, Saledate, Quantity) VALUES (?, ?, ?, ?)";
                     statement = conn.prepareStatement(insert_query, PreparedStatement.RETURN_GENERATED_KEYS);
+
+                    statement.setInt(1, userID);
+                    statement.setString(2, movie_id);
+                    statement.setDate(3, Date.valueOf(LocalDate.now())); // Assuming Saledate is a Date type in the database
+                    statement.setInt(4, quantity);
+
+
                     int rowsAffected = statement.executeUpdate();
 
                     // Check if any rows were affected

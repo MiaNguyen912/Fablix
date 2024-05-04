@@ -2,13 +2,12 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * This User class only has the username field in this example.
- * You can add more attributes such as the user's shopping cart items.
- */
 public class User {
     private final String username;
     private final String userID;
+
+    private String fullname;
+
 
     private ArrayList<Integer> sales_id;
     private HashMap<String, HashMap<String, String>> cart_items;
@@ -30,6 +29,11 @@ public class User {
     }
 
     public String getUserID() { return userID;}
+
+    public void setFullname(String name){ fullname = name;}
+
+    public String getFullname() { return fullname;}
+
     public HashMap<String, HashMap<String, String>> getCart(){
         return cart_items;
     }

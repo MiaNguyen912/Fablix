@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
@@ -49,8 +50,8 @@ public class Top20MoviesServlet extends HttpServlet {
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try (Connection conn = dataSource.getConnection()) {
 
-            // Declare our statement
-            Statement statement = conn.createStatement();
+            // note: the line below is replaced by: PreparedStatement statement = conn.prepareStatement(query);
+            //Statement statement = conn.createStatement(); // Declare our statement
 
             String query = "SELECT *\n" +
                     "       FROM (\n" +
@@ -89,6 +90,8 @@ public class Top20MoviesServlet extends HttpServlet {
             WHERE ranking <= 20
             ORDER BY ranked_ratings.ranking, movie_count DESC, s.name ASC;
             */
+
+            PreparedStatement statement = conn.prepareStatement(query);
 
 
             // Perform the query

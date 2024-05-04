@@ -11,9 +11,8 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Collections;
 import java.util.HashMap;
 
 
@@ -42,32 +41,37 @@ public class CartServlet extends HttpServlet {
 
         // Output stream to STDOUT
         PrintWriter out = response.getWriter();
+        String query = "";
 
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try (Connection conn = dataSource.getConnection()) {
 
             // Declare our statement
-            Statement statement = conn.createStatement();
+            //Statement statement = conn.createStatement();
 
-            // String of movieIds separated by , should be passed in, parse through it into a movieId array, then
-            // run an sql query where it only returns movies that are in that array?
+            // String of movieIds separated by ","
             String movieIdsString = request.getParameter("movieIds");
-            // Now just get the movie that match the id
+            String[] movieIdsArray = movieIdsString.split(","); // Split the movie IDs string into an array of individual IDs
 
-            // Split the movie IDs string into an array of individual IDs
-            String[] movieIdsArray = movieIdsString.split(",");
-
-            StringBuilder queryBuilder = new StringBuilder("SELECT * FROM movies WHERE id IN (");
+            String placeholder = "";
             for (int i = 0; i < movieIdsArray.length; i++) {
-                queryBuilder.append("'").append(movieIdsArray[i]).append("'");
+                placeholder += "?";
                 if (i < movieIdsArray.length - 1) {
-                    queryBuilder.append(",");
+                    placeholder += ",";
                 }
             }
-            queryBuilder.append(")");
+            query = "SELECT * FROM movies WHERE id IN (" + placeholder + ")";
+
+            PreparedStatement statement = conn.prepareStatement(query);
+            for (int i = 0; i < movieIdsArray.length; i++) {
+                statement.setString(i + 1, movieIdsArray[i]);
+            }
+
+            ResultSet rs = statement.executeQuery();
+
 
             // Perform the query
-            ResultSet rs = statement.executeQuery(queryBuilder.toString());
+            //ResultSet rs = statement.executeQuery(queryBuilder.toString());
 
             JsonArray jsonArray = new JsonArray();
 
@@ -100,6 +104,8 @@ public class CartServlet extends HttpServlet {
             // Write error message JSON object to output
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("errorMessage", e.getMessage());
+            jsonObject.addProperty("query", query);
+
             out.write(jsonObject.toString());
 
             // Set response status to 500 (Internal Server Error)

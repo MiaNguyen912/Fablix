@@ -65,7 +65,7 @@ public class ListServlet extends HttpServlet {
                 if (firstLetter.equals("*")){
                     like = " RLIKE '^[^A-Za-z0-9]' ";
                 } else {
-                    like = " LIKE '" + firstLetter + "%' ";
+                    like = " LIKE ?";
                 }
             } else if (type.equals("search")) {
                 titleParam = (request.getParameter("title") != null)? request.getParameter("title"): "";
@@ -192,8 +192,12 @@ public class ListServlet extends HttpServlet {
 
 
                 statement = conn.prepareStatement(query);
-                statement.setInt(1, limit);
-                statement.setInt(2,limit*(page-1));
+                int paramIndex = 1;
+                if (!firstLetter.equals("*")) {
+                    statement.setString(paramIndex++, firstLetter + "%");
+                }
+                statement.setInt(paramIndex++, limit);
+                statement.setInt(paramIndex,limit*(page-1));
             }
             else if (type.equals("search")){
                    /*
@@ -233,18 +237,18 @@ public class ListServlet extends HttpServlet {
                     query += " JOIN (SELECT sm.movieid as movie_of_chosen_star\n" +
                             "       FROM stars_in_movies sm\n" +
                             "       JOIN stars s ON s.id = sm.starid\n" +
-                            "       WHERE s.name LIKE '%" + starParam + "%'\n" +
+                            "       WHERE s.name LIKE ?" +
                             " ) as movies_of_chosen_star ON movies_of_chosen_star.movie_of_chosen_star = m.id\n";
                 }
 
                 if (!titleParam.isEmpty() || !yearParam.isEmpty() || !directorParam.isEmpty())
                     query += " WHERE ";
                 if (!titleParam.isEmpty())
-                    query += "(title LIKE '" + titleParam + "%' OR title LIKE '% " + titleParam + "%') AND ";
+                    query += "(title LIKE ? OR title LIKE ?) AND ";
                 if (!yearParam.isEmpty())
-                    query += "m.year = " + yearParam + " AND ";
+                    query += "m.year = ? AND ";
                 if (!directorParam.isEmpty())
-                    query += "m.director LIKE '%" + directorParam + "%' AND ";
+                    query += "m.director LIKE ? AND ";
                 if (query.endsWith(" AND "))
                     query = query.substring(0, query.length() - 5); // Remove the last " AND " if necessary
 
@@ -262,8 +266,24 @@ public class ListServlet extends HttpServlet {
                         " ORDER BY " + order_by + ", movie_count DESC, s.name ASC";
 
                 statement = conn.prepareStatement(query);
-                statement.setInt(1, limit);
-                statement.setInt(2,limit*(page-1));
+                // Set parameters
+                int paramIndex = 1;
+                if (!starParam.isEmpty()) {
+                    statement.setString(paramIndex++, "%" + starParam + "%");
+                }
+                if (!titleParam.isEmpty()) {
+                    statement.setString(paramIndex++, titleParam + "%");
+                    statement.setString(paramIndex++, "% " + titleParam + "%");
+                }
+                if (!yearParam.isEmpty()) {
+                    statement.setInt(paramIndex++, Integer.parseInt(yearParam));
+                }
+                if (!directorParam.isEmpty()) {
+                    statement.setString(paramIndex++, "%" + directorParam + "%");
+                }
+                statement.setInt(paramIndex++, limit);
+                statement.setInt(paramIndex, limit*(page-1));
+
             }
 
 
