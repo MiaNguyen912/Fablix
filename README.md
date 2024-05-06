@@ -177,3 +177,6 @@ mysql> quit;
         insert into employees_backup select * from employees;
 6. To recover the data in the "employees" table, run the following:
    <br>`update employees E1 set password = (select password from employees_backup E2 where E2.email = E1.email);`
+
+
+
