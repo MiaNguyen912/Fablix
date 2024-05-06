@@ -24,7 +24,7 @@ public class VerifyPassword {
 
 	}
 
-	private static boolean verifyCredentials(String email, String password) throws Exception {
+	public static boolean verifyCredentials(String email, String password) throws Exception {
 		
 		String loginUser = "mytestuser";
 		String loginPasswd = "My6$Password";
@@ -42,17 +42,18 @@ public class VerifyPassword {
 		if (rs.next()) {
 		    // get the encrypted password from the database
 			String encryptedPassword = rs.getString("password");
-			
+//			System.out.println("verify " + email + " - " + password + " - " + encryptedPassword);
+
 			// use the same encryptor to compare the user input password with encrypted password stored in DB
 			success = new StrongPasswordEncryptor().checkPassword(password, encryptedPassword);
 		}
 
+		String encryptedPassword = rs.getString("password");
+		System.out.println("verify " + email + " - " + password + " - " + encryptedPassword);
+
 		rs.close();
 		statement.close();
 		connection.close();
-		
-		System.out.println("verify " + email + " - " + password);
-
 		return success;
 	}
 

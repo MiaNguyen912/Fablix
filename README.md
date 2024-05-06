@@ -143,6 +143,9 @@ mysql> quit;
 - [GenresServlet.java](...)
 - [ConfirmationServlet.java](...)
 - [CartServlet.java](...)
+- [UpdatePassword.java](...)
+- [UpdatePasswordStaff.java](...)
+
 
 
 ### Encrypting password: (using http://www.jasypt.org/)
@@ -159,10 +162,18 @@ mysql> quit;
           password varchar(20) not null,
           foreign key(ccId) references creditcards(id)
         );
-        insert into customers_backup select * from customers;'''
-
+        insert into customers_backup select * from customers;
 2. Run [UpdateSecurePassword.java](src/main/java/UpdateSecurePassword.java) to update passwords in customers table from plain text to encrypted string.
-3. Use [VerifyPassword.java](src/main/java/VerifyPassword.java) to verify if the email and password are valid.
-
+3. Run [VerifyPassword.java](src/main/java/VerifyPassword.java) to verify if the email and password are valid.
 4. To recover the data in the "customers" table, run the following:
    <br>`update customers C1 set password = (select password from customers_backup C2 where C2.id = C1.id);`
+5. Repeat these steps for the employees table (run [UpdateSecurePasswordStaff.java](src/main/java/UpdateSecurePassword.java) instead)
+    ####
+        CREATE TABLE IF NOT EXISTS employees_backup(
+            email varchar(50) primary key,
+            password varchar(20) not null,
+            fullname varchar(100)
+        );
+        insert into employees_backup select * from employees;
+6. To recover the data in the "employees" table, run the following:
+   <br>`update employees E1 set password = (select password from employees_backup E2 where E2.email = E1.email);`

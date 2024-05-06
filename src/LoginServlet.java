@@ -58,38 +58,47 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-
         // Verifying username and password
         try (Connection conn = dataSource.getConnection()) {
             String query = "SELECT * FROM customers WHERE email= ?";
             PreparedStatement statement = conn.prepareStatement(query); // Declare statement
             statement.setString(1, username);
             ResultSet rs = statement.executeQuery(); // Perform the query
-
-
             JsonObject responseJsonObject = new JsonObject();
 
-
-
-
             if (rs.next()) { // rs having a row means the username or email exists
-
-
-
-                String resulting_password = rs.getString("password");
                 String id = rs.getString("id");
 
-                if (resulting_password.equals(password)){
+                // verifying password using encrypted password
+                VerifyPassword verifier = new VerifyPassword();
+                if (verifier.verifyCredentials(username, password)){
                     // Login success, set this user into the session
                     request.getSession().setAttribute("user", new User(username, id)); // initialize a User object
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
-                } else {
+                }
+                else {
                     // Login fail because of wrong password
                     responseJsonObject.addProperty("status", "fail");
                     request.getServletContext().log("Login failed"); // Log to localhost log
                     responseJsonObject.addProperty("message", "incorrect password");
                 }
+
+
+
+//                // verifying password using plain text password
+//                String resulting_password = rs.getString("password");
+//                if (resulting_password.equals(password)){
+//                    // Login success, set this user into the session
+//                    request.getSession().setAttribute("user", new User(username, id)); // initialize a User object
+//                    responseJsonObject.addProperty("status", "success");
+//                    responseJsonObject.addProperty("message", "success");
+//                } else {
+//                    // Login fail because of wrong password
+//                    responseJsonObject.addProperty("status", "fail");
+//                    request.getServletContext().log("Login failed"); // Log to localhost log
+//                    responseJsonObject.addProperty("message", "incorrect password");
+//                }
             }
             else {
                 // Login fail because of wrong username/email
@@ -102,9 +111,8 @@ public class LoginServlet extends HttpServlet {
             statement.close();
             response.setStatus(200); // Set response status to 200 (OK)
             response.getWriter().write(responseJsonObject.toString()); // write out response object
-
-
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             // Write error message JSON object to output
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("errorMessage", e.getMessage());
