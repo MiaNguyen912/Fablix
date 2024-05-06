@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter(filterName = "LoginFilter", urlPatterns = "/authenticated/*")
+@WebFilter(filterName = "LoginFilter", urlPatterns = "/*")
 public class LoginFilter implements Filter {
     private final ArrayList<String> allowedURIs = new ArrayList<>();
 
@@ -32,7 +32,8 @@ public class LoginFilter implements Filter {
 
         // Redirect to login page if the "user" attribute doesn't exist in session
         if (httpRequest.getSession().getAttribute("user") == null) {
-            httpResponse.sendRedirect("../login.html"); // we'll be redirect from page, for example, authenticated/single-movie, so we need "../"
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.html");
+
         } else {
             chain.doFilter(request, response);
         }
@@ -64,6 +65,10 @@ public class LoginFilter implements Filter {
         allowedURIs.add("index.html"); // home page
         allowedURIs.add("index.js");
         allowedURIs.add("api/20movies");
+
+        allowedURIs.add("fablix/_dashboard/login.html"); // login page
+        allowedURIs.add("fablix/_dashboard/login.js");
+        allowedURIs.add("fablix/_dashboard/api/staff-login");
     }
 
     public void destroy() {

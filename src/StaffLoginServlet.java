@@ -15,7 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 
-@WebServlet(name = "StaffLoginServlet", urlPatterns = "/api/staff-login")
+@WebServlet(name = "StaffLoginServlet", urlPatterns = "/fablix/_dashboard/api/staff-login")
 public class StaffLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 
@@ -94,7 +94,7 @@ public class StaffLoginServlet extends HttpServlet {
                 // Login fail because of wrong username/email
                 responseJsonObject.addProperty("status", "fail");
                 request.getServletContext().log("Login failed"); // Log to localhost log
-                responseJsonObject.addProperty("message", "Username " + username + " doesn't exist");
+                responseJsonObject.addProperty("message", "Employee's username " + username + " doesn't exist");
             }
 
             rs.close();

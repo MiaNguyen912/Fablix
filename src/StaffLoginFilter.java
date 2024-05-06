@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter(filterName = "StaffLoginFilter", urlPatterns = "/staff/_dashboard/authenticated/*")
+@WebFilter(filterName = "StaffLoginFilter", urlPatterns = "/fablix/_dashboard/*")
 public class StaffLoginFilter implements Filter {
     private final ArrayList<String> allowedURIs = new ArrayList<>();
 
@@ -32,7 +32,8 @@ public class StaffLoginFilter implements Filter {
 
         // Redirect to login page if the "user" attribute doesn't exist in session
         if (httpRequest.getSession().getAttribute("staff") == null) {
-            httpResponse.sendRedirect("../login.html");
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/fablix/_dashboard/login.html");
+
         } else {
             chain.doFilter(request, response);
         }
@@ -49,9 +50,13 @@ public class StaffLoginFilter implements Filter {
     }
 
     public void init(FilterConfig fConfig) {
-        allowedURIs.add("staff/_dashboard/login.html"); // login page
-        allowedURIs.add("staff/_dashboard/login.js");
-        allowedURIs.add("api/staff-login");
+        allowedURIs.add("/fablix/_dashboard/login.html"); // login page
+        allowedURIs.add("/fablix/_dashboard/login.js");
+        allowedURIs.add("/fablix/_dashboard/api/staff-login");
+//        allowedURIs.add("/login.html"); // login page
+//        allowedURIs.add("/login.js");
+//        allowedURIs.add("/api/staff-login");
+
     }
 
     public void destroy() {

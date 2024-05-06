@@ -39,7 +39,7 @@ function submitLoginForm(formSubmitEvent) {
 
     // Makes the asynchronous POST request and registers on success callback function handleLoginResult
     $.ajax(
-        "../../api/staff-login", {
+        "api/staff-login", {
             method: "POST",
             data: login_form.serialize(), // Serialize the login form to the data sent by POST request
             success: handleLoginResult // if success, jQuery will call handleLoginResult and pass the response data as an argument.
