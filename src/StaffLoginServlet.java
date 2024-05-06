@@ -69,14 +69,12 @@ public class StaffLoginServlet extends HttpServlet {
             JsonObject responseJsonObject = new JsonObject();
 
 
-            if (rs.next()) { // rs having a row means the username or email exists
-
-
-
-                String resulting_password = rs.getString("password");
+            if (rs.next()) { // rs having a row means the username or email exists -> check password
                 String fullName = rs.getString("fullName");
 
-                if (resulting_password.equals(password)){
+                VerifyPassword verifier = new VerifyPassword();
+                if (verifier.verifyCredentialsStaff(username, password)){
+                    System.out.println("login success");
                     // Login success, set this user into the session
                     request.getSession().setAttribute("staff", new Staff(username, fullName)); // username is email
                     request.getSession().setAttribute("user", new User(username, "000")); // create a User object with id=000 so that staff can access user's api used for browsing/searching
@@ -84,11 +82,34 @@ public class StaffLoginServlet extends HttpServlet {
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
                 } else {
+                    System.out.println("login fail");
+
                     // Login fail because of wrong password
                     responseJsonObject.addProperty("status", "fail");
                     request.getServletContext().log("Login failed"); // Log to localhost log
                     responseJsonObject.addProperty("message", "Incorrect password");
                 }
+
+
+
+
+
+//                String resulting_password = rs.getString("password");
+//                String fullName = rs.getString("fullName");
+//
+//                if (resulting_password.equals(password)){
+//                    // Login success, set this user into the session
+//                    request.getSession().setAttribute("staff", new Staff(username, fullName)); // username is email
+//                    request.getSession().setAttribute("user", new User(username, "000")); // create a User object with id=000 so that staff can access user's api used for browsing/searching
+//
+//                    responseJsonObject.addProperty("status", "success");
+//                    responseJsonObject.addProperty("message", "success");
+//                } else {
+//                    // Login fail because of wrong password
+//                    responseJsonObject.addProperty("status", "fail");
+//                    request.getServletContext().log("Login failed"); // Log to localhost log
+//                    responseJsonObject.addProperty("message", "Incorrect password");
+//                }
             }
             else {
                 // Login fail because of wrong username/email

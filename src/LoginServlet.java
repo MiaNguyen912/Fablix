@@ -71,7 +71,7 @@ public class LoginServlet extends HttpServlet {
 
                 // verifying password using encrypted password
                 VerifyPassword verifier = new VerifyPassword();
-                if (verifier.verifyCredentials(username, password)){
+                if (verifier.verifyCredentialsCustomers(username, password)){
                     // Login success, set this user into the session
                     request.getSession().setAttribute("user", new User(username, id)); // initialize a User object
                     responseJsonObject.addProperty("status", "success");
