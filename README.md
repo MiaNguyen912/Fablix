@@ -143,3 +143,26 @@ mysql> quit;
 - [GenresServlet.java](...)
 - [ConfirmationServlet.java](...)
 - [CartServlet.java](...)
+
+
+### Encrypting password: (using http://www.jasypt.org/)
+(make sure to change your mysql username and password in the 2 files below)
+1. Create a backup of the "customers" table:
+    ####
+        create table customers_backup(
+          id integer auto_increment primary key,
+          firstName varchar(50) not null,
+          lastName varchar(50) not null,
+          ccId varchar(20) not null,
+          address varchar(200) not null,
+          email varchar(50) not null,
+          password varchar(20) not null,
+          foreign key(ccId) references creditcards(id)
+        );
+        insert into customers_backup select * from customers;'''
+
+2. Run [UpdateSecurePassword.java](src/main/java/UpdateSecurePassword.java) to update passwords in customers table from plain text to encrypted string.
+3. Use [VerifyPassword.java](src/main/java/VerifyPassword.java) to verify if the email and password are valid.
+
+4. To recover the data in the "customers" table, run the following:
+   <br>`update customers C1 set password = (select password from customers_backup C2 where C2.id = C1.id);`
