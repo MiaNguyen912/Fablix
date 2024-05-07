@@ -105,7 +105,6 @@ public class StarDomParser {
 //        System.out.println(birthYear);
 
         // create a new Utility.Star with the value read from the xml nodes
-        System.out.println(lastStarID);
         Star newStar = new Star("nm" + (++lastStarID), name);
         if (birthYear != -1) {
             newStar.setBirthYear(birthYear);
@@ -138,13 +137,16 @@ public class StarDomParser {
      */
     private int getIntValue(Element ele, String tagName) {
         int intVal = -1;
+        String textVal = "";
         try {
-            String textVal = getTextValue(ele, tagName);
-            textVal = textVal.replaceAll("[^a-zA-Z0-9]", ""); // remove non-alphanumeric characters
-            intVal = Integer.parseInt(textVal);
+            textVal = getTextValue(ele, tagName);
+            String modifiedTextVal = textVal.replaceAll("[^a-zA-Z0-9]", ""); // remove non-alphanumeric characters
+            intVal = Integer.parseInt(modifiedTextVal);
         } catch (NumberFormatException e) {
             // Handle the case where the text cannot be parsed as an integer
-            System.out.println("Error parsing integer value for tag " + tagName + ": " + e.getMessage());
+            if (textVal.equals(""))
+                textVal = "(blank)";
+            System.out.println("Error parsing integer value for tag <" + tagName + "> --- value: " + textVal);
             // NOTE: <actor> with blank or invalid <dob> will have textVal for dob as "", thus cause exception
             // those invalid dob will have intVal == -1 instead
             // A lot of error message will be printed out but it's ok
