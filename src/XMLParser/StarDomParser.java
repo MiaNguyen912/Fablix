@@ -27,6 +27,8 @@ import java.util.*;
 
 
 public class StarDomParser {
+
+    private static final String TABLE = "stars";
     private DataSource dataSource;
     static int lastStarID;
     List<Star> stars = new ArrayList<>();
@@ -37,12 +39,14 @@ public class StarDomParser {
         String lastStarID_string = "";
         try {
             try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "mytestuser", "My6$Password")){;
-            String query = "select max(id) from stars;";
+            String query = "select max(id) from " + TABLE;
                 PreparedStatement statement = conn.prepareStatement(query);
                 ResultSet rs = statement.executeQuery();
                 if (rs.next()) {
                     lastStarID_string = rs.getString(1);
-//                    System.out.println(lastStarID_string);
+                    if (lastStarID_string == null)
+                        lastStarID_string = "nm0000000";
+                    // System.out.println(lastStarID_string);
                 }
                 rs.close();
                 statement.close();
@@ -101,6 +105,7 @@ public class StarDomParser {
 //        System.out.println(birthYear);
 
         // create a new Utility.Star with the value read from the xml nodes
+        System.out.println(lastStarID);
         Star newStar = new Star("nm" + (++lastStarID), name);
         if (birthYear != -1) {
             newStar.setBirthYear(birthYear);
@@ -164,30 +169,41 @@ public class StarDomParser {
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
+            PreparedStatement statement = null;
+            int[] iNoRows = null;
+            String query = "INSERT INTO " + TABLE + "(id, name, birthYear) VALUES (?, ?, ?)";
 
-            int count = 0;
-            String query = "INSERT INTO stars(id, name, birthYear) VALUES (?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-
-            System.out.println("Adding new stars");
-            for (Star s : stars){
-                String id = s.getId();
-                String name = s.getName();
-                int birthYear = s.getBirthYear();
-                statement.setString(1, id);
-                statement.setString(2, name);
-                if (birthYear != 0){
-                    statement.setInt(3, birthYear);
-                } else {
-                    statement.setNull(3, java.sql.Types.INTEGER); // set value of birthYear to NULL if birthYear data from the xml file doesn't exist
+            try {
+                connection.setAutoCommit(false);
+                statement = connection.prepareStatement(query);
+                System.out.println("Adding new stars");
+                for(Star s : stars)
+                {
+                    String id = s.getId();
+                    String name = s.getName();
+                    int birthYear = s.getBirthYear();
+                    statement.setString(1, id);
+                    statement.setString(2, name);
+                    if (birthYear != 0){
+                        statement.setInt(3, birthYear);
+                    } else {
+                        statement.setNull(3, java.sql.Types.INTEGER); // set value of birthYear to NULL if birthYear data from the xml file doesn't exist
+                    }
+                    statement.addBatch();
                 }
-                int updateResult = statement.executeUpdate();
-                count += updateResult;
+                iNoRows = statement.executeBatch(); // Each int in the array represents the update count for each command in the batch.
+                connection.commit();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            System.out.println("Inserting new stars completed, " + count + " rows affected");
-            statement.close();
-            connection.close();
 
+            try {
+                if (statement!=null) statement.close();
+                if(connection!=null) connection.close();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println("Inserting new stars completed, " + iNoRows.length + " rows affected");
         }
         catch (Exception e) {e.printStackTrace();}
     }
