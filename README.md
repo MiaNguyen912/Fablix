@@ -186,3 +186,7 @@ mysql> quit;
 
 ### Bulk import from XML files:
 - run [XMLParser.StarDomParser.java](...) to import new actors (remember to check location of the XML file in StarDomParser.java)
+
+  
+### methods to boost up query:
+- use batch insert
