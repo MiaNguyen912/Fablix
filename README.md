@@ -182,3 +182,7 @@ mysql> quit;
 - Get a reCAPTCHA from Google. v3 Admin Console -> Register a new site -> Choose Challenge (v2) -> Enter both your AWS public IP and "localhost" in "Domains" section -> Click "Submit"
 - In src/LoginServlet.RecaptchaConstants.java, replace YOUR_SECRET_KEY; with your own reCAPTCHA secret key.
 - In WebContent/index.html, replace data-sitekey="YOUR_SITE_KEY" with your own reCAPTCHA site key.
+
+
+### Bulk import from XML files:
+- run [XMLParser.StarDomParser.java](...) to import new actors (remember to check location of the XML file in StarDomParser.java)

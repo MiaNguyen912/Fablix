@@ -17,6 +17,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
 
+/* actors63.xml format:
+        <actors>
+            <actor><stagename>Willie Aames</stagename> <dowstart></dowstart> <dowend></dowend> <familyname>Aames</familyname> <firstname>William</firstname> <gender>M</gender> <dob>1960</dob> <dod>1984+</dod> <roletype>unknown</roletype> <origin>\Am</origin> <picref/> <relationships/> <notes/></actor>
+            <actor><stagename>Bud Abbott</stagename> <dowstart>1939</dowstart> <dowend>1956</dowend> <familyname> Abbott</familyname> <firstname>William</firstname> <gender>M</gender> <dob>1895</dob> <dod>1974</dod> <roletype>straight comedian</roletype> <origin>\Am</origin>  <studio>Universal</studio> <relationships><relship><reltype>Ww</reltype><towhom><relname>Lou Costello</relname></towhom></relship></relationships> <notes/></actor>
+            ...
+        </actors>
+* */
+
+
 public class StarDomParser {
     private DataSource dataSource;
     static int lastStarID;
@@ -49,7 +58,7 @@ public class StarDomParser {
     public void runParser() {
         parseXmlFile(); // parse the xml file and get the dom object
         parseDocument(); // get each employee element and create a Employee object
-//        printData(); // iterate through the list and print the data
+        // printData(); // iterate through the list and print the data
     }
 
     private void parseXmlFile() {
@@ -92,10 +101,11 @@ public class StarDomParser {
 //        System.out.println(birthYear);
 
         // create a new Utility.Star with the value read from the xml nodes
-        Star newStar = new Star("nm" + (lastStarID++), name);
+        Star newStar = new Star("nm" + (++lastStarID), name);
         if (birthYear != -1) {
             newStar.setBirthYear(birthYear);
         }
+
         return newStar;
     }
 
@@ -147,7 +157,39 @@ public class StarDomParser {
     }
 
     private void insertDataToBD(){
+        try {
+            String loginUser = "mytestuser";
+            String loginPasswd = "My6$Password";
+            String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
 
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
+
+            int count = 0;
+            String query = "INSERT INTO stars(id, name, birthYear) VALUES (?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(query);
+
+            System.out.println("Adding new stars");
+            for (Star s : stars){
+                String id = s.getId();
+                String name = s.getName();
+                int birthYear = s.getBirthYear();
+                statement.setString(1, id);
+                statement.setString(2, name);
+                if (birthYear != 0){
+                    statement.setInt(3, birthYear);
+                } else {
+                    statement.setNull(3, java.sql.Types.INTEGER); // set value of birthYear to NULL if birthYear data from the xml file doesn't exist
+                }
+                int updateResult = statement.executeUpdate();
+                count += updateResult;
+            }
+            System.out.println("Inserting new stars completed, " + count + " rows affected");
+            statement.close();
+            connection.close();
+
+        }
+        catch (Exception e) {e.printStackTrace();}
     }
 
 
