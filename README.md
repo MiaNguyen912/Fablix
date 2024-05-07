@@ -178,5 +178,7 @@ mysql> quit;
 6. To recover the data in the "employees" table, run the following:
    <br>`update employees E1 set password = (select password from employees_backup E2 where E2.email = E1.email);`
 
-
-
+### Config recaptcha
+- Get a reCAPTCHA from Google. v3 Admin Console -> Register a new site -> Choose Challenge (v2) -> Enter both your AWS public IP and "localhost" in "Domains" section -> Click "Submit"
+- In src/RecaptchaConstants.java, replace YOUR_SECRET_KEY; with your own reCAPTCHA secret key.
+- In WebContent/index.html, replace data-sitekey="YOUR_SITE_KEY" with your own reCAPTCHA site key.
