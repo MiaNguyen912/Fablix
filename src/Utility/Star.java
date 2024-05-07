@@ -1,3 +1,5 @@
+package Utility;
+
 public class Star {
     private final String id;
     private int birthYear;

@@ -1,3 +1,4 @@
+package DataServlet;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -20,8 +21,8 @@ import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
 
-// Declaring a WebServlet called SingleMovieServlet, which maps to url "/api/single-movie?id=..."
-@WebServlet(name = "SingleMovieServlet", urlPatterns = "/authenticated/api/single-movie")
+// Declaring a WebServlet called DataServlet.SingleMovieServlet, which maps to url "/api/single-movie?id=..."
+@WebServlet(name = "DataServlet.SingleMovieServlet", urlPatterns = "/authenticated/api/single-movie")
 public class SingleMovieServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 

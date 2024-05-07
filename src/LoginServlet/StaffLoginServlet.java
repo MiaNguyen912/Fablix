@@ -1,3 +1,6 @@
+package LoginServlet;
+import Utility.Staff;
+import Utility.User;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import jakarta.servlet.ServletConfig;
@@ -15,7 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 
-@WebServlet(name = "StaffLoginServlet", urlPatterns = "/fablix/_dashboard/api/staff-login")
+@WebServlet(name = "LoginServlet.LoginServlet.StaffLoginServlet", urlPatterns = "/fablix/_dashboard/api/staff-login")
 public class StaffLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 
@@ -77,7 +80,7 @@ public class StaffLoginServlet extends HttpServlet {
                     System.out.println("login success");
                     // Login success, set this user into the session
                     request.getSession().setAttribute("staff", new Staff(username, fullName)); // username is email
-                    request.getSession().setAttribute("user", new User(username, "000")); // create a User object with id=000 so that staff can access user's api used for browsing/searching
+                    request.getSession().setAttribute("user", new User(username, "000")); // create a Utility.User object with id=000 so that staff can access user's api used for browsing/searching
 
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
@@ -99,8 +102,8 @@ public class StaffLoginServlet extends HttpServlet {
 //
 //                if (resulting_password.equals(password)){
 //                    // Login success, set this user into the session
-//                    request.getSession().setAttribute("staff", new Staff(username, fullName)); // username is email
-//                    request.getSession().setAttribute("user", new User(username, "000")); // create a User object with id=000 so that staff can access user's api used for browsing/searching
+//                    request.getSession().setAttribute("staff", new Utility.Staff(username, fullName)); // username is email
+//                    request.getSession().setAttribute("user", new Utility.User(username, "000")); // create a Utility.User object with id=000 so that staff can access user's api used for browsing/searching
 //
 //                    responseJsonObject.addProperty("status", "success");
 //                    responseJsonObject.addProperty("message", "success");

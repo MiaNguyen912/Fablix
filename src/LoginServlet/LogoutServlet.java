@@ -1,3 +1,5 @@
+package LoginServlet;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import jakarta.servlet.ServletConfig;
@@ -10,7 +12,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebServlet(name = "LogoutServlet", urlPatterns = "/api/logout") // LoginServlet handles GET request sent to /api/logout
+@WebServlet(name = "LoginServlet.LogoutServlet", urlPatterns = "/api/logout") // LoginServlet.LoginServlet handles GET request sent to /api/logout
 public class LogoutServlet extends HttpServlet {
 
     /**

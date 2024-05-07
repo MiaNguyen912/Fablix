@@ -1,3 +1,5 @@
+package DataServlet;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import jakarta.servlet.ServletConfig;
@@ -23,7 +25,7 @@ import java.util.TreeMap;
  */
 
 // Declaring a WebServlet called FormServlet, which maps to url "/api/search"
-@WebServlet(name = "ListServlet", urlPatterns = "/authenticated/api/list")
+@WebServlet(name = "DataServlet.ListServlet", urlPatterns = "/authenticated/api/list")
 public class ListServlet extends HttpServlet {
     private DataSource dataSource;
     public void init(ServletConfig config) {

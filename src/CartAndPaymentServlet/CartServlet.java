@@ -1,3 +1,5 @@
+package CartAndPaymentServlet;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import jakarta.servlet.ServletConfig;
@@ -17,7 +19,7 @@ import java.util.HashMap;
 
 
 // Declaring a WebServlet called MoviesServlet, which maps to url "/api/20movies"
-@WebServlet(name = "CartServlet", urlPatterns = "/authenticated/api/cart")
+@WebServlet(name = "CartAndPaymentServlet.CartServlet", urlPatterns = "/authenticated/api/cart")
 public class CartServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

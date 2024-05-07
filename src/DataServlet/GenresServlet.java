@@ -1,3 +1,4 @@
+package DataServlet;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -17,7 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-@WebServlet(name = "GenresServlet", urlPatterns = "/authenticated/api/all-genres")
+@WebServlet(name = "DataServlet.GenresServlet", urlPatterns = "/authenticated/api/all-genres")
 public class GenresServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 

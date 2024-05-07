@@ -1,3 +1,4 @@
+package DataServlet;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -20,8 +21,8 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
-// Declaring a WebServlet called SingleStarServlet, which maps to url "/api/single-star/id=..."
-@WebServlet(name = "SingleStarServlet", urlPatterns = "/authenticated/api/single-star")
+// Declaring a WebServlet called DataServlet.SingleStarServlet, which maps to url "/api/single-star/id=..."
+@WebServlet(name = "DataServlet.SingleStarServlet", urlPatterns = "/authenticated/api/single-star")
 public class SingleStarServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 

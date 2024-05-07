@@ -1,3 +1,5 @@
+package LoginServlet;
+
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -7,10 +9,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Servlet Filter implementation class LoginFilter
+ * Servlet Filter implementation class LoginServlet.LoginFilter
  */
-@WebFilter(filterName = "LoginFilter", urlPatterns = "/*")
-public class LoginFilter implements Filter {
+@WebFilter(filterName = "LoginServlet.LoginServlet.StaffLoginFilter", urlPatterns = "/fablix/_dashboard/*")
+public class StaffLoginFilter implements Filter {
     private final ArrayList<String> allowedURIs = new ArrayList<>();
 
     /**
@@ -21,7 +23,7 @@ public class LoginFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        System.out.println("LoginFilter: " + httpRequest.getRequestURI());
+        System.out.println("LoginServlet.LoginFilter: " + httpRequest.getRequestURI());
 
         // Check if this URL is allowed to access without logging in
         if (this.isUrlAllowedWithoutLogin(httpRequest.getRequestURI())) {
@@ -31,8 +33,8 @@ public class LoginFilter implements Filter {
         }
 
         // Redirect to login page if the "user" attribute doesn't exist in session
-        if (httpRequest.getSession().getAttribute("user") == null) {
-            httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.html");
+        if (httpRequest.getSession().getAttribute("staff") == null) {
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/fablix/_dashboard/login.html");
 
         } else {
             chain.doFilter(request, response);
@@ -40,35 +42,23 @@ public class LoginFilter implements Filter {
     }
 
     private boolean isUrlAllowedWithoutLogin(String requestURI) {
-        /*
-         Setup your own rules here to allow accessing some resources without logging in
-         Always allow your own login related requests(html, js, servlet, etc..)
-         You might also want to allow some CSS files, etc..
-         */
 
-
-        if (requestURI.contains("assets/")){
+        if (requestURI.contains("../assets/")) {
             return true;
         }
-        //        if (requestURI.endsWith(".css") || requestURI.endsWith(".png")) {
-        //            return true; // Allow access to CSS and png files without login
-        //        }
 
         // allow all files/url specified in allowedURIs
         return allowedURIs.stream().anyMatch(requestURI.toLowerCase()::endsWith);
     }
 
     public void init(FilterConfig fConfig) {
-        allowedURIs.add("login.html"); // login page
-        allowedURIs.add("login.js");
-        allowedURIs.add("api/login");
-        allowedURIs.add("index.html"); // home page
-        allowedURIs.add("index.js");
-        allowedURIs.add("api/20movies");
+        allowedURIs.add("/fablix/_dashboard/login.html"); // login page
+        allowedURIs.add("/fablix/_dashboard/login.js");
+        allowedURIs.add("/fablix/_dashboard/api/staff-login");
+//        allowedURIs.add("/login.html"); // login page
+//        allowedURIs.add("/login.js");
+//        allowedURIs.add("/api/staff-login");
 
-        allowedURIs.add("fablix/_dashboard/login.html"); // login page
-        allowedURIs.add("fablix/_dashboard/login.js");
-        allowedURIs.add("fablix/_dashboard/api/staff-login");
     }
 
     public void destroy() {

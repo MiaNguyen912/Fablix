@@ -1,3 +1,6 @@
+package CartAndPaymentServlet;
+
+import Utility.User;
 import com.google.gson.*;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,15 +14,10 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
-@WebServlet(name = "ConfirmationServlet", urlPatterns = "/authenticated/api/confirmation")
+@WebServlet(name = "CartAndPaymentServlet.ConfirmationServlet", urlPatterns = "/authenticated/api/confirmation")
 public class ConfirmationServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

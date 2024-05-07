@@ -1,14 +1,11 @@
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import jakarta.servlet.ServletConfig;
+package XMLParser;
+
+import Utility.Star;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.sql.DataSource;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -73,11 +70,11 @@ public class StarDomParser {
         // get the document root Element
         Element documentElement = dom.getDocumentElement();
 
-        // get a nodelist of star Elements, parse each into Star object
+        // get a nodelist of star Elements, parse each into Utility.Star object
         NodeList actorsList = documentElement.getElementsByTagName("actor");
         for (int i = 0; i < actorsList.getLength(); i++) {
             Element element = (Element) actorsList.item(i); // get the star element
-            Star star = parseStar(element); // get the Star object
+            Star star = parseStar(element); // get the Utility.Star object
             stars.add(star); // add it to list
         }
     }
@@ -94,7 +91,7 @@ public class StarDomParser {
         int birthYear = getIntValue(element, "dob");
 //        System.out.println(birthYear);
 
-        // create a new Star with the value read from the xml nodes
+        // create a new Utility.Star with the value read from the xml nodes
         Star newStar = new Star("nm" + (lastStarID++), name);
         if (birthYear != -1) {
             newStar.setBirthYear(birthYear);
@@ -104,7 +101,7 @@ public class StarDomParser {
 
     /**
      * It takes an XML element and the tag name, look for the tag and get the text content
-     * i.e for <Star><Name>John</Name></Star> xml snippet if the Element points to Star node and tagName is name it will return John
+     * i.e for <Utility.Star><Name>John</Name></Utility.Star> xml snippet if the Element points to Utility.Star node and tagName is name it will return John
      */
     private String getTextValue(Element element, String tagName) {
         String textVal = null;

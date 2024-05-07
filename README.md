@@ -66,30 +66,30 @@ mysql> quit;
 ### Brief Explanation
 - This project uses `jQuery` for making HTTP requests and manipulate DOM.
 
-- [SingleMovieServlet.java](src/SingleMovieServlet.java), [SingleStarServlet.java](src/SingleStarServlet.java), [Top20MoviesServlet.java](src/Top20MoviesServlet.java): Java servlets that handle HTTP GET request by talking to the database and return information in the JSON format.
+- [DataServlet.SingleMovieServlet.java](src/SingleMovieServlet.java), [DataServlet.SingleStarServlet.java](src/SingleStarServlet.java), [DataServlet.Top20MoviesServlet.java](src/Top20MoviesServlet.java): Java servlets that handle HTTP GET request by talking to the database and return information in the JSON format.
 
 
 - [listServlet.java](...): generate API result when user searches for movies based on title's starting letter, by genre, or by searching for keyword (handle HTTP GET requests)
 
 
-- [User.java](...): a utility class that has variables and functions use for the login user
+- [Utility.User.java](...): a utility class that has variables and functions use for the login user
 
 
-- [LoginServlet.java](src/LoginServlet.java) handles the login requests. It contains the following functionalities:
+- [LoginServlet.LoginServlet.java](src/LoginServlet.java) handles the login requests. It contains the following functionalities:
    - It gets the username and password from the parameters.
    - It verifies the username and password.
-   - If login succeeds, it puts the `User` object in the session. Then it sends back a JSON response: `{"status": "success", "message": "success"}` .
+   - If login succeeds, it puts the `Utility.User` object in the session. Then it sends back a JSON response: `{"status": "success", "message": "success"}` .
    - If login fails, the JSON response will be: `{"status": "fail", "message": "incorrect password"}` or `{"status": "fail", "message": "user <username> doesn't exist"}`.
 
 
-- [LoginFilter.java](src/LoginFilter.java) is a special `Filter` class. It serves the purpose that for each URL request, if the user is not logged in, then it redirects the user to the `login.html` page.
+- [LoginServlet.LoginFilter.java](src/LoginFilter.java) is a special `Filter` class. It serves the purpose that for each URL request, if the user is not logged in, then it redirects the user to the `login.html` page.
    - A `Filter` class intercepts all incoming requests and determines if such requests are allowed against the rules we implement. See more details about `Filter` class [here](http://tutorials.jenkov.com/java-servlets/servlet-filters.html).
    - In `Filter`, all requests will pass through the `doFilter` function.
-   - `LoginFilter` first checks if the request (the URL pattern) maps to the home page or login page (which are allowed to access without login).
+   - `LoginServlet.LoginFilter` first checks if the request (the URL pattern) maps to the home page or login page (which are allowed to access without login).
    - It then checks if the user has logged in to the current session. If so, it redirects the user to the requested URL and if otherwise,`login.html` .
 
 
-- [CartServlet.java](...): handle HTTP POST request when user finalize their items in cart and go to checkout page
+- [CartAndPaymentServlet.CartServlet.java](...): handle HTTP POST request when user finalize their items in cart and go to checkout page
 
 
 - [PaymentServet.java](src/IndexServlet.java): has method doPOST, which is invoked with HTTP POST requests, responsible for validating card information 
@@ -134,15 +134,15 @@ mysql> quit;
 - To use DataSource, you can create a new connection to it by `dataSource.getConnection()`.
 
 ### Files with Prepared Statements
-- [Top20MoviesServlet.java](src/Top20MoviesServlet.java)
-- [SingleStarServlet.java](...)
-- [SingleMovieServlet.java](...)
-- [PaymentServlet.java](...)
-- [LoginServlet.java](...)
-- [ListServlet.java](...)
-- [GenresServlet.java](...)
-- [ConfirmationServlet.java](...)
-- [CartServlet.java](...)
+- [DataServlet.Top20MoviesServlet.java](src/Top20MoviesServlet.java)
+- [DataServlet.SingleStarServlet.java](...)
+- [DataServlet.SingleMovieServlet.java](...)
+- [CartAndPaymentServlet.java](...)
+- [LoginServlet.LoginServlet.java](...)
+- [DataServlet.ListServlet.java](...)
+- [DataServlet.GenresServlet.java](...)
+- [CartAndPaymentServlet.ConfirmationServlet.java](...)
+- [CartAndPaymentServlet.CartServlet.java](...)
 - [UpdatePassword.java](...)
 - [UpdatePasswordStaff.java](...)
 
@@ -163,11 +163,11 @@ mysql> quit;
           foreign key(ccId) references creditcards(id)
         );
         insert into customers_backup select * from customers;
-2. Run [UpdateSecurePassword.java](src/main/java/UpdateSecurePassword.java) to update passwords in customers table from plain text to encrypted string.
-3. Run [VerifyPassword.java](src/main/java/VerifyPassword.java) to verify if the email and password are valid.
+2. Run [LoginServlet.UpdateSecurePassword.java](src/main/java/UpdateSecurePassword.java) to update passwords in customers table from plain text to encrypted string.
+3. Run [LoginServlet.VerifyPassword.java](src/main/java/VerifyPassword.java) to verify if the email and password are valid.
 4. To recover the data in the "customers" table, run the following:
    <br>`update customers C1 set password = (select password from customers_backup C2 where C2.id = C1.id);`
-5. Repeat these steps for the employees table (run [UpdateSecurePasswordStaff.java](src/main/java/UpdateSecurePassword.java) instead)
+5. Repeat these steps for the employees table (run [LoginServlet.UpdateSecurePasswordStaff.java](src/main/java/UpdateSecurePassword.java) instead)
     ####
         CREATE TABLE IF NOT EXISTS employees_backup(
             email varchar(50) primary key,
@@ -180,5 +180,5 @@ mysql> quit;
 
 ### Config recaptcha
 - Get a reCAPTCHA from Google. v3 Admin Console -> Register a new site -> Choose Challenge (v2) -> Enter both your AWS public IP and "localhost" in "Domains" section -> Click "Submit"
-- In src/RecaptchaConstants.java, replace YOUR_SECRET_KEY; with your own reCAPTCHA secret key.
+- In src/LoginServlet.RecaptchaConstants.java, replace YOUR_SECRET_KEY; with your own reCAPTCHA secret key.
 - In WebContent/index.html, replace data-sitekey="YOUR_SITE_KEY" with your own reCAPTCHA site key.

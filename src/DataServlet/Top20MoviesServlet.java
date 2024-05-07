@@ -1,3 +1,4 @@
+package DataServlet;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -22,7 +23,7 @@ import java.util.TreeMap;
 
 
 // Declaring a WebServlet called MoviesServlet, which maps to url "/api/20movies"
-@WebServlet(name = "Top20MoviesServlet", urlPatterns = "/api/20movies")
+@WebServlet(name = "DataServlet.Top20MoviesServlet", urlPatterns = "/api/20movies")
 public class Top20MoviesServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

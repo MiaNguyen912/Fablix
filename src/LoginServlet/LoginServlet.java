@@ -1,4 +1,6 @@
-import com.google.gson.JsonArray;
+package LoginServlet;
+import Utility.User;
+
 import com.google.gson.JsonObject;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,9 +15,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.HashMap;
 
-@WebServlet(name = "LoginServlet", urlPatterns = "/api/login") // LoginServlet handles POST request sent to /api/login
+@WebServlet(name = "LoginServlet", urlPatterns = "/api/login") // LoginServlet.LoginServlet handles POST request sent to /api/login
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 
@@ -73,7 +74,7 @@ public class LoginServlet extends HttpServlet {
                 VerifyPassword verifier = new VerifyPassword();
                 if (verifier.verifyCredentialsCustomers(username, password)){
                     // Login success, set this user into the session
-                    request.getSession().setAttribute("user", new User(username, id)); // initialize a User object
+                    request.getSession().setAttribute("user", new User(username, id)); // initialize a Utility.User object
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
                 }
@@ -90,7 +91,7 @@ public class LoginServlet extends HttpServlet {
 //                String resulting_password = rs.getString("password");
 //                if (resulting_password.equals(password)){
 //                    // Login success, set this user into the session
-//                    request.getSession().setAttribute("user", new User(username, id)); // initialize a User object
+//                    request.getSession().setAttribute("user", new Utility.User(username, id)); // initialize a Utility.User object
 //                    responseJsonObject.addProperty("status", "success");
 //                    responseJsonObject.addProperty("message", "success");
 //                } else {
