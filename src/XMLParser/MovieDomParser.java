@@ -1,7 +1,5 @@
 package XMLParser;
-
 import Utility.Movie;
-import Utility.Star;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -11,7 +9,6 @@ import javax.sql.DataSource;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -75,9 +72,9 @@ import java.util.*;
 
 public class MovieDomParser {
 
-    private static final String MOVIES_TABLE = "movies"; // may create a movies_backup table for testing
-    private static final String GENRES_TABLE = "genres"; // may create a genres_backup table for testing
-    private static final String GENRES_IN_MOVIES_TABLE = "genres_in_movies"; // may create a genres_in_movies_backup table for testing
+    private static final String MOVIES_TABLE = "movies_backup"; // may create a movies_backup table for testing
+    private static final String GENRES_TABLE = "genres_backup"; // may create a genres_backup table for testing
+    private static final String GENRES_IN_MOVIES_TABLE = "genres_in_movies_backup"; // may create a genres_in_movies_backup table for testing
 
     private DataSource dataSource;
     List<Movie> movies = new ArrayList<>();
