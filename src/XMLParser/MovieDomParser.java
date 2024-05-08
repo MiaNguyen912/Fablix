@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -83,6 +84,8 @@ public class MovieDomParser {
     LinkedHashSet<String> all_genres = new LinkedHashSet<>();
 
     LinkedHashSet<String> all_movieId = new LinkedHashSet<>();
+    Map<String, Integer> all_movieTitle_year = new HashMap<>();
+
     Document dom;
 
     public void runParser() {
@@ -94,12 +97,16 @@ public class MovieDomParser {
     private void parseXmlFile() {
         // get the factory
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+
+
         try {
+
             // using factory get an instance of document builder
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 
             // parse using builder to get DOM representation of the XML file
             dom = documentBuilder.parse("XML/mains243.xml");
+
         } catch (ParserConfigurationException | SAXException | IOException error) {
             error.printStackTrace();
         }
@@ -162,6 +169,8 @@ public class MovieDomParser {
                     new_genre =  new_genre.trim();
                 }
                 if (!new_genre.isEmpty()){
+                    // capitalize new_genre and add to genres list
+                    new_genre = new_genre.substring(0, 1).toUpperCase() + new_genre.substring(1).toLowerCase();
                     genres.add(new_genre);
                     all_genres.add(new_genre);
                 }
@@ -177,6 +186,14 @@ public class MovieDomParser {
                 continue; // skip this movie
             } else {
                 all_movieId.add(filmId);
+            }
+
+            // update all_movieTitle (some movies might have same title but released in different years, which are valid)
+            if (all_movieTitle_year.containsKey(title) && all_movieTitle_year.get(title) == year){
+                System.out.println("Error: duplicate value of movie --- <t> --- value: " + title);
+                continue; // skip this movie
+            } else {
+                all_movieTitle_year.put(title, year) ;
             }
 
             // Create a Random price
