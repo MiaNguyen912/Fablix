@@ -28,7 +28,7 @@ import java.util.*;
 
 public class StarDomParser {
 
-    private static final String TABLE = "stars";
+    private static final String TABLE = "stars_backup";
     private DataSource dataSource;
     static int lastStarID;
     List<Star> stars = new ArrayList<>();
