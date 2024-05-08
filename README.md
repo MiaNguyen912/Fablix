@@ -190,3 +190,8 @@ mysql> quit;
   
 ### methods to boost up query:
 - use batch insert
+
+
+insert into movies_backup select * from movies;
+insert into genres_backup select * from genres;
+insert into genres_in_movies_backup select * from genres_in_movies;
