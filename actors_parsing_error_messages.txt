@@ -1,3 +1,9 @@
+// from cast124.xml:
+Error parsing actor name --- tag <a> --- value: (null) --- movie ID: ClC18
+Error parsing actor name --- tag <a> --- value: (null) --- movie ID: DMl10
+Error parsing actor name --- tag <a> --- value: (null) --- movie ID: H65
+
+// from actors63.xml:
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Diahnne Abbott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kareem AbdulJabbar
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: F.Murray Abraham
