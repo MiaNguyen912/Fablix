@@ -5,3 +5,4 @@ node_modules
 .DS_Store
 WebContent/.DS_Store
 XML
+WebContent/WEB-INF/web.xml
