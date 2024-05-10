@@ -1,9 +1,3 @@
-// from cast124.xml:
-Error parsing actor name --- tag <a> --- value: (null) --- movie ID: ClC18
-Error parsing actor name --- tag <a> --- value: (null) --- movie ID: DMl10
-Error parsing actor name --- tag <a> --- value: (null) --- movie ID: H65
-
-// from actors63.xml:
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Diahnne Abbott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kareem AbdulJabbar
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: F.Murray Abraham
@@ -13,21 +7,28 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Victoria
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dan Ackroyd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Ackroyd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Adames
+Error parsing star, this star has already existed in the Stars table --- star name: Brooke Adams
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sam Adams
+Error parsing star, this star has already existed in the Stars table --- star name: Mario Adorf
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ben Affleck
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Casey Affleck
+Error parsing star, this star has already existed in the Stars table --- star name: Rati Agnihotri
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maria Aitkins
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Serap Aksoy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Josh Albee
+Error parsing star, this star has already existed in the Stars table --- star name: Edward Albert
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Edward Albert~jr.
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Albert
+Error parsing star, this star has already existed in the Stars table --- star name: Alan Alda
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rutanya Alda
+Error parsing star, this star has already existed in the Stars table --- star name: John Alderton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Vera Alentova
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sandy Alexander
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hope AlexanderWells
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Andrea Allan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Catherine Allegret
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rae Allen
+Error parsing star, this star has already existed in the Stars table --- star name: Woody Allen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joseph Allen~jr.
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kirstie Alley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pedro Almodovar
@@ -45,9 +46,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: E. Erich
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Harriet Anderson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ingrid Anderson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Melissa Sue Anderson
+Error parsing star, this star has already existed in the Stars table --- star name: Richard Anderson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carole Andre
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gabe Andre
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fr\'ed\'ric Andrei
+Error parsing star, this star has already existed in the Stars table --- star name: Ursula Andress
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brian Andrews
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eamonn Andrews
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: The Andrews Sisters
@@ -63,15 +66,19 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lou Anto
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alfonso Arau
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Allan Arbus
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anne Archer
+Error parsing star, this star has already existed in the Stars table --- star name: Fanny Ardant
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carmen Argenziano
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Adam Arkin
+Error parsing star, this star has already existed in the Stars table --- star name: Alan Arkin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Arkin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bess Armstrong
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Curtis Armstrong
+Error parsing star, this star has already existed in the Stars table --- star name: Lucie Arnaz
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeanetta Arnette
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mark Arnott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rosanna Arquette
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leslie Ash
+Error parsing star, this star has already existed in the Stars table --- star name: Elizabeth Ashley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jennifer Ashley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Ashley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gregoire Asian
@@ -80,6 +87,10 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Chuck As
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Armand Assante
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Asta
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Adele Astaire
+Error parsing star, this star has already existed in the Stars table --- star name: Fred Astaire
+Error parsing star, this star has already existed in the Stars table --- star name: William Atherton
+Error parsing star, this star has already existed in the Stars table --- star name: Christopher Atkins
+Error parsing star, this star has already existed in the Stars table --- star name: Richard Attenborough
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kim Atwood
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brigitte Auber
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joss Auckland
@@ -95,19 +106,27 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: George A
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dan Aykroyd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gregg Ayres
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Shabana Azmi
+Error parsing star, this star has already existed in the Stars table --- star name: Charles Aznavour
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Candy Azzara
+Error parsing star, this star has already existed in the Stars table --- star name: Hank Azaria
+Error parsing star, this star has already existed in the Stars table --- star name: Amitabh Bachchan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kevin Bacon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hermione Baddeley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Harry Baer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Blanche Baker
+Error parsing star, this star has already existed in the Stars table --- star name: Josephine Baker
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kathy Baker
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ruby Baker
+Error parsing star, this star has already existed in the Stars table --- star name: Jill Balcon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rebecca Balding
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Adam Baldwin
 Error parsing integer value for tag <dob> --- value: 195x --- actor: Alec Baldwin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Daniel Baldwin
+Error parsing star, this star has already existed in the Stars table --- star name: William Baldwin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Florinda Balkan
 Error parsing integer value for tag <dob> --- value: * --- actor: Vincent Ball
+Error parsing star, this star has already existed in the Stars table --- star name: Anne Bancroft
+Error parsing star, this star has already existed in the Stars table --- star name: Antonio Banderas
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Victor Banerjee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Donatas Banionis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alex Bank
@@ -118,6 +137,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joyce Ba
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mijanou Bardot
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sonny Barger
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lex Barker
+Error parsing star, this star has already existed in the Stars table --- star name: Ellen Barkin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marcie Barkin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mikhail Barishnikov
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jake Barnes
@@ -135,9 +155,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Bar
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maurice Barrymore
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eddie Barth
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tony Basil
+Error parsing star, this star has already existed in the Stars table --- star name: Kim Basinger
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Count Basie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Baskin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alfie Bass
+Error parsing star, this star has already existed in the Stars table --- star name: Angela Bassett
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Bassett
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barbara Bates
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Belinda Bauer
@@ -148,15 +170,20 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nathalie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gary Bayer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jennifer Beals
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: The Beatles
+Error parsing star, this star has already existed in the Stars table --- star name: Ned Beatty
+Error parsing star, this star has already existed in the Stars table --- star name: Warren Beatty
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John C. Becher
+Error parsing star, this star has already existed in the Stars table --- star name: John Beck
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kimberly Beck
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stanley Beck
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barry Beckerman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Molly Bee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hagan Beggs
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ed Begley~jr.
+Error parsing star, this star has already existed in the Stars table --- star name: Harry Belafonte
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Charles Belcher
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ann Bell
+Error parsing star, this star has already existed in the Stars table --- star name: Tom Bell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Agostina Belli
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Olga Bellin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Belmonts
@@ -166,13 +193,16 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jim Belu
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Belzer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pat Benatar
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brian Benben
+Error parsing star, this star has already existed in the Stars table --- star name: Dirk Benedict
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Benedict
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Annette Bening
+Error parsing star, this star has already existed in the Stars table --- star name: Hywel Bennett
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Bennett
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barbi Benton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susanne Benton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Iris Berben
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Judith-Marie Bergan
+Error parsing star, this star has already existed in the Stars table --- star name: Candice Bergen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Bergen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Katya Berger
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Berger
@@ -225,6 +255,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Bo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Beverly Bonner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Val\'erie Bonnier
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bonzo
+Error parsing star, this star has already existed in the Stars table --- star name: Pat Boone
+Error parsing star, this star has already existed in the Stars table --- star name: John Boorman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Connie Booth
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Powers Boothe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paola Borboni
@@ -232,6 +264,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Matt Bor
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dirk Borgarde
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Victor Borge
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nelly Borgeaud
+Error parsing star, this star has already existed in the Stars table --- star name: Tom Bosley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Benjamin Bottoms
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Daniel Boulanger
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mathew Boulton
@@ -242,6 +275,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tony Bov
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elizabeth Bowen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Roger Bowen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Malick Bowes
+Error parsing star, this star has already existed in the Stars table --- star name: David Bowie
+Error parsing star, this star has already existed in the Stars table --- star name: Bruce Boxleitner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dorothy Boyd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Guy Boyd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William `Stage' Stage
@@ -251,35 +286,46 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Terry Br
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pat Brady
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rob Brady
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sonia Braga
+Error parsing star, this star has already existed in the Stars table --- star name: Kenneth Branagh
 Error parsing integer value for tag <dob> --- value: dob --- actor: Miriam Brickman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wilford Brimley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kenneth Branagh
+Error parsing star, this star has already existed in the Stars table --- star name: Marlon Brando
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Brandon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Betsy Brantley
+Error parsing star, this star has already existed in the Stars table --- star name: Claude Brasseur
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Larry Breeding
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hanna Brejchova
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Timothy Brent
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patricia Breslin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: JeanClaude Brialy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bricktop
+Error parsing star, this star has already existed in the Stars table --- star name: Beau Bridges
+Error parsing star, this star has already existed in the Stars table --- star name: Jeff Bridges
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wilford Brimley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Brocco
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Phil Brock
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gary Brockette
+Error parsing star, this star has already existed in the Stars table --- star name: James Brolin
+Error parsing star, this star has already existed in the Stars table --- star name: Albert Brooks
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elisabeth Brooks
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hildy Brooks
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James L. Brooks
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Louise Brooks
+Error parsing star, this star has already existed in the Stars table --- star name: Mel Brooks
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Antonia Brough
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bruce Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eric Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Foxy Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gary Brown
+Error parsing star, this star has already existed in the Stars table --- star name: Gary Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gaye Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Janet Brown
+Error parsing star, this star has already existed in the Stars table --- star name: Jim Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ken Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lou Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Brown
+Error parsing star, this star has already existed in the Stars table --- star name: Peter Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Reb Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Roger Aaron Brown
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kathy Browne
@@ -299,6 +345,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Scott Bu
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gary Burghoff
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dennis Burkley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Burlinson
+Error parsing star, this star has already existed in the Stars table --- star name: Carol Burnett
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Smiley Burnette
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marilyn Burns
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stephan W. Burns
@@ -306,11 +353,15 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tim Burn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Terri Burrell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jackie Burroughs
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bill Burrows
+Error parsing star, this star has already existed in the Stars table --- star name: Ellen Burstyn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeff Burton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: LeVar Burton
+Error parsing star, this star has already existed in the Stars table --- star name: Gary Busey
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Billy "Green" Bush
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Butler
+Error parsing star, this star has already existed in the Stars table --- star name: Robert Butler
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Butler
+Error parsing star, this star has already existed in the Stars table --- star name: William Butler
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Yancy Butler
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pat Buttram
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ruth Buzzi
@@ -320,7 +371,9 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anne Byr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Martha Byrne
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kathleen Byron
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cheri Caffaro
+Error parsing star, this star has already existed in the Stars table --- star name: Nicolas Cage
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Cagney
+Error parsing star, this star has already existed in the Stars table --- star name: Michael Caine
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Shakira Caine
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joseph Cali
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Simon Callow
@@ -368,17 +421,23 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pat Carr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Regina Carrol
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Regina Carroll
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kit Carson
+Error parsing star, this star has already existed in the Stars table --- star name: Helena Bonham Carter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jim Carter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lydia Carter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lynda Carter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: T.K. Carter
+Error parsing star, this star has already existed in the Stars table --- star name: Veronica Cartwright
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bernie Casey
+Error parsing star, this star has already existed in the Stars table --- star name: Johnny Cash
+Error parsing star, this star has already existed in the Stars table --- star name: Seymour Cassel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Cassidy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: JeanPierre Castaldi
+Error parsing star, this star has already existed in the Stars table --- star name: Phoebe Cates
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kim Cattrall
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Olimpia Cavalli
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dick Cavett
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christopher Cazenove
+Error parsing star, this star has already existed in the Stars table --- star name: Adolfo Celi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Renzo Cesana
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: June Chadwick
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Challee
@@ -387,8 +446,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marilyn 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jackie Chan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Simon Chandler
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Margo Channing
+Error parsing star, this star has already existed in the Stars table --- star name: Stockard Channing
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Esme Chaplin
+Error parsing star, this star has already existed in the Stars table --- star name: Geraldine Chaplin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Josephine Chaplin
+Error parsing star, this star has already existed in the Stars table --- star name: Sydney Chaplin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Geraldine Chapman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Graham Chapman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lonny Chapman
@@ -400,6 +462,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Martine 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marvin Chatinover
 Error parsing integer value for tag <dob> --- value: 19bb --- actor: Soumitra Chatterjee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joan Chen
+Error parsing star, this star has already existed in the Stars table --- star name: Cher
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patrice Chereau
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Arthur Chesney
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Helen Chester
@@ -408,10 +471,12 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sonny Ch
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eric Chitty
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Shelby Chong
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Thomas Chong
+Error parsing star, this star has already existed in the Stars table --- star name: Thomas Chong
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sarita Choudhury
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Navin Chowdhury
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Cristian
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Suzanne Christian
+Error parsing star, this star has already existed in the Stars table --- star name: Julie Christie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kay Christopher
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Christopher
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sarah Churchill
@@ -425,15 +490,19 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ken Clar
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Caitlin Clarke
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sharon D. Clarke
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Warren Clarke
+Error parsing star, this star has already existed in the Stars table --- star name: John Cleese
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Clendinning
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Clennon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Corinne Clery
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jimmy Cliff
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Al Cliver
 Error parsing integer value for tag <dob> --- value: dob --- actor: George Clooney
+Error parsing star, this star has already existed in the Stars table --- star name: Glenn Close
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Raymond Cloutier
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jennifer Cluff
+Error parsing star, this star has already existed in the Stars table --- star name: Jennifer Cluff
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: June Clyde
+Error parsing star, this star has already existed in the Stars table --- star name: James Coburn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: George Coe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tristam Coffin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mindy Cohen
@@ -457,10 +526,12 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frederic
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: The Commodores
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fay Compton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Oliver Conant
+Error parsing star, this star has already existed in the Stars table --- star name: Jeff Conaway
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Didi Conn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Betty Connell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Chris Connelly
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jenifer Connelly
+Error parsing star, this star has already existed in the Stars table --- star name: Robert Conrad
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Considine
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tim Considine
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michel Constantin
@@ -468,12 +539,15 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mario Co
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carolyn Conwell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Perry Cook
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ron Cook
+Error parsing star, this star has already existed in the Stars table --- star name: Ron Cook
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alice Cooper
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Terrec Cooper
+Error parsing star, this star has already existed in the Stars table --- star name: Francis Ford Coppola
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sofia Coppola
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barry Corbin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lola Cordova
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Irwin Corey
+Error parsing star, this star has already existed in the Stars table --- star name: Roger Corman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Judy Cornwell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Salvatore Corsitto
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joseph Cortese
@@ -484,10 +558,14 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cybil Co
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ernest Cosart
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rich Cosentino
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Desiree Costeau
+Error parsing star, this star has already existed in the Stars table --- star name: Kevin Costner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carolyn Courage
+Error parsing star, this star has already existed in the Stars table --- star name: Clotilde Courau
+Error parsing star, this star has already existed in the Stars table --- star name: Tom Courtenay
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cicely Courtneige
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maggie CousineauArndt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Herbert `Cowboy' Coward
+Error parsing star, this star has already existed in the Stars table --- star name: Ronny Cox
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ruth Cox
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Coyote
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Donald Crabtree
@@ -495,6 +573,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Cra
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Grant Cramer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Norma Crane
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Crawford
+Error parsing star, this star has already existed in the Stars table --- star name: John Crawford
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Plett Creighton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Creley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Crenna
@@ -508,7 +587,10 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kim Cros
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mary Crosby
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Scatman Crothers
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lindsay Crouse
+Error parsing star, this star has already existed in the Stars table --- star name: Billy Crystal
+Error parsing star, this star has already existed in the Stars table --- star name: Kieran Culkin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Cullum
+Error parsing star, this star has already existed in the Stars table --- star name: Robert Culp
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dorothy Cumming
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Quinn Cummings
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susan Cummings
@@ -518,8 +600,10 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lee Curr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Currie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sondra Currie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Curry
+Error parsing star, this star has already existed in the Stars table --- star name: Tim Curry
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jane Curtin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Valerie Curtin
+Error parsing star, this star has already existed in the Stars table --- star name: Jamie Lee Curtis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kelly Curtis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maryam DAbo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Willem Dafoe
@@ -528,6 +612,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elizabet
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Irene Daily
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jennifer Dale
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Beatrice Dalle
+Error parsing star, this star has already existed in the Stars table --- star name: Roger Daltrey
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mark Damon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bill Dana
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leona Dana
@@ -542,8 +627,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeff Dan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sybil Danning
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tony Danza
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patti D'Arbanville
+Error parsing star, this star has already existed in the Stars table --- star name: Kim Darby
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ruth Dardick
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frank Darien
+Error parsing star, this star has already existed in the Stars table --- star name: James Darren
+Error parsing star, this star has already existed in the Stars table --- star name: Danielle Darrieux
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jean Daste
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elyssa Davalos
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Doris Davenport
@@ -556,6 +644,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Larry Da
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lyndon Davis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mac Davis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Miles Davis
+Error parsing star, this star has already existed in the Stars table --- star name: Ossie Davis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Phyllis Davis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Roger Davis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sonny Carl Davis
@@ -578,14 +667,20 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Willem D
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nicholas DeGunzberg
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frank deKova
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carla DelPoggio
+Error parsing star, this star has already existed in the Stars table --- star name: Julie Delpy
+Error parsing star, this star has already existed in the Stars table --- star name: Dom DeLuise
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Deman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maria deMadeiros
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rebecca deMorney
+Error parsing star, this star has already existed in the Stars table --- star name: Judi Dench
+Error parsing star, this star has already existed in the Stars table --- star name: Catherine Deneuve
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Raymond Denny
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rossy dePalma
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elisabeth Depardieu
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frederic dePasquale
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe deRita
+Error parsing star, this star has already existed in the Stars table --- star name: Bruce Dern
+Error parsing star, this star has already existed in the Stars table --- star name: Laura Dern
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cleavant Derricks
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anne DeSalvo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe DeSantis
@@ -604,7 +699,10 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susan De
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Selma Diamond
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bobby DiCicco
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lucinda Dickey
+Error parsing star, this star has already existed in the Stars table --- star name: Marlene Dietrich
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Arthur Dignam
+Error parsing star, this star has already existed in the Stars table --- star name: Phyllis Diller
+Error parsing star, this star has already existed in the Stars table --- star name: Matt Dillon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Dimbleby
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Piero DiOrio
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dante DiPaolo
@@ -632,11 +730,13 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Diana Do
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kent Douglas
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robyn Douglas
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sarah Douglas
+Error parsing star, this star has already existed in the Stars table --- star name: Brad Dourif
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ned Dowd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Betsy Drake
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Drake
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patrick Dray
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Georgiana Drew
+Error parsing star, this star has already existed in the Stars table --- star name: James Drury
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lesley Dudley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patrick Duffy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Duggan
@@ -645,16 +745,19 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Du
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jane Dulo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sandra Dumas
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gerald duMaurier
+Error parsing star, this star has already existed in the Stars table --- star name: Faye Dunaway
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carmen Duncan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Isadora Duncan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Victor Dunlop
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Liam Dunn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Dunn
+Error parsing star, this star has already existed in the Stars table --- star name: Griffin Dunne
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Dunne
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Don Dunphy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ann Duprey
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anthony Durbee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Monique Dury
+Error parsing star, this star has already existed in the Stars table --- star name: Robert Duvall
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Dvorsky
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cameron Dye
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bob Dylan
@@ -664,6 +767,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: George D
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: George Eastman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marilyn Eastman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alison Eastwood
+Error parsing star, this star has already existed in the Stars table --- star name: Clint Eastwood
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kimber Eastwood
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kyle Eastwood
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Shirley Eaton
@@ -675,6 +779,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gosta Ec
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hallie Eckstein
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elizabeth Edmonds
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anthony Edwards
+Error parsing star, this star has already existed in the Stars table --- star name: Blake Edwards
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jennifer Edwards
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Luke Edmonds
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Snitz Edwards
@@ -682,13 +787,16 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lisa Eil
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Janet Eilber
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anthony Eisley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ike Eisenmann
+Error parsing star, this star has already existed in the Stars table --- star name: Hector Elizondo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Duke Ellington
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Biff Elliott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frank Elliott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jane Elliott
+Error parsing star, this star has already existed in the Stars table --- star name: Sam Elliott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stephen Elliott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robin Ellis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Art Ellison
+Error parsing star, this star has already existed in the Stars table --- star name: Michael Elphick
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sallee Elyse
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Emil
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Englund
@@ -718,6 +826,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jamie Fa
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Derek Farr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nick Farrell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sharon Farrell
+Error parsing star, this star has already existed in the Stars table --- star name: Mia Farrow
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stephanie Farrow
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tisa Farrow
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Graham Faulkner
@@ -727,6 +836,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lynne Fe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Birgitte Federspiel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frances Feist
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tovah Feldshuh
+Error parsing star, this star has already existed in the Stars table --- star name: Sherilyn Fenn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sylvie Fennec
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Willie Fennell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Irine Fenwick
@@ -737,6 +847,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wilhelmi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Noel Ferrier
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lou Ferrigno
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Karen Field
+Error parsing star, this star has already existed in the Stars table --- star name: Sally Field
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Edward Fielding
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Margaret Fielding
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Charles Fields
@@ -744,11 +855,14 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: W.C. Fie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Filer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dennis Fimple
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: T.G. Finkbinder
+Error parsing star, this star has already existed in the Stars table --- star name: Frank Finlay
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Finley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Warren Finnerty
+Error parsing star, this star has already existed in the Stars table --- star name: Albert Finney
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Shirley Jo Finney
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elena Fiore
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eddie Firestone
+Error parsing star, this star has already existed in the Stars table --- star name: Frances Fisher
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Larry Fishburne
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cindy Fisher
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frances Fisher
@@ -756,6 +870,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fannie F
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Flagg
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: George "Buck" Flower
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joel Fluellen
+Error parsing star, this star has already existed in the Stars table --- star name: Bridget Fonda
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leo Fong
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Genevieve Fontanel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Margot Fonteyn
@@ -766,12 +881,16 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mike For
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Constance Forslund
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Henderson Forsythe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nick Apollo Forte
+Error parsing star, this star has already existed in the Stars table --- star name: Jodie Foster
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Foster
+Error parsing star, this star has already existed in the Stars table --- star name: John Foster
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Meg Foster
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Phil Foster
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Foster
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susannah Fowle
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bernard Fox
+Error parsing star, this star has already existed in the Stars table --- star name: James Fox
+Error parsing star, this star has already existed in the Stars table --- star name: Michael J. Fox
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rolla France
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eve Francis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ivor Francis
@@ -798,6 +917,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sauri Fr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Friedman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Friedrich
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gustav Froehlich
+Error parsing star, this star has already existed in the Stars table --- star name: Dominic Frontiere
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eric Fryer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alan Fudge
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dale Fuller
@@ -816,9 +936,13 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ken Gamp
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Abel Gance
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bruno Ganz
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Teresa Ganzel
+Error parsing star, this star has already existed in the Stars table --- star name: Greta Garbo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Andres Garcia
+Error parsing star, this star has already existed in the Stars table --- star name: Allen Garfield
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Art Garfunkel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Garko
+Error parsing star, this star has already existed in the Stars table --- star name: Beverly Garland
+Error parsing star, this star has already existed in the Stars table --- star name: James Garner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Garay
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joaquin Garay~III
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eliza Garrett
@@ -830,18 +954,25 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marie-Lo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fernand Gavet
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Erica Gavin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: George Gaynes
+Error parsing star, this star has already existed in the Stars table --- star name: Ben Gazzara
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Gazzo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ellen Geer
+Error parsing star, this star has already existed in the Stars table --- star name: Judy Geeson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Laura Gemser
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Gentile
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nathan George
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rita George
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carmelita Geraghty
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bill Gerber
+Error parsing star, this star has already existed in the Stars table --- star name: Bill Gerber
+Error parsing star, this star has already existed in the Stars table --- star name: Richard Gere
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Flo Gerish
+Error parsing star, this star has already existed in the Stars table --- star name: Balthazar Getty
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Getz
+Error parsing star, this star has already existed in the Stars table --- star name: Giancarlo Giannini
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Judi Gibbs
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Colin Gibson
+Error parsing star, this star has already existed in the Stars table --- star name: Henry Gibson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stefan Gierasch
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frank Gifford
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gloria Gifford
@@ -855,9 +986,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Terry Gi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Virginia Gilmore
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ian Gilmour
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Ginty
+Error parsing star, this star has already existed in the Stars table --- star name: Annie Girardot
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anton Glanzelius
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Yves Glary
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gil Glasco
+Error parsing star, this star has already existed in the Stars table --- star name: Paul Michael Glaser
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sabine Glaser
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ron Glass
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Gleason
@@ -870,6 +1003,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carlin G
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jacques Godin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bernard Goetzke
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Goff
+Error parsing star, this star has already existed in the Stars table --- star name: Jeff Goldblum
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Matt Goldsby
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Clio Goldsmith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bobcat Goldthwait
@@ -879,14 +1013,18 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dody Goo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Suki Goodwin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Allen Goorwitz
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Colin Gordin
+Error parsing star, this star has already existed in the Stars table --- star name: Colin Gordon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dexter Gordon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Don Gordon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Keith Gordon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Gordon
+Error parsing star, this star has already existed in the Stars table --- star name: Robert Gordon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lynee Gorman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Karen Gorney
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lou Gossett~jr.
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Walter Gotell
+Error parsing star, this star has already existed in the Stars table --- star name: Elliott Gould
+Error parsing star, this star has already existed in the Stars table --- star name: Harold Gould
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jason Gould
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Gover
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Harry Goz
@@ -913,14 +1051,17 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anne Gre
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Grieg
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Helmut Griem
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Alan Grier
+Error parsing star, this star has already existed in the Stars table --- star name: Pam Grier
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rosie Grier
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kirstin Griffith
+Error parsing star, this star has already existed in the Stars table --- star name: Melanie Griffith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Simone Griffith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tracy Griffith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ele Grigsby
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dan Grimaldi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jonathan Griss
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Claire Griswold
+Error parsing star, this star has already existed in the Stars table --- star name: Charles Grodin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ake Groenberg
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Herbert Gronemeyer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sam Groom
@@ -942,6 +1083,7 @@ Error parsing integer value for tag <dob> --- value: n.a. --- actor: The Little 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Gwillin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Gwynne
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Haake
+Error parsing star, this star has already existed in the Stars table --- star name: Gene Hackman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sayle Haddon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ross Hagen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Julie Hagerty
@@ -963,11 +1105,13 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Veronica
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bernie Hamilton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Hamilton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Suzanne Hamilton
+Error parsing star, this star has already existed in the Stars table --- star name: Harry Hamlin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ben Hammer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Hampton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Master Bong Soo Han
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Miyi Hana
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lloyd Hanes
+Error parsing star, this star has already existed in the Stars table --- star name: Tom Hanks
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mie Hanna
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Darryl Hannah
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patti Hansen
@@ -978,6 +1122,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lyn Hard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Karl Hardman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Hargreaves
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Deborah Harmon
+Error parsing star, this star has already existed in the Stars table --- star name: Mark Harmon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ron Harper
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tess Harper
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pat Harrington
@@ -998,7 +1143,9 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jenilee 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lisa Harrow
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Deborah Harry
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Hart
+Error parsing star, this star has already existed in the Stars table --- star name: John Hart
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Veronica Hart
+Error parsing star, this star has already existed in the Stars table --- star name: Mariette Hartley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ena Hartman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lisa Hartman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Hartman
@@ -1010,6 +1157,7 @@ Error parsing integer value for tag <dob> --- value: dob --- actor: Terry Hatche
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Hatch
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rohini Hattangady
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rondo Hatton
+Error parsing star, this star has already existed in the Stars table --- star name: Rutger Hauer
 Error parsing integer value for tag <dob> --- value: 19bb --- actor: Max Haufler
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fay Hauser
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joachim Hauser
@@ -1017,11 +1165,13 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wings Ha
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Thomas Haustein
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nigel Havers
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Hawley
+Error parsing star, this star has already existed in the Stars table --- star name: Goldie Hawn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Julie Haydon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Lind Hayes
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Haynes
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jonathan Haze
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Katherine Healy
+Error parsing star, this star has already existed in the Stars table --- star name: John Heard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marta Heflin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Hegarty
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Julie Hegerty
@@ -1031,6 +1181,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Randee H
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anne Helm
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Florence Helminger
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Helmore
+Error parsing star, this star has already existed in the Stars table --- star name: Mariel Hemingway
+Error parsing star, this star has already existed in the Stars table --- star name: David Hemmings
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Albert Henderson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Skitch Henderson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nancy Hendrickson
@@ -1039,9 +1191,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marilu H
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pat Henning
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lance Henriksen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gregg Henry
+Error parsing star, this star has already existed in the Stars table --- star name: Justin Henry
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pamela Hensley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nicky Henson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dee Hepburn
+Error parsing star, this star has already existed in the Stars table --- star name: Bernard Hepton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tim Herbert
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Herd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: PeeWee Herman
@@ -1065,6 +1219,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maurice 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patrick K. Hinses
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Darby Hinton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Hodern
+Error parsing star, this star has already existed in the Stars table --- star name: Dustin Hoffman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hulk Hogan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Hogan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Hogan
@@ -1081,16 +1236,19 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Oscar Ho
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Hooten
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Beverly Hope
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leslie Hope
+Error parsing star, this star has already existed in the Stars table --- star name: Bo Hopkins
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christiane Hoerbiger
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Hoerbiger
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Len Horne
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lee Horsley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Horton
+Error parsing star, this star has already existed in the Stars table --- star name: Bob Hoskins
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jerry Houser
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patrick Houser
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barbara Howard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brie Howard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dan Howard
+Error parsing star, this star has already existed in the Stars table --- star name: Dan Howard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Clint Howard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mel Howard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susan Howard
@@ -1109,18 +1267,27 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Daniel H
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Hulce
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dianne Hull
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barry Humphries
+Error parsing star, this star has already existed in the Stars table --- star name: Helen Hunt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jimmy Hunt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Hunt
+Error parsing star, this star has already existed in the Stars table --- star name: Holly Hunter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kaki Hunter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pam Huntington
+Error parsing star, this star has already existed in the Stars table --- star name: Elizabeth Hurley
+Error parsing star, this star has already existed in the Stars table --- star name: John Hurt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Hurt
+Error parsing star, this star has already existed in the Stars table --- star name: William Hurt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ferlin Husky
+Error parsing star, this star has already existed in the Stars table --- star name: Olivia Hussey
+Error parsing star, this star has already existed in the Stars table --- star name: Anjelica Huston
+Error parsing star, this star has already existed in the Stars table --- star name: Timothy Hutton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Scott Hylands
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mike Hynson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eric Idle
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Iglehart
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: A.B. Imenson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Amy Ingersoll
+Error parsing star, this star has already existed in the Stars table --- star name: Jeremy Irons
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Ironside
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robin Irvine
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Zachary Ittimangnaq
@@ -1130,8 +1297,10 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kereem A
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wolfman Jack
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jamie Smith Jackson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Jackson
+Error parsing star, this star has already existed in the Stars table --- star name: Samuel L. Jackson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sherry Jackson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Irene Jacob
+Error parsing star, this star has already existed in the Stars table --- star name: Derek Jacobi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Saeed Jaffrey
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Henry Jaglom
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elizabeth James
@@ -1149,6 +1318,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Roy Came
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Roy Jenson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ann Jillian
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Johansen
+Error parsing star, this star has already existed in the Stars table --- star name: Elton John
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Don Johnson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Glynis Johnson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Johnny Johnston
@@ -1156,17 +1326,21 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Laura Jo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lynn-Holly Johnson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michelle Johnson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stephen Johnson
+Error parsing star, this star has already existed in the Stars table --- star name: Stephen Johnson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tor Johnson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jo Johnston
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Duane Jones
+Error parsing star, this star has already existed in the Stars table --- star name: Freddie Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Grace Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hannah Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeffrey Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jennifer Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jocelyn Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: OLan Jones
+Error parsing star, this star has already existed in the Stars table --- star name: Shirley Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susan Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Terry Jones
+Error parsing star, this star has already existed in the Stars table --- star name: Tommy Lee Jones
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Samson Jorah
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christine Jorgenson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jackie Joseph
@@ -1208,20 +1382,24 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Diane Ka
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Caren Kaye
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lainie Kazan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Keach
+Error parsing star, this star has already existed in the Stars table --- star name: Stacy Keach
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Kehoe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kishi Keiko
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Keith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dorothy Keller
+Error parsing star, this star has already existed in the Stars table --- star name: Marthe Keller
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susan Kellerman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fred Kelly
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeanette Kelly
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jim Kelly
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paula Kelly
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sharon Kelly
+Error parsing star, this star has already existed in the Stars table --- star name: Gary Kemp
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rachel Kempson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Takakura Ken
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tony Kendall
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alexa Kenin
+Error parsing star, this star has already existed in the Stars table --- star name: George Kennedy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gerard Kennedy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jayne Kennedy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leon Isaac Kennedy
@@ -1240,8 +1418,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sara Kes
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mark Keyloun
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Chaka Khan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Kidd
+Error parsing star, this star has already existed in the Stars table --- star name: Margot Kidder
+Error parsing star, this star has already existed in the Stars table --- star name: Nicole Kidman
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: Dead End Kids
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: East Side Kids
+Error parsing star, this star has already existed in the Stars table --- star name: Val Kilmer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bruce Kimmel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stephen Kinanju
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Adrienne King
@@ -1250,6 +1431,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mabel Ki
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pamela King
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Zalman King
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Melinda Kinnaman
+Error parsing star, this star has already existed in the Stars table --- star name: Greg Kinnear
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bruno Kirby
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Al Kirkeby
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sally Kirkland
@@ -1280,6 +1462,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lisa Kre
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anneline Kriel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alice Krige
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marta Kristen
+Error parsing star, this star has already existed in the Stars table --- star name: Kris Kristofferson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joseph Kroner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gene Krupa
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Vivian Kubrick
@@ -1288,6 +1471,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cal Kuni
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alwyn Kurts
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Katy Kurtzman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Kushner
+Error parsing star, this star has already existed in the Stars table --- star name: Burt Kwouk
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Labiosa
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ronald Lacey
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Taylor Lacher
@@ -1310,16 +1494,20 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Judy Lan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Laurene Landon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Valerie Landsburg
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Abbe Lane
+Error parsing star, this star has already existed in the Stars table --- star name: Diane Lane
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jocelyn Lane
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kent Lane
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mike Lane
+Error parsing star, this star has already existed in the Stars table --- star name: Mike Lane
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rusty Lane
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Lane
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Perry Lang
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Langdon
+Error parsing star, this star has already existed in the Stars table --- star name: Jessica Lange
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Laurie Lapinski
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Erik Larsen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ham Larsen
+Error parsing star, this star has already existed in the Stars table --- star name: Louise Lasser
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sidney Lassick
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lassie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Louise Latham
@@ -1331,11 +1519,13 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ellen Ha
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carol Laure
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: Laurel and Hardy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Laurie
+Error parsing star, this star has already existed in the Stars table --- star name: John Phillip Law
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Adam Lawrence
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bruno Lawrence
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Lawrence
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robin Leach
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rosemary Leach
+Error parsing star, this star has already existed in the Stars table --- star name: Cloris Leachman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stanley Leavitt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kelly LeBrock
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Otto Lederer
@@ -1345,6 +1535,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cinque L
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cynthia Lee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joie Lee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mark Lee
+Error parsing star, this star has already existed in the Stars table --- star name: Mark Lee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robbie Lee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pinky Lee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Spike
@@ -1370,6 +1561,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Le
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Geoffrey Lewis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jerry Lee Lewis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Lewis
+Error parsing star, this star has already existed in the Stars table --- star name: Joe Lewis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Viola Leyel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brian Libby
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Liberace
@@ -1398,6 +1590,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Heather 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barbara Loden
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jaqueline Logan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert F. Logan
+Error parsing star, this star has already existed in the Stars table --- star name: Robert Loggia
+Error parsing star, this star has already existed in the Stars table --- star name: Karina Lombard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sol Lomita
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Lone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Avon Long
@@ -1439,6 +1633,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marion M
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fulton Mackay
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Janet MacLachian
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kyle MacLachlan
+Error parsing star, this star has already existed in the Stars table --- star name: Shirley MacLaine
+Error parsing star, this star has already existed in the Stars table --- star name: Jena Malone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert MacNaughton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter MacNicol
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Macrae
@@ -1463,12 +1659,14 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kiti Man
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leslie Manville
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Manzy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marcel Marceau
+Error parsing star, this star has already existed in the Stars table --- star name: Jane March
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nancy Marchand
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Andrea Marcovicci
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Janie Mareze
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Margotta
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cheech Marin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rikki Marin
+Error parsing star, this star has already existed in the Stars table --- star name: Jane March
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kika Markham
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ted Markland
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Scott Marlowe
@@ -1476,12 +1674,14 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Evaristo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sally Marr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Arthur Marshal
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bryan Marshall
+Error parsing star, this star has already existed in the Stars table --- star name: Bryan Marshall
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Don Marshall
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ken Marshall
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Penny Marshall
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sarah Marshall
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jean Martin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pamela Sue Martin
+Error parsing star, this star has already existed in the Stars table --- star name: Steve Martin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frederick Martini
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Al Martino
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leslie Martinson
@@ -1491,10 +1691,13 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Johnny M
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Henry Mason
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hilary Mason
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Mason
+Error parsing star, this star has already existed in the Stars table --- star name: Anna Massey
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Edith Massey
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Masterson
+Error parsing star, this star has already existed in the Stars table --- star name: Peter Masterson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sean Masterson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mary Elizabeth Mastrantonio
+Error parsing star, this star has already existed in the Stars table --- star name: Chiara Mastroianni
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Masur
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Clelia Matania
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Julian Mateus
@@ -1503,6 +1706,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Ma
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robin Mattson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cyril Maude
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carmen Maura
+Error parsing star, this star has already existed in the Stars table --- star name: Elaine May
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Russ Mayberry
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Mayhew
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Melanie Mayron
@@ -1524,6 +1728,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeff McC
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jody McCrea
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kit McDonough
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Betty McDowall
+Error parsing star, this star has already existed in the Stars table --- star name: Malcolm McDowell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Arnie McEnroe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Spanky McFarland
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Vonetta McGee
@@ -1555,6 +1760,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Claudia 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kathryn McNeil
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maggie McOmie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frank McRae
+Error parsing star, this star has already existed in the Stars table --- star name: Ian McShane
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Audrey Meadows
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joyce Meadows
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: DeAnn Mears
@@ -1598,6 +1804,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Mi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mark Miller
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Penelope Ann Miller
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Andra Millian
+Error parsing star, this star has already existed in the Stars table --- star name: Spike Milligan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Donna Mills
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mort Mills
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Josh Milrad
@@ -1625,6 +1832,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Mont
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: M.J. Montfajon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Julie Montgomery
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jim Moody
+Error parsing star, this star has already existed in the Stars table --- star name: Ron Moody
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Keith Moon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alvy Moore
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barry Moore
@@ -1633,11 +1841,14 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Demi Moo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dennis Moore
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eileen Moore
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kenny Moore
+Error parsing star, this star has already existed in the Stars table --- star name: Terry Moore
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Santos Morales
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Erin Moran
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gerard Moran
+Error parsing star, this star has already existed in the Stars table --- star name: Jeanne Moreau
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Agnes Morehead
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rina Morelli
+Error parsing star, this star has already existed in the Stars table --- star name: Rita Moreno
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cindy Morgan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Debbi Morgan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hank Morgan
@@ -1668,9 +1879,12 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: George M
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Charlie Murphy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Donald Murphy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Murphy
+Error parsing star, this star has already existed in the Stars table --- star name: Michael Murphy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bill Murray
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brian Doyle Murray
+Error parsing star, this star has already existed in the Stars table --- star name: Don Murray
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Murray
+Error parsing star, this star has already existed in the Stars table --- star name: Tom Murray
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susan Myers
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jim Nabors
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joanne Nail
@@ -1681,6 +1895,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brian Na
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Clarence Nash
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stephen Nathan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Naughton
+Error parsing star, this star has already existed in the Stars table --- star name: James Naughton
 Error parsing integer value for tag <dob> --- value: 18bb --- actor: Rene Navarre
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Audrie J. Neenan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kay Neer
@@ -1688,19 +1903,23 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Liam Nee
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Little Nell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bob Nelson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Craig T. Nelson
+Error parsing star, this star has already existed in the Stars table --- star name: Judd Nelson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kenneth Nelson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Nelson
+Error parsing star, this star has already existed in the Stars table --- star name: Willie Nelson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rosalba Neri
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tommaso Neri
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Neuman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Nevens
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carol Irene Newell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lorraine Newman
+Error parsing star, this star has already existed in the Stars table --- star name: Paul Newman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rachel Newman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Scott Newman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Haing S. Ngor
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Britt Nichols
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nichelle Nichols
+Error parsing star, this star has already existed in the Stars table --- star name: Jack Nicholson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Daria Nicolodi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brigitte Nielsen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lisa Niemi
@@ -1712,6 +1931,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Miyamoto
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Natalie Nogulich
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bob Nolan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Nolan
+Error parsing star, this star has already existed in the Stars table --- star name: Nick Nolte
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mike Nomad
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christine Noonan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Noonan
@@ -1721,6 +1941,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mike Nor
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Harry Northup
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ken Norton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Nouri
+Error parsing star, this star has already existed in the Stars table --- star name: Kim Novak
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Terri Nunn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Will Nye
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cicely Oates
@@ -1731,6 +1952,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maria OB
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Andrea Occhipinti
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Taffy OConnell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kevin OConnor
+Error parsing star, this star has already existed in the Stars table --- star name: Kevin OConnor
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carroll ODea
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Judith ODea
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Chris ODonnell
@@ -1738,6 +1960,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lani OGr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Catherine OHara
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael OKeefe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Miles OKeefe
+Error parsing star, this star has already existed in the Stars table --- star name: Gary Oldman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael OLeary
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lena Olin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barret Oliver
@@ -1760,14 +1983,17 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kathleen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack ORourke
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Umberto Orsini
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mechu Ortiz
+Error parsing star, this star has already existed in the Stars table --- star name: Per Oscarsson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Missy OShea
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cliff Osmond
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pernilla Ostergren
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeff Osterhage
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Osth
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ossi Oswalda
+Error parsing star, this star has already existed in the Stars table --- star name: Peter OToole
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frank Overton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tony Owen
+Error parsing star, this star has already existed in the Stars table --- star name: Frank Oz
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joanna Pacula
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anita Page
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joy Page
@@ -1780,8 +2006,10 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stuart P
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Pantoliano
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Don Pardo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Pare
+Error parsing star, this star has already existed in the Stars table --- star name: Sarah Jessica Parker
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leslie Parrish
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Louella Parsons
+Error parsing star, this star has already existed in the Stars table --- star name: Dolly Parton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Pataki
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christopher Pate
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mandy Patinkin
@@ -1807,6 +2035,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Raymond 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pina Pellicer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rick Pemberton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christopher Penn
+Error parsing star, this star has already existed in the Stars table --- star name: Sean Penn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Penny
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Virginia Penta
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stacey Peralta
@@ -1816,22 +2045,27 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anna Per
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Felton Perry
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Louis Perryman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Pesci
+Error parsing star, this star has already existed in the Stars table --- star name: Bernadette Peters
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stewart Petersen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sammy Petrillo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Howard Petri
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: George Petrie
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elizabeth Petterson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jo Ann Pflug
+Error parsing star, this star has already existed in the Stars table --- star name: Leslie Phillips
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michelle Phillips
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Phipps
+Error parsing star, this star has already existed in the Stars table --- star name: Michel Piccoli
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paloma Picasso
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sorrells Pickard
+Error parsing star, this star has already existed in the Stars table --- star name: Ronald Pickup
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tiana Pierce
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bronson Pinchot
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Miguel Pinero
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dominique Pinon
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Danny Pintauro
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: The Sons of the Pioneers
+Error parsing star, this star has already existed in the Stars table --- star name: Marie-France Pisier
 Error parsing integer value for tag <dob> --- value: dob --- actor: Brad Pitt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mary Kay Place
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michele Placich
@@ -1839,15 +2073,19 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Roger Pl
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dana Plato
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: Moliere Players
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hilda Plowright
+Error parsing star, this star has already existed in the Stars table --- star name: Joan Plowright
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Amanda Plummer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Adelina Poerio
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jean Poiret
+Error parsing star, this star has already existed in the Stars table --- star name: Roman Polanski
+Error parsing star, this star has already existed in the Stars table --- star name: Sydney Pollack
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tommy Pollard
 Error parsing integer value for tag <dob> --- value: 19bb --- actor: Sarah Polley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Roy Poole
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Albert Popwell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Don Porter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eric Porter
+Error parsing star, this star has already existed in the Stars table --- star name: Natalie Portman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Markie Post
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Madeline Potter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Annie Potts
@@ -1863,12 +2101,16 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wolfgang
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lucy Prentiss
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Prescott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Donna Prescow
+Error parsing star, this star has already existed in the Stars table --- star name: Micheline Presle
+Error parsing star, this star has already existed in the Stars table --- star name: Elvis Presley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alan Price
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Martin Priest
+Error parsing star, this star has already existed in the Stars table --- star name: Barry Primus
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jurgen Prochnow
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Prosky
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Prowse
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cameron Prudhomme
+Error parsing star, this star has already existed in the Stars table --- star name: Jonathan Pryce
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nicholas Pryor
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Vladimir Pucholt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lee Purcell
@@ -1878,6 +2120,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Qua
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rita Quigley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Aidan Quinn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Aileen Quinn
+Error parsing star, this star has already existed in the Stars table --- star name: Anthony Quinn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bill Quinn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Valerie Quinnessen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Francine Racette
@@ -1903,20 +2146,26 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sheila R
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stephen Rea
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Read
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bertice Reading
+Error parsing star, this star has already existed in the Stars table --- star name: Ronald Reagan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Billy Redden
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Helen Reddy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Redfield
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Basil Redford
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jemma Redgrave
+Error parsing star, this star has already existed in the Stars table --- star name: Lynn Redgrave
+Error parsing star, this star has already existed in the Stars table --- star name: Vanessa Redgrave
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jerry Reed
 Error parsing integer value for tag <dob> --- value: * --- actor: Pamela Reed
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Reed
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tracy Reed
+Error parsing star, this star has already existed in the Stars table --- star name: Roger Rees
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Regalbuto
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Whit Reichert
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frances Reid
+Error parsing star, this star has already existed in the Stars table --- star name: Frances Reid
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Reigert
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Reilly
+Error parsing star, this star has already existed in the Stars table --- star name: Carl Reiner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Thomas Reiner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Judge Reinhold
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Winston Rekert
@@ -1927,6 +2176,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kelly Re
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dan Resin
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Aldo Rey
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alejandro Rey
+Error parsing star, this star has already existed in the Stars table --- star name: Burt Reynolds
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael J. Reynolds
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sybil Rhoda
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Rhys
@@ -1937,15 +2187,19 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joely Ri
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lee Richardson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Natasha Richardson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Debi Richter
+Error parsing star, this star has already existed in the Stars table --- star name: Don Rickles
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Judith Ridley
+Error parsing star, this star has already existed in the Stars table --- star name: Leni Riefenstahl
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peter Riegert
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ron Rifkin
+Error parsing star, this star has already existed in the Stars table --- star name: Diana Rigg
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Terence Right
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Riley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Larry Riley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Shane Rimmer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Brad Rinn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kristen Riter
+Error parsing star, this star has already existed in the Stars table --- star name: John Ritter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Harry Ritz
 Error parsing integer value for tag <dob> --- value: n.a. --- actor: The Ritz-Brothers
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cecilia Rivera
@@ -1957,17 +2211,21 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sam Roba
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mathew Robbins
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John C. Roberick
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christian Roberts
+Error parsing star, this star has already existed in the Stars table --- star name: Eric Roberts
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Glenn Roberts
+Error parsing star, this star has already existed in the Stars table --- star name: Julia Roberts
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael D. Roberts
 Error parsing integer value for tag <dob> --- value: * --- actor: Tanya Roberts
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Teal Roberts
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dennis Robertson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Robertson
+Error parsing star, this star has already existed in the Stars table --- star name: James Robertson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robbie Robertson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hayward Robillard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Andy Robinson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ann Robinson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wayne Robson
+Error parsing star, this star has already existed in the Stars table --- star name: Jean Rochefort
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marcia Rodd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maurice Roeves
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lela Rogers
@@ -1975,10 +2233,12 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Helena R
 Error parsing integer value for tag <dob> --- value: * --- actor: Howard E. Rollins~jr.
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Andy Romano
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fred Romer
+Error parsing star, this star has already existed in the Stars table --- star name: Mickey Rooney
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Annie Ross
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Yvonne Ross
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: George Rossi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leo Rossi
+Error parsing star, this star has already existed in the Stars table --- star name: Leo Rossi
 Error parsing integer value for tag <dob> --- value: 19bb --- actor: Tim Roth
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lionel Royce
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Saul Rubinek
@@ -1993,11 +2253,13 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: William 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Betsy Russell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Craig Russell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ken Russell
+Error parsing star, this star has already existed in the Stars table --- star name: Kurt Russell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gianni Russo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fran Ryan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Ryan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Raisa Ryazonova
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Rydall
+Error parsing star, this star has already existed in the Stars table --- star name: Winona Ryder
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Ryland
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Yacef Saadi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Greta Sacchi
@@ -2008,22 +2270,30 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kengji S
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael SaintDenis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Theresa Saldana
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: P.J. Sales
+Error parsing star, this star has already existed in the Stars table --- star name: Soupy Sales
+Error parsing star, this star has already existed in the Stars table --- star name: Peter Sallis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Louis Salon
+Error parsing star, this star has already existed in the Stars table --- star name: Jennifer Salt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Renato Salvatori
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: JoAnne Samuel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Henry Sanada
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jaime Sanchez
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Salvatore Sanchez
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Sanderson
+Error parsing star, this star has already existed in the Stars table --- star name: Adam Sandler
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Sandor
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Julian Sands
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Santchi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Santos
+Error parsing star, this star has already existed in the Stars table --- star name: Chris Sarandon
+Error parsing star, this star has already existed in the Stars table --- star name: Susan Sarandon
+Error parsing star, this star has already existed in the Stars table --- star name: Fred Savage
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Vic Savage
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: George Savalas
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Savini
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Teresa Ann Savoy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peggy Sawyer
+Error parsing star, this star has already existed in the Stars table --- star name: Greta Scacchi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Diana Scarwid
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Felice Schacter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wendy Schall
@@ -2041,6 +2311,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kyra Sch
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Avery Schreiber
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dwight Schultz
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Scott Schwartz
+Error parsing star, this star has already existed in the Stars table --- star name: Arnold Schwarzenegger
+Error parsing star, this star has already existed in the Stars table --- star name: Hanna Schygulla
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Schyck
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Patti Scialfa
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Annbelle Sciorra
@@ -2055,9 +2327,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ken Scot
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mary Scott
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Vito Scotti
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Scruggs
+Error parsing star, this star has already existed in the Stars table --- star name: Steven Seagal
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Franklyn Seales
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Seay
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Josef Sebanek
+Error parsing star, this star has already existed in the Stars table --- star name: George Segal
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pierre Segui
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Johnny Sekka
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Selleck
@@ -2067,17 +2341,21 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Sene
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Assumpta Serna
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Julieta Serrano
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pilar Seurat
+Error parsing star, this star has already existed in the Stars table --- star name: Jane Seymour
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ralph Seymour
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kamran Shah
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: ShabbaDoo
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Glen Shadix
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Wallace Shaen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Shaffer
+Error parsing star, this star has already existed in the Stars table --- star name: Tupac Shakur
 Error parsing integer value for tag <dob> --- value: 19bb --- actor: Tony Shalhoub
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ken Shapiro
+Error parsing star, this star has already existed in the Stars table --- star name: Omar Sharif
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Anthony Sharp
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Albert Sharpe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cornelia Sharpe
+Error parsing star, this star has already existed in the Stars table --- star name: William Shatner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Helen Shaver
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stan Shaw
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Susan Damante Shaw
@@ -2086,6 +2364,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: John She
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Harry Shearer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alice Sheedy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Charlie Sheen
+Error parsing star, this star has already existed in the Stars table --- star name: Martin Sheen
+Error parsing star, this star has already existed in the Stars table --- star name: Sam Shepard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elizabeth Shepherd
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paula Sheppard
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Margaret Sheridan
@@ -2095,6 +2375,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sue Shio
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Yumi Shirakawa
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dan Shor
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dorothy Short
+Error parsing star, this star has already existed in the Stars table --- star name: Martin Short
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Show
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ricky Shroder
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard B. Shull
@@ -2108,6 +2389,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Trididad
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Silvain
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cyndi Silver
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joe Silver
+Error parsing star, this star has already existed in the Stars table --- star name: Ron Silver
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Arlene Simmons
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Peggy Simpson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gordon John Sinclair
@@ -2117,9 +2399,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Steve Si
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Penny Singleton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Joseph Sirola
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lilia Skala
+Error parsing star, this star has already existed in the Stars table --- star name: Tom Skerritt
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Helgi Skulason
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Olga Slade
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard B. Skull
+Error parsing star, this star has already existed in the Stars table --- star name: Christian Slater
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Helen Slater
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard X. Slattery
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hana Slikova
@@ -2129,6 +2413,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Charles 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jaclyn Smith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kate Smith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lane Smith
+Error parsing star, this star has already existed in the Stars table --- star name: Lois Smith
+Error parsing star, this star has already existed in the Stars table --- star name: Maggie Smith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mel Smith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Smith
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rainbeaux Smith
@@ -2145,13 +2431,16 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Andrew S
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Julie Sommars
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Sonkkila
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Sorenson
+Error parsing star, this star has already existed in the Stars table --- star name: Paul Sorvino
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Talisa Soto
+Error parsing star, this star has already existed in the Stars table --- star name: David Soul
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ann Southern
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Merrie Spaeth
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fay Spain
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Vincent Spano
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hazel Spears
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bruce Spence
+Error parsing star, this star has already existed in the Stars table --- star name: Bud Spencer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: George Spencer
 Error parsing integer value for tag <dob> --- value: 19bb --- actor: Posh Spice
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Spielberg
@@ -2161,12 +2450,15 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: G.D. Spr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rick Springfield
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Stacy
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Stahl
+Error parsing star, this star has already existed in the Stars table --- star name: Sylvester Stallone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Staley
+Error parsing star, this star has already existed in the Stars table --- star name: John Standing
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael StAngel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jiri Stanislav
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Forrest Stanley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lora Stanley
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frank Stanmore
+Error parsing star, this star has already existed in the Stars table --- star name: Maureen Stapleton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Koo Stark
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kay Starr
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ringo Starr
@@ -2174,6 +2466,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Valerie 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Imaelda Staunton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alison Steadman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Simonetta Stefanelli
+Error parsing star, this star has already existed in the Stars table --- star name: Rod Steiger
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Steinberg
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Steiner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Albert Steinruck
@@ -2188,6 +2481,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Daniel S
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Erik Stern
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Stern
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frances Sternhagen
+Error parsing star, this star has already existed in the Stars table --- star name: Andrew Stevens
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Casey Stevens
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Morgan Stevens
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: MacLean Stevenson
@@ -2209,12 +2503,14 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Sto
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Austin Stoker
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Shirley Stoler
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christopher Stone
+Error parsing star, this star has already existed in the Stars table --- star name: Christopher Stone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Danny Stone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fred Stone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ivory Stone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Philip Stone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sharon Stone
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marcia Strassman
+Error parsing star, this star has already existed in the Stars table --- star name: Meryl Streep
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Russel Streiner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Annette Stroyberg
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Barbara Stuart
@@ -2225,11 +2521,15 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tom Sull
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Madame SulTeWan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Donna Summer
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Todd Susman
+Error parsing star, this star has already existed in the Stars table --- star name: Donald Sutherland
+Error parsing star, this star has already existed in the Stars table --- star name: Dudley Sutton
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frank Sutton
+Error parsing star, this star has already existed in the Stars table --- star name: Bo Svenson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dominique Swain
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Robert Swann
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Forrest Swanson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gary Swanson
+Error parsing star, this star has already existed in the Stars table --- star name: Patrick Swayze
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bob Sweeney
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dolph Sweet
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Stanley Swerdlow
@@ -2272,10 +2572,12 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Henry Th
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kristin Scott Thomas
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tim Thomerson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Derek Thompson
+Error parsing star, this star has already existed in the Stars table --- star name: Derek Thompson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dorri Thompson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Emma Thompson
 Error parsing integer value for tag <dob> --- value: dob --- actor: Fred Thompson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Hal Thompson
+Error parsing star, this star has already existed in the Stars table --- star name: Jack Thompson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lea Thompson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Linda Thompson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kay Thompson
@@ -2297,6 +2599,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marilu T
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeana Tomasina
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marisa Tomei
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Geoffrey Toonen
+Error parsing star, this star has already existed in the Stars table --- star name: Rip Torn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Toto
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tamara Toumanova
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Harry Townes
@@ -2308,6 +2611,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mary Ell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Daniel J. Travanti
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jemru Travers
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nancy Travis
+Error parsing star, this star has already existed in the Stars table --- star name: John Travolta
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Noel Trevarthen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jack Trevor
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Les Tremayne
@@ -2319,6 +2623,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paris Ts
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Tucker
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ann Turkel
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Elizabeth Turner
+Error parsing star, this star has already existed in the Stars table --- star name: Guinevere Turner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tina Turner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lurene Tuttle
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Shannon Tweed
@@ -2343,7 +2648,9 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Deborah 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Deborah VanValkenburgh
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Monique VanVooren
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Valentina Vargas
+Error parsing star, this star has already existed in the Stars table --- star name: Peter Vaughan
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Martin Vaughn
+Error parsing star, this star has already existed in the Stars table --- star name: Robert Vaughn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Reginald VelJohnson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Chick Vennera
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Diane Venora
@@ -2360,6 +2667,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Enzo Vit
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mario Vitale
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Viva
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ruth Vivian
+Error parsing star, this star has already existed in the Stars table --- star name: Jon Voight
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ferdinand vonAlten
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Thomas vonBromssen
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lenny VonDohlen
@@ -2369,9 +2677,12 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Milena V
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Wade
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Russel Wade
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Christie Wagner
+Error parsing star, this star has already existed in the Stars table --- star name: Lindsay Wagner
+Error parsing star, this star has already existed in the Stars table --- star name: Robert Wagner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: James Wainwright
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Akiko Wakabayashi
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eijo Wakabayashi
+Error parsing star, this star has already existed in the Stars table --- star name: Christopher Walken
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kathryn Walker
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Maggie Walker
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Tippy Walker
@@ -2389,6 +2700,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: S.J. War
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Warner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Marcia Warner
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Fran Warren
+Error parsing star, this star has already existed in the Stars table --- star name: Lesley Ann Warren
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Warren
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Warrilow
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Dionne Warwick
@@ -2396,12 +2708,15 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Beverly Washburn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mavis Washington
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ted Wass
+Error parsing star, this star has already existed in the Stars table --- star name: Craig Wasson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gedde Watanabe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: William Waterman
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: John Waters
+Error parsing star, this star has already existed in the Stars table --- star name: Sam Waterston
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Charlene Watkins
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bobby Watson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Douglass Watson
+Error parsing star, this star has already existed in the Stars table --- star name: Emily Watson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Timothy Watson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kristina Wayborn
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: E-than Wayne
@@ -2410,6 +2725,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Keith Wa
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael Wayne
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Nina Wayne
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Carl Weathers
+Error parsing star, this star has already existed in the Stars table --- star name: Sigourney Weaver
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Richard Webb
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Ann Wedgeworth
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Leslie Weiner
@@ -2451,7 +2767,11 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Bernie W
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Billy-Dee Williams
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Eric Bransby Williams
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: JoBeth Williams
+Error parsing star, this star has already existed in the Stars table --- star name: Robin Williams
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Sharon Williams
+Error parsing star, this star has already existed in the Stars table --- star name: Vanessa Williams
+Error parsing star, this star has already existed in the Stars table --- star name: Vanessa Williams
+Error parsing star, this star has already existed in the Stars table --- star name: Fred Williamson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Noble Willingham
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Austin Willis
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Pierre-Richard Willm
@@ -2464,10 +2784,12 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lambert 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Margery Wilson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Mary Louise Wilson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael G. Wilson
+Error parsing star, this star has already existed in the Stars table --- star name: Scott Wilson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Trey Wilson
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Paul Winchell
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Penelope Windust
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Kitty Winn
+Error parsing star, this star has already existed in the Stars table --- star name: Kate Winslet
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Philip Winter
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Deborah Winters
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael James Wixted
@@ -2476,6 +2798,8 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Michael 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Allan Wolfe
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cyndi Wood
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: David Wood
+Error parsing star, this star has already existed in the Stars table --- star name: David Wood
+Error parsing star, this star has already existed in the Stars table --- star name: Elijah Wood
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Gary Wood
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Lana Wood
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Alfre Woodard
@@ -2498,6 +2822,7 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Celeste 
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Cassie Yates
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Yury Yarvet
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jeff York
+Error parsing star, this star has already existed in the Stars table --- star name: Michael York
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Rebecca York
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Burt Young
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Karen Young
@@ -2522,3 +2847,274 @@ Error parsing integer value for tag <dob> --- value: (blank) --- actor: Jerry Zu
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Daphne Zuniga
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Frantisek Zvarik
 Error parsing integer value for tag <dob> --- value: (blank) --- actor: Darrell Zwerling
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: AAd10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: AAn14
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: AbK15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ACf10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ACu27
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ADx1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: AHa10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: AMa50
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: AMa69
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Amo13
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: AMp1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: AnB24
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ArL51
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ATk12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: BBl1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: BHt10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Bmy14
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: BnjR10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: BRf39
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: BS6
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: BsK30
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: BuE10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: CBu12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: CC60
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: CC83
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: CCo1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ChG1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ClC5
+Error parsing actor name --- tag <a> --- value: (null) --- movie ID: ClC18
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ClC22
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: CNo3
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: CoW4
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: CsS15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: CTB25
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: DiS10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: DlB10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: DLy5
+Error parsing actor name --- tag <a> --- value: (null) --- movie ID: DMl10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: DS39
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: DvH10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: EBu5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: EGU18
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: EKu5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: EL9
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: EL13
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: EL15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: EL35
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: EMa1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ESP15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ESP18
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ESP24
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FC24
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FDa17
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FeF28
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FNm20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FRo8
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FRo28
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Ft24
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FTr12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FTu23
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: FTu25
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GeM24
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GFi2x
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GMy25
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GMy35
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GRH3
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GrM10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GSc20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GSsl
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GTh29
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: GTh34
+Error parsing actor name --- tag <a> --- value: (null) --- movie ID: H65
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: HAA10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: HAA15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: HBe3
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: HBH10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: HHa5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: HKa10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: HRi10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: HWi1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: IAv12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: IGB10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: IH20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: IHu20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: IMT24
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JaS33
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JBt20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JBt24
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JBt38
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JCm1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JD7
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JeB10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JFW5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JFW5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JGd2
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JIV47
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JnA20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JKt10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JLp10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JLT10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JLT11
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JnD39
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JnD39
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JnCN10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JoD14
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JoG1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JoG2
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JoR31
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: JSe10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: KCo10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: KHi20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: KuN50
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LB9
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LB35
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LBu1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LDc5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Leh10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LHh10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LHM15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LlF1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LM38
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LOb13
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LoW12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LoW14
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LPh4
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: LuB5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MaM1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MaN50
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MBo7
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MBr1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MBr4
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MCr10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MHe11
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Mfe40
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MLt15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MPi42
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MPl10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MrN12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MRP10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MRs16
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: MRs43
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: NaM3
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: NML26
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: NoL20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Nos12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: OPa2
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PAl20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PeG5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PeM1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PhD25
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PhG10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PM8
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PNe1.
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PRb1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: PeW15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Qta6
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RbC1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RbC28
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Rbt20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RcF26
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RCll0
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RdR64
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ReH22
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ReN53
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ReN55
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RHr5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RM8
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RM14
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RM15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RM16
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RNB10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RoA35
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RoP5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RRe10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RS14
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSal0
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSa20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi17
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi18
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi25
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi29
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi30
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi40
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi41
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RSi45
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RT10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RTh20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RWF7
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RWF37
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: RWN32
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SaT6
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SaT8
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SaT9
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SeL40
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Sfg2
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SiH20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SMi3
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SpJ10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SPo8
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SRa1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: StD37
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: STW10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi4
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi6
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi7
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi8
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi9
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi11
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: SWi12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Sys1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Sys1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Tan20
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Tan21
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TdC15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TFd1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TGi1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TGi2
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TGt10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: THu10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ThS6
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TiG12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TiG15
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ToP1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ToSl
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TRb19
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: TSm10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: VF37
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: VM7
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Vm9
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: W78
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Waw4
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: WBe1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Whu1
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: WiW29
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: WiW30
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Wmk28
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Wmk31
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: WoP26
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: WS35
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: WS45
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: WvD35
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: WW68
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: xDt10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: xDv10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: DSz10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: DSz12
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: YMi10
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: YMZ0
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: ZK5
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0220
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0230
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0250
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0270
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0401
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0406
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0414
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0418
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z0427
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z3410
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z3910
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z4104
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z4250
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z4250
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z7410
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z9630
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z9735
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z9740
+Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: Z9865
