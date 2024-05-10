@@ -5,11 +5,13 @@ add_form.submit(addData);
 
 
 function addData(addDataEvent) {
+    console.log("adding star")
     addDataEvent.preventDefault();
 
     // Get the input values from the form fields
     let starName = document.getElementById('starName').value.trim();
     let birthYear = document.getElementById('birthYear').value.trim();
+    console.log("adding " + starName + " " + birthYear);
 
     let postData = {
         star_name: starName,
@@ -24,7 +26,7 @@ function addData(addDataEvent) {
         data: postData,
         success: function(response) {
             if (response["status"] === "success") {
-                showConfirmation();
+                showConfirmation(response);
             } else {
                 showInvalid(response);
             }
@@ -33,11 +35,10 @@ function addData(addDataEvent) {
 
 }
 
-function showConfirmation(){
-    console.log("Star has been successfully added")
+function showConfirmation(response){
+    console.log("Star has been successfully added with id : " + response["new_star_id"])
     alert("Star has been successfully added");
 }
 function showInvalid(response){
-    console.log("Cannot add star: star already exist")
-    $("#error_message").text(response["message"]);
+    console.log(response["errorMessage"])
 }
