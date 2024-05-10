@@ -73,19 +73,21 @@ public class LoginServlet extends HttpServlet {
 
                 // verifying password using encrypted password
                 VerifyPassword verifier = new VerifyPassword();
-                request.getServletContext().log("About to call verifyCredentialCustomers");
+                System.out.println("About to call verifyCredentialCustomers");
                 if (verifier.verifyCredentialsCustomers(username, password)){
-                    request.getServletContext().log("Login success");
+                    System.out.println("Login success");
                     // Login success, set this user into the session
+                    System.out.println("Setting user attribute to " + username + " " + id);
                     request.getSession().setAttribute("user", new User(username, id)); // initialize a Utility.User object
+                    System.out.println("User setting done and shows " + request.getSession().getAttribute("user"));
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
                 }
                 else {
-                    request.getServletContext().log("Login verification failed");
+                    System.out.println("Login verification failed");
                     // Login fail because of wrong password
                     responseJsonObject.addProperty("status", "fail");
-                    request.getServletContext().log("Login failed"); // Log to localhost log
+                    System.out.println("Login failed"); // Log to localhost log
                     responseJsonObject.addProperty("message", "incorrect password");
                 }
 
@@ -93,7 +95,7 @@ public class LoginServlet extends HttpServlet {
             else {
                 // Login fail because of wrong username/email
                 responseJsonObject.addProperty("status", "fail");
-                request.getServletContext().log("Login failed"); // Log to localhost log
+                System.out.println("Login failed"); // Log to localhost log
                 responseJsonObject.addProperty("message", "user " + username + " doesn't exist");
             }
 

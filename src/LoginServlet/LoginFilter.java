@@ -29,18 +29,19 @@ public class LoginFilter implements Filter {
         // Check if this URL is allowed to access without logging in
         if (this.isUrlAllowedWithoutLogin(httpRequest.getRequestURI())) {
             // Keep default action: pass along the filter chain
-            System.out.println("Passed loginfilter");
+            System.out.println("LoginServlet.LoginFilter: Passed loginfilter");
             chain.doFilter(request, response);
             return;
         }
 
         // Redirect to login page if the "user" attribute doesn't exist in session
+        System.out.println(httpRequest.getSession().getAttribute("user").toString());
         if (httpRequest.getSession().getAttribute("user") == null) {
-            System.out.println("Redirecting back to login user doesn't exist");
+            System.out.println("LoginServlet.LoginFilter: Redirecting back to login user doesn't exist");
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.html");
 
         } else {
-            System.out.println("Passed loginfilter");
+            System.out.println("LoginServlet.LoginFilter: Passed loginfilter");
             chain.doFilter(request, response);
         }
     }
