@@ -45,6 +45,9 @@ function handleMoviesByGenreResult(resultData) {
         let movie_year = resultData[i]["movie_year"];
         let movie_director = resultData[i]["movie_director"];
         let movie_rating = resultData[i]["movie_rating"];
+        if (movie_rating === 0 || movie_rating === null){
+            movie_rating = "N/A"
+        }
         let stars = resultData[i]["stars"];
         let genres = resultData[i]["genres"];
 
@@ -188,6 +191,9 @@ function handleSearchResult(resultData) {
         let movie_year = resultData[i]["movie_year"];
         let movie_director = resultData[i]["movie_director"];
         let movie_rating = resultData[i]["movie_rating"];
+        if (movie_rating === 0 || movie_rating === null){
+            movie_rating = "N/A"
+        }
         let stars = resultData[i]["stars"];
         let genres = resultData[i]["genres"];
 
@@ -329,6 +335,9 @@ function handleMoviesByTitleResult(resultData) {
         let movie_year = resultData[i]["movie_year"];
         let movie_director = resultData[i]["movie_director"];
         let movie_rating = resultData[i]["movie_rating"];
+        if (movie_rating === 0 || movie_rating === null){
+            movie_rating = "N/A"
+        }
         let stars = resultData[i]["stars"];
         let genres = resultData[i]["genres"];
 
