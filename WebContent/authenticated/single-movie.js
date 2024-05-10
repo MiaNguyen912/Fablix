@@ -49,6 +49,9 @@ function handleMovieResult(resultData) {
     let movie_title = resultData[0]["movie_title"];
     let movie_director = resultData[0]["movie_director"];
     let movie_rating = resultData[0]["movie_rating"];
+    if (movie_rating === 0 || movie_rating === null){
+            movie_rating = "N/A"
+    }
     let stars = resultData[0]["stars"];
     let genres = resultData[0]["genres"];
 
