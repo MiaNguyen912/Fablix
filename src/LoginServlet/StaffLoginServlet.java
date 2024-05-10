@@ -47,15 +47,17 @@ public class StaffLoginServlet extends HttpServlet {
         String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
         System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
 
+        System.out.println("About to verify staff recaptcha 1");
         // Verify reCAPTCHA
         try {
             RecaptchaVerifyUtils.verify(gRecaptchaResponse);
+            System.out.println("Recaptcha response verified");
         } catch (Exception e) {
             JsonObject responseJsonObject = new JsonObject();
             responseJsonObject.addProperty("status", "fail");
             request.getServletContext().log("Login failed"); // Log to localhost log
-            // responseJsonObject.addProperty("message", e.getMessage());
-            responseJsonObject.addProperty("message", "Recaptcha verification failed");
+            responseJsonObject.addProperty("message", e.getMessage());
+            //responseJsonObject.addProperty("message", "Recaptcha verification failed");
             response.setStatus(200); // Set response status to 200 (OK)
             response.getWriter().write(responseJsonObject.toString()); // write out response object
             return;

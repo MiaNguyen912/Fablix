@@ -70,7 +70,7 @@ function handleGenreListDisplay(resultData) {
 jQuery.ajax({
     dataType: "json", // Setting return data type
     method: "GET", // Setting request method
-    url: "../../../authenticated/api/all-genres", // Setting request url, which is mapped by StarsServlet in Stars.java
+    url: "../../authenticated/api/all-genres", // Setting request url, which is mapped by StarsServlet in Stars.java
     success: (resultData) => handleGenreListDisplay(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
 });
 

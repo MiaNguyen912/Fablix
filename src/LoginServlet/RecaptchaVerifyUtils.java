@@ -32,7 +32,6 @@ public class RecaptchaVerifyUtils {
         System.out.println("3");
 
 
-        System.out.println("About to verify secret: " + RecaptchaConstants.SECRET_KEY + "with" + gRecaptchaResponse);
         // Data will be sent to the server.
         String postParams = "secret=" + RecaptchaConstants.SECRET_KEY + "&response=" + gRecaptchaResponse;
 
