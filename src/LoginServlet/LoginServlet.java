@@ -16,7 +16,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet(name = "LoginServlet", urlPatterns = "/api/login") // LoginServlet.LoginServlet handles POST request sent to /api/login
+@WebServlet(name = "LoginServlet", urlPatterns = "/api/login") // LoginServlet.LoginServlet
+// es POST request sent to /api/login
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 
@@ -36,18 +37,16 @@ public class LoginServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username;
-        String password;
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
         // Retrieve parameters username/password from the POST request.
         // Verify reCAPTCHA
+        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+
+        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
+
+        System.out.println("About to verify recaptcha 1");
         try {
-            username = request.getParameter("username");
-            password = request.getParameter("password");
-            String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
-
-            System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
-
-            System.out.println("About to verify recaptcha 1");
             RecaptchaVerifyUtils.verify(gRecaptchaResponse);
             System.out.println("Recaptcha response verified");
         } catch (Exception e) {
@@ -74,13 +73,16 @@ public class LoginServlet extends HttpServlet {
 
                 // verifying password using encrypted password
                 VerifyPassword verifier = new VerifyPassword();
+                request.getServletContext().log("About to call verifyCredentialCustomers");
                 if (verifier.verifyCredentialsCustomers(username, password)){
+                    request.getServletContext().log("Login success");
                     // Login success, set this user into the session
                     request.getSession().setAttribute("user", new User(username, id)); // initialize a Utility.User object
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
                 }
                 else {
+                    request.getServletContext().log("Login verification failed");
                     // Login fail because of wrong password
                     responseJsonObject.addProperty("status", "fail");
                     request.getServletContext().log("Login failed"); // Log to localhost log

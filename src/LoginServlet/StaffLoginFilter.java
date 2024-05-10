@@ -20,23 +20,27 @@ public class StaffLoginFilter implements Filter {
      */
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
+        System.out.println("Login Filtering Staff");
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        System.out.println("LoginServlet.LoginFilter: " + httpRequest.getRequestURI());
+        System.out.println("LoginServlet.StaffLoginFilter: " + httpRequest.getRequestURI());
 
         // Check if this URL is allowed to access without logging in
         if (this.isUrlAllowedWithoutLogin(httpRequest.getRequestURI())) {
             // Keep default action: pass along the filter chain
+            System.out.println("Passed loginfilter Staff");
             chain.doFilter(request, response);
             return;
         }
 
         // Redirect to login page if the "user" attribute doesn't exist in session
         if (httpRequest.getSession().getAttribute("staff") == null) {
+            System.out.println("Redirecting loginfilter StaffStaff");
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/fablix/_dashboard/login.html");
 
         } else {
+            System.out.println("Passed loginfilter");
             chain.doFilter(request, response);
         }
     }
