@@ -44,11 +44,12 @@ public class LoginServlet extends HttpServlet {
             username = request.getParameter("username");
             password = request.getParameter("password");
             String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
-            request.getServletContext().log("gRecaptchaResponse: " + gRecaptchaResponse);
 
             System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
 
+            System.out.println("About to verify recaptcha 1");
             RecaptchaVerifyUtils.verify(gRecaptchaResponse);
+            System.out.println("Recaptcha response verified");
         } catch (Exception e) {
             JsonObject responseJsonObject = new JsonObject();
             responseJsonObject.addProperty("status", "fail");
