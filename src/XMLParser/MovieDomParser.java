@@ -72,10 +72,10 @@ import java.util.*;
 
 public class MovieDomParser {
 
-    private static final String MOVIES_TABLE = "movies_backup"; // may create a movies_backup table for testing
-    private static final String GENRES_TABLE = "genres_backup"; // may create a genres_backup table for testing
-    private static final String GENRES_IN_MOVIES_TABLE = "genres_in_movies_backup"; // may create a genres_in_movies_backup table for testing
-
+    private static final String MOVIES_TABLE = "movies"; // may create a movies_backup table for testing
+    private static final String GENRES_TABLE = "genres"; // may create a genres_backup table for testing
+    private static final String GENRES_IN_MOVIES_TABLE = "genres_in_movies"; // may create a genres_in_movies_backup table for testing
+    private static final String RATINGS_TABLE = "ratings";
     private DataSource dataSource;
     List<Movie> movies = new ArrayList<>();
     LinkedHashSet<String> all_genres = new LinkedHashSet<>();
@@ -375,7 +375,34 @@ public class MovieDomParser {
     }
 
 
+    private void updateRatingsTable(){
+        try {
+            String loginUser = "mytestuser";
+            String loginPasswd = "My6$Password";
+            String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
 
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
+            PreparedStatement statement = null;
+            String alterTableQuery = "ALTER TABLE " + RATINGS_TABLE + " MODIFY Rating float NULL, MODIFY Numvotes integer NULL;";
+            statement = connection.prepareStatement(alterTableQuery);
+            statement.executeUpdate();
+
+            String ratingsInsertQuery = "INSERT INTO " + RATINGS_TABLE + "(movieid, rating, numvotes)  SELECT id, null, null FROM " + MOVIES_TABLE + " m WHERE NOT EXISTS " +
+                                        " (SELECT 1 FROM " + RATINGS_TABLE + " r WHERE r.movieid = m.id)";
+
+            int numRowAffected = 0;
+            statement = connection.prepareStatement(ratingsInsertQuery);
+            numRowAffected = statement.executeUpdate();
+
+            statement.close();
+            connection.close();
+
+            System.out.println("Updating ratings table completed, " + numRowAffected + " rows affected");
+
+        }
+        catch (Exception e) {e.printStackTrace();}
+    }
 
     public static void main(String[] args) {
         // connect to DB and get the current max ID (last ID) of genre in the genres table
@@ -390,8 +417,11 @@ public class MovieDomParser {
         // insert new genres into Genres table
         domParser.insertIntoGenresTable();
 
-        // insert data into database
+        // insert data into movies and genres_in_movies table
         domParser.insertDataToBD();
+
+        // update ratings table to add null rating for newly added movies
+        domParser.updateRatingsTable();
     }
 
 }
