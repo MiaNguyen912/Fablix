@@ -45,6 +45,7 @@ function submitLoginForm(formSubmitEvent) {
             success: handleLoginResult // if success, jQuery will call handleLoginResult and pass the response data as an argument.
         }
     );
+    console.log("login post sent");
 }
 
 // Bind the submit action of the form to a handler function
