@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
 
-@WebServlet(name = "DataServlet.MetadataServlet", urlPatterns = "/fablix/_dashboard/loggedin/api/metadata")
+@WebServlet(name = "DataServlet.MetadataServlet", urlPatterns = "/_dashboard/loggedin/api/metadata")
 public class MetadataServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

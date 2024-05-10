@@ -18,7 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 
-@WebServlet(name = "LoginServlet.LoginServlet.StaffLoginServlet", urlPatterns = "/fablix/_dashboard/api/staff-login")
+@WebServlet(name = "LoginServlet.LoginServlet.StaffLoginServlet", urlPatterns = "/_dashboard/api/staff-login")
 public class StaffLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 

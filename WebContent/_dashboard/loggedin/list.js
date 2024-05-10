@@ -96,9 +96,9 @@ function handleMoviesByGenreResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -247,9 +247,9 @@ function handleSearchResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -387,9 +387,9 @@ function handleMoviesByTitleResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
