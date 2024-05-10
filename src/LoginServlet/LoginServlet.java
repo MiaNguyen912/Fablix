@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.concurrent.TimeUnit;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/api/login") // LoginServlet.LoginServlet
 // es POST request sent to /api/login
@@ -80,6 +81,7 @@ public class LoginServlet extends HttpServlet {
                     System.out.println("Setting user attribute to " + username + " " + id);
                     request.getSession().setAttribute("user", new User(username, id)); // initialize a Utility.User object
                     System.out.println("User setting done and shows " + request.getSession().getAttribute("user"));
+                    TimeUnit.SECONDS.sleep(1); // Pause for 1 second for session attribute to sync for loginfilter on AWS
                     responseJsonObject.addProperty("status", "success");
                     responseJsonObject.addProperty("message", "success");
                 }

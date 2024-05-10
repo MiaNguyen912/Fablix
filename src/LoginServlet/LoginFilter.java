@@ -35,7 +35,7 @@ public class LoginFilter implements Filter {
         }
 
         // Redirect to login page if the "user" attribute doesn't exist in session
-        System.out.println(httpRequest.getSession().getAttribute("user").toString());
+        System.out.println(httpRequest.getSession().getAttribute("user"));
         if (httpRequest.getSession().getAttribute("user") == null) {
             System.out.println("LoginServlet.LoginFilter: Redirecting back to login user doesn't exist");
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.html");
