@@ -41,6 +41,7 @@ public class AddStarServlet extends HttpServlet {
      * Adds a star into the database, taking in a star name and an optional birth year
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        System.out.println("Starting doPost");
         response.setContentType("application/json"); // Response mime type
 
         // Output stream to STDOUT
@@ -48,13 +49,14 @@ public class AddStarServlet extends HttpServlet {
 
         String query = "";
 
-
+        System.out.println("Connecting to data");
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try (Connection conn = dataSource.getConnection()) {
 
+            System.out.println("Getting params");
             // Query should be inserting into stars with name and birth year
             // Doesn't matter if there is duplicate, treat as different with different ids
-            String name = request.getParameter("name");
+            String name = request.getParameter("star_name");
             String birth_year = request.getParameter("birth_year");
 
             // table for reference
@@ -64,36 +66,35 @@ public class AddStarServlet extends HttpServlet {
 //                   birthYear INTEGER
 //            );
 
+            // Call the stored procedure
+            String call = "{CALL AddStar(?, ?, ?)}";
 
-            // make a sql insert query for the prepare statement to database to insert
-            String insert_query = "INSERT INTO stars (name, birthYear) VALUES (?, ?)";
-            PreparedStatement statement = conn.prepareStatement(insert_query, PreparedStatement.RETURN_GENERATED_KEYS);
+            try (CallableStatement stmt = conn.prepareCall(call)) {
+                stmt.setString(1, name);
 
-
-
-            statement.setString(1, name);
-
-            if (birth_year != null && !birth_year.isEmpty()) {
-                statement.setInt(2, Integer.parseInt(birth_year));
-            } else {
-                statement.setNull(2, Types.INTEGER);
-            }
-
-            int rowsAffected = statement.executeUpdate();
-
-            JsonObject responseJson = new JsonObject();
-
-            if (rowsAffected > 0) {
-                try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
-                    if (generatedKeys.next()) {
-                        responseJson.addProperty("new_star_id", generatedKeys.getString(1));
-                    }
+                // Check if birth_year is provided and parse it to an integer if it is
+                if (birth_year != null && !birth_year.isEmpty()) {
+                    stmt.setInt(2, Integer.parseInt(birth_year));
+                } else {
+                    stmt.setNull(2, Types.INTEGER);
                 }
+
+                // Register the third parameter as an OUT parameter
+                stmt.registerOutParameter(3, Types.VARCHAR);
+
+                // Execute the stored procedure
+                stmt.execute();
+
+                // Retrieve the new star ID from the OUT parameter
+                String newStarId = stmt.getString(3);
+
+                // Create a JSON object to send as a response
+                JsonObject responseJson = new JsonObject();
+                responseJson.addProperty("status", "success");
+                responseJson.addProperty("new_star_id", newStarId);
+
+                out.println(responseJson.toString());
             }
-
-            responseJson.addProperty("status", "success");
-
-            out.println(responseJson.toString());
 
         } catch (Exception e) {
 
@@ -105,7 +106,7 @@ public class AddStarServlet extends HttpServlet {
             out.write(jsonObject.toString());
 
             // Set response status to 500 (Internal Server Error)
-            response.setStatus(500);
+            response.setStatus(200);
         } finally {
             out.close();
         }
