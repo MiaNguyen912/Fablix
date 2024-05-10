@@ -37,7 +37,7 @@ function addData(addDataEvent) {
 
 function showConfirmation(response){
     console.log("Star has been successfully added with id : " + response["new_star_id"])
-    alert("Star has been successfully added");
+    alert("Star has been successfully added with id : " + response["new_star_id"]);
 }
 function showInvalid(response){
     console.log(response["errorMessage"])
