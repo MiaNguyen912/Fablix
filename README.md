@@ -184,14 +184,15 @@ mysql> quit;
 - In WebContent/index.html, replace data-sitekey="YOUR_SITE_KEY" with your own reCAPTCHA site key.
 
 
-### Bulk import from XML files:
-- run [XMLParser.StarDomParser.java](...) to import new actors (remember to check location of the XML file in StarDomParser.java)
-
+### populating DB and do bulk import from XML files:
+1. run createtable.sql
+2. run movie-data.sql
+3. edittables.sql
+4. edittables-P3.sql
+5. UpdateSecurePassword.java
+6. UpdateSecurePasswordStaff.java
+7. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file)
+8. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
   
 ### methods to boost up query:
 - use batch insert
-
-
-insert into movies_backup select * from movies;
-insert into genres_backup select * from genres;
-insert into genres_in_movies_backup select * from genres_in_movies;
