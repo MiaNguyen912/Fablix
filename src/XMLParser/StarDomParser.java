@@ -11,35 +11,30 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.*;
 
-/* actors63.xml format:
-        <actors>
-            <actor><stagename>Willie Aames</stagename> <dowstart></dowstart> <dowend></dowend> <familyname>Aames</familyname> <firstname>William</firstname> <gender>M</gender> <dob>1960</dob> <dod>1984+</dod> <roletype>unknown</roletype> <origin>\Am</origin> <picref/> <relationships/> <notes/></actor>
-            <actor><stagename>Bud Abbott</stagename> <dowstart>1939</dowstart> <dowend>1956</dowend> <familyname> Abbott</familyname> <firstname>William</firstname> <gender>M</gender> <dob>1895</dob> <dod>1974</dod> <roletype>straight comedian</roletype> <origin>\Am</origin>  <studio>Universal</studio> <relationships><relship><reltype>Ww</reltype><towhom><relname>Lou Costello</relname></towhom></relship></relationships> <notes/></actor>
-            ...
-        </actors>
-* */
 
 
 public class StarDomParser {
+    private static final String STARS_TABLE = "stars"; // may create a stars_backup table for testing
+    private static final String STARS_IN_MOVIES_TABLE = "stars_in_movies"; // may create a stars_in_movies_backup table for testing
+    private static final String MOVIES_TABLE = "movies"; // may create a movies_backup table for testing
 
-    private static final String TABLE = "stars_backup";
-    private DataSource dataSource;
-    static int lastStarID;
-    List<Star> stars = new ArrayList<>();
+    public static int lastStarID;
+
+    HashMap<String, Integer> existing_stars_map = new HashMap<>();
+    ArrayList<String> existing_movies_list = new ArrayList<>();
+    HashMap<String, HashSet<String>> stars_in_movies = new HashMap<>();
+    public static Map<String, Star> starName_starObject_map = new HashMap<>();
     Document dom;
-
+    // ------------------------------------------------------------------------------------------------------------
 
     public static String getLastStarID() {
         String lastStarID_string = "";
         try {
             try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviedb", "mytestuser", "My6$Password")){;
-            String query = "select max(id) from " + TABLE;
+            String query = "select max(id) from " + STARS_TABLE;
                 PreparedStatement statement = conn.prepareStatement(query);
                 ResultSet rs = statement.executeQuery();
                 if (rs.next()) {
@@ -59,13 +54,16 @@ public class StarDomParser {
         return lastStarID_string;
     }
 
-    public void runParser() {
-        parseXmlFile(); // parse the xml file and get the dom object
-        parseDocument(); // get each employee element and create a Employee object
-        // printData(); // iterate through the list and print the data
+    public void runParser(String filename) {
+        parseXmlFile(filename); // parse the xml file and get the dom object
+        if (filename.equals("XML/actors63.xml")){
+            parseActorXML();
+        } else if (filename.equals("XML/casts124.xml")){
+            parseCastXML();
+        }
     }
 
-    private void parseXmlFile() {
+    private void parseXmlFile(String filename) {
         // get the factory
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         try {
@@ -73,13 +71,13 @@ public class StarDomParser {
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 
             // parse using builder to get DOM representation of the XML file
-            dom = documentBuilder.parse("XML/actors63.xml");
+            dom = documentBuilder.parse(filename);
         } catch (ParserConfigurationException | SAXException | IOException error) {
             error.printStackTrace();
         }
     }
 
-    private void parseDocument() {
+    private void parseActorXML() {
         // get the document root Element
         Element documentElement = dom.getDocumentElement();
 
@@ -88,35 +86,86 @@ public class StarDomParser {
         for (int i = 0; i < actorsList.getLength(); i++) {
             Element element = (Element) actorsList.item(i); // get the star element
             Star star = parseStar(element); // get the Utility.Star object
-            stars.add(star); // add it to list
+
+            // only add to starName_starObject_map if the star has not existed in database
+            if (existing_stars_map.containsKey(star.getName())){
+                if (existing_stars_map.get(star.getName()) != star.getBirthYear()){
+                    starName_starObject_map.put(star.getName(), star); // add it to list
+                }
+                else {
+                    System.out.println("Error parsing star, this star has already existed in the Stars table --- star name: " + star.getName());
+                }
+            } else {
+                starName_starObject_map.put(star.getName(), star); // add it to list
+            }
         }
     }
 
-    /**
-     * It takes an employee Element, reads the values in, creates
-     * an Employee object for return
-     */
-    private Star parseStar(Element element) {
+    private void parseCastXML() {
+        // get the document root Element
+        Element documentElement = dom.getDocumentElement();
 
+        NodeList films = documentElement.getElementsByTagName("filmc");
+        for (int i = 0; i < films.getLength(); i++) {
+            Element element = (Element) films.item(i);
+            HashMap<String, HashSet<String>> stars_in_this_movie = parseStarInMovies(element);
+            stars_in_movies.putAll(stars_in_this_movie);
+        }
+    }
+
+    private Star parseStar(Element element) {
         // for each <actor> element get text or int values of stagename and dob
         String name = getTextValue(element, "stagename");
-//        System.out.println(name);
         int birthYear = getIntValue(element, "dob", name);
-//        System.out.println(birthYear);
 
         // create a new Utility.Star with the value read from the xml nodes
         Star newStar = new Star("nm" + (++lastStarID), name);
         if (birthYear != -1) {
             newStar.setBirthYear(birthYear);
         }
-
         return newStar;
     }
 
-    /**
-     * It takes an XML element and the tag name, look for the tag and get the text content
-     * i.e for <Utility.Star><Name>John</Name></Utility.Star> xml snippet if the Element points to Utility.Star node and tagName is name it will return John
-     */
+    private HashMap<String, HashSet<String>> parseStarInMovies(Element element) {
+        HashMap<String, HashSet<String>> stars_in_movie = new HashMap<>();
+        HashSet<String> stars = new HashSet<>();
+        String movieId = "";
+
+        NodeList movies = element.getElementsByTagName("m");
+        for (int i = 0; i < movies.getLength(); i++) {
+            Element movieElement = (Element) movies.item(i);
+            if (i == 0){
+                movieId = getTextValue(movieElement, "f");
+
+                // if movie ID has not exist in the movies table, ignore this movie (by returning an empty map)
+                if (!existing_movies_list.contains(movieId)){
+                    System.out.println("Error parsing movie ID for stars_in_movies, this ID does not exist in the Movies table --- tag <f> --- value: " + movieId);
+                    return stars_in_movie;
+                }
+            }
+
+            String actor_name = getTextValue(movieElement, "a");
+            if (actor_name == null || actor_name.isEmpty() || actor_name.trim().isEmpty()){
+                System.out.println("Error parsing actor name --- tag <a> --- value: (null) --- movie ID: " + movieId);
+                continue; // skip this star
+            }
+
+            Star actor_object = starName_starObject_map.get(actor_name);
+            if (actor_object == null){
+                Star newStar = new Star("nm" + (++lastStarID), actor_name);
+                starName_starObject_map.put(actor_name, newStar);
+            }
+
+            String actorId = starName_starObject_map.get(actor_name).getId();
+
+            stars.add(actorId);
+//            stars.add(actor_name);
+        }
+        stars_in_movie.put(movieId, stars);
+        return stars_in_movie;
+    }
+    // ------------------------------------------------------------------------------------------------------------
+
     private String getTextValue(Element element, String tagName) {
         String textVal = null;
         NodeList nodeList = element.getElementsByTagName(tagName);
@@ -132,9 +181,6 @@ public class StarDomParser {
         return textVal;
     }
 
-    /**
-     * Calls getTextValue and returns a int value
-     */
     private int getIntValue(Element ele, String tagName, String starName) {
         int intVal = -1;
         String textVal = "";
@@ -159,14 +205,28 @@ public class StarDomParser {
         }
         return intVal;
     }
-    private void printData() {
-        System.out.println("Total parsed " + stars.size() + " stars");
-        for (Star s : stars) {
-            System.out.println("\t" + s.toString());
+    // ------------------------------------------------------------------------------------------------------------
+
+    private void print_stars() {
+        System.out.println("Total parsed " + starName_starObject_map.size() + " stars");
+        for (String starName : starName_starObject_map.keySet()) {
+            System.out.println("\t" + starName_starObject_map.get(starName).toString());
         }
+        System.out.println("Total: " + starName_starObject_map.size());
+
     }
 
-    private void insertDataToBD(){
+    private void print_starsInMovies() {
+        System.out.println("Total parsed " + stars_in_movies.size() + " movies");
+        for (HashMap.Entry<String, HashSet<String>> entry : stars_in_movies.entrySet()) {
+            String movieId = entry.getKey();
+            HashSet<String> stars = entry.getValue();
+            System.out.println("\tMovie: " + movieId + ", stars: " + stars);
+        }
+    }
+    // ------------------------------------------------------------------------------------------------------------
+
+    private void check_existing_stars(){
         try {
             String loginUser = "mytestuser";
             String loginPasswd = "My6$Password";
@@ -176,14 +236,75 @@ public class StarDomParser {
             Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
             PreparedStatement statement = null;
             int[] iNoRows = null;
-            String query = "INSERT INTO " + TABLE + "(id, name, birthYear) VALUES (?, ?, ?)";
+            String query = "SELECT * FROM " + STARS_TABLE;
+            statement = connection.prepareStatement(query);
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()){
+                String stars_name = rs.getString("name");
+                int birth_year = rs.getInt("birthYear");
+                existing_stars_map.put(stars_name, birth_year);
+            }
+
+            try {
+                if (statement!=null) statement.close();
+                if(connection!=null) connection.close();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+        catch (Exception e) {e.printStackTrace();}
+    }
+
+    private void check_existing_movies(){
+        try {
+            String loginUser = "mytestuser";
+            String loginPasswd = "My6$Password";
+            String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
+
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
+            PreparedStatement statement = null;
+            int[] iNoRows = null;
+            String query = "SELECT * FROM " + MOVIES_TABLE;
+            statement = connection.prepareStatement(query);
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()){
+                String movieId = rs.getString("id");
+                existing_movies_list.add(movieId);
+            }
+            try {
+                if (statement!=null) statement.close();
+                if(connection!=null) connection.close();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+        catch (Exception e) {e.printStackTrace();}
+    }
+
+    // ------------------------------------------------------------------------------------------------------------
+
+    private void insert_into_stars(){
+        try {
+            String loginUser = "mytestuser";
+            String loginPasswd = "My6$Password";
+            String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
+
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
+            PreparedStatement statement = null;
+            int[] iNoRows = null;
+            String query = "INSERT INTO " + STARS_TABLE + "(id, name, birthYear) VALUES (?, ?, ?)";
 
             try {
                 connection.setAutoCommit(false);
                 statement = connection.prepareStatement(query);
                 System.out.println("Adding new stars");
-                for(Star s : stars)
+                for (String starName : starName_starObject_map.keySet())
                 {
+                    Star s = starName_starObject_map.get(starName);
                     String id = s.getId();
                     String name = s.getName();
                     int birthYear = s.getBirthYear();
@@ -213,7 +334,50 @@ public class StarDomParser {
         catch (Exception e) {e.printStackTrace();}
     }
 
+    private void insert_into_stars_in_movies(){
+        try {
+            String loginUser = "mytestuser";
+            String loginPasswd = "My6$Password";
+            String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
 
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
+            PreparedStatement insertStatement = null;
+            int[] rowsAffected = null;
+            String query = "INSERT INTO " + STARS_IN_MOVIES_TABLE + "(starId, movieId) VALUES (?, ?)";
+
+            System.out.println("Start inserting into " + STARS_IN_MOVIES_TABLE + " table");
+            try {
+                connection.setAutoCommit(false);
+                insertStatement = connection.prepareStatement(query);
+
+                for (HashMap.Entry<String, HashSet<String>> entry : stars_in_movies.entrySet()) {
+                    String movieId = entry.getKey();
+                    HashSet<String> stars = entry.getValue();
+                    for (String starId : stars){
+                        insertStatement.setString(1, starId);
+                        insertStatement.setString(2, movieId);
+                        insertStatement.addBatch();
+                    }
+                }
+                rowsAffected = insertStatement.executeBatch(); // Each int in the array represents the update count for each command in the batch.
+                connection.commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            try {
+                if (insertStatement!=null) insertStatement.close();
+                if(connection!=null) connection.close();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("Updating stars_in_movies completed, " + rowsAffected.length + " rows affected");
+        }
+        catch (Exception e) {e.printStackTrace();}
+    }
+    // ------------------------------------------------------------------------------------------------------------
 
 
     public static void main(String[] args) {
@@ -224,11 +388,23 @@ public class StarDomParser {
         // create a parser instance
         StarDomParser domParser = new StarDomParser();
 
-        // start parsing xml
-        domParser.runParser();
+        // check existing data in table
+        domParser.check_existing_stars();
+        domParser.check_existing_movies();
 
-        // insert data into database
-        domParser.insertDataToBD();
+        // start parsing xml
+        domParser.runParser("XML/actors63.xml");
+        domParser.runParser("XML/casts124.xml");
+        //domParser.print_stars();
+        //domParser.print_starsInMovies();
+
+        // insert stars into the stars table
+        domParser.insert_into_stars();
+
+
+        // insert into DB
+        domParser.insert_into_stars_in_movies();
+
     }
 
 }
