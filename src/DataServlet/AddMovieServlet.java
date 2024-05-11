@@ -85,12 +85,17 @@ public class AddMovieServlet extends HttpServlet {
                 stmt.execute();
 
                 // Retrieve the new movie ID from the OUT parameter
-                String new_movie_id = stmt.getString(6);
+                String movie_id = stmt.getString(6);
+                String genre_id = stmt.getString(7);
+                String star_id = stmt.getString(8);
+                String status = stmt.getString(9);
 
                 // Create a JSON object to send as a response
                 JsonObject responseJson = new JsonObject();
-                responseJson.addProperty("status", "success");
-                responseJson.addProperty("new", new_movie_id);
+                responseJson.addProperty("status", status);
+                responseJson.addProperty("movie_id", movie_id);
+                responseJson.addProperty("genre_id", genre_id);
+                responseJson.addProperty("star_id", star_id);
 
                 out.println(responseJson.toString());
             }

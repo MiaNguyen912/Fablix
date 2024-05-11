@@ -67,7 +67,7 @@ public class AddStarServlet extends HttpServlet {
 //            );
 
             // Call the stored procedure
-            String call = "{CALL AddStar(?, ?, ?)}";
+            String call = "{CALL add_star(?, ?, ?)}";
 
             try (CallableStatement stmt = conn.prepareCall(call)) {
                 stmt.setString(1, name);

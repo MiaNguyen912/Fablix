@@ -43,9 +43,9 @@ function addData(addDataEvent) {
 }
 
 function showConfirmation(response){
-    console.log("Movie has been successfully added with id : " + response["new_movie_id"])
-    alert("Movie has been successfully added with id : " + response["new_movie_id"]);
+    console.log("Movie has been successfully added with id : " + response["movie_id"])
+    alert("Movie added with movieId: " + response["movie_id"] + " genreId: " + response["genre_id"] + " starId: " + response["star_id"]);
 }
 function showInvalid(response){
-    console.log(response["errorMessage"])
+    alert("Error: Duplicate Movie!");
 }
