@@ -106,6 +106,10 @@ BEGIN
         -- Insert into stars_in_movies
         INSERT INTO stars_in_movies (starId, movieId) VALUES (out_star_id, out_movie_id);
 
+
+        -- Insert into ratings as well with a placeholder rating and numvotes
+        INSERT INTO ratings (Movieid, Rating, Numvotes) VALUES (out_movie_id, 10, 100);
+
         SET out_status = 'success';
 
         COMMIT;
