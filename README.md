@@ -95,9 +95,14 @@ mysql> quit;
 - [PaymentServet.java](src/IndexServlet.java): has method doPOST, which is invoked with HTTP POST requests, responsible for validating card information 
 
 
+- [UpdateSecurePassword.java](...) and [UpdateSecurePasswordStaff.java](...): encode plan-text password of customers and staffs
 
-- Web pages that required log in to access are put in `authenticated` folder
-- only the home page (index.html) and login page (login.html) are accessible without logging in
+
+- [MovieDomParser.java](...) and [StarDomParser.java](...): parse the XML files
+
+
+- [AddMovieServlet.java](...) and [AddStarServlet.java](...): call the stored procedures to add new movie and star
+
 
 ### Searching logic
 - if title is specified: find 'title%' or '% title%' (title should match at the beginning or after a space)
@@ -125,6 +130,7 @@ mysql> quit;
           AND
     ORDER BY m.title, sp.movie_count DESC, s.name ASC;
 
+
 ### DataSource
 - `WebContent/META-INF/context.xml` contains a DataSource, with database information stored in it.
 `WEB-INF/web.xml` registers the DataSource to name jdbc/moviedb, which could be referred to anywhere in the project.
@@ -134,17 +140,21 @@ mysql> quit;
 - To use DataSource, you can create a new connection to it by `dataSource.getConnection()`.
 
 ### Files with Prepared Statements
-- [DataServlet.Top20MoviesServlet.java](src/Top20MoviesServlet.java)
-- [DataServlet.SingleStarServlet.java](...)
-- [DataServlet.SingleMovieServlet.java](...)
-- [CartAndPaymentServlet.java](...)
-- [LoginServlet.LoginServlet.java](...)
-- [DataServlet.ListServlet.java](...)
-- [DataServlet.GenresServlet.java](...)
-- [CartAndPaymentServlet.ConfirmationServlet.java](...)
-- [CartAndPaymentServlet.CartServlet.java](...)
-- [UpdatePassword.java](...)
-- [UpdatePasswordStaff.java](...)
+- [ConfirmationServlet.java](src/CartAndPaymentServlet/ConfirmationServlet.java)
+- [CartServlet.java](src/CartAndPaymentServlet/CartServlet.java)
+- [PaymentServlet.java](src/CartAndPaymentServlet/PaymentServlet.java)
+- [GenresServlet.java](src/DataServlet/GenresServlet.java)
+- [ListServlet.java](src/DataServlet/ListServlet.java)
+- [MetadataServet.java](src/DataServlet/MetadataServet.java)
+- [Top20MoviesServlet.java](src/DataServlet/Top20MoviesServlet.java)
+- [SingleStarServlet.java](src/DataServlet/SingleStarServlet.java)
+- [SingleMovieServlet.java](src/DataServlet/SingleMovieServlet.java)
+- [LoginServlet.java](src/LoginServlet/LoginServlet.java)
+- [StaffLoginServlet.java](src/LoginServlet/StaffLoginServlet.java)
+- [UpdateSecurePassword.java](src/LoginServlet/UpdateSecurePassword.java)
+- [UpdateSecurePasswordStaff.java](src/LoginServlet/UpdateSecurePasswordStaff.java)
+- [MovieDomParser.java](src/XMLParser/MovieDomParser.java) 
+- [StarDomParser.java](src/XMLParser/StarDomParser.java)
 
 
 
@@ -196,3 +206,8 @@ mysql> quit;
   
 ### methods to boost up query:
 - use batch insert
+
+
+### XML Parsing error messages:
+- [actors_parsing_error_messages.txt](actors_parsing_error_messages.txt)
+- [movies_parsing_error_messages.txt](movies_parsing_error_messages.txt)

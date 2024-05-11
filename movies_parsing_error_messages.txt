@@ -1,13 +1,30 @@
+Error: duplicate value of movie --- <t> --- value: Romeo and Juliet
+Error: duplicate value of movie --- <t> --- value: Romeo and Juliet
+Error: duplicate value of movie --- <t> --- value: Romeo and Juliet
+Error: duplicate value of movie --- <t> --- value: Romeo and Juliet
 Error: duplicate value of movie ID --- <fid> --- value: CC80 --- movie: Limelight
 Error: duplicate value of movie ID --- <fid> --- value: ECn107 --- movie: Captain January
+Error: duplicate value of movie --- <t> --- value: The Freshman
 Error: duplicate value of movie ID --- <fid> --- value: JuD11 --- movie: La Fin de Jour
 Error: duplicate value of movie ID --- <fid> --- value: FB21 --- movie: Liliom
 Error: duplicate value of movie ID --- <fid> --- value: GCt30 --- movie: The Rat
+Error: duplicate value of movie --- <t> --- value: Our Daily Bread
+Error: duplicate value of movie --- <t> --- value: Why Worry
+Error: duplicate value of movie --- <t> --- value: Girl Shy
+Error: duplicate value of movie --- <t> --- value: Hot Water
 Error: duplicate value of movie ID --- <fid> --- value: FNm10 --- movie: Doctor Jack
 Error: duplicate value of movie ID --- <fid> --- value: RC5 --- movie: Two Timid Souls
+Error: duplicate value of movie --- <t> --- value: The Light That Failed
+Error: duplicate value of movie --- <t> --- value: Seven Chances
+Error: duplicate value of movie --- <t> --- value: Feet First
 Error: duplicate value of movie ID --- <fid> --- value: MLR6 --- movie: Five Star Final
+Error: duplicate value of movie --- <t> --- value: Waterloo Bridge
+Error: duplicate value of movie --- <t> --- value: Monsieur Verdoux
+Error: duplicate value of movie --- <t> --- value: Evergreen
 Error parsing integer value for tag <year> --- value: 19yy --- movie: El grand cavalcodos
+Error: duplicate value of movie --- <t> --- value: Boy Meets Girl
 Error: duplicate value of movie ID --- <fid> --- value: RdR38 --- movie: Upperworld
+Error: duplicate value of movie --- <t> --- value: Topper Returns
 Error parsing string value for tag <fid> --- value: (null) --- movie:Becky Sharp
 Error parsing string value for tag <fid> --- value: (null) --- movie:Rings on her Fingers
 Error parsing string value for tag <fid> --- value: (null) --- movie:Summer Holiday
@@ -24,34 +41,63 @@ Error parsing string value for tag <fid> --- value: (null) --- movie:The Dark Mi
 Error parsing string value for tag <fid> --- value: (null) --- movie:Criss Cross
 Error parsing string value for tag <fid> --- value: (null) --- movie:The Spiral Staircase
 Error parsing string value for tag <fid> --- value: (null) --- movie:The Crimson Pirate
+Error: duplicate value of movie --- <t> --- value: Desire Me
+Error: duplicate value of movie --- <t> --- value: Laughter
+Error: duplicate value of movie --- <t> --- value: Topaze
 Error: duplicate value of movie ID --- <fid> --- value: IAg10 --- movie: Send For Paul Temple
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
 Error: duplicate value of movie ID --- <fid> --- value: OP13 --- movie: Forever Amber
 Error: duplicate value of movie ID --- <fid> --- value: GSt3 --- movie: The Nitwits
+Error: duplicate value of movie --- <t> --- value: La Maternelle
+Error: duplicate value of movie --- <t> --- value: La Mort du Cygne
+Error: duplicate value of movie --- <t> --- value: Strange Illusion
+Error: duplicate value of movie --- <t> --- value: Pastor Hall
+Error: duplicate value of movie --- <t> --- value: Snow White and the Seven Dwarfs
+Error: duplicate value of movie --- <t> --- value: Dragon Seed
+Error: duplicate value of movie --- <t> --- value: Thank Your Lucky Stars
+Error: duplicate value of movie --- <t> --- value: Of Mice and Men
 Error: duplicate value of movie ID --- <fid> --- value: ChC5 --- movie: Against the Wind
 Error: duplicate value of movie ID --- <fid> --- value: ChC12 --- movie: Law and Disorder
 Error: duplicate value of movie ID --- <fid> --- value: ChC15 --- movie: Wild Duck
+Error: duplicate value of movie --- <t> --- value: Heaven Knows Mr.~Allison
 Error: duplicate value of movie ID --- <fid> --- value: PaJ2 --- movie: Ferry Pilot
+Error: duplicate value of movie --- <t> --- value: The First of the Few
 Error: duplicate value of movie ID --- <fid> --- value: FZ8 --- movie: The Men
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
+Error: duplicate value of movie --- <t> --- value: Crime Doctor's Strangest Case
 Error: duplicate value of movie ID --- <fid> --- value: MRs21 --- movie: Peyton Place
+Error: duplicate value of movie --- <t> --- value: Ziegfeld Follies
 Error: duplicate value of movie ID --- <fid> --- value: LAl4 --- movie: Those Endearing Young Charms
 Error: duplicate value of movie ID --- <fid> --- value: CoB1 --- movie: The Seventh Veil
+Error: duplicate value of movie --- <t> --- value: Unfaithfully Yours
 Error parsing integer value for tag <year> --- value: 19yy --- movie: Catherine of Russia
 Error: duplicate value of movie ID --- <fid> --- value: NR1 --- movie: They Live By Night
+Error: duplicate value of movie --- <t> --- value: We're not Married
+Error: duplicate value of movie --- <t> --- value: As Young as You Feel
+Error: duplicate value of movie --- <t> --- value: Let's Make Love
+Error: duplicate value of movie --- <t> --- value: The Shaggy Dog
+Error: duplicate value of movie --- <t> --- value: On the Town
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
 Error: duplicate value of movie ID --- <fid> --- value: HyC10 --- movie: Last Holiday
 Error: duplicate value of movie ID --- <fid> --- value: JLT50 --- movie: Allan Quatermain and the Lost City of Gold
+Error: duplicate value of movie --- <t> --- value: Alice In Wonderland
+Error: duplicate value of movie --- <t> --- value: The Koumiko Mystery
+Error: duplicate value of movie --- <t> --- value: Of Human Bondage
 Error: duplicate value of movie ID --- <fid> --- value: JIv42 --- movie: The Remains of the Day
+Error: duplicate value of movie --- <t> --- value: The Longest Day
 Error: duplicate value of movie ID --- <fid> --- value: SR45 --- movie: The Adversary
 Error parsing integer value for tag <year> --- value: 199x --- movie: Morgan Stewart's Coming Home
 Error parsing integer value for tag <year> --- value: 199x --- movie: Raging Angels
 Error: duplicate value of movie ID --- <fid> --- value: GeP15 --- movie: Murder Most Foul
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
 Error: duplicate value of movie ID --- <fid> --- value: ArH205 --- movie: The Klansmen
+Error: duplicate value of movie --- <t> --- value: Vicious Circle
 Error: duplicate value of movie ID --- <fid> --- value: MBo12 --- movie: The Legend of Aneus
+Error: duplicate value of movie --- <t> --- value: Command Decision
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
+Error: duplicate value of movie --- <t> --- value: Rosemary's Baby
+Error: duplicate value of movie --- <t> --- value: The World of Henry Orient
 Error: duplicate value of movie ID --- <fid> --- value: JaS13 --- movie: The Dark Pool
 Error parsing integer value for tag <year> --- value: 199x --- movie: Stop Train 349
 Error: duplicate value of movie ID --- <fid> --- value: KRu25 --- movie: Rainbow
@@ -59,41 +105,69 @@ Error: duplicate value of movie ID --- <fid> --- value: MAp43 --- movie: Moving 
 Error: duplicate value of movie ID --- <fid> --- value: FrW10 --- movie: Titicut Follies
 Error parsing integer value for tag <year> --- value: 199x --- movie: Karate Kid
 Error: duplicate value of movie ID --- <fid> --- value: JRl10 --- movie: Virgins and Vampires
+Error: duplicate value of movie --- <t> --- value: The American Soldier
 Error parsing integer value for tag <year> --- value: 196x --- movie: The Eternal City
 Error: duplicate value of movie ID --- <fid> --- value: PDu10 --- movie: Experience Preferred...But Not Essential
 Error: duplicate value of movie ID --- <fid> --- value: MeW10 --- movie: Daughter of Frankenstein
+Error: duplicate value of movie --- <t> --- value: The Phantom of Hollywood
 Error: duplicate value of movie ID --- <fid> --- value: JKp35 --- movie: Brokedown Palace
 Error parsing integer value for tag <year> --- value: 19yy --- movie: Buena Vista Social Club
+Error: duplicate value of movie --- <t> --- value: Amelia Earhart
+Error: duplicate value of movie --- <t> --- value: Wolf
+Error: duplicate value of movie --- <t> --- value: Dune
 Error parsing integer value for tag <year> --- value: 19yy --- movie: Mulholland Drive
 Error: duplicate value of movie ID --- <fid> --- value: GeM17 --- movie: Lorenzo's Oil
+Error: duplicate value of movie --- <t> --- value: Black Rain
+Error: duplicate value of movie --- <t> --- value: Heaven Can Wait
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
 Error: duplicate value of movie ID --- <fid> --- value: MxS10 --- movie: Tales from the Vienna Woods
 Error: duplicate value of movie ID --- <fid> --- value: NiM30 --- movie: Star Trek, Generations
 Error: duplicate value of movie ID --- <fid> --- value: DDo15 --- movie: Keiner liebt mich
 Error: duplicate value of movie ID --- <fid> --- value: FOR12 --- movie: Scream Queen Hot Tub Party
 Error: duplicate value of movie ID --- <fid> --- value: PAl4 --- movie: Matador
+Error: duplicate value of movie --- <t> --- value: Over the Edge
 Error: duplicate value of movie ID --- <fid> --- value: BLe5 --- movie: Tin Men
 Error: duplicate value of movie ID --- <fid> --- value: KaK10 --- movie: Another Way
+Error: duplicate value of movie --- <t> --- value: Tendres Cousines
+Error: duplicate value of movie --- <t> --- value: Lovesick
 Error parsing integer value for tag <year> --- value: 19yy --- movie: Sarabande
 Error: duplicate value of movie ID --- <fid> --- value: LeN10 --- movie: The Good Mother
+Error: duplicate value of movie --- <t> --- value: A Private Function
 Error parsing string value for tag <dirname> --- value: (blank, replaced by 'Unknown') --- movie: Bachelor Party
 Error: duplicate value of movie ID --- <fid> --- value: AKo15 --- movie: The Inner Circle
 Error parsing string value for tag <dirname> --- value: (blank, replaced by 'Unknown') --- movie: Rent-a-Cop
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
+Error: duplicate value of movie --- <t> --- value: Intersection
 Error: duplicate value of movie ID --- <fid> --- value: ThS5 --- movie: Kingfish: A Story of Huey P. Long
+Error: duplicate value of movie --- <t> --- value: A Few Good Men
+Error: duplicate value of movie --- <t> --- value: For Love or Money
+Error: duplicate value of movie --- <t> --- value: New Jack City
 Error parsing integer value for tag <year> --- value: 199x --- movie: Fairy Tale: A True Story
+Error: duplicate value of movie --- <t> --- value: Contempt
+Error: duplicate value of movie --- <t> --- value: Caged Heat
 Error parsing string value for tag <fid> --- value: (null) --- movie:Cradle will Rock
 Error: duplicate value of movie ID --- <fid> --- value: AnL15 --- movie: Crouching Tiger, Hidden Dragon
+Error: duplicate value of movie --- <t> --- value: Desperado
+Error: duplicate value of movie --- <t> --- value: After Life
 Error parsing integer value for tag <year> --- value: 199x --- movie:
 Error parsing string value for tag <t> --- value: (null) --- movie: (blank movie title)
 Error parsing integer value for tag <year> --- value: 19yy --- movie: Jerry and Tom
+Error: duplicate value of movie --- <t> --- value: Lawn Dogs
 Error parsing integer value for tag <year> --- value: 19yy --- movie: The Shanghai Triad
 Error parsing integer value for tag <year> --- value: 19yy --- movie: Taste of Cherry
+Error: duplicate value of movie --- <t> --- value: Hope Floats
+Error: duplicate value of movie --- <t> --- value: The Frighteners
+Error: duplicate value of movie --- <t> --- value: One Fine Day
+Error: duplicate value of movie --- <t> --- value: In the Company of Men
+Error: duplicate value of movie --- <t> --- value: In and Out
+Error: duplicate value of movie --- <t> --- value: The Prince of Egypt
 Error: duplicate value of movie ID --- <fid> --- value: MiM10 --- movie: I Got the Hook-Up
 Error parsing integer value for tag <year> --- value: 19yy --- movie: All is Routine
+Error: duplicate value of movie --- <t> --- value: The Mighty
 Error parsing string value for tag <dirname> --- value: (blank, replaced by 'Unknown') --- movie: Show Me Love
 Error: duplicate value of movie ID --- <fid> --- value: NtB10 --- movie: On the Ropes
 Error: duplicate value of movie ID --- <fid> --- value: PSv10 --- movie: Metroland
+Error: duplicate value of movie --- <t> --- value: Topsy-Turvy
 Error: duplicate value of movie ID --- <fid> --- value: SfG1 --- movie: Lost in Translation
 Error parsing string value for tag <dirname> --- value: (blank, replaced by 'Unknown') --- movie: In the Bedroom
 Error parsing string value for tag <dirname> --- value: (blank, replaced by 'Unknown') --- movie: Never Never
