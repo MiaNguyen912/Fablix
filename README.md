@@ -204,9 +204,10 @@ mysql> quit;
 7. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file)
 8. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
   
-### methods to boost up query:
-- use batch insert
-
+### parsing time optimization strategies:
+- use a batch to store multiple queries and use executeBatch() to execute all insertion at once
+- In [StarDomParser.java](src/XMLParser/StarDomParser.java): parse all necessary data and save them in maps/lists to avoid querying the DB everytime we insert
+- In [MovieDomParser.java](src/XMLParser/MovieDomParser.java): loop through the movies list only once and concurrently add statements into 2 batches (the 2 batches store insert statements that are used to insert data into 2 different tables), then execute 2 batches continuously to save time
 
 ### XML Parsing error messages:
 - [actors_parsing_error_messages.txt](actors_parsing_error_messages.txt)

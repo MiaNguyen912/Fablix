@@ -324,7 +324,7 @@ public class MovieDomParser {
             int[] genres_in_moviesRowsAffected = null;
 
             String movieInsertQuery = "INSERT INTO " + MOVIES_TABLE + "(id, title, year, director, price) VALUES (?, ?, ?, ?, ?)";
-            String genreInMovieInsertQuery = "INSERT INTO " + GENRES_IN_MOVIES_TABLE + "(genreId, movieId) SELECT id, ? FROM " + GENRES_TABLE + " g WHERE g.name = ?";
+            String genreInMovieInsertQuery = "INSERT INTO " + GENRES_IN_MOVIES_TABLE + "(genreId, movieId) SELECT id, ? FROM " + GENRES_TABLE + " g WHERE g.name = ?"; // genres table is usually not large, so the SELECT statement wont slow down the process
 
             try {
                 connection.setAutoCommit(false);
