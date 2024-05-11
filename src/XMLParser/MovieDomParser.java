@@ -418,13 +418,13 @@ public class MovieDomParser {
         domParser.runParser();
 
         // insert new genres into Genres table
-//        domParser.insertIntoGenresTable();
-//
-//        // insert data into movies and genres_in_movies table
-//        domParser.insertDataToBD();
-//
-//        // update ratings table to add null rating for newly added movies
-//        domParser.updateRatingsTable();
+        domParser.insertIntoGenresTable();
+
+        // insert data into movies and genres_in_movies table
+        domParser.insertDataToBD();
+
+        // update ratings table to add null rating for newly added movies
+        domParser.updateRatingsTable();
     }
 
 }
