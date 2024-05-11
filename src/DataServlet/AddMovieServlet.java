@@ -66,7 +66,7 @@ public class AddMovieServlet extends HttpServlet {
 //            );
 
             // Call the stored procedure
-            String call = "{CALL add_movie(?, ?, ?, ?, ?, ?)}";
+            String call = "{CALL add_movie(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
 
             try (CallableStatement stmt = conn.prepareCall(call)) {
                 stmt.setString(1, title);
@@ -75,8 +75,11 @@ public class AddMovieServlet extends HttpServlet {
                 stmt.setString(4, genre);
                 stmt.setString(5, star_name);
 
-                // Register the sixth parameter as an OUT parameter
+                // Register the last four parameters as an OUT parameter
                 stmt.registerOutParameter(6, Types.VARCHAR);
+                stmt.registerOutParameter(7, Types.VARCHAR);
+                stmt.registerOutParameter(8, Types.VARCHAR);
+                stmt.registerOutParameter(9, Types.VARCHAR);
 
                 // Execute the stored procedure
                 stmt.execute();
