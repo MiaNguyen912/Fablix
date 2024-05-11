@@ -14,7 +14,7 @@ function getParameterByName(target) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-
+console.log("CHECKING IF VERSION IS CORRECT");
 /**
  * Adds the specified movieId into the cart that's saved in sessionStorage
  * @param button button that was clicked
@@ -88,7 +88,7 @@ function handleMoviesByGenreResult(resultData) {
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
+        rowHTML += "<td><a href='../../authenticated/single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
         rowHTML += "<td>" + movie_year + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
 
@@ -96,9 +96,9 @@ function handleMoviesByGenreResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>";
+                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -106,9 +106,9 @@ function handleMoviesByGenreResult(resultData) {
         let starsText = "";
         for (let i = 0; i<stars_id.length; i++){
             if (i < stars_id.length -1 )
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+                starsText += "<a href='../../authenticated/single-starsingle-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
+                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
 
@@ -239,7 +239,7 @@ function handleSearchResult(resultData) {
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
+        rowHTML += "<td><a href='../../authenticated/single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
         rowHTML += "<td>" + movie_year + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
 
@@ -247,9 +247,9 @@ function handleSearchResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>";
+                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -257,9 +257,9 @@ function handleSearchResult(resultData) {
         let starsText = "";
         for (let i = 0; i<stars_id.length; i++){
             if (i < stars_id.length -1 )
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
+                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
         rowHTML += "<td>" + movie_rating + "</td>";
@@ -379,7 +379,7 @@ function handleMoviesByTitleResult(resultData) {
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
+        rowHTML += "<td><a href='../../authenticated/single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
         rowHTML += "<td>" + movie_year + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
 
@@ -387,9 +387,9 @@ function handleMoviesByTitleResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href=" + genres_name[i] + "'list.html?type=genre&name='> " + genres_name[i] + "</a>";
+                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -397,9 +397,9 @@ function handleMoviesByTitleResult(resultData) {
         let starsText = "";
         for (let i = 0; i<stars_id.length; i++){
             if (i < stars_id.length -1 )
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
+                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
         rowHTML += "<td>" + movie_rating + "</td>";
@@ -514,7 +514,7 @@ if (type === "genre"){
     jQuery.ajax({
         dataType: "json", // Setting return data type
         method: "GET", // Setting request method
-        url: "../../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+        url: "../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
         success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
     });
 }
@@ -566,11 +566,12 @@ else if (type === "title"){
         }
     }
 
+    console.log("Making http get request title loggedin/list.js");
     // Makes the HTTP GET request
     jQuery.ajax({
         dataType: "json", // Setting return data type
         method: "GET", // Setting request method
-        url: "../../../authenticated/api/list?type=title&start=" + firstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+        url: "../../authenticated/api/list?type=title&start=" + firstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
         success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
     });
 }
@@ -628,11 +629,12 @@ else if (type === "search"){
         }
     }
 
+    console.log("Making http get request search loggedin/list.js");
     // Makes the HTTP GET request
     jQuery.ajax({
         dataType: "json", // Setting return data type
         method: "GET", // Setting request method
-        url: "../../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+        url: "../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
         success: (resultData) => handleSearchResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
     });
 }
@@ -664,7 +666,7 @@ function handleSort(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     } else if (genre === "null" && titleFirstLetter !== "null"){
@@ -673,7 +675,7 @@ function handleSort(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "../../authenticated/api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
 
@@ -683,7 +685,7 @@ function handleSort(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleSearchResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     }
@@ -718,7 +720,7 @@ function handleMoviesPerPage(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     } else if (genre === "null" && titleFirstLetter !== "null"){
@@ -727,7 +729,7 @@ function handleMoviesPerPage(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "../../authenticated/api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
 
@@ -737,7 +739,7 @@ function handleMoviesPerPage(selectElement) {
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
+            url: "../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + page,
             success: (resultData) => handleSearchResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     }
@@ -771,7 +773,7 @@ function handlePreviousPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     } else if (genre === "null" && titleFirstLetter !== "null"){
@@ -780,7 +782,7 @@ function handlePreviousPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "../../authenticated/api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
 
@@ -790,7 +792,7 @@ function handlePreviousPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleSearchResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     }
@@ -821,7 +823,7 @@ function handleNextPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "../../authenticated/api/list?type=genre&name=" + genre + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleMoviesByGenreResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     } else if (genre === "null" && titleFirstLetter !== "null"){
@@ -830,7 +832,7 @@ function handleNextPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "../../authenticated/api/list?type=title&start=" + titleFirstLetter + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleMoviesByTitleResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
 
@@ -840,10 +842,12 @@ function handleNextPage(){
         jQuery.ajax({
             dataType: "json", // Setting return data type
             method: "GET", // Setting request method
-            url: "../../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
+            url: "../../authenticated/api/list?type=search&title=" + searchTitle + "&year=" + searchYear + "&director=" + searchDirector + "&star=" + searchStar + "&sort-style=" + sort + "&limit=" + limit + "&page=" + new_page,
             success: (resultData) => handleSearchResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
         });
     }
+
 }
+console.log("LOGGEDIN/LIST.JS BEING RAN")
 
 
