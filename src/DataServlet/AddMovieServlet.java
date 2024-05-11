@@ -52,8 +52,11 @@ public class AddMovieServlet extends HttpServlet {
             System.out.println("Getting params");
             // Query should be inserting into stars with name and birth year
             // Doesn't matter if there is duplicate, treat as different with different ids
-            String name = request.getParameter("star_name");
-            String birth_year = request.getParameter("birth_year");
+            String title = request.getParameter("title");
+            String director = request.getParameter("director");
+            String year = request.getParameter("year");
+            String genre = request.getParameter("genre");
+            String star_name = request.getParameter("star_name");
 
             // table for reference
 //            CREATE TABLE IF NOT EXISTS stars (
@@ -63,31 +66,28 @@ public class AddMovieServlet extends HttpServlet {
 //            );
 
             // Call the stored procedure
-            String call = "{CALL add_star(?, ?, ?)}";
+            String call = "{CALL add_movie(?, ?, ?, ?, ?, ?)}";
 
             try (CallableStatement stmt = conn.prepareCall(call)) {
-                stmt.setString(1, name);
+                stmt.setString(1, title);
+                stmt.setString(2, director);
+                stmt.setInt(3, Integer.parseInt(year));
+                stmt.setString(4, genre);
+                stmt.setString(5, star_name);
 
-                // Check if birth_year is provided and parse it to an integer if it is
-                if (birth_year != null && !birth_year.isEmpty()) {
-                    stmt.setInt(2, Integer.parseInt(birth_year));
-                } else {
-                    stmt.setNull(2, Types.INTEGER);
-                }
-
-                // Register the third parameter as an OUT parameter
-                stmt.registerOutParameter(3, Types.VARCHAR);
+                // Register the sixth parameter as an OUT parameter
+                stmt.registerOutParameter(6, Types.VARCHAR);
 
                 // Execute the stored procedure
                 stmt.execute();
 
-                // Retrieve the new star ID from the OUT parameter
-                String newStarId = stmt.getString(3);
+                // Retrieve the new movie ID from the OUT parameter
+                String new_movie_id = stmt.getString(6);
 
                 // Create a JSON object to send as a response
                 JsonObject responseJson = new JsonObject();
                 responseJson.addProperty("status", "success");
-                responseJson.addProperty("new_star_id", newStarId);
+                responseJson.addProperty("new", new_movie_id);
 
                 out.println(responseJson.toString());
             }
