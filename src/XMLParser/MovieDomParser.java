@@ -79,7 +79,6 @@ public class MovieDomParser {
     private DataSource dataSource;
     List<Movie> movies = new ArrayList<>();
     LinkedHashSet<String> all_genres = new LinkedHashSet<>();
-
     LinkedHashSet<String> all_movieId = new LinkedHashSet<>();
     Map<String, Integer> all_movieTitle_year = new HashMap<>();
 
@@ -156,6 +155,22 @@ public class MovieDomParser {
                 continue;
             }
 
+            // update all_movieID
+            if (all_movieId.contains(filmId)){
+                System.out.println("Error: duplicate value of movie ID --- <fid> --- value: " + filmId + " --- movie: " + title);
+                continue; // skip this movie
+            } else {
+                all_movieId.add(filmId);
+            }
+
+            // update all_movieTitle (some movies might have same title but released in different years, which are valid)
+            if (all_movieTitle_year.containsKey(title) && all_movieTitle_year.get(title) == year){
+                System.out.println("Error: duplicate value of movie --- <t> --- value: " + title);
+                continue; // skip this movie
+            } else {
+                all_movieTitle_year.put(title, year) ;
+            }
+
 
             ArrayList<String> genres = new ArrayList<>();
             NodeList catsList = filmElement.getElementsByTagName("cat");
@@ -177,21 +192,9 @@ public class MovieDomParser {
                 all_genres.add("Unknown");
             }
 
-            // update all_movieID
-            if (all_movieId.contains(filmId)){
-                System.out.println("Error: duplicate value of movie ID --- <fid> --- value: " + filmId + " --- movie: " + title);
-                continue; // skip this movie
-            } else {
-                all_movieId.add(filmId);
-            }
 
-            // update all_movieTitle (some movies might have same title but released in different years, which are valid)
-            if (all_movieTitle_year.containsKey(title) && all_movieTitle_year.get(title) == year){
-                System.out.println("Error: duplicate value of movie --- <t> --- value: " + title);
-                continue; // skip this movie
-            } else {
-                all_movieTitle_year.put(title, year) ;
-            }
+
+
 
             // Create a Random price
             Random random = new Random();
@@ -415,13 +418,13 @@ public class MovieDomParser {
         domParser.runParser();
 
         // insert new genres into Genres table
-        domParser.insertIntoGenresTable();
-
-        // insert data into movies and genres_in_movies table
-        domParser.insertDataToBD();
-
-        // update ratings table to add null rating for newly added movies
-        domParser.updateRatingsTable();
+//        domParser.insertIntoGenresTable();
+//
+//        // insert data into movies and genres_in_movies table
+//        domParser.insertDataToBD();
+//
+//        // update ratings table to add null rating for newly added movies
+//        domParser.updateRatingsTable();
     }
 
 }

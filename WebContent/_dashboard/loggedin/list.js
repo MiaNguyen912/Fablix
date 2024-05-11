@@ -88,7 +88,7 @@ function handleMoviesByGenreResult(resultData) {
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='../../authenticated/single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
+        rowHTML += "<td><a href='single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
         rowHTML += "<td>" + movie_year + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
 
@@ -96,9 +96,9 @@ function handleMoviesByGenreResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -106,9 +106,9 @@ function handleMoviesByGenreResult(resultData) {
         let starsText = "";
         for (let i = 0; i<stars_id.length; i++){
             if (i < stars_id.length -1 )
-                starsText += "<a href='../../authenticated/single-starsingle-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
 
@@ -239,7 +239,7 @@ function handleSearchResult(resultData) {
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='../../authenticated/single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
+        rowHTML += "<td><a href='single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
         rowHTML += "<td>" + movie_year + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
 
@@ -247,9 +247,9 @@ function handleSearchResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -257,9 +257,9 @@ function handleSearchResult(resultData) {
         let starsText = "";
         for (let i = 0; i<stars_id.length; i++){
             if (i < stars_id.length -1 )
-                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
         rowHTML += "<td>" + movie_rating + "</td>";
@@ -379,7 +379,7 @@ function handleMoviesByTitleResult(resultData) {
         // Concatenate the html tags with resultData jsonObject
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<td><a href='../../authenticated/single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
+        rowHTML += "<td><a href='single-movie.html?id=" + movie_id  + "'> " + movie_title + "</a></td>";
         rowHTML += "<td>" + movie_year + "</td>";
         rowHTML += "<td>" + movie_director + "</td>";
 
@@ -387,9 +387,9 @@ function handleMoviesByTitleResult(resultData) {
         let genresText = "";
         for (let i = 0; i<genres_id.length; i++){
             if (i < genres_id.length -1 )
-                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>, ";
             else
-                genresText += "<a href='../../authenticated/list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
+                genresText += "<a href='list.html?type=genre&name=" + genres_name[i] + "'> " + genres_name[i] + "</a>";
         }
         rowHTML += "<td>" + genresText + "</td>";
 
@@ -397,9 +397,9 @@ function handleMoviesByTitleResult(resultData) {
         let starsText = "";
         for (let i = 0; i<stars_id.length; i++){
             if (i < stars_id.length -1 )
-                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a>, ";
             else
-                starsText += "<a href='../../authenticated/single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
+                starsText += "<a href='single-star.html?id=" + stars_id[i] + "'> " + stars_name[i] + "</a> ...";
         }
         rowHTML += "<td>" + starsText + "</td>";
         rowHTML += "<td>" + movie_rating + "</td>";
