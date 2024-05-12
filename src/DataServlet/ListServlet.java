@@ -122,7 +122,7 @@ public class ListServlet extends HttpServlet {
                         FROM stars_in_movies
                         GROUP BY starid
                     ) sp ON s.id = sp.starid
-                    ORDER BY title DESC, rating DESC, movie_count DESC, s.name ASC;
+                    ORDER BY title DESC, rating DESC, distinct_movies.movieid ASC, movie_count DESC, s.name ASC;
 
                 */
                 query += "SELECT *\n" +
@@ -143,7 +143,7 @@ public class ListServlet extends HttpServlet {
                         "                    FROM stars_in_movies\n" +
                         "                    GROUP BY starid\n" +
                         "                ) sp ON s.id = sp.starid " +
-                        "                ORDER BY " + order_by + ", movie_count DESC, s.name ASC";
+                        "                ORDER BY " + order_by + ", distinct_movies.movieid ASC, movie_count DESC, s.name ASC";
 
                 statement = conn.prepareStatement(query);
                 statement.setString(1, genre);
@@ -170,7 +170,7 @@ public class ListServlet extends HttpServlet {
                         FROM stars_in_movies
                         GROUP BY starid
                     ) sp ON s.id = sp.starid
-                    ORDER BY title ASC, rating ASC, movie_count DESC, s.name ASC;
+                    ORDER BY title ASC, rating ASC, distinct_movies.movieid ASC, movie_count DESC, s.name ASC;
                 */
                 query = "SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count\n" +
                         "                FROM (\n" +
@@ -190,7 +190,7 @@ public class ListServlet extends HttpServlet {
                         "                    FROM stars_in_movies\n" +
                         "                    GROUP BY starid\n" +
                         "                ) sp ON s.id = sp.starid\n" +
-                        "                ORDER BY " + order_by + ", movie_count DESC, s.name ASC";
+                        "                ORDER BY " + order_by + ", distinct_movies.movieid ASC, movie_count DESC, s.name ASC";
 
 
                 statement = conn.prepareStatement(query);
@@ -227,7 +227,7 @@ public class ListServlet extends HttpServlet {
                         FROM stars_in_movies
                         GROUP BY starid
                     ) sp ON s.id = sp.starid
-                    ORDER BY title ASC, rating ASC, movie_count DESC, s.name ASC;
+                    ORDER BY title ASC, rating ASC, distinct_movies.movieid ASC, movie_count DESC, s.name ASC;
                 */
 
                 query = " SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count " +
@@ -265,7 +265,7 @@ public class ListServlet extends HttpServlet {
                         "    FROM stars_in_movies\n" +
                         "    GROUP BY starid\n" +
                         " ) sp ON s.id = sp.starid\n" +
-                        " ORDER BY " + order_by + ", movie_count DESC, s.name ASC";
+                        " ORDER BY " + order_by + ", distinct_movies.movieid ASC, movie_count DESC, s.name ASC";
 
                 statement = conn.prepareStatement(query);
                 // Set parameters
