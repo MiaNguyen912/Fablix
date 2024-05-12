@@ -443,7 +443,7 @@ public class StarDomParser {
         //domParser.print_starsInMovies();
 
         // fill in stars_in_movies with unknown_star for movies that have no actor
-        //domParser.fillin_stars_in_movies_with_unknown_star();
+        domParser.fillin_stars_in_movies_with_unknown_star();
 
         // insert stars into the stars table
         domParser.insert_into_stars();
