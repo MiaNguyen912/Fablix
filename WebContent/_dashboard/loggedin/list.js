@@ -26,7 +26,18 @@ console.log("CHECKING IF VERSION IS CORRECT");
  */
 function handleMoviesByGenreResult(resultData) {
     console.log("Handle movies by title results");
+    console.log("resultData.length = " + resultData.length )
 
+    // --------- disable "next page" button if run out of results
+    let limit = sessionStorage.getItem('limit');
+    let next_page_button = document.getElementById("next-page-button")
+    if (resultData.length < limit){
+        next_page_button.disabled = true;
+        console.log("disabling next_page_button, resultData.length = " + resultData.length )
+    } else {
+        next_page_button.disabled = false;
+        console.log("undisabling next_page_button")
+    }
     // --------- display page number
     let page_number = document.getElementById("page-number");
     let page = sessionStorage.getItem('page');
@@ -173,6 +184,18 @@ function handleMoviesByGenreResult(resultData) {
  */
 function handleSearchResult(resultData) {
     console.log("Handle movies by title results");
+    console.log("resultData.length = " + resultData.length )
+
+    // --------- disable "next page" button if run out of results
+    let limit = sessionStorage.getItem('limit');
+    let next_page_button = document.getElementById("next-page-button")
+    if (resultData.length < limit){
+        next_page_button.disabled = true;
+        console.log("disabling next_page_button, resultData.length = " + resultData.length )
+    } else {
+        next_page_button.disabled = false;
+        console.log("undisabling next_page_button")
+    }
 
     // --------- display page number
     let page_number = document.getElementById("page-number");
@@ -316,7 +339,19 @@ function handleSearchResult(resultData) {
  */
 function handleMoviesByTitleResult(resultData) {
     console.log("Handle movies by title results");
+    console.log("resultData.length = " + resultData.length )
 
+    // --------- disable "next page" button if run out of results
+    let limit = sessionStorage.getItem('limit');
+    let next_page_button = document.getElementById("next-page-button")
+    if (resultData.length < limit){
+        next_page_button.disabled = true;
+        console.log("disabling next_page_button, resultData.length = " + resultData.length )
+    } else {
+        next_page_button.disabled = false;
+        console.log("undisabling next_page_button")
+    }
+    
     // --------- display page number
     let page_number = document.getElementById("page-number");
     let page = sessionStorage.getItem('page');
