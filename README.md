@@ -199,6 +199,7 @@ mysql> quit;
 2. run movie-data.sql
 3. edittables.sql
 4. edittables-P3.sql
+5. stored-procedure.sql
 5. UpdateSecurePassword.java
 6. UpdateSecurePasswordStaff.java
 7. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file)
