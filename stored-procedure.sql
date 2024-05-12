@@ -1,3 +1,8 @@
+INSERT INTO id_manager (table_name, next_id) SELECT 'stars', IFNULL(MAX(CAST(SUBSTRING(id, 3) AS UNSIGNED)) + 1, 1) FROM stars;
+
+INSERT INTO id_manager (table_name, next_id)
+    SELECT 'movies', IFNULL(MAX(CAST(SUBSTRING(max_id, 3) AS UNSIGNED)) + 1, 1)
+    FROM (SELECT MAX(id) AS max_id FROM movies WHERE BINARY id LIKE 'tt%') AS subquery;
 
 DELIMITER //
 
