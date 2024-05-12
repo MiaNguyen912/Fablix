@@ -285,7 +285,51 @@ public class StarDomParser {
     }
 
     // ------------------------------------------------------------------------------------------------------------
+    private void fillin_stars_in_movies_with_unknown_star() {
+        // (((function not completed)))
+        Star unknownStar = new Star("nm" + (++lastStarID), "Unknown");
+        String unknownStarID = unknownStar.getId();
+        int unknownStarYOB = unknownStar.getBirthYear();
+        HashSet<String> unknownSet = new HashSet<>();
+        unknownSet.add(unknownStarID);
 
+        List<String> all_movie_ids = new ArrayList<>();
+        try {
+            String loginUser = "mytestuser";
+            String loginPasswd = "My6$Password";
+            String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
+
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
+            PreparedStatement statement = null;
+            String insertQuery = "INSERT INTO " + STARS_TABLE + "(id, name, birthYear) VALUES (?, ?, ?)";
+            statement = connection.prepareStatement(insertQuery);
+            statement.setString(1, unknownStarID);
+            statement.setString(2, "Unknown");
+            statement.setInt(3, unknownStarYOB);
+            statement.executeUpdate();
+            System.out.println("Add an Unknown star");
+
+            String query = "SELECT id FROM " + MOVIES_TABLE;
+            statement = connection.prepareStatement(query);
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                all_movie_ids.add(rs.getString("id"));
+            }
+            statement.close();
+            connection.close();
+        }
+        catch (Exception e) {e.printStackTrace();}
+
+        for (String movieID : all_movie_ids){
+            if (!stars_in_movies.containsKey(movieID)){
+                System.out.println("Movie " + movieID + " has no actor");
+                stars_in_movies.put(movieID, unknownSet);
+            }
+        }
+    }
+
+    
     private void insert_into_stars(){
         try {
             String loginUser = "mytestuser";
@@ -397,6 +441,9 @@ public class StarDomParser {
         domParser.runParser("XML/casts124.xml");
         //domParser.print_stars();
         //domParser.print_starsInMovies();
+
+        // fill in stars_in_movies with unknown_star for movies that have no actor
+        //domParser.fillin_stars_in_movies_with_unknown_star();
 
         // insert stars into the stars table
         domParser.insert_into_stars();
