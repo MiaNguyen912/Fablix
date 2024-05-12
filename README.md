@@ -198,13 +198,12 @@ mysql> quit;
 1. run createtable.sql
 2. run movie-data.sql
 3. edittables.sql
-4. edittables-P3.sql
-5. stored-procedure.sql
-5. UpdateSecurePassword.java
-6. UpdateSecurePasswordStaff.java
-7. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file)
-8. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
-  
+4. UpdateSecurePassword.java
+5. UpdateSecurePasswordStaff.java
+6. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file)
+7. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
+8. stored-procedure.sql
+
 ### parsing time optimization strategies:
 - use a batch to store multiple queries and use executeBatch() to execute all insertion at once
 - In [StarDomParser.java](src/XMLParser/StarDomParser.java): parse all necessary data and save them in maps/lists to avoid querying the DB everytime we insert

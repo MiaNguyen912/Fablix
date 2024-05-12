@@ -63,3 +63,15 @@ Create table IF NOT EXISTS ratings (
     Rating float not null,
     Numvotes integer not null
     );
+
+CREATE TABLE IF NOT EXISTS employees(
+                                        email varchar(50) primary key,
+    password varchar(20) not null,
+    fullname varchar(100)
+    );
+
+CREATE TABLE IF NOT EXISTS id_manager (
+                                          table_name VARCHAR(50) NOT NULL,
+    next_id INT NOT NULL,
+    PRIMARY KEY (table_name)
+    );

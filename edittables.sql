@@ -4,6 +4,8 @@ UPDATE movies SET price = FLOOR(RAND() * 60) + 1;
 
 ALTER TABLE sales ADD COLUMN Quantity INT NOT NULL DEFAULT 1;
 
+INSERT INTO employees (email, password, fullname) VALUES ("classta@email.edu", "classta", "andTA CS122B");
+
 -- Creating index to improve query performance:
 
 -- ratings
