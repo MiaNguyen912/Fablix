@@ -46,6 +46,18 @@ function addToCart(button){
  */
 function handleMoviesByGenreResult(resultData) {
     console.log("Handle movies by title results");
+    console.log("resultData.length = " + resultData.length )
+
+    // --------- disable "next page" button if run out of results
+    let limit = sessionStorage.getItem('limit');
+    let next_page_button = document.getElementById("next-page-button")
+    if (resultData.length < limit){
+        next_page_button.disabled = true;
+        console.log("disabling next_page_button, resultData.length = " + resultData.length )
+    } else {
+        next_page_button.disabled = false;
+        console.log("undisabling next_page_button")
+    }
 
     // --------- display page number
     let page_number = document.getElementById("page-number");
@@ -194,6 +206,19 @@ function handleMoviesByGenreResult(resultData) {
  */
 function handleSearchResult(resultData) {
     console.log("Handle movies by title results");
+    console.log("resultData.length = " + resultData.length )
+
+
+    // --------- disable "next page" button if run out of results
+    let limit = sessionStorage.getItem('limit');
+    let next_page_button = document.getElementById("next-page-button")
+    if (resultData.length < limit){
+        next_page_button.disabled = true;
+        console.log("disabling next_page_button, resultData.length = " + resultData.length )
+    } else {
+        next_page_button.disabled = false;
+        console.log("undisabling next_page_button")
+    }
 
     // --------- display page number
     let page_number = document.getElementById("page-number");
@@ -338,6 +363,18 @@ function handleSearchResult(resultData) {
  */
 function handleMoviesByTitleResult(resultData) {
     console.log("Handle movies by title results");
+    console.log("resultData.length = " + resultData.length )
+
+    // --------- disable "next page" button if run out of results
+    let limit = sessionStorage.getItem('limit');
+    let next_page_button = document.getElementById("next-page-button")
+    if (resultData.length < limit){
+        next_page_button.disabled = true;
+        console.log("disabling next_page_button, resultData.length = " + resultData.length )
+    } else {
+        next_page_button.disabled = false;
+        console.log("undisabling next_page_button")
+    }
 
     // --------- display page number
     let page_number = document.getElementById("page-number");
@@ -375,10 +412,6 @@ function handleMoviesByTitleResult(resultData) {
                 break;
             }
         }
-        // for (const key in genres){
-        //     genres_id.push(key);
-        //     genres_name.push(genres[key]);
-        // }
 
         let stars_id = [];
         let stars_name = [];
@@ -392,10 +425,6 @@ function handleMoviesByTitleResult(resultData) {
                 break;
             }
         }
-        // for (const key in stars){
-        //     stars_id.push(key);
-        //     stars_name.push(stars[key]);
-        // }
 
 
         // Concatenate the html tags with resultData jsonObject
