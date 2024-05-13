@@ -5,12 +5,10 @@ https://drive.google.com/file/d/1ytjUkzfHDQmdgsq8W4jHau3LAFm4xxgj/view?usp=shari
 
 ### Contributions: 
 Mia:
-- Construct the login page and login logic
-- construct the Header of each page to include browsing options, search bar, shopping cart button, and logout button
-- Build the search and browse movie functions (front-end and back-end)
-- Build the sort/filter/pagination of the result page when user browses or searches for movies
-- Modify single-movie and single-star servlets to display data in the correct order (genre by alphabetical order, stars by decreasing number of movies they play)
-- Beautify the cart, checkout, and confirmation pages with tailwind css
+- Set up recaptcha on customer and employee site
+- Make XML parsing files
+- Modify all queries to use prepared statements
+- Add files to encrypt password and modify loginServlet to use the encrypted password instead of plain text password
 
 
 Daniel:
