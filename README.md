@@ -1,8 +1,7 @@
 ## CS 122B Project 2
 
 ### Demo Video Link: 
-https://drive.google.com/drive/folders/10XUPX29k_KBGcLwpegHCa0qt7Qlegs7X?usp=sharing
-- It's in 2 parts as the video recording software froze near the end, but I made sure to restart the recording right where we left off with additional cart items
+https://drive.google.com/file/d/1ytjUkzfHDQmdgsq8W4jHau3LAFm4xxgj/view?usp=sharing
 
 ### Contributions: 
 Mia:
@@ -13,12 +12,40 @@ Mia:
 - Modify single-movie and single-star servlets to display data in the correct order (genre by alphabetical order, stars by decreasing number of movies they play)
 - Beautify the cart, checkout, and confirmation pages with tailwind css
 
-  
+
 Daniel:
-- Build list page to reroute search results from genre, title, and substring search
-- Build cart page to show items in cart as well as logic to keep track of cart contents
-- Build checkout page to take in credit card information and check with backend database
-- Draft confirmation page to display successful sale result and summarized information
+- Built addStar and addMovie frontend and backend functionality (Not UI)
+- Built stored-procedures sql to add stars and movies, using a helper id manager table
+- Fixed database preparation procedure to account for new XML data
+- Setup AWS instance configurations for https routing
+- Setup domain "tomsfablix.site" for the project
+
+### Files with Prepared Statements
+- [ConfirmationServlet.java](src/CartAndPaymentServlet/ConfirmationServlet.java)
+- [CartServlet.java](src/CartAndPaymentServlet/CartServlet.java)
+- [PaymentServlet.java](src/CartAndPaymentServlet/PaymentServlet.java)
+- [GenresServlet.java](src/DataServlet/GenresServlet.java)
+- [ListServlet.java](src/DataServlet/ListServlet.java)
+- [MetadataServet.java](src/DataServlet/MetadataServet.java)
+- [Top20MoviesServlet.java](src/DataServlet/Top20MoviesServlet.java)
+- [SingleStarServlet.java](src/DataServlet/SingleStarServlet.java)
+- [SingleMovieServlet.java](src/DataServlet/SingleMovieServlet.java)
+- [LoginServlet.java](src/LoginServlet/LoginServlet.java)
+- [StaffLoginServlet.java](src/LoginServlet/StaffLoginServlet.java)
+- [UpdateSecurePassword.java](src/LoginServlet/UpdateSecurePassword.java)
+- [UpdateSecurePasswordStaff.java](src/LoginServlet/UpdateSecurePasswordStaff.java)
+- [MovieDomParser.java](src/XMLParser/MovieDomParser.java)
+- [StarDomParser.java](src/XMLParser/StarDomParser.java)
+
+### parsing time optimization strategies:
+- use a batch to store multiple queries and use executeBatch() to execute all insertion at once
+- In [StarDomParser.java](src/XMLParser/StarDomParser.java): parse all necessary data and save them in maps/lists to avoid querying the DB everytime we insert
+- In [MovieDomParser.java](src/XMLParser/MovieDomParser.java): loop through the movies list only once and concurrently add statements into 2 batches (the 2 batches store insert statements that are used to insert data into 2 different tables), then execute 2 batches continuously to save time
+
+### XML Parsing error messages:
+- [actors_parsing_error_messages.txt](actors_parsing_error_messages.txt)
+- [movies_parsing_error_messages.txt](movies_parsing_error_messages.txt)
+
 
 ### Before running the project
 
@@ -139,23 +166,6 @@ mysql> quit;
 
 - To use DataSource, you can create a new connection to it by `dataSource.getConnection()`.
 
-### Files with Prepared Statements
-- [ConfirmationServlet.java](src/CartAndPaymentServlet/ConfirmationServlet.java)
-- [CartServlet.java](src/CartAndPaymentServlet/CartServlet.java)
-- [PaymentServlet.java](src/CartAndPaymentServlet/PaymentServlet.java)
-- [GenresServlet.java](src/DataServlet/GenresServlet.java)
-- [ListServlet.java](src/DataServlet/ListServlet.java)
-- [MetadataServet.java](src/DataServlet/MetadataServet.java)
-- [Top20MoviesServlet.java](src/DataServlet/Top20MoviesServlet.java)
-- [SingleStarServlet.java](src/DataServlet/SingleStarServlet.java)
-- [SingleMovieServlet.java](src/DataServlet/SingleMovieServlet.java)
-- [LoginServlet.java](src/LoginServlet/LoginServlet.java)
-- [StaffLoginServlet.java](src/LoginServlet/StaffLoginServlet.java)
-- [UpdateSecurePassword.java](src/LoginServlet/UpdateSecurePassword.java)
-- [UpdateSecurePasswordStaff.java](src/LoginServlet/UpdateSecurePasswordStaff.java)
-- [MovieDomParser.java](src/XMLParser/MovieDomParser.java) 
-- [StarDomParser.java](src/XMLParser/StarDomParser.java)
-
 
 
 ### Encrypting password: (using http://www.jasypt.org/)
@@ -203,12 +213,3 @@ mysql> quit;
 6. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file)
 7. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
 8. stored-procedure.sql
-
-### parsing time optimization strategies:
-- use a batch to store multiple queries and use executeBatch() to execute all insertion at once
-- In [StarDomParser.java](src/XMLParser/StarDomParser.java): parse all necessary data and save them in maps/lists to avoid querying the DB everytime we insert
-- In [MovieDomParser.java](src/XMLParser/MovieDomParser.java): loop through the movies list only once and concurrently add statements into 2 batches (the 2 batches store insert statements that are used to insert data into 2 different tables), then execute 2 batches continuously to save time
-
-### XML Parsing error messages:
-- [actors_parsing_error_messages.txt](actors_parsing_error_messages.txt)
-- [movies_parsing_error_messages.txt](movies_parsing_error_messages.txt)
