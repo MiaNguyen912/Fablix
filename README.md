@@ -10,6 +10,7 @@ Mia:
 - Modify all queries to use prepared statements
 - Add files to encrypt password and modify loginServlet to use the encrypted password instead of plain text password
 - Built addStar and addMovie UI
+- Build the employee landing page (the metadata page)
 
 
 Daniel:
