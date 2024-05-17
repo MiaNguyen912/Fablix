@@ -1,3 +1,16 @@
+/**
+ * Once this .js is loaded, following scripts will be executed by the browser
+ */
+
+// Makes the HTTP GET request and registers on success callback function handleStarResult
+jQuery.ajax({
+    dataType: "json", // Setting return data type
+    method: "GET", // Setting request method
+    url: "../api/20movies", // Setting request url, which is mapped by StarsServlet in Stars.java
+    success: (resultData) => handleTop20Result(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+});
+
+
 
 function handleListBtnClick(){
     let grid = document.getElementById("movie_grid");
@@ -48,8 +61,6 @@ function addToCart(button){
     // Save updated cart data back to sessionStorage
     sessionStorage.setItem('cart', JSON.stringify(cartData));
 }
-
-
 
 
 /**
@@ -182,16 +193,3 @@ function handleTop20Result(resultData) {
 
     }
 }
-
-
-/**
- * Once this .js is loaded, following scripts will be executed by the browser
- */
-
-// Makes the HTTP GET request and registers on success callback function handleStarResult
-jQuery.ajax({
-    dataType: "json", // Setting return data type
-    method: "GET", // Setting request method
-    url: "../api/20movies", // Setting request url, which is mapped by StarsServlet in Stars.java
-    success: (resultData) => handleTop20Result(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
-});

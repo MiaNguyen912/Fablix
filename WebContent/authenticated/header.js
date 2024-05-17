@@ -5,7 +5,8 @@ if (isLoggedIn){
     let login_btn = document.getElementById("login-btn");
     login_btn.style.display = "none";
 
-} else {
+}
+else {
     let logout_btn = document.getElementById("logout-btn");
     let cart_btn = document.getElementById("cart-btn");
     let browse_ddl = document.getElementById("browse-dropdown-list");
@@ -132,3 +133,121 @@ function handleGoBackBtnClick(){
         window.location.href = 'list.html?type=search&title=' + searchTitle + '&year=' + searchYear+ '&director=' + searchDirector + '&star=' + searchStar + '&goback=true';
     }
 }
+
+
+
+// --------------------- handle autocomplete search box -------------------------
+
+/*
+ * This statement binds the autocomplete library with the input box element and sets necessary parameters of the library.
+ * The library documentation can be found here:
+ *   https://github.com/devbridge/jQuery-Autocomplete
+ *   https://www.devbridge.com/sourcery/components/jquery-autocomplete/
+ */
+$('#autocomplete').autocomplete({
+    // documentation of the lookup function can be found under the "Custom lookup function" section
+    lookup: function (titleQuery, doneCallback) {
+        handleLookup(titleQuery, doneCallback) // call this function when need to look up a query
+    },
+    onSelect: function(suggestion) {
+        handleSelectSuggestion(suggestion)
+    },
+    // set delay time
+    deferRequestBy: 300,
+    noCache: false,
+    minChars: 3,
+});
+
+
+
+/*
+ * This function is called by the library when it needs to lookup a query.
+ * The parameter titleQuery is the search query string.
+ * The doneCallback is a callback function provided by the library, after you get the suggestion list from AJAX, you need to call this function to let the library know.
+ */
+function handleLookup(titleQuery, doneCallback) {
+    console.log("autocomplete initiated")
+    console.log("sending AJAX request to backend Java Servlet")
+
+    // check past query results first
+    autocompleteQueries = JSON.parse(sessionStorage.getItem("autocompleteQueries"))
+    if (autocompleteQueries == null){
+        let autocompleteQueries = {} // create an empty dict
+        sessionStorage.setItem("autocompleteQueries", JSON.stringify(autocompleteQueries))
+    } else {
+        if (titleQuery in autocompleteQueries){
+            console.log("Autocomplete search uses cached results")
+            let resultData = autocompleteQueries[titleQuery]
+            handleLookupAjaxSuccess(resultData, titleQuery, doneCallback)
+            return
+        }
+    }
+    // sending the HTTP GET request
+    console.log("Autocomplete search is sending ajax request to the server")
+    jQuery.ajax({
+        "method": "GET",
+        "url": "api/autocomplete?titleQuery=" + titleQuery,
+        "success": function(data) {
+            handleLookupAjaxSuccess(data, titleQuery, doneCallback) // pass the data, query, and doneCallback function into the success handler
+        },
+        "error": function(errorData) {
+            console.log("lookup ajax error")
+            console.log(errorData)
+        }
+    })
+}
+
+
+/*
+ * This function is used to handle the ajax success callback function.
+ * It is called by our own code upon the success of the AJAX request
+ * data is the JSON data string you get from your Java Servlet
+ */
+function handleLookupAjaxSuccess(data, titleQuery, doneCallback) {
+    console.log("lookup ajax successful")
+
+    // parse the string into JSON
+    var jsonData = JSON.parse(data);
+    console.log(jsonData)
+
+    // to cache the result into a global variable
+    autocompleteQueries =  JSON.parse(sessionStorage.getItem("autocompleteQueries"))
+    autocompleteQueries[titleQuery] = data
+    sessionStorage.setItem("autocompleteQueries",  JSON.stringify(autocompleteQueries))
+
+    // call the callback function provided by the autocomplete library
+    // add "{suggestions: jsonData}" to satisfy the library response format according to the "Response Format" section in documentation
+    doneCallback( { suggestions: jsonData } );
+}
+
+
+/*
+ * This function is the select suggestion handler function.
+ * When a suggestion is selected, this function is called by the library.
+ *
+ * You can redirect to the page you want using the suggestion data.
+ */
+function handleSelectSuggestion(suggestion) {
+    // // TODO: jump to the specific result page based on the selected suggestion
+    // console.log("you select " + suggestion["value"] + " with ID " + suggestion["data"]["heroID"])
+    $('#seach-form').submit()
+}
+
+
+/*
+ * do normal full text search if no suggestion is selected
+ */
+function handleNormalSearch(query) {
+    console.log("doing normal search with query: " + query);
+    // TODO: you should do normal search here
+}
+
+// bind pressing enter key to a handler function
+$('#autocomplete').keypress(function(event) {
+    if (event.keyCode == 13) {  // keyCode 13 is the enter key
+        handleNormalSearch($('#autocomplete').val())  // pass the value of the input box to the handler function
+    }
+})
+
+// TODO: if you have a "search" button, you may want to bind the onClick event as well of that button
+

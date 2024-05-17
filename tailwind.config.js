@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./WebContent/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      flexGrow: {
+        '2': 2,
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

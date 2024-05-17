@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 body{
     box-sizing: border-box;
     /*background: linear-gradient(to right, pink, lightblue);*/
@@ -130,3 +132,12 @@ td a {
     background-color: darkorange !important;
     font-weight: bold !important;
 }
+
+
+/* ------------------------------ */
+.autocomplete-suggestions { border: 1px solid #d2612d; border-radius: 10px; background: rgb(229 231 235); overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: rgb(253 186 116); font-weight: bold;}
+.autocomplete-suggestions strong { font-weight: normal; color: darkorange; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }

@@ -23,14 +23,13 @@
     <!-- style sheet -->
     <link rel="stylesheet" href="../assets/style.css">
 
-
     <title>Single Movie</title>
 </head>
 <body>
     <!-- -------------------------- HEADER ----------------------- -->
     <header class="bg-gray-900" id="header" >
         <nav class="mx-6 flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-            <div class="flex lg:flex-1 lg:gap-x-12">
+            <div class="flex lg:flex-1 lg:gap-x-12 flex-grow">
                 <!-- logo -->
                 <a href="home.html" class="-m-1.5 p-1.5">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d2612d" class="h-8 w-auto inline">
@@ -95,11 +94,12 @@
                 </div>
             </div>
 
-            <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12 items-center">
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12 items-center flex-grow-2" style="flex-grow:2">
                 <!-- Search form -->
                 <form ACTION="list.html" METHOD="GET" id="seach-form">
                     <input type="hidden" name="type" value="search"> <!-- Hidden input for type=search -->
-                    <input type="text" placeholder="Movie title" name="title" id="title-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 w-24 mr-1">
+                    <input type="text" placeholder="Movie title" name="title" id="autocomplete" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 w-64 mr-1">
+<!--                    <input type="text" placeholder="Movie title" name="title" id="title-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 w-24 mr-1">-->
                     <input type="text" placeholder="Year" name="year" id="year-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 w-24 mr-1">
                     <input type="text" placeholder="Director" name="director" id="director-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 w-24 mr-1">
                     <input type="text" placeholder="Star" name="star" id="star-search" class="rounded-md border-0 bg-white/5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6 w-24">
@@ -311,6 +311,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- jquery autocomplete JS  -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
 
     <!-- Load our own JS file -->
     <script src="home.js"></script>
