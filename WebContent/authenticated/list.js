@@ -1,3 +1,6 @@
+sessionStorage.setItem("redirectedToSingleMovieByAutocompleteSuggestion", "false")
+
+
 function getParameterByName(target) {
     // Get request URL
     let url = window.location.href;

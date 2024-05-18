@@ -1,5 +1,11 @@
 let isLoggedIn = sessionStorage.getItem('isLoggedIn');
 
+window.onload = function() {
+    $("#year-search").val(''); // clear value of the year input field
+    console.log("clear year");
+};
+
+
 console.log("User have logged in: " + isLoggedIn);
 if (isLoggedIn){
     let login_btn = document.getElementById("login-btn");
@@ -28,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 function handleLogOut(){
     // sessionStorage.setItem('isLoggedIn', 'false'); // update isLoggedIn information onto session storage
 
@@ -40,6 +47,8 @@ function handleLogOut(){
     //     success: (resultData) => console.log(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
     // });
 }
+
+
 
 // --------- populate search option dropdown list---------------
 
@@ -120,10 +129,14 @@ function handleGoBackBtnClick(){
     let searchYear = sessionStorage.getItem('searchYear');
     let searchDirector = sessionStorage.getItem('searchDirector');
     let searchStar = sessionStorage.getItem('searchStar');
-    let limit = sessionStorage.getItem('limit');
-    let sort = sessionStorage.getItem('sort');
-    let page = sessionStorage.getItem('page');
 
+
+    let redirectedToSingleMovieByAutocompleteSuggestion = sessionStorage.getItem("redirectedToSingleMovieByAutocompleteSuggestion")
+    if (redirectedToSingleMovieByAutocompleteSuggestion === "true") {
+        // go back to home page
+        window.location.href = 'home.html';
+        return;
+    }
 
     if (search_type === "genre"){
         window.location.href = 'list.html?type=genre&name=' + genre + '&goback=true';
@@ -158,6 +171,36 @@ $('#autocomplete').autocomplete({
     minChars: 3,
 });
 
+let searchForm = document.getElementById("seach-form");
+searchForm.addEventListener("submit", function(event) {
+    // Prevent the form from submitting normally
+    event.preventDefault();
+
+    // Get the value of the input field
+    let movieTitle = $('#autocomplete').val();
+
+    // If the value contains a movie year in parentheses, remove it
+    let indexOfYearOpeningBracket = movieTitle.lastIndexOf('(');
+    let indexOfYearClosingBracket = movieTitle.lastIndexOf(')');
+    let consoleLogString = "doing normal search for movie with title: "
+
+    if (indexOfYearOpeningBracket !== -1 && indexOfYearClosingBracket-indexOfYearOpeningBracket === 5){
+        // Remove the movie year if it exists
+        let year = movieTitle.substring(indexOfYearOpeningBracket + 1, indexOfYearClosingBracket)
+        $("#year-search").val(year)
+        movieTitle = movieTitle.substring(0, indexOfYearOpeningBracket).trim();
+        consoleLogString += movieTitle + " --- year: " + year
+    } else {
+        consoleLogString += movieTitle
+    }
+    // Set the input field value to the modified movie title
+    $('#autocomplete').val(movieTitle);
+
+    // Submit the form
+    console.log(consoleLogString);
+    this.submit();
+})
+
 
 
 /*
@@ -167,7 +210,6 @@ $('#autocomplete').autocomplete({
  */
 function handleLookup(titleQuery, doneCallback) {
     console.log("autocomplete initiated")
-    console.log("sending AJAX request to backend Java Servlet")
 
     // check past query results first
     autocompleteQueries = JSON.parse(sessionStorage.getItem("autocompleteQueries"))
@@ -183,7 +225,7 @@ function handleLookup(titleQuery, doneCallback) {
         }
     }
     // sending the HTTP GET request
-    console.log("Autocomplete search is sending ajax request to the server")
+    console.log("Autocomplete search is sending ajax request to backend server")
     jQuery.ajax({
         "method": "GET",
         "url": "api/autocomplete?titleQuery=" + titleQuery,
@@ -204,8 +246,6 @@ function handleLookup(titleQuery, doneCallback) {
  * data is the JSON data string you get from your Java Servlet
  */
 function handleLookupAjaxSuccess(data, titleQuery, doneCallback) {
-    console.log("lookup ajax successful")
-
     // parse the string into JSON
     var jsonData = JSON.parse(data);
     console.log(jsonData)
@@ -217,37 +257,22 @@ function handleLookupAjaxSuccess(data, titleQuery, doneCallback) {
 
     // call the callback function provided by the autocomplete library
     // add "{suggestions: jsonData}" to satisfy the library response format according to the "Response Format" section in documentation
-    doneCallback( { suggestions: jsonData } );
+    doneCallback( {suggestions: jsonData} );
+
+
 }
 
 
 /*
  * This function is the select suggestion handler function.
  * When a suggestion is selected, this function is called by the library.
- *
- * You can redirect to the page you want using the suggestion data.
  */
 function handleSelectSuggestion(suggestion) {
-    // // TODO: jump to the specific result page based on the selected suggestion
-    // console.log("you select " + suggestion["value"] + " with ID " + suggestion["data"]["heroID"])
-    $('#seach-form').submit()
+    // jump to the specific result page based on the selected suggestion
+    console.log("You select " + suggestion["value"] + " with ID " + suggestion["data"]["id"])
+    let movie_id = suggestion["data"]["id"]
+    sessionStorage.setItem("redirectedToSingleMovieByAutocompleteSuggestion", "true")
+    window.location.href = "single-movie.html?id=" + movie_id;
 }
 
-
-/*
- * do normal full text search if no suggestion is selected
- */
-function handleNormalSearch(query) {
-    console.log("doing normal search with query: " + query);
-    // TODO: you should do normal search here
-}
-
-// bind pressing enter key to a handler function
-$('#autocomplete').keypress(function(event) {
-    if (event.keyCode == 13) {  // keyCode 13 is the enter key
-        handleNormalSearch($('#autocomplete').val())  // pass the value of the input box to the handler function
-    }
-})
-
-// TODO: if you have a "search" button, you may want to bind the onClick event as well of that button
 

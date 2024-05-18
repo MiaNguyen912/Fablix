@@ -70,15 +70,16 @@ public class autocompleteSearchServlet extends HttpServlet {
 
                 JsonObject jsonSubObject = new JsonObject();
                 jsonSubObject.addProperty("id", movieID);
+                jsonSubObject.addProperty("title", movieTitle);
                 jsonSubObject.addProperty("year", year);
 
                 JsonObject jsonObject = new JsonObject();
-                jsonObject.addProperty("value", movieTitle);
+                jsonObject.addProperty("value", movieTitle + " (" + year + ")");
                 jsonObject.add("data", jsonSubObject);
                 jsonArray.add(jsonObject);
 
                 /* required format for autocomplete library: (the data in "value" will appear in suggestion box)
-                * [{value: "Tom and Viv", data: {id: "BGt10", year: 1996}},…]
+                * [{value: "Tom and Viv (1996)", data: {id: "BGt10", title: "Tom and Viv", year: 1996}},…]
                  */
             }
 
