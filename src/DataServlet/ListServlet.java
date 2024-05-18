@@ -228,6 +228,34 @@ public class ListServlet extends HttpServlet {
                         GROUP BY starid
                     ) sp ON s.id = sp.starid
                     ORDER BY title ASC, rating ASC, distinct_movies.movieid ASC, movie_count DESC, s.name ASC;
+
+
+
+                    SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count
+                    FROM (
+                        SELECT *
+                        FROM ratings r
+                        JOIN movies m ON r.movieid = m.id
+                        JOIN (SELECT sm.movieid as movie_of_chosen_star
+                            FROM stars_in_movies sm
+                            JOIN stars s ON s.id = sm.starid
+                            WHERE s.name LIKE '%ste%'
+                        ) as movies_of_chosen_star ON movies_of_chosen_star.movie_of_chosen_star = m.id
+                        WHERE (MATCH(title) AGAINST ('+lov* +s*' IN BOOLEAN MODE))
+                            AND year = 2004
+                            AND director LIKE '%%'
+                        ORDER BY title ASC, rating ASC
+                        LIMIT 10 OFFSET 0
+                    ) AS distinct_movies
+                    JOIN genres_in_movies gm ON gm.movieid = distinct_movies.movieid
+                    JOIN genres g ON g.id = gm.genreid
+                    JOIN stars_in_movies sm ON sm.movieid = distinct_movies.movieid
+                    JOIN stars s ON s.id = sm.starid
+                    JOIN ( SELECT starid, COUNT(movieid) AS movie_count
+                        FROM stars_in_movies
+                        GROUP BY starid
+                    ) sp ON s.id = sp.starid
+                    ORDER BY title ASC, rating ASC, distinct_movies.movieid ASC, movie_count DESC, s.name ASC;
                 */
 
                 query = " SELECT distinct_movies.movieid, rating, numvotes, title, year, director, genreid, g.name as genrename, sm.starid, s.name, birthYear, movie_count " +
@@ -246,7 +274,10 @@ public class ListServlet extends HttpServlet {
                 if (!titleParam.isEmpty() || !yearParam.isEmpty() || !directorParam.isEmpty())
                     query += " WHERE ";
                 if (!titleParam.isEmpty())
-                    query += "(title LIKE ? OR title LIKE ?) AND ";
+//                    query += "(title LIKE ? OR title LIKE ?) AND ";
+                    query += "MATCH(title) AGAINST (? IN BOOLEAN MODE) AND ";
+
+
                 if (!yearParam.isEmpty())
                     query += "m.year = ? AND ";
                 if (!directorParam.isEmpty())
@@ -274,8 +305,15 @@ public class ListServlet extends HttpServlet {
                     statement.setString(paramIndex++, "%" + starParam + "%");
                 }
                 if (!titleParam.isEmpty()) {
-                    statement.setString(paramIndex++, titleParam + "%");
-                    statement.setString(paramIndex++, "% " + titleParam + "%");
+
+                    String[] words = titleParam.trim().split(" ");
+                    String placeholder = "";
+                    for (String word : words) {
+                        placeholder += "+" + word + "* "; // Append placeholder for each word
+                    }
+                    statement.setString(paramIndex++, placeholder);
+//                    statement.setString(paramIndex++, titleParam + "%");
+//                    statement.setString(paramIndex++, "% " + titleParam + "%");
                 }
                 if (!yearParam.isEmpty()) {
                     statement.setInt(paramIndex++, Integer.parseInt(yearParam));
