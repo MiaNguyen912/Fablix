@@ -43,6 +43,7 @@ function addToCart(button){
     sessionStorage.setItem('cart', JSON.stringify(cartData));
 }
 
+
 /**
  * Handles the data returned by the API, read the jsonObject and populate data into html elements
  * @param resultData jsonObject
