@@ -274,10 +274,7 @@ public class ListServlet extends HttpServlet {
                 if (!titleParam.isEmpty() || !yearParam.isEmpty() || !directorParam.isEmpty())
                     query += " WHERE ";
                 if (!titleParam.isEmpty())
-//                    query += "(title LIKE ? OR title LIKE ?) AND ";
                     query += "MATCH(title) AGAINST (? IN BOOLEAN MODE) AND ";
-
-
                 if (!yearParam.isEmpty())
                     query += "m.year = ? AND ";
                 if (!directorParam.isEmpty())
