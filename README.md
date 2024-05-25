@@ -213,3 +213,22 @@ mysql> quit;
 6. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file)
 7. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
 8. stored-procedure.sql
+9. add the edit distance function for fuzzy-searching into database (see below)
+   
+### Adding edit distance UDF function into the database:
+- UDF: user-defined function, in this case it's written in C, easier to implement than SQL function. 
+- to use this C function in SQL (check out https://flamingo.ics.uci.edu/toolkit/ to see), we will compile the function into a shared library with extension format ".so" ->  save this library into SQL database -> n sql, create an SQL function and provide it the library name 
+    - go to https://flamingo.ics.uci.edu/toolkit/ -> docs folder: to see step-by-step documentation
+    - at https://flamingo.ics.uci.edu/toolkit/, download the file toolkit_2021-05-18.tgz:
+    - in AWS instance terminal, copy the link address and run 'wget <link-address>' to download
+    - run 'tar xvf toolkit_2021-05-18.tgz' to unzip the file, run 'ls' to see a new folder 'toolkit' exists
+    - 'cd toolkit/src/udf/mysql/ed/' (ed is edit distance) to see the 'makefile' and all C programs written
+    - run 'vim ed.c' to see the function
+    - to use this function as a UDF, we need to download the C-compiler gcc package: 'sudo apt-get install gcc make mysql-server libmysqlclient-dev'
+    - run 'make' so compile the C programs into libraries (run 'ls -ls *.so' to see the libraries)
+    - copy the libraries into /usr/lib/mysql/plugin/ so that MySQL sees them: 'sudo cp libed*.so /usr/lib/mysql/plugin/'
+    - restart MySQL: 'sudo /etc/init.d/mysql restart'
+    - Now we can add the functions to MySQL and test them. To do that we can connect to MySQL and Copy-and-Paste the SQL statements provided for each function in their respective .sql file
+      - for example, at directory 'toolkit/src/udf/mysql/ed/' run 'vim ed.sql' to see the sql statement provided for edit distance function ('CREATE FUNCTION ed RETURNS INTEGER SONAME 'libed.so';), copy and run this statement
+      - now, we can test the function by running 'SELECT * from stars where ed(name, 'Paul Newman') <= 1' (note that 1 is the number of error we can tolerate)
+  
