@@ -57,10 +57,15 @@ public class autocompleteSearchServlet extends HttpServlet {
             for (String word : words) {
                 placeholder += "+" + word + "* "; // Append placeholder for each word
             }
-
-            query = "SELECT * FROM movies WHERE MATCH(title) AGAINST (? IN BOOLEAN MODE) LIMIT 10;";
+            int fuzzySearchThreshold = (int) Math.floor(Math.sqrt(titleQuery.length())) + words.length - 1; //the ed function distinguish capital and normal letter, so we add  words.length to compensate the first letter of every word
+            System.out.println("fuzzySearchThreshold: " + fuzzySearchThreshold);
+            query = "SELECT * FROM movies WHERE MATCH(title) AGAINST (? IN BOOLEAN MODE) OR ed(title, ?) <= ? OR title LIKE ? OR title LIKE ? LIMIT 10;";
             statement = conn.prepareStatement(query);
             statement.setString(1, placeholder);
+            statement.setString(2, titleQuery);
+            statement.setInt(3, fuzzySearchThreshold);
+            statement.setString(4, titleQuery + "%");
+            statement.setString(5, "% " + titleQuery + '%');
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()){
