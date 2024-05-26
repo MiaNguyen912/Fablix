@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Context>
-    <!-- Defines a Data Source Connecting to localhost moviedb-->
+    <!-- Defines a Data Source connection pool Connecting to localhost moviedb-->
+    <!-- this pool can have max 100 connections, can have at most 30 connections unused-->
+    <!-- when we use a connection to talk to a server, it'll wait for at most 10000ms and timeout-->
     <Resource name="jdbc/moviedb"
               auth="Container"
               driverClassName="com.mysql.cj.jdbc.Driver"
