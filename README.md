@@ -5,13 +5,9 @@ https://drive.google.com/file/d/1dZPljEU9nHfgHZZP_qAtgYJ3-mocunRO/view?usp=shari
 
 ### Contributions: 
 Mia:
-- Set up recaptcha on customer and employee site
-- Make XML parsing files
-- Modify all queries to use prepared statements
-- Add files to encrypt password and modify loginServlet to use the encrypted password instead of plain text password
-- Built addStar and addMovie UI
-- Build the employee landing page (the metadata page)
-
+- created the autocomplete servlet for movie title
+- upgrade to movie title search box to use full-text search and autocomplete (on both client and employee sites)
+- imported Edit Distance function and added fuzzy-search feature into the search box and search result
 
 Daniel:
 - Enabled JDBC Connection Pooling for all servlets
