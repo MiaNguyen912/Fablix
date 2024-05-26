@@ -1,7 +1,7 @@
 ## CS 122B Project 2
 
 ### Demo Video Link: 
-https://drive.google.com/file/d/1ytjUkzfHDQmdgsq8W4jHau3LAFm4xxgj/view?usp=sharing
+https://drive.google.com/file/d/1dZPljEU9nHfgHZZP_qAtgYJ3-mocunRO/view?usp=sharing
 
 ### Contributions: 
 Mia:
@@ -14,12 +14,45 @@ Mia:
 
 
 Daniel:
-- Built addStar and addMovie frontend and backend functionality (Not UI)
-- Built stored-procedures sql to add stars and movies, using a helper id manager table
-- Fixed database preparation procedure to account for new XML data
-- Setup AWS instance configurations for https routing
-- Setup domain "tomsfablix.site" for the project
+- Enabled JDBC Connection Pooling for all servlets
+- Setup AWS instances using AMIs for the master and slave instances
+- Enabled synchronization between the master and slave, where only changes to master are propagated to both
+- Setup loadbalancer with sticky sessions on both AWS and GCP instances to redirect to either master or slave depending on the operation
+- Modified AWS and GCP security groups for proper communication between the instances
 
+
+### Connection Pooling
+- Include the filename/path of all code/configuration files in GitHub of using JDBC Connection Pooling.
+  - WebContent\META-INF\context.xml
+- Explain how Connection Pooling is utilized in the Fabflix code.
+  - Connection pooling is enabled by using a factory to create and manage datasources in the connection pool. This is enabled in the context.xml file, where we also set configurations like the maximum amount of connections, how long they can be idle for, as well as how long the application would wait for a connection.
+  - We also modified the URL to cache prepared statements to handle more than one connection
+- Explain how Connection Pooling works with two backend SQL.
+  - In our project we used a single connection pool resource and relied on the load balancer servers to route to the correct master/slave instances.
+  - However, we could optimize further by creating separate connection pools for read and write operations, each configured to route to their respective instance.
+  - This would allow us to optimize resources specific to either read and write operations, thus using computing resources more efficiently.
+
+### Master/Slave
+- Include the filename/path of all code/configuration files in GitHub of routing queries to Master/Slave SQL.
+  - On each loadbalancer instance (Not github): /etc/apache2/sites-enabled/000-default.conf
+- How read/write requests were routed to Master/Slave SQL?
+  - Directly edited the apache configuration files to route specific pages where write requests were made
+  - For example, I'd create a new proxy to route only to the master instance:
+    ```
+    <Proxy "balancer://master_balancer">
+      BalancerMember "http://34.225.112.155:8080/cs122b-project5-TomcatPooling-example" route=1
+      ProxySet stickysession=ROUTEID
+    </Proxy>
+    ```
+  - Then in the VirtualHost tag have it route those specific queries to the master-only proxy to write properly to the database:
+    ```
+    ProxyPass /_dashboard/loggedin/api/add-movie balancer://master_balancer
+    ProxyPassReverse /_dashboard/loggedin/api/add-movie balancer://master_balancer
+    ```
+
+
+
+  
 ### Files with Prepared Statements
 - [ConfirmationServlet.java](src/CartAndPaymentServlet/ConfirmationServlet.java)
 - [CartServlet.java](src/CartAndPaymentServlet/CartServlet.java)
@@ -213,7 +246,8 @@ mysql> quit;
 6. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file) 
 7. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
 8. stored-procedure.sql
-9. add the edit distance function for fuzzy-searching into database (see below)
+9. edittables_p4.sql
+10.add the edit distance function for fuzzy-searching into database (see below)
    
 ### Adding edit distance UDF function into the database:
 - UDF: user-defined function, in this case it's written in C, easier to implement than SQL function. 
