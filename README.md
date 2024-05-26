@@ -20,13 +20,15 @@ Daniel:
 ### Connection Pooling
 - Include the filename/path of all code/configuration files in GitHub of using JDBC Connection Pooling.
   - WebContent\META-INF\context.xml
-- Explain how Connection Pooling is utilized in the Fabflix code.
+- Explain how Connection Pooling is utilized in the Fabflix code:
   - Connection pooling is enabled by using a factory to create and manage datasources in the connection pool. This is enabled in the context.xml file, where we also set configurations like the maximum amount of connections, how long they can be idle for, as well as how long the application would wait for a connection.
   - We also modified the URL to cache prepared statements to handle more than one connection
-- Explain how Connection Pooling works with two backend SQL.
+- Explain how Connection Pooling works with two backend SQL:
+  - Connection pooling allows us to reuse connections for multiple queries instead of creating and deleting new ones for each one
   - In our project we used a single connection pool resource and relied on the load balancer servers to route to the correct master/slave instances.
+  - We also used prepared statements to ensure the SQL statements are precompiled and stored in the connection pool
   - However, we could optimize further by creating separate connection pools for read and write operations, each configured to route to their respective instance.
-  - This would allow us to optimize resources specific to either read and write operations, thus using computing resources more efficiently.
+    - This would allow us to optimize resources specific to either read and write operations, thus using computing resources more efficiently.
 
 ### Master/Slave
 - Include the filename/path of all code/configuration files in GitHub of routing queries to Master/Slave SQL.
@@ -45,6 +47,7 @@ Daniel:
     ProxyPass /_dashboard/loggedin/api/add-movie balancer://master_balancer
     ProxyPassReverse /_dashboard/loggedin/api/add-movie balancer://master_balancer
     ```
+  - All read requests are also routed to either slave or master instance using the default round-robin algorithm.
 
 
 
