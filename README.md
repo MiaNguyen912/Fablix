@@ -208,9 +208,9 @@ mysql> quit;
 1. run createtable.sql
 2. run movie-data.sql
 3. edittables.sql
-4. UpdateSecurePassword.java
-5. UpdateSecurePasswordStaff.java
-6. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file)
+4. UpdateSecurePassword.java (with aws instance, run: mvn exec:java -Dexec.mainClass="LoginServlet.UpdateSecurePassword")
+5. UpdateSecurePasswordStaff.java (with aws instance, run: mvn exec:java -Dexec.mainClass="LoginServlet.UpdateSecurePasswordStaff")
+6. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file) 
 7. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
 8. stored-procedure.sql
 9. add the edit distance function for fuzzy-searching into database (see below)
