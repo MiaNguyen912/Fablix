@@ -245,8 +245,7 @@ mysql> quit;
 6. MovieDomParser.java (bulk import from main243.xml) (remember to check location of the XML file) 
 7. StarDomParser.java (bulk import from actors63.xml and casts124.xml) (remember to check location of the XML file)
 8. stored-procedure.sql
-9. edittables_p4.sql
-10.add the edit distance function for fuzzy-searching into database (see below)
+9. add the edit distance function for fuzzy-searching into database (see below)
    
 ### Adding edit distance UDF function into the database:
 - UDF: user-defined function, in this case it's written in C, easier to implement than SQL function. 

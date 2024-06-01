@@ -27,3 +27,7 @@ CREATE INDEX idx_stars_in_movies_starid ON stars_in_movies (starid);
 
 -- stars
 CREATE INDEX idx_stars_id ON stars (id);
+
+
+
+ALTER TABLE movies ADD FULLTEXT (title);
