@@ -26,9 +26,12 @@ public class VerifyPassword {
 
 	public static boolean verifyCredentialsCustomers(String email, String password) throws Exception {
 		
-		String loginUser = "mytestuser";
+		String loginUser = "mytestuserdocker";
 		String loginPasswd = "My6$Password";
-		String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
+//		String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
+		String loginUrl = "jdbc:mysql://host.docker.internal:3306/moviedb";
+
+
 
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 		Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
@@ -59,9 +62,9 @@ public class VerifyPassword {
 
 	public static boolean verifyCredentialsStaff(String email, String password) throws Exception {
 
-		String loginUser = "mytestuser";
+		String loginUser = "mytestuserdocker";
 		String loginPasswd = "My6$Password";
-		String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
+		String loginUrl = "jdbc:mysql://host.docker.internal:3306/moviedb";
 
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 		Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);

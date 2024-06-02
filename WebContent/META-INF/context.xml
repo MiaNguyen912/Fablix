@@ -4,8 +4,10 @@
     <!-- Defines a Data Source connection pool Connecting to localhost moviedb-->
     <!-- this pool can have max 100 connections, can have at most 30 connections unused-->
     <!-- when we use a connection to talk to a server, it'll wait for at most 10000ms and timeout-->
+    <!-- mytestuserdocker is created by  `CREATE USER 'mytestuserdocker'@'%' IDENTIFIED BY 'My6$Password'; GRANT ALL PRIVILEGES ON * . * TO 'mytestuserdocker'@'%';` -->
+    <!-- Note that ``@'%'`` allows the user to login from anywhere instead of only `@'localhost'`. This command is critical for Docker and Kubernetes:-->
 
-    <!--    <Resource name="jdbc/moviedb"-->
+<!--    <Resource name="jdbc/moviedbReadWrite"-->
 <!--              auth="Container"-->
 <!--              driverClassName="com.mysql.cj.jdbc.Driver"-->
 <!--              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"-->
@@ -16,6 +18,16 @@
 <!--              url="jdbc:mysql://localhost:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"-->
 <!--    />-->
 
+<!--    <Resource name="jdbc/moviedbReadOnly"-->
+<!--              auth="Container"-->
+<!--              driverClassName="com.mysql.cj.jdbc.Driver"-->
+<!--              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"-->
+<!--              maxTotal="100" maxIdle="30" maxWaitMillis="10000"-->
+<!--              type="javax.sql.DataSource"-->
+<!--              username="mytestuserdocker"-->
+<!--              password="My6$Password"-->
+<!--              url="jdbc:mysql://localhost:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"-->
+<!--    />-->
 
     <Resource name="jdbc/moviedbReadWrite"
               auth="Container"
@@ -25,7 +37,7 @@
               type="javax.sql.DataSource"
               username="mytestuserdocker"
               password="My6$Password"
-              url="jdbc:mysql://localhost:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"
+              url="jdbc:mysql://host.docker.internal:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"
     />
 
     <Resource name="jdbc/moviedbReadOnly"
@@ -36,8 +48,8 @@
               type="javax.sql.DataSource"
               username="mytestuserdocker"
               password="My6$Password"
-              url="jdbc:mysql://localhost:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"
+              url="jdbc:mysql://host.docker.internal:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"
     />
-    <!--              url="jdbc:mysql://host.docker.internal:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"-->
+
 
 </Context>
