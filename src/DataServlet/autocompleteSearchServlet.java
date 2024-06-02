@@ -26,7 +26,7 @@ public class autocompleteSearchServlet extends HttpServlet {
     private DataSource dataSource;
     public void init(ServletConfig config) {
         try {
-            dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
+            dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedbReadOnly");
         } catch (NamingException e) {
             e.printStackTrace();
         }
