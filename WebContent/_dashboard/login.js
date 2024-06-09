@@ -19,7 +19,7 @@ function handleLoginResult(resultDataString) {
         sessionStorage.setItem('isLoggedIn', 'false');
         console.log("Error message: " + resultDataJson["message"]);
         $("#login_error_message").text(resultDataJson["message"]);
-        grecaptcha.reset(); // reset recaptcha
+        // grecaptcha.reset(); // reset recaptcha
     }
 }
 

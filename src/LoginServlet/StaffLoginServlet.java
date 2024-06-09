@@ -44,13 +44,13 @@ public class StaffLoginServlet extends HttpServlet {
 
 
 
-        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
-        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
-
-        System.out.println("About to verify staff recaptcha 1");
+//        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+//        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
+//
+//        System.out.println("About to verify staff recaptcha 1");
         // Verify reCAPTCHA
         try {
-            RecaptchaVerifyUtils.verify(gRecaptchaResponse);
+//            RecaptchaVerifyUtils.verify(gRecaptchaResponse);
             System.out.println("Recaptcha response verified");
         } catch (Exception e) {
             JsonObject responseJsonObject = new JsonObject();

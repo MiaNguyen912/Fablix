@@ -29,7 +29,8 @@ public class VerifyPassword {
 		String loginUser = "mytestuserdocker";
 		String loginPasswd = "My6$Password";
 //		String loginUrl = "jdbc:mysql://localhost:3306/moviedb";
-		String loginUrl = "jdbc:mysql://host.docker.internal:3306/moviedb";
+//		String loginUrl = "jdbc:mysql://host.docker.internal:3306/moviedb";
+		String loginUrl = "jdbc:mysql://mysql-primary:3306/moviedb";
 
 
 
@@ -64,7 +65,8 @@ public class VerifyPassword {
 
 		String loginUser = "mytestuserdocker";
 		String loginPasswd = "My6$Password";
-		String loginUrl = "jdbc:mysql://host.docker.internal:3306/moviedb";
+//		String loginUrl = "jdbc:mysql://host.docker.internal:3306/moviedb";
+		String loginUrl = "jdbc:mysql://mysql-primary:3306/moviedb";
 
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 		Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);

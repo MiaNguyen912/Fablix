@@ -17,8 +17,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.concurrent.TimeUnit;
 
-@WebServlet(name = "LoginServlet", urlPatterns = "/api/login") // LoginServlet.LoginServlet
-// es POST request sent to /api/login
+@WebServlet(name = "LoginServlet", urlPatterns = "/api/login")
+// send POST request sent to /api/login
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 
@@ -42,13 +42,13 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         // Retrieve parameters username/password from the POST request.
         // Verify reCAPTCHA
-        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
-
-        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
-
-        System.out.println("About to verify recaptcha 1");
+//        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+//
+//        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
+//
+//        System.out.println("About to verify recaptcha 1");
         try {
-            RecaptchaVerifyUtils.verify(gRecaptchaResponse);
+//            RecaptchaVerifyUtils.verify(gRecaptchaResponse);
             System.out.println("Recaptcha response verified");
         } catch (Exception e) {
             JsonObject responseJsonObject = new JsonObject();

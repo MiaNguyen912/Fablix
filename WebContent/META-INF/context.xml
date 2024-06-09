@@ -29,6 +29,31 @@
 <!--              url="jdbc:mysql://localhost:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"-->
 <!--    />-->
 
+<!--    ========================================================= -->
+
+<!--    <Resource name="jdbc/moviedbReadWrite"-->
+<!--              auth="Container"-->
+<!--              driverClassName="com.mysql.cj.jdbc.Driver"-->
+<!--              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"-->
+<!--              maxTotal="100" maxIdle="30" maxWaitMillis="10000"-->
+<!--              type="javax.sql.DataSource"-->
+<!--              username="mytestuserdocker"-->
+<!--              password="My6$Password"-->
+<!--              url="jdbc:mysql://host.docker.internal:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"-->
+<!--    />-->
+
+<!--    <Resource name="jdbc/moviedbReadOnly"-->
+<!--              auth="Container"-->
+<!--              driverClassName="com.mysql.cj.jdbc.Driver"-->
+<!--              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"-->
+<!--              maxTotal="100" maxIdle="30" maxWaitMillis="10000"-->
+<!--              type="javax.sql.DataSource"-->
+<!--              username="mytestuserdocker"-->
+<!--              password="My6$Password"-->
+<!--              url="jdbc:mysql://host.docker.internal:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"-->
+<!--    />-->
+
+
     <Resource name="jdbc/moviedbReadWrite"
               auth="Container"
               driverClassName="com.mysql.cj.jdbc.Driver"
