@@ -53,6 +53,7 @@
 <!--              url="jdbc:mysql://host.docker.internal:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"-->
 <!--    />-->
 
+    <!--    ========================================================= -->
 
     <Resource name="jdbc/moviedbReadWrite"
               auth="Container"
