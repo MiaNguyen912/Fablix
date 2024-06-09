@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fablix-container # Names the container within the pod as "murphy-movies-container".
-          image: mianguyen00/fablix:v6 # Uses the Docker image "https://hub.docker.com/r/danielbolee/fablix" for the container.
+          image: mianguyen00/fablix:v4 # Uses the Docker image "https://hub.docker.com/r/danielbolee/fablix" for the container.
           ports:
             - name: http
               containerPort: 8080 # Exposes port 8080 of the container.
