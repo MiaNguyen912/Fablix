@@ -1,8 +1,8 @@
 ## CS 122B Project 2
 
 ### Demo Video Link: 
-https://drive.google.com/file/d/1dZPljEU9nHfgHZZP_qAtgYJ3-mocunRO/view?usp=sharing
-
+https://drive.google.com/file/d/1ccJ6_6PSUbBA619_IHwiN-H9Sb4tBlf1/view?usp=sharing
+- The throughput numbers are different than the readme as it only was able to run for a few seconds
 
 ### Jmeter throughput:
 1. K8s cluster has 1 Control Plane + 3 Worker nodes + 1 master MySQL pod + 1 slave MySQL pod + 2 Fabflix pods:
@@ -17,12 +17,9 @@ Mia:
 - imported Edit Distance function and added fuzzy-search feature into the search box and search result
 
 Daniel:
-- Enabled JDBC Connection Pooling for all servlets
-- Setup AWS instances using AMIs for the master and slave instances
-- Enabled synchronization between the master and slave, where only changes to master are propagated to both
-- Setup loadbalancer with sticky sessions on both AWS and GCP instances to redirect to either master or slave depending on the operation
-- Modified AWS and GCP security groups for proper communication between the instances
-
+- Set up kubernetes cluster on AWS
+- Migrated moviedb database to mysql instances
+- Deployed fablix website on Kubernetes and applied appropriate config changes in the repository and docker image
 
 ### Connection Pooling
 - Include the filename/path of all code/configuration files in GitHub of using JDBC Connection Pooling.
