@@ -3,6 +3,13 @@
 ### Demo Video Link: 
 https://drive.google.com/file/d/1dZPljEU9nHfgHZZP_qAtgYJ3-mocunRO/view?usp=sharing
 
+
+### Jmeter throughput:
+1. K8s cluster has 1 Control Plane + 3 Worker nodes + 1 master MySQL pod + 1 slave MySQL pod + 2 Fabflix pods:
+- 381.792/minute
+2. K8s Cluster has 1 Control Plane + 4 Worker nodes + 1 master MySQL pod + 1 slave MySQL pod + 3 Fabflix pods:
+- 446.582/minute
+
 ### Contributions: 
 Mia:
 - created the autocomplete servlet for movie title
