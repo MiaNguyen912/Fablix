@@ -12,9 +12,8 @@ https://drive.google.com/file/d/1ccJ6_6PSUbBA619_IHwiN-H9Sb4tBlf1/view?usp=shari
 
 ### Contributions: 
 Mia:
-- created the autocomplete servlet for movie title
-- upgrade to movie title search box to use full-text search and autocomplete (on both client and employee sites)
-- imported Edit Distance function and added fuzzy-search feature into the search box and search result
+- create the docker image an push it onto dockerhub
+- create the .jmx file and do the stress test for the application
 
 Daniel:
 - Set up kubernetes cluster on AWS
