@@ -42,22 +42,20 @@ public class StaffLoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
 
-
-//        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
-//        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
-//
-//        System.out.println("About to verify staff recaptcha 1");
+        System.out.println("About to verify staff recaptcha 1");
         // Verify reCAPTCHA
         try {
-//            RecaptchaVerifyUtils.verify(gRecaptchaResponse);
+            RecaptchaVerifyUtils.verify(gRecaptchaResponse);
             System.out.println("Recaptcha response verified");
         } catch (Exception e) {
             JsonObject responseJsonObject = new JsonObject();
             responseJsonObject.addProperty("status", "fail");
             request.getServletContext().log("Login failed"); // Log to localhost log
             responseJsonObject.addProperty("message", e.getMessage());
-            //responseJsonObject.addProperty("message", "Recaptcha verification failed");
+            responseJsonObject.addProperty("message", "Recaptcha verification failed");
             response.setStatus(200); // Set response status to 200 (OK)
             response.getWriter().write(responseJsonObject.toString()); // write out response object
             return;
@@ -94,27 +92,6 @@ public class StaffLoginServlet extends HttpServlet {
                     request.getServletContext().log("Login failed"); // Log to localhost log
                     responseJsonObject.addProperty("message", "Incorrect password");
                 }
-
-
-
-
-
-//                String resulting_password = rs.getString("password");
-//                String fullName = rs.getString("fullName");
-//
-//                if (resulting_password.equals(password)){
-//                    // Login success, set this user into the session
-//                    request.getSession().setAttribute("staff", new Utility.Staff(username, fullName)); // username is email
-//                    request.getSession().setAttribute("user", new Utility.User(username, "000")); // create a Utility.User object with id=000 so that staff can access user's api used for browsing/searching
-//
-//                    responseJsonObject.addProperty("status", "success");
-//                    responseJsonObject.addProperty("message", "success");
-//                } else {
-//                    // Login fail because of wrong password
-//                    responseJsonObject.addProperty("status", "fail");
-//                    request.getServletContext().log("Login failed"); // Log to localhost log
-//                    responseJsonObject.addProperty("message", "Incorrect password");
-//                }
             }
             else {
                 // Login fail because of wrong username/email

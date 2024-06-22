@@ -246,8 +246,8 @@ public class ListServlet extends HttpServlet {
                 if (!titleParam.isEmpty() || !yearParam.isEmpty() || !directorParam.isEmpty())
                     query += " WHERE ";
                 if (!titleParam.isEmpty()) {
-                    // query += "MATCH(title) AGAINST (? IN BOOLEAN MODE) OR ed(title, ?) <= ? OR title like ? OR title like ? AND ";
-                    query += "MATCH(title) AGAINST (? IN BOOLEAN MODE) OR title like ? OR title like ? AND ";
+                     query += "MATCH(title) AGAINST (? IN BOOLEAN MODE) OR ed(title, ?) <= ? OR title like ? OR title like ? AND ";
+//                    query += "MATCH(title) AGAINST (? IN BOOLEAN MODE) OR title like ? OR title like ? AND ";
                 }
                 if (!yearParam.isEmpty())
                     query += "m.year = ? AND ";
@@ -285,8 +285,8 @@ public class ListServlet extends HttpServlet {
                     int fuzzySearchThreshold = (int) Math.floor(Math.sqrt(titleParam.length())) + words.length - 1; //the ed function distinguish capital and normal letter, so we add  words.length to compensate the first letter of every word
 
                     statement.setString(paramIndex++, placeholder);
-                    // statement.setString(paramIndex++, titleParam);
-                    // statement.setInt(paramIndex++, fuzzySearchThreshold);
+                    statement.setString(paramIndex++, titleParam);
+                    statement.setInt(paramIndex++, fuzzySearchThreshold);
                     statement.setString(paramIndex++, titleParam + "%");
                     statement.setString(paramIndex++, "% " + titleParam + "%");
                 }

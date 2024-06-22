@@ -1,86 +1,6 @@
-## CS 122B Project 2
-
-### Demo Video Link: 
-https://drive.google.com/file/d/1ccJ6_6PSUbBA619_IHwiN-H9Sb4tBlf1/view?usp=sharing
-- The throughput numbers are different than the readme as it only was able to run for a few seconds
-
-### Jmeter throughput:
-1. K8s cluster has 1 Control Plane + 3 Worker nodes + 1 master MySQL pod + 1 slave MySQL pod + 2 Fabflix pods:
-- 381.792/minute
-2. K8s Cluster has 1 Control Plane + 4 Worker nodes + 1 master MySQL pod + 1 slave MySQL pod + 3 Fabflix pods:
-- 446.582/minute
-
-### Contributions: 
-Mia:
-- create the docker image an push it onto dockerhub
-- create the .jmx file and do the stress test for the application
-
-Daniel:
-- Set up kubernetes cluster on AWS
-- Migrated moviedb database to mysql instances
-- Deployed fablix website on Kubernetes and applied appropriate config changes in the repository and docker image
-
-### Connection Pooling
-- Include the filename/path of all code/configuration files in GitHub of using JDBC Connection Pooling.
-  - WebContent\META-INF\context.xml
-- Explain how Connection Pooling is utilized in the Fabflix code:
-  - Connection pooling is enabled by using a factory to create and manage datasources in the connection pool. This is enabled in the context.xml file, where we also set configurations like the maximum amount of connections, how long they can be idle for, as well as how long the application would wait for a connection.
-  - We also modified the URL to cache prepared statements to handle more than one connection
-- Explain how Connection Pooling works with two backend SQL:
-  - Connection pooling allows us to reuse connections for multiple queries instead of creating and deleting new ones for each one
-  - In our project we used a single connection pool resource and relied on the load balancer servers to route to the correct master/slave instances.
-  - We also used prepared statements to ensure the SQL statements are precompiled and stored in the connection pool
-  - However, we could optimize further by creating separate connection pools for read and write operations, each configured to route to their respective instance.
-    - This would allow us to optimize resources specific to either read and write operations, thus using computing resources more efficiently.
-
-### Master/Slave
-- Include the filename/path of all code/configuration files in GitHub of routing queries to Master/Slave SQL.
-  - On each loadbalancer instance (Not github): /etc/apache2/sites-enabled/000-default.conf
-- How read/write requests were routed to Master/Slave SQL?
-  - Directly edited the apache configuration files to route specific pages where write requests were made
-  - For example, I'd create a new proxy to route only to the master instance:
-    ```
-    <Proxy "balancer://master_balancer">
-      BalancerMember "http://34.225.112.155:8080/cs122b-project5-TomcatPooling-example" route=1
-      ProxySet stickysession=ROUTEID
-    </Proxy>
-    ```
-  - Then in the VirtualHost tag have it route those specific queries to the master-only proxy to write properly to the database:
-    ```
-    ProxyPass /_dashboard/loggedin/api/add-movie balancer://master_balancer
-    ProxyPassReverse /_dashboard/loggedin/api/add-movie balancer://master_balancer
-    ```
-  - All read requests are also routed to either slave or master instance using the default round-robin algorithm.
-
-
-
-  
-### Files with Prepared Statements
-- [ConfirmationServlet.java](src/CartAndPaymentServlet/ConfirmationServlet.java)
-- [CartServlet.java](src/CartAndPaymentServlet/CartServlet.java)
-- [PaymentServlet.java](src/CartAndPaymentServlet/PaymentServlet.java)
-- [GenresServlet.java](src/DataServlet/GenresServlet.java)
-- [ListServlet.java](src/DataServlet/ListServlet.java)
-- [MetadataServet.java](src/DataServlet/MetadataServet.java)
-- [Top20MoviesServlet.java](src/DataServlet/Top20MoviesServlet.java)
-- [SingleStarServlet.java](src/DataServlet/SingleStarServlet.java)
-- [SingleMovieServlet.java](src/DataServlet/SingleMovieServlet.java)
-- [LoginServlet.java](src/LoginServlet/LoginServlet.java)
-- [StaffLoginServlet.java](src/LoginServlet/StaffLoginServlet.java)
-- [UpdateSecurePassword.java](src/LoginServlet/UpdateSecurePassword.java)
-- [UpdateSecurePasswordStaff.java](src/LoginServlet/UpdateSecurePasswordStaff.java)
-- [MovieDomParser.java](src/XMLParser/MovieDomParser.java)
-- [StarDomParser.java](src/XMLParser/StarDomParser.java)
-
-### parsing time optimization strategies:
-- use a batch to store multiple queries and use executeBatch() to execute all insertion at once
-- In [StarDomParser.java](src/XMLParser/StarDomParser.java): parse all necessary data and save them in maps/lists to avoid querying the DB everytime we insert
-- In [MovieDomParser.java](src/XMLParser/MovieDomParser.java): loop through the movies list only once and concurrently add statements into 2 batches (the 2 batches store insert statements that are used to insert data into 2 different tables), then execute 2 batches continuously to save time
-
-### XML Parsing error messages:
-- [actors_parsing_error_messages.txt](actors_parsing_error_messages.txt)
-- [movies_parsing_error_messages.txt](movies_parsing_error_messages.txt)
-
+### SUMMARY:
+- go to http://localhost:8080/cs122b-project1-api-example/login.html to access customer site (account/password: a@email.com / a2)
+- go to http://localhost:8080/cs122b-project1-api-example/_dashboard/login.html to access employee site (account/password: classta@email.edu / classta)
 
 ### Before running the project
 
@@ -166,31 +86,6 @@ mysql> quit;
 - [AddMovieServlet.java](...) and [AddStarServlet.java](...): call the stored procedures to add new movie and star
 
 
-### Searching logic
-- if title is specified: find 'title%' or '% title%' (title should match at the beginning or after a space)
-- if year is specified: find results with the exact specified year 
-- if director is specified: find '%director%' (director can match at the beginning, middle, or end)
-- if star name is specified: find '%star%' (star can match at the beginning, middle, or end)
-- results are arranged in alphabetical order for movie title
-#### Seach query example:
-
-    SELECT * FROM ratings r
-    JOIN movies m ON r.movieid = m.id
-    JOIN genres_in_movies gm ON gm.movieid = r.movieid
-    JOIN genres g ON g.id = gm.genreid
-    JOIN stars_in_movies sm ON sm.movieid = r.movieid
-    JOIN stars s ON s.id = sm.starid
-    JOIN ( SELECT starid, COUNT(movieid) AS movie_count FROM stars_in_movies GROUP BY starid) sp ON s.id = sp.starid
-    JOIN (SELECT sm.movieid
-        FROM stars_in_movies sm
-        JOIN stars s ON s.id = sm.starid
-        WHERE s.name LIKE '%tom%'
-    ) as movies_of_chosen_star ON movies_of_chosen_star.movieid = m.id
-    WHERE m.title LIKE 'term%' or m.title LIKE '% term%'
-          AND m.year = 2004 
-          AND m.director LIKE '%Steven%'
-          AND
-    ORDER BY m.title, sp.movie_count DESC, s.name ASC;
 
 
 ### DataSource
@@ -266,4 +161,20 @@ mysql> quit;
     - Now we can add the functions to MySQL and test them. To do that we can connect to MySQL and Copy-and-Paste the SQL statements provided for each function in their respective .sql file
       - for example, at directory 'toolkit/src/udf/mysql/ed/' run 'vim ed.sql' to see the sql statement provided for edit distance function ('CREATE FUNCTION ed RETURNS INTEGER SONAME 'libed.so';), copy and run this statement
       - now, we can test the function by running 'SELECT * from stars where ed(name, 'Paul Newman') <= 1' (note that 1 is the number of error we can tolerate)
-  
+
+### XML Parsing error messages:
+- [actors_parsing_error_messages.txt](actors_parsing_error_messages.txt)
+- [movies_parsing_error_messages.txt](movies_parsing_error_messages.txt)
+
+
+### using Docker 
+1.  create a mytestuserdocker in mysql:
+    `CREATE USER 'mytestuserdocker'@'%' IDENTIFIED BY 'My6$Password'; GRANT ALL PRIVILEGES ON * . * TO 'mytestuserdocker'@'%';`
+    Note that ``@'%'`` allows the user to login from anywhere instead of only `@'localhost'`. This command is critical for Docker and Kubernetes
+2. Check the context.xml file to verify correct database connections
+    If you switch to using other connections (for Kubernetes or for localhost, modify context.xml and the variables specifying connection url in VerifyPassword.java )
+3. build the image: `docker build -t <DockerHub-user-name>/fablix:v1 .`
+    Or you can pull down a pre-built image: `docker pull mianguyen00/fablix:v9`
+4. start the docker container to run the app and bind the port 8080 (first parameter) of the host instance to the port 8080 (second parameter) of the container:
+   `docker run --add-host host.docker.internal:host-gateway -p 8080:8080 <image ID>`
+5. Now you can access the web at  http://localhost:8080/cs122b-project1-api-example/login.html 
