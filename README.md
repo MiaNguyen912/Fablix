@@ -1,3 +1,6 @@
+### DEMO VIDEO:
+- https://drive.google.com/file/d/1oTMvUh_mwMhZdfjgiv6q5UG_vJTR4rry/view
+
 ### SUMMARY:
 - go to http://localhost:8080/cs122b-project1-api-example/login.html to access customer site (account/password: a@email.com / a2)
 - go to http://localhost:8080/cs122b-project1-api-example/_dashboard/login.html to access employee site (account/password: classta@email.edu / classta)
